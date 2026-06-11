@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frotis sanguíneo · Medios de Diagnóstico</title>
+  <script>
+    if (localStorage.theme === 'dark' ||
+        (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = { darkMode: 'class' }</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style> body { font-family: 'Inter', system-ui, sans-serif; } </style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-200 transition-colors duration-300">
+<div class="min-h-screen flex">
+
+  <!-- ============ BARRA LATERAL ============ -->
+  <aside id="sidebar"
+         class="fixed lg:sticky top-0 z-40 h-screen w-72 shrink-0 -translate-x-full lg:translate-x-0
+                transition-transform bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800 flex flex-col">
+    <div class="px-5 py-5 border-b border-slate-100 dark:border-slate-800">
+      <a href="index.html" class="flex items-center gap-3">
+        <span class="h-10 w-10 rounded-xl bg-indigo-600 text-white flex items-center justify-center">
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12h4l2 5 4-12 2 7h6"/></svg>
+        </span>
+        <span>
+          <span class="block font-extrabold text-slate-800 dark:text-white leading-tight">Wiki Diagnóstico</span>
+          <span class="block text-xs text-slate-400">UEPD-04 · Medios de Diagnóstico</span>
+        </span>
+      </a>
+    </div>
+    <nav class="flex-1 overflow-y-auto px-3 py-4 space-y-1 text-sm">
+      <a href="index.html"        class="block rounded-lg px-3 py-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Carátula</a>
+      <a href="introduccion.html" class="block rounded-lg px-3 py-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Introducción</a>
+      <a href="examenes.html"     class="block rounded-lg px-3 py-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Exámenes</a>
+      <p class="px-3 pt-3 pb-1 text-xs font-semibold uppercase tracking-wide text-slate-400">Exámenes en detalle</p>
+      <a href="hemograma.html"  class="block rounded-lg px-3 py-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Hemograma con diferencial</a>
+      <a href="frotis.html"     class="block rounded-lg px-3 py-2 font-semibold bg-violet-50 dark:bg-violet-500/15 text-violet-700 dark:text-violet-300">Frotis sanguíneo</a>
+      <a href="neurograma.html" class="block rounded-lg px-3 py-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Neurograma</a>
+      <p class="px-3 pt-3 pb-1 text-xs font-semibold uppercase tracking-wide text-slate-400">Otros estudios</p>
+      <a href="fluidos.html" class="block rounded-lg px-3 py-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Análisis de fluidos biológicos</a>
+      <p class="px-3 pt-3 pb-1 text-xs font-semibold uppercase tracking-wide text-slate-400">Recursos</p>
+      <a href="enlaces.html" class="block rounded-lg px-3 py-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Enlaces y referencias</a>
+    </nav>
+    <div class="px-4 py-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
+      <span class="text-xs text-slate-400">© Proyecto académico</span>
+      <button onclick="toggleTheme()" aria-label="Cambiar tema"
+              class="h-9 w-9 rounded-full grid place-items-center ring-1 ring-slate-200 dark:ring-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 transition text-slate-600 dark:text-slate-300">
+        <svg class="dark:hidden h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="hidden dark:block h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path stroke-linecap="round" d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </button>
+    </div>
+  </aside>
+
+  <button onclick="document.getElementById('sidebar').classList.toggle('-translate-x-full')"
+          class="lg:hidden fixed bottom-5 right-5 z-50 h-12 w-12 rounded-full bg-indigo-600 text-white shadow-lg grid place-items-center">
+    <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+  </button>
+
+  <!-- ============ CONTENIDO ============ -->
+  <main class="flex-1 min-w-0">
+    <div class="max-w-3xl mx-auto px-6 py-10 lg:py-14">
+
+      <nav class="text-xs text-slate-400 mb-3">Inicio / Exámenes / <span class="text-slate-600 dark:text-slate-300">Frotis sanguíneo</span></nav>
+
+      <div class="flex items-center gap-4">
+        <div class="h-12 w-1.5 rounded-full bg-violet-500"></div>
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">Frotis sanguíneo</h1>
+      </div>
+
+      <!-- Descripción -->
+      <section class="mt-8">
+        <h2 class="text-xl font-bold text-slate-900 dark:text-white">Descripción</h2>
+        <p class="mt-2 text-slate-700 dark:text-slate-300 leading-relaxed">
+          Es una prueba de laboratorio en la que se extiende una gota de sangre sobre una
+          <strong class="text-slate-900 dark:text-white">lámina de vidrio</strong> para observar las células sanguíneas bajo el
+          <strong class="text-slate-900 dark:text-white">microscopio</strong>.
+        </p>
+      </section>
+
+      <!-- Para qué sirve -->
+      <section class="mt-8">
+        <h2 class="text-xl font-bold text-slate-900 dark:text-white">¿Para qué sirve?</h2>
+        <div class="mt-3 rounded-2xl bg-violet-50 dark:bg-violet-500/10 ring-1 ring-violet-100 dark:ring-violet-500/30 p-5">
+          <ul class="space-y-2 text-slate-700 dark:text-slate-300 text-sm">
+            <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 rounded-full bg-violet-500 shrink-0"></span><span>Evaluar la forma y tamaño de las células sanguíneas.</span></li>
+            <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 rounded-full bg-violet-500 shrink-0"></span><span>Diagnosticar anemias.</span></li>
+            <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 rounded-full bg-violet-500 shrink-0"></span><span>Detectar infecciones parasitarias.</span></li>
+            <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 rounded-full bg-violet-500 shrink-0"></span><span>Identificar enfermedades hematológicas.</span></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Cuidados de enfermería -->
+      <section class="mt-10">
+        <h2 class="text-xl font-bold text-slate-900 dark:text-white">Cuidados de enfermería</h2>
+        <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">Indicaciones que debe cumplir la enfermería con el paciente.</p>
+
+        <div class="mt-5 grid gap-4">
+          <div class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+            <div class="bg-emerald-500 px-5 py-2.5 text-white font-semibold">Antes del examen</div>
+            <ul class="p-5 space-y-2 text-sm text-slate-700 dark:text-slate-300">
+              <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 rounded-full bg-emerald-500 shrink-0"></span><span>Informar al paciente sobre el procedimiento.</span></li>
+              <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 rounded-full bg-emerald-500 shrink-0"></span><span>Verificar la orden médica.</span></li>
+            </ul>
+          </div>
+          <div class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+            <div class="bg-amber-500 px-5 py-2.5 text-white font-semibold">Durante el examen</div>
+            <ul class="p-5 space-y-2 text-sm text-slate-700 dark:text-slate-300">
+              <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 rounded-full bg-amber-500 shrink-0"></span><span>Obtener la muestra siguiendo normas de bioseguridad.</span></li>
+              <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 rounded-full bg-amber-500 shrink-0"></span><span>Preparar adecuadamente la lámina.</span></li>
+            </ul>
+          </div>
+          <div class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+            <div class="bg-sky-500 px-5 py-2.5 text-white font-semibold">Después del examen</div>
+            <ul class="p-5 space-y-2 text-sm text-slate-700 dark:text-slate-300">
+              <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 rounded-full bg-sky-500 shrink-0"></span><span>Desechar materiales según protocolo.</span></li>
+              <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 rounded-full bg-sky-500 shrink-0"></span><span>Vigilar el sitio de punción.</span></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Referencia -->
+      <a href="https://medlineplus.gov/spanish/pruebas-de-laboratorio/frotis-de-sangre/" target="_blank" rel="noopener"
+         class="mt-8 inline-flex items-center gap-2 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 ring-1 ring-slate-200 dark:ring-slate-700 px-4 py-2 text-sm font-medium hover:bg-slate-200 dark:hover:bg-slate-700 transition">
+        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H18v4.5M18 6l-7 7M11 5H7a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-4"/></svg>
+        Fuente: MedlinePlus — Frotis de sangre
+      </a>
+
+      <div class="mt-12 flex items-center justify-between border-t border-slate-200 dark:border-slate-800 pt-6">
+        <a href="hemograma.html" class="text-sm text-slate-500 hover:text-indigo-600 dark:hover:text-indigo-400">← Hemograma</a>
+        <a href="neurograma.html"
+           class="inline-flex items-center gap-2 rounded-full bg-indigo-600 px-5 py-2.5 text-white text-sm font-semibold hover:bg-indigo-700">
+          Siguiente: Neurograma →
+        </a>
+      </div>
+    </div>
+  </main>
+</div>
+<script>
+  function toggleTheme(){
+    const html = document.documentElement;
+    html.classList.toggle('dark');
+    localStorage.theme = html.classList.contains('dark') ? 'dark' : 'light';
+  }
+</script>
+</body>
+</html>

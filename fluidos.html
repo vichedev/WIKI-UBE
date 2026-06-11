@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Análisis de fluidos biológicos · Medios de Diagnóstico</title>
+  <script>
+    if (localStorage.theme === 'dark' ||
+        (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = { darkMode: 'class' }</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style> body { font-family: 'Inter', system-ui, sans-serif; } </style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-200 transition-colors duration-300">
+<div class="min-h-screen flex">
+
+  <!-- ============ BARRA LATERAL ============ -->
+  <aside id="sidebar"
+         class="fixed lg:sticky top-0 z-40 h-screen w-72 shrink-0 -translate-x-full lg:translate-x-0
+                transition-transform bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800 flex flex-col">
+    <div class="px-5 py-5 border-b border-slate-100 dark:border-slate-800">
+      <a href="index.html" class="flex items-center gap-3">
+        <span class="h-10 w-10 rounded-xl bg-indigo-600 text-white flex items-center justify-center">
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12h4l2 5 4-12 2 7h6"/></svg>
+        </span>
+        <span>
+          <span class="block font-extrabold text-slate-800 dark:text-white leading-tight">Wiki Diagnóstico</span>
+          <span class="block text-xs text-slate-400">UEPD-04 · Medios de Diagnóstico</span>
+        </span>
+      </a>
+    </div>
+    <nav class="flex-1 overflow-y-auto px-3 py-4 space-y-1 text-sm">
+      <a href="index.html"        class="block rounded-lg px-3 py-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Carátula</a>
+      <a href="introduccion.html" class="block rounded-lg px-3 py-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Introducción</a>
+      <a href="examenes.html"     class="block rounded-lg px-3 py-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Exámenes</a>
+      <p class="px-3 pt-3 pb-1 text-xs font-semibold uppercase tracking-wide text-slate-400">Exámenes en detalle</p>
+      <a href="hemograma.html"  class="block rounded-lg px-3 py-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Hemograma con diferencial</a>
+      <a href="frotis.html"     class="block rounded-lg px-3 py-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Frotis sanguíneo</a>
+      <a href="neurograma.html" class="block rounded-lg px-3 py-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Neurograma</a>
+      <p class="px-3 pt-3 pb-1 text-xs font-semibold uppercase tracking-wide text-slate-400">Otros estudios</p>
+      <a href="fluidos.html" class="block rounded-lg px-3 py-2 font-semibold bg-indigo-50 dark:bg-indigo-500/15 text-indigo-700 dark:text-indigo-300">Análisis de fluidos biológicos</a>
+      <p class="px-3 pt-3 pb-1 text-xs font-semibold uppercase tracking-wide text-slate-400">Recursos</p>
+      <a href="enlaces.html" class="block rounded-lg px-3 py-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Enlaces y referencias</a>
+    </nav>
+    <div class="px-4 py-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
+      <span class="text-xs text-slate-400">© Proyecto académico</span>
+      <button onclick="toggleTheme()" aria-label="Cambiar tema"
+              class="h-9 w-9 rounded-full grid place-items-center ring-1 ring-slate-200 dark:ring-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 transition text-slate-600 dark:text-slate-300">
+        <svg class="dark:hidden h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="hidden dark:block h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path stroke-linecap="round" d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </button>
+    </div>
+  </aside>
+
+  <button onclick="document.getElementById('sidebar').classList.toggle('-translate-x-full')"
+          class="lg:hidden fixed bottom-5 right-5 z-50 h-12 w-12 rounded-full bg-indigo-600 text-white shadow-lg grid place-items-center">
+    <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+  </button>
+
+  <!-- ============ CONTENIDO ============ -->
+  <main class="flex-1 min-w-0">
+    <div class="max-w-4xl mx-auto px-6 py-10 lg:py-14">
+
+      <nav class="text-xs text-slate-400 mb-3">Inicio / <span class="text-slate-600 dark:text-slate-300">Análisis de fluidos biológicos</span></nav>
+
+      <div class="flex items-center gap-4">
+        <div class="h-12 w-1.5 rounded-full bg-sky-500"></div>
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">Análisis de fluidos biológicos</h1>
+      </div>
+
+      <!-- Descripción -->
+      <section class="mt-8">
+        <h2 class="text-xl font-bold text-slate-900 dark:text-white">¿Qué son?</h2>
+        <p class="mt-2 text-slate-700 dark:text-slate-300 leading-relaxed">
+          Los <strong class="text-slate-900 dark:text-white">análisis de fluidos biológicos</strong> son pruebas de laboratorio que
+          consisten en estudiar muestras de líquidos producidos por el organismo, como sangre, orina, saliva, líquido
+          cefalorraquídeo y otros. Su objetivo es obtener información sobre el estado de salud del paciente, detectar
+          enfermedades, identificar infecciones, evaluar el funcionamiento de órganos y ayudar al médico a establecer un
+          diagnóstico preciso y un tratamiento adecuado. Estos análisis son fundamentales porque muchos cambios que ocurren
+          en el cuerpo se reflejan en la composición de los fluidos biológicos, permitiendo detectar alteraciones incluso
+          antes de que aparezcan síntomas evidentes.
+        </p>
+      </section>
+
+      <!-- Tipos -->
+      <section class="mt-10">
+        <h2 class="text-xl font-bold text-slate-900 dark:text-white">Tipos de análisis</h2>
+        <div class="mt-4 grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+          <div class="flex items-center gap-3 rounded-xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 px-4 py-3"><span class="h-2 w-2 rounded-full bg-sky-500 shrink-0"></span><span class="text-sm">Análisis de componentes sanguíneos</span></div>
+          <div class="flex items-center gap-3 rounded-xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 px-4 py-3"><span class="h-2 w-2 rounded-full bg-sky-500 shrink-0"></span><span class="text-sm">Análisis del líquido cefalorraquídeo</span></div>
+          <div class="flex items-center gap-3 rounded-xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 px-4 py-3"><span class="h-2 w-2 rounded-full bg-sky-500 shrink-0"></span><span class="text-sm">Análisis del líquido pleural</span></div>
+          <div class="flex items-center gap-3 rounded-xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 px-4 py-3"><span class="h-2 w-2 rounded-full bg-sky-500 shrink-0"></span><span class="text-sm">Análisis del líquido pericárdico</span></div>
+          <div class="flex items-center gap-3 rounded-xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 px-4 py-3"><span class="h-2 w-2 rounded-full bg-sky-500 shrink-0"></span><span class="text-sm">Análisis del líquido sinovial</span></div>
+          <div class="flex items-center gap-3 rounded-xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 px-4 py-3"><span class="h-2 w-2 rounded-full bg-sky-500 shrink-0"></span><span class="text-sm">Análisis del líquido peritoneal</span></div>
+          <div class="flex items-center gap-3 rounded-xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 px-4 py-3"><span class="h-2 w-2 rounded-full bg-sky-500 shrink-0"></span><span class="text-sm">Citológico de líquido ascítico</span></div>
+          <div class="flex items-center gap-3 rounded-xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 px-4 py-3"><span class="h-2 w-2 rounded-full bg-sky-500 shrink-0"></span><span class="text-sm">Análisis del líquido amniótico</span></div>
+          <div class="flex items-center gap-3 rounded-xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 px-4 py-3"><span class="h-2 w-2 rounded-full bg-sky-500 shrink-0"></span><span class="text-sm">Saliva</span></div>
+          <div class="flex items-center gap-3 rounded-xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 px-4 py-3"><span class="h-2 w-2 rounded-full bg-sky-500 shrink-0"></span><span class="text-sm">Uroanálisis</span></div>
+          <div class="flex items-center gap-3 rounded-xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 px-4 py-3"><span class="h-2 w-2 rounded-full bg-sky-500 shrink-0"></span><span class="text-sm">Estudio del semen</span></div>
+          <div class="flex items-center gap-3 rounded-xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 px-4 py-3"><span class="h-2 w-2 rounded-full bg-sky-500 shrink-0"></span><span class="text-sm">Pruebas en sudor</span></div>
+          <div class="flex items-center gap-3 rounded-xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 px-4 py-3"><span class="h-2 w-2 rounded-full bg-sky-500 shrink-0"></span><span class="text-sm">Recuento de eosinófilos en moco nasal</span></div>
+          <div class="flex items-center gap-3 rounded-xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 px-4 py-3"><span class="h-2 w-2 rounded-full bg-sky-500 shrink-0"></span><span class="text-sm">Examen de esputo</span></div>
+        </div>
+      </section>
+
+      <!-- Más comunes -->
+      <section class="mt-10">
+        <h2 class="text-xl font-bold text-slate-900 dark:text-white">Algunos de los más comunes</h2>
+        <div class="mt-4 overflow-hidden rounded-2xl ring-1 ring-slate-200 dark:ring-slate-800">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="bg-slate-100 dark:bg-slate-800 text-left text-slate-600 dark:text-slate-300">
+                <th class="px-5 py-3 font-semibold">Fluido</th>
+                <th class="px-5 py-3 font-semibold">Análisis / Utilidad</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-200 dark:divide-slate-800 bg-white dark:bg-slate-900">
+              <tr>
+                <td class="px-5 py-3 font-medium text-slate-900 dark:text-white">Sangre</td>
+                <td class="px-5 py-3 text-slate-700 dark:text-slate-300">Hemograma, frotis sanguíneo.</td>
+              </tr>
+              <tr>
+                <td class="px-5 py-3 font-medium text-slate-900 dark:text-white">Orina</td>
+                <td class="px-5 py-3 text-slate-700 dark:text-slate-300">Uroanálisis.</td>
+              </tr>
+              <tr>
+                <td class="px-5 py-3 font-medium text-slate-900 dark:text-white">Saliva</td>
+                <td class="px-5 py-3 text-slate-700 dark:text-slate-300">Detección de infecciones y alteraciones hormonales.</td>
+              </tr>
+              <tr>
+                <td class="px-5 py-3 font-medium text-slate-900 dark:text-white">Líquido cefalorraquídeo</td>
+                <td class="px-5 py-3 text-slate-700 dark:text-slate-300">Diagnóstico de meningitis y enfermedades neurológicas.</td>
+              </tr>
+              <tr>
+                <td class="px-5 py-3 font-medium text-slate-900 dark:text-white">Esputo</td>
+                <td class="px-5 py-3 text-slate-700 dark:text-slate-300">Diagnóstico de infecciones respiratorias.</td>
+              </tr>
+              <tr>
+                <td class="px-5 py-3 font-medium text-slate-900 dark:text-white">Semen</td>
+                <td class="px-5 py-3 text-slate-700 dark:text-slate-300">Evaluación de la fertilidad masculina.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <div class="mt-12 flex items-center justify-between border-t border-slate-200 dark:border-slate-800 pt-6">
+        <a href="neurograma.html" class="text-sm text-slate-500 hover:text-indigo-600 dark:hover:text-indigo-400">← Neurograma</a>
+        <a href="enlaces.html"
+           class="inline-flex items-center gap-2 rounded-full bg-indigo-600 px-5 py-2.5 text-white text-sm font-semibold hover:bg-indigo-700">
+          Enlaces y referencias →
+        </a>
+      </div>
+    </div>
+  </main>
+</div>
+<script>
+  function toggleTheme(){
+    const html = document.documentElement;
+    html.classList.toggle('dark');
+    localStorage.theme = html.classList.contains('dark') ? 'dark' : 'light';
+  }
+</script>
+</body>
+</html>
