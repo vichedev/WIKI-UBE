@@ -39,9 +39,10 @@
       <a href="introduccion.html" class="block rounded-lg px-3 py-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Introducción</a>
       <a href="examenes.html"     class="block rounded-lg px-3 py-2 font-semibold bg-indigo-50 dark:bg-indigo-500/15 text-indigo-700 dark:text-indigo-300">Exámenes</a>
       <p class="px-3 pt-3 pb-1 text-xs font-semibold uppercase tracking-wide text-slate-400">Exámenes en detalle</p>
-      <a href="hemograma.html"  class="block rounded-lg px-3 py-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Hemograma con diferencial</a>
-      <a href="frotis.html"     class="block rounded-lg px-3 py-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Frotis sanguíneo</a>
-      <a href="neurograma.html" class="block rounded-lg px-3 py-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Neurograma</a>
+      <a href="hemograma.html"   class="block rounded-lg px-3 py-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Hemograma con diferencial</a>
+      <a href="componentes.html" class="block rounded-lg px-3 py-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Componentes de la sangre</a>
+      <a href="frotis.html"      class="block rounded-lg px-3 py-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Frotis sanguíneo</a>
+      <a href="medulograma.html" class="block rounded-lg px-3 py-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Medulograma</a>
       <p class="px-3 pt-3 pb-1 text-xs font-semibold uppercase tracking-wide text-slate-400">Otros estudios</p>
       <a href="fluidos.html" class="block rounded-lg px-3 py-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Análisis de fluidos biológicos</a>
       <p class="px-3 pt-3 pb-1 text-xs font-semibold uppercase tracking-wide text-slate-400">Recursos</p>
@@ -77,36 +78,54 @@
       <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
 
         <a href="hemograma.html"
-           class="group rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 p-6 hover:ring-rose-300 dark:hover:ring-rose-500 hover:shadow-lg hover:-translate-y-1 transition">
-          <div class="flex items-center gap-3 mb-4">
-            <span class="h-8 w-8 rounded-lg bg-rose-100 dark:bg-rose-500/15 text-rose-600 dark:text-rose-300 grid place-items-center font-bold">1</span>
-            <div class="h-1.5 flex-1 rounded-full bg-rose-500/20"></div>
+           class="group rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden hover:ring-rose-300 dark:hover:ring-rose-500 hover:shadow-lg hover:-translate-y-1 transition">
+          <div class="relative aspect-[16/10] bg-slate-100 dark:bg-slate-800">
+            <img src="IMG/hemograma/hemograma.jpg" alt="Hemograma con diferencial" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-xs text-slate-400 p-3">
+              <svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+              <span>IMG/hemograma/hemograma.jpg</span>
+            </div>
           </div>
-          <h2 class="font-bold text-lg text-slate-900 dark:text-white">Hemograma con diferencial</h2>
-          <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">Evalúa glóbulos rojos, glóbulos blancos y plaquetas, e identifica los tipos de leucocitos.</p>
-          <span class="mt-4 inline-block text-sm font-semibold text-rose-600 dark:text-rose-400 group-hover:translate-x-1 transition">Leer más →</span>
+          <div class="p-6">
+            <span class="inline-grid h-8 w-8 place-items-center rounded-lg bg-rose-100 dark:bg-rose-500/15 text-rose-600 dark:text-rose-300 font-bold mb-3">1</span>
+            <h2 class="font-bold text-lg text-slate-900 dark:text-white">Hemograma con diferencial</h2>
+            <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">Evalúa glóbulos rojos, glóbulos blancos y plaquetas, e identifica los tipos de leucocitos.</p>
+            <span class="mt-4 inline-block text-sm font-semibold text-rose-600 dark:text-rose-400 group-hover:translate-x-1 transition">Leer más →</span>
+          </div>
         </a>
 
         <a href="frotis.html"
-           class="group rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 p-6 hover:ring-violet-300 dark:hover:ring-violet-500 hover:shadow-lg hover:-translate-y-1 transition">
-          <div class="flex items-center gap-3 mb-4">
-            <span class="h-8 w-8 rounded-lg bg-violet-100 dark:bg-violet-500/15 text-violet-600 dark:text-violet-300 grid place-items-center font-bold">2</span>
-            <div class="h-1.5 flex-1 rounded-full bg-violet-500/20"></div>
+           class="group rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden hover:ring-violet-300 dark:hover:ring-violet-500 hover:shadow-lg hover:-translate-y-1 transition">
+          <div class="relative aspect-[16/10] bg-slate-100 dark:bg-slate-800">
+            <img src="IMG/frotis/frotis.jpg" alt="Frotis sanguíneo" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-xs text-slate-400 p-3">
+              <svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+              <span>IMG/frotis/frotis.jpg</span>
+            </div>
           </div>
-          <h2 class="font-bold text-lg text-slate-900 dark:text-white">Frotis sanguíneo</h2>
-          <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">Extensión de sangre sobre una lámina para observar las células al microscopio.</p>
-          <span class="mt-4 inline-block text-sm font-semibold text-violet-600 dark:text-violet-400 group-hover:translate-x-1 transition">Leer más →</span>
+          <div class="p-6">
+            <span class="inline-grid h-8 w-8 place-items-center rounded-lg bg-violet-100 dark:bg-violet-500/15 text-violet-600 dark:text-violet-300 font-bold mb-3">2</span>
+            <h2 class="font-bold text-lg text-slate-900 dark:text-white">Frotis sanguíneo</h2>
+            <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">Extensión de sangre sobre una lámina para observar las células al microscopio.</p>
+            <span class="mt-4 inline-block text-sm font-semibold text-violet-600 dark:text-violet-400 group-hover:translate-x-1 transition">Leer más →</span>
+          </div>
         </a>
 
-        <a href="neurograma.html"
-           class="group rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 p-6 hover:ring-amber-300 dark:hover:ring-amber-500 hover:shadow-lg hover:-translate-y-1 transition">
-          <div class="flex items-center gap-3 mb-4">
-            <span class="h-8 w-8 rounded-lg bg-amber-100 dark:bg-amber-500/15 text-amber-600 dark:text-amber-300 grid place-items-center font-bold">3</span>
-            <div class="h-1.5 flex-1 rounded-full bg-amber-500/20"></div>
+        <a href="medulograma.html"
+           class="group rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden hover:ring-amber-300 dark:hover:ring-amber-500 hover:shadow-lg hover:-translate-y-1 transition">
+          <div class="relative aspect-[16/10] bg-slate-100 dark:bg-slate-800">
+            <img src="IMG/medulograma/medulograma.jpg" alt="Medulograma" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-xs text-slate-400 p-3">
+              <svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+              <span>IMG/medulograma/medulograma.jpg</span>
+            </div>
           </div>
-          <h2 class="font-bold text-lg text-slate-900 dark:text-white">Neurograma</h2>
-          <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">Estudio de conducción nerviosa: mide cómo los nervios transmiten los impulsos eléctricos.</p>
-          <span class="mt-4 inline-block text-sm font-semibold text-amber-600 dark:text-amber-400 group-hover:translate-x-1 transition">Leer más →</span>
+          <div class="p-6">
+            <span class="inline-grid h-8 w-8 place-items-center rounded-lg bg-amber-100 dark:bg-amber-500/15 text-amber-600 dark:text-amber-300 font-bold mb-3">3</span>
+            <h2 class="font-bold text-lg text-slate-900 dark:text-white">Medulograma</h2>
+            <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">Aspirado de médula ósea: evalúa directamente la producción de células sanguíneas.</p>
+            <span class="mt-4 inline-block text-sm font-semibold text-amber-600 dark:text-amber-400 group-hover:translate-x-1 transition">Leer más →</span>
+          </div>
         </a>
       </div>
 
@@ -128,7 +147,7 @@
               </div>
               <div class="flex flex-col items-center">
                 <div class="h-6 w-px bg-slate-300 dark:bg-slate-700 hidden sm:block"></div>
-                <div class="rounded-lg bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-200 dark:ring-amber-500/30 text-amber-700 dark:text-amber-300 px-4 py-2 text-sm font-semibold text-center">Neurograma</div>
+                <div class="rounded-lg bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-200 dark:ring-amber-500/30 text-amber-700 dark:text-amber-300 px-4 py-2 text-sm font-semibold text-center">Medulograma</div>
               </div>
             </div>
           </div>
@@ -152,5 +171,40 @@
     localStorage.theme = html.classList.contains('dark') ? 'dark' : 'light';
   }
 </script>
+
+  <!-- ===== Lightbox: clic en una imagen para ampliarla ===== -->
+  <div id="lightbox" class="fixed inset-0 z-[60] hidden items-center justify-center bg-black/80 backdrop-blur-sm p-4 cursor-zoom-out" onclick="closeLightbox()">
+    <button onclick="closeLightbox()" aria-label="Cerrar"
+            class="absolute top-4 right-4 h-11 w-11 rounded-full bg-white/10 hover:bg-white/20 ring-1 ring-white/30 text-white grid place-items-center">
+      <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <figure class="flex flex-col items-center gap-3" onclick="event.stopPropagation()">
+      <img id="lightbox-img" src="" alt="" class="max-h-[85vh] max-w-[92vw] rounded-xl shadow-2xl object-contain">
+      <figcaption id="lightbox-cap" class="text-sm text-white/80"></figcaption>
+    </figure>
+  </div>
+  <script>
+    (function(){
+      const box = document.getElementById('lightbox');
+      const big = document.getElementById('lightbox-img');
+      const cap = document.getElementById('lightbox-cap');
+      document.querySelectorAll('main img').forEach(function(el){
+        el.classList.add('cursor-zoom-in');
+        el.addEventListener('click', function(ev){
+          ev.preventDefault(); ev.stopPropagation();
+          big.src = el.currentSrc || el.src;
+          big.alt = el.alt || '';
+          cap.textContent = el.alt || '';
+          box.classList.remove('hidden'); box.classList.add('flex');
+          document.body.style.overflow = 'hidden';
+        });
+      });
+      window.closeLightbox = function(){
+        box.classList.add('hidden'); box.classList.remove('flex');
+        document.body.style.overflow = '';
+      };
+      document.addEventListener('keydown', function(e){ if(e.key === 'Escape') window.closeLightbox(); });
+    })();
+  </script>
 </body>
 </html>

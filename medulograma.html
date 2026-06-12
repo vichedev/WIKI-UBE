@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Medulograma · Medios de Diagnóstico</title>
+  <script>
+    if (localStorage.theme === 'dark' ||
+        (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = { darkMode: 'class' }</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style> body { font-family: 'Inter', system-ui, sans-serif; } </style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-200 transition-colors duration-300">
+<div class="min-h-screen flex">
+
+  <!-- ============ BARRA LATERAL ============ -->
+  <aside id="sidebar"
+         class="fixed lg:sticky top-0 z-40 h-screen w-72 shrink-0 -translate-x-full lg:translate-x-0
+                transition-transform bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800 flex flex-col">
+    <div class="px-5 py-5 border-b border-slate-100 dark:border-slate-800">
+      <a href="index.html" class="flex items-center gap-3">
+        <span class="h-10 w-10 rounded-xl bg-indigo-600 text-white flex items-center justify-center">
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12h4l2 5 4-12 2 7h6"/></svg>
+        </span>
+        <span>
+          <span class="block font-extrabold text-slate-800 dark:text-white leading-tight">Wiki Diagnóstico</span>
+          <span class="block text-xs text-slate-400">UEPD-04 · Medios de Diagnóstico</span>
+        </span>
+      </a>
+    </div>
+    <nav class="flex-1 overflow-y-auto px-3 py-4 space-y-1 text-sm">
+      <a href="index.html"        class="block rounded-lg px-3 py-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Carátula</a>
+      <a href="introduccion.html" class="block rounded-lg px-3 py-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Introducción</a>
+      <a href="examenes.html"     class="block rounded-lg px-3 py-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Exámenes</a>
+      <p class="px-3 pt-3 pb-1 text-xs font-semibold uppercase tracking-wide text-slate-400">Exámenes en detalle</p>
+      <a href="hemograma.html"   class="block rounded-lg px-3 py-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Hemograma con diferencial</a>
+      <a href="componentes.html" class="block rounded-lg px-3 py-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Componentes de la sangre</a>
+      <a href="frotis.html"      class="block rounded-lg px-3 py-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Frotis sanguíneo</a>
+      <a href="medulograma.html" class="block rounded-lg px-3 py-2 font-semibold bg-amber-50 dark:bg-amber-500/15 text-amber-700 dark:text-amber-300">Medulograma</a>
+      <p class="px-3 pt-3 pb-1 text-xs font-semibold uppercase tracking-wide text-slate-400">Otros estudios</p>
+      <a href="fluidos.html" class="block rounded-lg px-3 py-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Análisis de fluidos biológicos</a>
+      <p class="px-3 pt-3 pb-1 text-xs font-semibold uppercase tracking-wide text-slate-400">Recursos</p>
+      <a href="enlaces.html" class="block rounded-lg px-3 py-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Enlaces y referencias</a>
+    </nav>
+    <div class="px-4 py-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
+      <span class="text-xs text-slate-400">© Proyecto académico</span>
+      <button onclick="toggleTheme()" aria-label="Cambiar tema"
+              class="h-9 w-9 rounded-full grid place-items-center ring-1 ring-slate-200 dark:ring-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 transition text-slate-600 dark:text-slate-300">
+        <svg class="dark:hidden h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="hidden dark:block h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path stroke-linecap="round" d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </button>
+    </div>
+  </aside>
+
+  <button onclick="document.getElementById('sidebar').classList.toggle('-translate-x-full')"
+          class="lg:hidden fixed bottom-5 right-5 z-50 h-12 w-12 rounded-full bg-indigo-600 text-white shadow-lg grid place-items-center">
+    <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+  </button>
+
+  <!-- ============ CONTENIDO ============ -->
+  <main class="flex-1 min-w-0">
+    <div class="max-w-3xl mx-auto px-6 py-10 lg:py-14">
+
+      <nav class="text-xs text-slate-400 mb-3">Inicio / Exámenes / <span class="text-slate-600 dark:text-slate-300">Medulograma</span></nav>
+
+      <div class="flex items-center gap-4">
+        <div class="h-12 w-1.5 rounded-full bg-amber-500"></div>
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">Medulograma</h1>
+      </div>
+      <p class="mt-2 text-amber-600 dark:text-amber-400 font-semibold">Aspirado de médula ósea</p>
+
+      <!-- Imagen principal -->
+      <figure class="mt-6 overflow-hidden rounded-2xl ring-1 ring-slate-200 dark:ring-slate-800">
+        <div class="relative aspect-[16/9] bg-slate-100 dark:bg-slate-800">
+          <img src="IMG/medulograma/medulograma.jpg" alt="Medulograma" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="absolute inset-0 hidden flex-col items-center justify-center gap-2 text-center text-sm text-slate-400 p-4">
+            <svg class="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+            <span>Coloca la imagen en <strong>IMG/medulograma/medulograma.jpg</strong></span>
+          </div>
+        </div>
+      </figure>
+
+      <!-- ¿Qué es? -->
+      <section class="mt-8">
+        <h2 class="text-xl font-bold text-slate-900 dark:text-white">¿Qué es un medulograma?</h2>
+        <p class="mt-2 text-slate-700 dark:text-slate-300 leading-relaxed">
+          El <strong class="text-slate-900 dark:text-white">medulograma</strong>, también conocido como
+          <strong class="text-slate-900 dark:text-white">aspirado de médula ósea</strong>, es un procedimiento diagnóstico que consiste
+          en extraer una pequeña muestra de médula ósea líquida mediante una aguja especial para su análisis microscópico. La médula
+          ósea es un tejido blando localizado en el interior de los huesos y es responsable de la producción de las células sanguíneas:
+          glóbulos rojos, glóbulos blancos y plaquetas. El procedimiento suele realizarse en la cresta ilíaca posterior (hueso de la
+          pelvis), aunque en algunas situaciones puede efectuarse en otros huesos. Permite evaluar directamente la actividad
+          hematopoyética de la médula ósea, es decir, la capacidad que tiene para formar células sanguíneas normales. Por ello,
+          constituye una de las pruebas más importantes en hematología para el diagnóstico, seguimiento y pronóstico de múltiples
+          enfermedades de la sangre.
+        </p>
+      </section>
+
+      <!-- Qué se evalúa -->
+      <section class="mt-8">
+        <h2 class="text-xl font-bold text-slate-900 dark:text-white">¿Qué se evalúa o mide?</h2>
+        <p class="mt-2 text-slate-700 dark:text-slate-300 leading-relaxed">
+          A través del estudio microscópico de la muestra se analiza la cantidad, calidad y maduración de las células que forman la
+          sangre. Se determina la proporción entre las diferentes líneas celulares (eritroide, mieloide y megacariocítica), el grado de
+          celularidad de la médula, la presencia de células anormales o malignas y posibles alteraciones en la formación de células
+          sanguíneas. Además, permite identificar infiltraciones tumorales, microorganismos infecciosos, fibrosis medular y trastornos
+          en la producción de células. También puede complementarse con estudios especializados como inmunofenotipo, citometría de
+          flujo, citogenética y pruebas moleculares para obtener diagnósticos más precisos.
+        </p>
+      </section>
+
+      <!-- Por qué se realiza -->
+      <section class="mt-8">
+        <h2 class="text-xl font-bold text-slate-900 dark:text-white">¿Por qué se realiza este examen?</h2>
+        <p class="mt-2 text-slate-700 dark:text-slate-300 leading-relaxed">
+          El medulograma se solicita cuando existen alteraciones en los análisis sanguíneos que no pueden explicarse únicamente mediante
+          pruebas de laboratorio convencionales. Es especialmente útil cuando el hemograma muestra disminución o aumento anormal de
+          glóbulos rojos, glóbulos blancos o plaquetas. Asimismo, se realiza para confirmar diagnósticos de enfermedades hematológicas,
+          evaluar la respuesta a tratamientos oncológicos, determinar la extensión de ciertos cánceres y estudiar casos de fiebre
+          prolongada de origen desconocido o infecciones sistémicas graves.
+        </p>
+      </section>
+
+      <!-- Enfermedades -->
+      <section class="mt-8">
+        <h2 class="text-xl font-bold text-slate-900 dark:text-white">Enfermedades que puede detectar</h2>
+        <div class="mt-3 rounded-2xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/30 p-5">
+          <ul class="space-y-2 text-slate-700 dark:text-slate-300 text-sm">
+            <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 rounded-full bg-amber-500 shrink-0"></span><span><strong class="text-slate-900 dark:text-white">Leucemias</strong> agudas y crónicas (proliferación anormal de células inmaduras).</span></li>
+            <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 rounded-full bg-amber-500 shrink-0"></span><span><strong class="text-slate-900 dark:text-white">Linfomas</strong> con infiltración medular y <strong class="text-slate-900 dark:text-white">mieloma múltiple</strong>.</span></li>
+            <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 rounded-full bg-amber-500 shrink-0"></span><span>Anemias de origen medular, como la <strong class="text-slate-900 dark:text-white">anemia aplásica</strong>.</span></li>
+            <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 rounded-full bg-amber-500 shrink-0"></span><span>Síndromes mielodisplásicos, mielofibrosis, policitemia vera y trombocitosis esencial.</span></li>
+            <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 rounded-full bg-amber-500 shrink-0"></span><span>Infecciones bacterianas, virales, micóticas o parasitarias que comprometan la médula.</span></li>
+            <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 rounded-full bg-amber-500 shrink-0"></span><span>Metástasis de tumores sólidos (mama, próstata o pulmón).</span></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Procedimiento -->
+      <section class="mt-8">
+        <h2 class="text-xl font-bold text-slate-900 dark:text-white">Procedimiento del examen</h2>
+        <figure class="mt-4 overflow-hidden rounded-2xl ring-1 ring-slate-200 dark:ring-slate-800">
+          <div class="relative aspect-[16/9] bg-slate-100 dark:bg-slate-800">
+            <img src="IMG/medulograma/procedimiento.jpg" alt="Procedimiento del medulograma" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="absolute inset-0 hidden flex-col items-center justify-center gap-2 text-center text-sm text-slate-400 p-4">
+              <svg class="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+              <span>Coloca la imagen en <strong>IMG/medulograma/procedimiento.jpg</strong></span>
+            </div>
+          </div>
+        </figure>
+        <p class="mt-4 text-slate-700 dark:text-slate-300 leading-relaxed">
+          Antes del procedimiento, el paciente es evaluado clínicamente y se revisan sus antecedentes médicos, especialmente la presencia
+          de trastornos de coagulación, alergias o uso de medicamentos anticoagulantes. Posteriormente se limpia y desinfecta la zona de
+          la punción. Se administra anestesia local para disminuir el dolor y se introduce una aguja especializada hasta llegar a la
+          médula ósea. Mediante aspiración se obtiene una pequeña cantidad de material medular que luego será enviada al laboratorio para
+          su análisis. Aunque la anestesia reduce significativamente las molestias, muchos pacientes describen una sensación breve de
+          presión intensa o dolor agudo durante el momento de la aspiración, que generalmente dura solo unos segundos.
+        </p>
+      </section>
+
+      <!-- Cuidados de enfermería -->
+      <section class="mt-10">
+        <h2 class="text-xl font-bold text-slate-900 dark:text-white">Cuidados de enfermería</h2>
+        <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">Indicaciones que debe cumplir la enfermería con el paciente.</p>
+
+        <div class="mt-5 grid gap-4">
+          <div class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+            <div class="bg-emerald-500 px-5 py-2.5 text-white font-semibold">Antes del procedimiento</div>
+            <div class="p-5 text-sm text-slate-700 dark:text-slate-300 leading-relaxed space-y-3">
+              <p>La intervención comienza con la preparación física y emocional del paciente. Es importante explicar detalladamente el
+              procedimiento, su finalidad diagnóstica y las posibles sensaciones que experimentará, para disminuir la ansiedad y favorecer
+              la cooperación.</p>
+              <p>La enfermera debe verificar la identidad del paciente, revisar la historia clínica, confirmar el consentimiento informado
+              y evaluar antecedentes de alergias, trastornos hemorrágicos o tratamientos anticoagulantes. También comprueba los resultados
+              recientes de hemograma y pruebas de coagulación. Si el procedimiento requiere sedación, se verifica el cumplimiento del ayuno
+              indicado, se controlan los signos vitales basales y se prepara el material estéril necesario.</p>
+            </div>
+          </div>
+          <div class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+            <div class="bg-amber-500 px-5 py-2.5 text-white font-semibold">Durante el procedimiento</div>
+            <div class="p-5 text-sm text-slate-700 dark:text-slate-300 leading-relaxed space-y-3">
+              <p>La enfermera colabora manteniendo la técnica aséptica y brindando apoyo físico y emocional. Ayuda a colocar al paciente en
+              la posición adecuada, generalmente en decúbito lateral o prono, según el sitio de punción.</p>
+              <p>Es fundamental monitorizar continuamente los signos vitales y observar posibles manifestaciones de dolor, ansiedad, mareos
+              o reacciones adversas a la anestesia o sedación. Además, asiste al médico en la manipulación del material y la obtención de la
+              muestra. La observación constante permite detectar precozmente complicaciones como sangrado excesivo, hipotensión o malestar
+              intenso.</p>
+            </div>
+          </div>
+          <div class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+            <div class="bg-sky-500 px-5 py-2.5 text-white font-semibold">Después del procedimiento</div>
+            <div class="p-5 text-sm text-slate-700 dark:text-slate-300 leading-relaxed space-y-3">
+              <p>Una vez finalizada la extracción, se ejerce presión directa sobre el sitio de punción para prevenir hemorragias y favorecer
+              la hemostasia. Luego se coloca un apósito estéril y se verifica periódicamente la presencia de sangrado, hematomas o signos de
+              infección.</p>
+              <p>La enfermera monitoriza los signos vitales y valora el nivel de dolor. Se recomienda reposo relativo durante las primeras
+              horas y evitar esfuerzos físicos intensos por al menos 24 horas. Se instruye al paciente para mantener el vendaje limpio y seco
+              e informar de inmediato si presenta fiebre, dolor intenso, enrojecimiento, inflamación o sangrado persistente. La educación al
+              paciente es esencial para prevenir complicaciones y favorecer una recuperación segura.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Complicaciones -->
+      <section class="mt-8">
+        <h2 class="text-xl font-bold text-slate-900 dark:text-white">Posibles complicaciones</h2>
+        <div class="mt-3 rounded-2xl bg-rose-50 dark:bg-rose-500/10 ring-1 ring-rose-100 dark:ring-rose-500/30 p-5">
+          <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+            El medulograma es considerado un procedimiento <strong class="text-slate-900 dark:text-white">seguro</strong> cuando se realiza
+            bajo condiciones adecuadas. Sin embargo, pueden presentarse algunas complicaciones poco frecuentes, como sangrado en el sitio de
+            punción, hematomas, dolor persistente o infección local. En casos excepcionales pueden ocurrir hemorragias importantes,
+            especialmente en pacientes con alteraciones de la coagulación.
+          </p>
+        </div>
+      </section>
+
+      <!-- Referencias -->
+      <div class="mt-8 flex flex-wrap gap-2">
+        <a href="https://medlineplus.gov/lab-tests/bone-marrow-tests/" target="_blank" rel="noopener"
+           class="inline-flex items-center gap-2 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 ring-1 ring-slate-200 dark:ring-slate-700 px-4 py-2 text-sm font-medium hover:bg-slate-200 dark:hover:bg-slate-700 transition">
+          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H18v4.5M18 6l-7 7M11 5H7a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-4"/></svg>
+          MedlinePlus — Bone marrow tests
+        </a>
+        <a href="https://medlineplus.gov/spanish/ency/article/003658.htm" target="_blank" rel="noopener"
+           class="inline-flex items-center gap-2 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 ring-1 ring-slate-200 dark:ring-slate-700 px-4 py-2 text-sm font-medium hover:bg-slate-200 dark:hover:bg-slate-700 transition">
+          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H18v4.5M18 6l-7 7M11 5H7a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-4"/></svg>
+          MedlinePlus — Aspiración de médula ósea (español)
+        </a>
+      </div>
+
+      <div class="mt-12 flex items-center justify-between border-t border-slate-200 dark:border-slate-800 pt-6">
+        <a href="frotis.html" class="text-sm text-slate-500 hover:text-indigo-600 dark:hover:text-indigo-400">← Frotis sanguíneo</a>
+        <a href="fluidos.html"
+           class="inline-flex items-center gap-2 rounded-full bg-indigo-600 px-5 py-2.5 text-white text-sm font-semibold hover:bg-indigo-700">
+          Análisis de fluidos biológicos →
+        </a>
+      </div>
+    </div>
+  </main>
+</div>
+<script>
+  function toggleTheme(){
+    const html = document.documentElement;
+    html.classList.toggle('dark');
+    localStorage.theme = html.classList.contains('dark') ? 'dark' : 'light';
+  }
+</script>
+
+  <!-- ===== Lightbox: clic en una imagen para ampliarla ===== -->
+  <div id="lightbox" class="fixed inset-0 z-[60] hidden items-center justify-center bg-black/80 backdrop-blur-sm p-4 cursor-zoom-out" onclick="closeLightbox()">
+    <button onclick="closeLightbox()" aria-label="Cerrar"
+            class="absolute top-4 right-4 h-11 w-11 rounded-full bg-white/10 hover:bg-white/20 ring-1 ring-white/30 text-white grid place-items-center">
+      <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <figure class="flex flex-col items-center gap-3" onclick="event.stopPropagation()">
+      <img id="lightbox-img" src="" alt="" class="max-h-[85vh] max-w-[92vw] rounded-xl shadow-2xl object-contain">
+      <figcaption id="lightbox-cap" class="text-sm text-white/80"></figcaption>
+    </figure>
+  </div>
+  <script>
+    (function(){
+      const box = document.getElementById('lightbox');
+      const big = document.getElementById('lightbox-img');
+      const cap = document.getElementById('lightbox-cap');
+      document.querySelectorAll('main img').forEach(function(el){
+        el.classList.add('cursor-zoom-in');
+        el.addEventListener('click', function(ev){
+          ev.preventDefault(); ev.stopPropagation();
+          big.src = el.currentSrc || el.src;
+          big.alt = el.alt || '';
+          cap.textContent = el.alt || '';
+          box.classList.remove('hidden'); box.classList.add('flex');
+          document.body.style.overflow = 'hidden';
+        });
+      });
+      window.closeLightbox = function(){
+        box.classList.add('hidden'); box.classList.remove('flex');
+        document.body.style.overflow = '';
+      };
+      document.addEventListener('keydown', function(e){ if(e.key === 'Escape') window.closeLightbox(); });
+    })();
+  </script>
+</body>
+</html>

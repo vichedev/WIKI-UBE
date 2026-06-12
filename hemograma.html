@@ -39,9 +39,10 @@
       <a href="introduccion.html" class="block rounded-lg px-3 py-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Introducción</a>
       <a href="examenes.html"     class="block rounded-lg px-3 py-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Exámenes</a>
       <p class="px-3 pt-3 pb-1 text-xs font-semibold uppercase tracking-wide text-slate-400">Exámenes en detalle</p>
-      <a href="hemograma.html"  class="block rounded-lg px-3 py-2 font-semibold bg-rose-50 dark:bg-rose-500/15 text-rose-700 dark:text-rose-300">Hemograma con diferencial</a>
-      <a href="frotis.html"     class="block rounded-lg px-3 py-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Frotis sanguíneo</a>
-      <a href="neurograma.html" class="block rounded-lg px-3 py-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Neurograma</a>
+      <a href="hemograma.html"   class="block rounded-lg px-3 py-2 font-semibold bg-rose-50 dark:bg-rose-500/15 text-rose-700 dark:text-rose-300">Hemograma con diferencial</a>
+      <a href="componentes.html" class="block rounded-lg px-3 py-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Componentes de la sangre</a>
+      <a href="frotis.html"      class="block rounded-lg px-3 py-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Frotis sanguíneo</a>
+      <a href="medulograma.html" class="block rounded-lg px-3 py-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Medulograma</a>
       <p class="px-3 pt-3 pb-1 text-xs font-semibold uppercase tracking-wide text-slate-400">Otros estudios</p>
       <a href="fluidos.html" class="block rounded-lg px-3 py-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Análisis de fluidos biológicos</a>
       <p class="px-3 pt-3 pb-1 text-xs font-semibold uppercase tracking-wide text-slate-400">Recursos</p>
@@ -73,15 +74,46 @@
         <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">Hemograma con diferencial</h1>
       </div>
 
+      <!-- Imagen -->
+      <figure class="mt-6 overflow-hidden rounded-2xl ring-1 ring-slate-200 dark:ring-slate-800">
+        <div class="relative aspect-[16/9] bg-slate-100 dark:bg-slate-800">
+          <img src="IMG/hemograma/hemograma.jpg" alt="Hemograma con diferencial" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="absolute inset-0 hidden flex-col items-center justify-center gap-2 text-center text-sm text-slate-400 p-4">
+            <svg class="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+            <span>Coloca la imagen en <strong>IMG/hemograma/hemograma.jpg</strong></span>
+          </div>
+        </div>
+      </figure>
+
       <!-- Descripción -->
       <section class="mt-8">
         <h2 class="text-xl font-bold text-slate-900 dark:text-white">Descripción</h2>
         <p class="mt-2 text-slate-700 dark:text-slate-300 leading-relaxed">
-          El <strong class="text-slate-900 dark:text-white">hemograma con diferencial</strong> es un análisis de sangre que evalúa los
-          componentes celulares sanguíneos: <strong class="text-slate-900 dark:text-white">glóbulos rojos</strong>,
-          <strong class="text-slate-900 dark:text-white">glóbulos blancos</strong> y <strong class="text-slate-900 dark:text-white">plaquetas</strong>.
-          Además, el diferencial permite identificar los distintos tipos de leucocitos presentes en la sangre.
+          El <strong class="text-slate-900 dark:text-white">hemograma completo</strong> es un análisis de sangre. Se utiliza para
+          examinar el estado general de salud y detectar una amplia variedad de afecciones, como
+          <strong class="text-slate-900 dark:text-white">anemia</strong>, una <strong class="text-slate-900 dark:text-white">infección</strong> y
+          <strong class="text-slate-900 dark:text-white">leucemia</strong>.
         </p>
+        <p class="mt-4 font-semibold text-slate-900 dark:text-white">Un hemograma completo mide lo siguiente:</p>
+        <div class="mt-3 rounded-2xl bg-rose-50 dark:bg-rose-500/10 ring-1 ring-rose-100 dark:ring-rose-500/30 p-5">
+          <ul class="space-y-2 text-slate-700 dark:text-slate-300 text-sm">
+            <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 rounded-full bg-rose-500 shrink-0"></span><span>Los <strong class="text-slate-900 dark:text-white">glóbulos rojos</strong>, que transportan el oxígeno.</span></li>
+            <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 rounded-full bg-rose-500 shrink-0"></span><span>Los <strong class="text-slate-900 dark:text-white">glóbulos blancos</strong>, que combaten las infecciones.</span></li>
+            <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 rounded-full bg-rose-500 shrink-0"></span><span>La <strong class="text-slate-900 dark:text-white">hemoglobina</strong>, la proteína de los glóbulos rojos que transporta el oxígeno.</span></li>
+            <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 rounded-full bg-rose-500 shrink-0"></span><span>Los <strong class="text-slate-900 dark:text-white">hematocritos</strong>, la cantidad de glóbulos rojos en la sangre.</span></li>
+            <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 rounded-full bg-rose-500 shrink-0"></span><span>Las <strong class="text-slate-900 dark:text-white">plaquetas</strong>, que ayudan a que la sangre coagule.</span></li>
+          </ul>
+        </div>
+
+        <!-- Enlace a página de componentes -->
+        <a href="componentes.html"
+           class="mt-4 flex items-center justify-between gap-3 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 px-5 py-4 hover:ring-rose-300 dark:hover:ring-rose-500 hover:shadow transition group">
+          <span>
+            <span class="block font-semibold text-slate-900 dark:text-white">Componentes de la sangre — en detalle</span>
+            <span class="block text-sm text-slate-500 dark:text-slate-400">Glóbulos rojos, glóbulos blancos, hemoglobina, hematocrito y plaquetas.</span>
+          </span>
+          <span class="text-rose-600 dark:text-rose-400 font-semibold group-hover:translate-x-1 transition">→</span>
+        </a>
       </section>
 
       <!-- Para qué sirve -->
@@ -104,7 +136,6 @@
         <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">Indicaciones que debe cumplir la enfermería con el paciente.</p>
 
         <div class="mt-5 grid gap-4">
-          <!-- ANTES -->
           <div class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
             <div class="bg-emerald-500 px-5 py-2.5 text-white font-semibold">Antes del examen</div>
             <ul class="p-5 space-y-2 text-sm text-slate-700 dark:text-slate-300">
@@ -113,7 +144,6 @@
               <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 rounded-full bg-emerald-500 shrink-0"></span><span>Confirmar si requiere ayuno según indicación médica.</span></li>
             </ul>
           </div>
-          <!-- DURANTE -->
           <div class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
             <div class="bg-amber-500 px-5 py-2.5 text-white font-semibold">Durante el examen</div>
             <ul class="p-5 space-y-2 text-sm text-slate-700 dark:text-slate-300">
@@ -122,7 +152,6 @@
               <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 rounded-full bg-amber-500 shrink-0"></span><span>Vigilar signos de malestar.</span></li>
             </ul>
           </div>
-          <!-- DESPUÉS -->
           <div class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
             <div class="bg-sky-500 px-5 py-2.5 text-white font-semibold">Después del examen</div>
             <ul class="p-5 space-y-2 text-sm text-slate-700 dark:text-slate-300">
@@ -143,9 +172,9 @@
 
       <div class="mt-12 flex items-center justify-between border-t border-slate-200 dark:border-slate-800 pt-6">
         <a href="examenes.html" class="text-sm text-slate-500 hover:text-indigo-600 dark:hover:text-indigo-400">← Exámenes</a>
-        <a href="frotis.html"
+        <a href="componentes.html"
            class="inline-flex items-center gap-2 rounded-full bg-indigo-600 px-5 py-2.5 text-white text-sm font-semibold hover:bg-indigo-700">
-          Siguiente: Frotis sanguíneo →
+          Componentes de la sangre →
         </a>
       </div>
     </div>
@@ -158,5 +187,40 @@
     localStorage.theme = html.classList.contains('dark') ? 'dark' : 'light';
   }
 </script>
+
+  <!-- ===== Lightbox: clic en una imagen para ampliarla ===== -->
+  <div id="lightbox" class="fixed inset-0 z-[60] hidden items-center justify-center bg-black/80 backdrop-blur-sm p-4 cursor-zoom-out" onclick="closeLightbox()">
+    <button onclick="closeLightbox()" aria-label="Cerrar"
+            class="absolute top-4 right-4 h-11 w-11 rounded-full bg-white/10 hover:bg-white/20 ring-1 ring-white/30 text-white grid place-items-center">
+      <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <figure class="flex flex-col items-center gap-3" onclick="event.stopPropagation()">
+      <img id="lightbox-img" src="" alt="" class="max-h-[85vh] max-w-[92vw] rounded-xl shadow-2xl object-contain">
+      <figcaption id="lightbox-cap" class="text-sm text-white/80"></figcaption>
+    </figure>
+  </div>
+  <script>
+    (function(){
+      const box = document.getElementById('lightbox');
+      const big = document.getElementById('lightbox-img');
+      const cap = document.getElementById('lightbox-cap');
+      document.querySelectorAll('main img').forEach(function(el){
+        el.classList.add('cursor-zoom-in');
+        el.addEventListener('click', function(ev){
+          ev.preventDefault(); ev.stopPropagation();
+          big.src = el.currentSrc || el.src;
+          big.alt = el.alt || '';
+          cap.textContent = el.alt || '';
+          box.classList.remove('hidden'); box.classList.add('flex');
+          document.body.style.overflow = 'hidden';
+        });
+      });
+      window.closeLightbox = function(){
+        box.classList.add('hidden'); box.classList.remove('flex');
+        document.body.style.overflow = '';
+      };
+      document.addEventListener('keydown', function(e){ if(e.key === 'Escape') window.closeLightbox(); });
+    })();
+  </script>
 </body>
 </html>

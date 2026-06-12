@@ -10,13 +10,22 @@ Haz doble clic en **`index.html`** y se abrirá en tu navegador. Desde ahí nave
 | Archivo | Contenido |
 |---|---|
 | `index.html` | Carátula (universidad, integrantes, curso, docente) |
-| `introduccion.html` | Introducción a los medios de diagnóstico |
+| `introduccion.html` | Introducción + mapa de tipos de exámenes |
 | `examenes.html` | Listado/esquema de los exámenes |
 | `hemograma.html` | Hemograma con diferencial |
-| `frotis.html` | Frotis |
-| `neurograma.html` | Neurograma |
+| `componentes.html` | Componentes de la sangre (glóbulos, hemoglobina, etc.) |
+| `frotis.html` | Frotis sanguíneo |
+| `medulograma.html` | Medulograma (aspirado de médula ósea) |
+| `fluidos.html` | Análisis de fluidos biológicos |
 | `enlaces.html` | Enlaces y referencias |
 | `_plantilla.html` | Plantilla para crear nuevas páginas |
+
+## 🖼️ Imágenes
+
+Las imágenes van en la carpeta **`IMG/`**, organizadas por tema (`IMG/hemograma/`, `IMG/frotis/`,
+`IMG/medulograma/`, `IMG/componentes/`, `IMG/fluidos/`, `IMG/introduccion/`). Consulta
+**`IMG/LEEME-IMAGENES.md`** para ver el nombre exacto de cada archivo. Mientras no exista la imagen,
+la web muestra un recuadro gris con la ruta esperada; al colocar el archivo con ese nombre, aparece sola.
 
 ## ➕ Cómo agregar una página nueva (a futuro)
 1. **Copia** el archivo `_plantilla.html` y renómbralo, por ejemplo `glucosa.html`.
