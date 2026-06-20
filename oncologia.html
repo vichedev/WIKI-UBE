@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oncología y neoplasias · Medios de Diagnóstico</title>
+  <script>
+    if (localStorage.theme === 'dark' ||
+        (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = { darkMode: 'class' }</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style> body { font-family: 'Inter', system-ui, sans-serif; } </style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-200 transition-colors duration-300">
+<div class="min-h-screen flex">
+
+  <!-- ============ BARRA LATERAL ============ -->
+  <aside id="sidebar"
+         class="fixed lg:sticky top-0 z-40 h-screen w-72 shrink-0 -translate-x-full lg:translate-x-0
+                transition-transform bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800 flex flex-col">
+    <div class="px-5 py-5 border-b border-slate-100 dark:border-slate-800">
+      <a href="index.html" class="flex items-center gap-3">
+        <span class="h-10 w-10 rounded-xl bg-indigo-600 text-white flex items-center justify-center">
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12h4l2 5 4-12 2 7h6"/></svg>
+        </span>
+        <span>
+          <span class="block font-extrabold text-slate-800 dark:text-white leading-tight">Wiki Diagnóstico</span>
+          <span class="block text-xs text-slate-400">UEPD-04 · Medios de Diagnóstico</span>
+        </span>
+      </a>
+    </div>
+    <nav class="flex-1 overflow-y-auto px-3 py-4 space-y-1 text-sm">
+      <a href="index.html"        class="block rounded-lg px-3 py-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Carátula</a>
+      <a href="introduccion.html" class="block rounded-lg px-3 py-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Introducción</a>
+      <a href="examenes.html"     class="block rounded-lg px-3 py-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Exámenes</a>
+      <p class="px-3 pt-3 pb-1 text-xs font-semibold uppercase tracking-wide text-slate-400">Exámenes en detalle</p>
+      <a href="hemograma.html"   class="block rounded-lg px-3 py-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Hemograma con diferencial</a>
+      <a href="componentes.html" class="block rounded-lg px-3 py-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Componentes de la sangre</a>
+      <a href="frotis.html"      class="block rounded-lg px-3 py-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Frotis sanguíneo</a>
+      <a href="medulograma.html" class="block rounded-lg px-3 py-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Medulograma</a>
+      <p class="px-3 pt-3 pb-1 text-xs font-semibold uppercase tracking-wide text-slate-400">Otros estudios</p>
+      <a href="fluidos.html" class="block rounded-lg px-3 py-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Análisis de fluidos biológicos</a>
+      <p class="px-3 pt-3 pb-1 text-xs font-semibold uppercase tracking-wide text-slate-400">Diagnóstico clínico</p>
+      <a href="embarazo.html"    class="block rounded-lg px-3 py-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Diagnóstico en el embarazo</a>
+      <a href="autoinmunes.html" class="block rounded-lg px-3 py-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Trastornos autoinmunitarios</a>
+      <a href="oncologia.html"  class="block rounded-lg px-3 py-2 font-semibold bg-indigo-50 dark:bg-indigo-500/15 text-indigo-700 dark:text-indigo-300">Oncología y neoplasias</a>
+      <a href="neurologia.html" class="block rounded-lg px-3 py-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Neurología avanzada</a>
+      <p class="px-3 pt-3 pb-1 text-xs font-semibold uppercase tracking-wide text-slate-400">Recursos</p>
+      <a href="enlaces.html" class="block rounded-lg px-3 py-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Enlaces y referencias</a>
+    </nav>
+    <div class="px-4 py-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
+      <span class="text-xs text-slate-400">© Proyecto académico</span>
+      <button onclick="toggleTheme()" aria-label="Cambiar tema"
+              class="h-9 w-9 rounded-full grid place-items-center ring-1 ring-slate-200 dark:ring-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 transition text-slate-600 dark:text-slate-300">
+        <svg class="dark:hidden h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="hidden dark:block h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path stroke-linecap="round" d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </button>
+    </div>
+  </aside>
+
+  <button onclick="document.getElementById('sidebar').classList.toggle('-translate-x-full')"
+          class="lg:hidden fixed bottom-5 right-5 z-50 h-12 w-12 rounded-full bg-indigo-600 text-white shadow-lg grid place-items-center">
+    <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+  </button>
+
+  <!-- ============ CONTENIDO ============ -->
+  <main class="flex-1 min-w-0">
+    <div class="max-w-4xl mx-auto px-6 py-10 lg:py-14">
+
+      <nav class="text-xs text-slate-400 mb-3">Inicio / <span class="text-slate-600 dark:text-slate-300">Oncología y neoplasias</span></nav>
+
+      <div class="flex items-center gap-4">
+        <div class="h-12 w-1.5 rounded-full bg-purple-500"></div>
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">Oncología clínica y medios diagnósticos de neoplasias</h1>
+      </div>
+
+      <!-- ============ 4.1 Definición y clasificación ============ -->
+      <section class="mt-10">
+        <div class="flex items-center gap-3">
+          <span class="grid h-8 w-8 place-items-center rounded-lg bg-purple-100 dark:bg-purple-500/15 text-purple-600 dark:text-purple-300 font-bold text-sm">4.1</span>
+          <h2 class="text-xl font-bold text-slate-900 dark:text-white">Definición y clasificación histopatológica</h2>
+        </div>
+        <div class="mt-4 rounded-2xl bg-purple-50 dark:bg-purple-500/10 ring-1 ring-purple-200 dark:ring-purple-500/30 p-5">
+          <p class="text-sm text-slate-700 dark:text-slate-300"><strong class="text-slate-900 dark:text-white">Concepto:</strong> crecimiento anormal, descontrolado, autónomo y clonal de un tejido que evade los mecanismos biológicos de control celular y apoptosis.</p>
+        </div>
+
+        <!-- Imagen de apoyo -->
+        <figure class="mt-5">
+          <div class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+            <div class="relative aspect-[16/9] bg-slate-100 dark:bg-slate-800">
+              <img src="IMG/oncologia/clasificacion-tumores.webp" alt="Clasificación de tumores" class="absolute inset-0 h-full w-full object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-xs text-slate-400 p-3"><svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>IMG/oncologia/clasificacion-tumores.webp</span></div>
+            </div>
+          </div>
+          <figcaption class="mt-2 text-center text-sm text-slate-500 dark:text-slate-400">Clasificación de las neoplasias.</figcaption>
+        </figure>
+
+        <div class="mt-6 grid sm:grid-cols-2 gap-4">
+          <div class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 p-5">
+            <h3 class="font-bold text-slate-900 dark:text-white">Clasificación por comportamiento</h3>
+            <ul class="mt-2 space-y-2 text-sm text-slate-700 dark:text-slate-300">
+              <li class="flex gap-2"><span class="text-emerald-500 shrink-0 font-bold">•</span><span><strong class="text-slate-900 dark:text-white">Benignas:</strong> de crecimiento lento, localizadas, bien diferenciadas, respetan los límites de los tejidos adyacentes y no producen metástasis.</span></li>
+              <li class="flex gap-2"><span class="text-rose-500 shrink-0 font-bold">•</span><span><strong class="text-slate-900 dark:text-white">Malignas (cáncer):</strong> invasivas, de crecimiento rápido, anaplásicas (pierden la diferenciación celular original) y con capacidad de infiltrar vasos sanguíneos o linfáticos para metastatizar.</span></li>
+            </ul>
+          </div>
+          <div class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 p-5">
+            <h3 class="font-bold text-slate-900 dark:text-white">Clasificación por estructura tisular</h3>
+            <ul class="mt-2 space-y-2 text-sm text-slate-700 dark:text-slate-300">
+              <li class="flex gap-2"><span class="text-purple-500 shrink-0 font-bold">•</span><span><strong class="text-slate-900 dark:text-white">Epitelial:</strong> carcinomas y adenocarcinomas.</span></li>
+              <li class="flex gap-2"><span class="text-purple-500 shrink-0 font-bold">•</span><span><strong class="text-slate-900 dark:text-white">Conectivo / mesenquimatoso:</strong> sarcomas (óseos, musculares).</span></li>
+              <li class="flex gap-2"><span class="text-purple-500 shrink-0 font-bold">•</span><span><strong class="text-slate-900 dark:text-white">Sanguíneo / linfoide:</strong> leucemias y linfomas.</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <h3 class="mt-6 font-semibold text-slate-900 dark:text-white text-sm">Cuidados de enfermería en el procedimiento</h3>
+        <div class="mt-3 grid sm:grid-cols-3 gap-3">
+          <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-200 dark:ring-sky-500/30 p-4"><p class="text-xs font-bold uppercase tracking-wide text-sky-700 dark:text-sky-300">Antes</p><p class="mt-1 text-sm text-slate-700 dark:text-slate-300">Verificación de identidad, antecedentes, alergias y factores de riesgo; confirmación del consentimiento informado. Se mitiga la ansiedad con educación y se alista el material en condiciones seguras.</p></div>
+          <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-200 dark:ring-amber-500/30 p-4"><p class="text-xs font-bold uppercase tracking-wide text-amber-700 dark:text-amber-300">Durante</p><p class="mt-1 text-sm text-slate-700 dark:text-slate-300">Asepsia rigurosa, colaboración con el equipo, apoyo emocional, monitoreo de signos vitales y reacciones adversas, y correcto etiquetado y conservación de las muestras.</p></div>
+          <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-200 dark:ring-emerald-500/30 p-4"><p class="text-xs font-bold uppercase tracking-wide text-emerald-700 dark:text-emerald-300">Después</p><p class="mt-1 text-sm text-slate-700 dark:text-slate-300">Monitorización del estado general (signos vitales, dolor, hemorragias o infecciones) e instrucciones de cuidados en casa, restricciones y signos de alarma.</p></div>
+        </div>
+      </section>
+
+      <!-- ============ 4.2 Arsenal de herramientas diagnósticas ============ -->
+      <section class="mt-14">
+        <div class="flex items-center gap-3">
+          <span class="grid h-8 w-8 place-items-center rounded-lg bg-purple-100 dark:bg-purple-500/15 text-purple-600 dark:text-purple-300 font-bold text-sm">4.2</span>
+          <h2 class="text-xl font-bold text-slate-900 dark:text-white">Arsenal de herramientas diagnósticas</h2>
+        </div>
+
+        <div class="mt-4 space-y-3">
+          <div class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 p-5">
+            <h3 class="font-bold text-slate-900 dark:text-white">Diagnóstico precoz (tamizaje)</h3>
+            <p class="mt-1 text-sm text-slate-700 dark:text-slate-300">Uso de pruebas médicas estandarizadas en poblaciones asintomáticas para detectar precozmente lesiones preneoplásicas o cáncer en estadios iniciales, mejorando drásticamente el pronóstico de supervivencia.</p>
+          </div>
+          <div class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 p-5">
+            <h3 class="font-bold text-slate-900 dark:text-white">Análisis de laboratorio y marcadores tumorales</h3>
+            <p class="mt-1 text-sm text-slate-700 dark:text-slate-300">Identificación en sangre u otros fluidos de sustancias producidas por las células cancerosas o por el organismo en respuesta a estas.</p>
+            <div class="mt-3 rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-200 dark:ring-amber-500/30 p-3 text-sm text-slate-700 dark:text-slate-300">
+              <strong class="text-amber-700 dark:text-amber-300">Nota de interpretación:</strong> los marcadores alterados por sí solos no son definitivos, ya que pueden elevarse en patologías benignas inflamatorias. Son esenciales para correlacionar con otros estudios, el seguimiento y el control de la respuesta terapéutica.
+            </div>
+            <div class="mt-3 grid sm:grid-cols-3 gap-3">
+              <div class="rounded-xl bg-slate-50 dark:bg-slate-800/60 ring-1 ring-slate-200 dark:ring-slate-700 p-3"><p class="font-bold text-sm text-purple-600 dark:text-purple-300">PSA</p><p class="text-xs text-slate-600 dark:text-slate-400">Antígeno prostático específico — orientador del cáncer de próstata.</p></div>
+              <div class="rounded-xl bg-slate-50 dark:bg-slate-800/60 ring-1 ring-slate-200 dark:ring-slate-700 p-3"><p class="font-bold text-sm text-purple-600 dark:text-purple-300">CA-125</p><p class="text-xs text-slate-600 dark:text-slate-400">Monitoreo del cáncer de ovario.</p></div>
+              <div class="rounded-xl bg-slate-50 dark:bg-slate-800/60 ring-1 ring-slate-200 dark:ring-slate-700 p-3"><p class="font-bold text-sm text-purple-600 dark:text-purple-300">CEA</p><p class="text-xs text-slate-600 dark:text-slate-400">Antígeno carcinoembrionario — seguimiento del cáncer colorrectal.</p></div>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="mt-6 font-bold text-slate-900 dark:text-white">Pruebas de imagen avanzadas</h3>
+        <div class="mt-4 grid sm:grid-cols-3 gap-4">
+          <div class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+            <div class="relative aspect-[16/10] bg-slate-100 dark:bg-slate-800">
+              <img src="IMG/oncologia/tomografia.webp" alt="Tomografía computarizada" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-[0.65rem] text-slate-400 p-2"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>IMG/oncologia/tomografia.webp</span></div>
+            </div>
+            <div class="p-4"><h4 class="font-bold text-slate-900 dark:text-white">Tomografía computarizada (TC)</h4><p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Rayos X computarizados para visualizar la estructura del tumor, la invasión local y la afectación ganglionar.</p></div>
+          </div>
+          <div class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+            <div class="relative aspect-[16/10] bg-slate-100 dark:bg-slate-800">
+              <img src="IMG/oncologia/resonancia.webp" alt="Resonancia magnética" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-[0.65rem] text-slate-400 p-2"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>IMG/oncologia/resonancia.webp</span></div>
+            </div>
+            <div class="p-4"><h4 class="font-bold text-slate-900 dark:text-white">Resonancia magnética (IRM)</h4><p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Campos magnéticos de alta resolución para estudiar de forma detallada tumores en tejidos blandos.</p></div>
+          </div>
+          <div class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+            <div class="relative aspect-[16/10] bg-slate-100 dark:bg-slate-800">
+              <img src="IMG/oncologia/pet.webp" alt="Gammagrafía y PET" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-[0.65rem] text-slate-400 p-2"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>IMG/oncologia/pet.webp</span></div>
+            </div>
+            <div class="p-4"><h4 class="font-bold text-slate-900 dark:text-white">Gammagrafía / PET</h4><p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Medicina nuclear para evaluar la actividad metabólica o focos metastásicos óseos y orgánicos.</p></div>
+          </div>
+        </div>
+
+        <h3 class="mt-6 font-semibold text-slate-900 dark:text-white text-sm">Cuidados de enfermería en los estudios diagnósticos</h3>
+        <div class="mt-3 grid sm:grid-cols-3 gap-3">
+          <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-200 dark:ring-sky-500/30 p-4"><p class="text-xs font-bold uppercase tracking-wide text-sky-700 dark:text-sky-300">Antes</p><p class="mt-1 text-sm text-slate-700 dark:text-slate-300">Gestión y preparación: verificar identidad, historial, indicaciones y requisitos (ayuno, suspensión de fármacos). Educación sobre la importancia del estudio y preparación del material.</p></div>
+          <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-200 dark:ring-amber-500/30 p-4"><p class="text-xs font-bold uppercase tracking-wide text-amber-700 dark:text-amber-300">Durante</p><p class="mt-1 text-sm text-slate-700 dark:text-slate-300">Bioseguridad y precisión técnica: obtención adecuada de muestras, identificación correcta, acompañamiento emocional y vigilancia del estado general en posición cómoda y segura.</p></div>
+          <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-200 dark:ring-emerald-500/30 p-4"><p class="text-xs font-bold uppercase tracking-wide text-emerald-700 dark:text-emerald-300">Después</p><p class="mt-1 text-sm text-slate-700 dark:text-slate-300">Recuperación y registro: monitorizar signos vitales, atender el sitio de punción o biopsia, educar sobre cuidados y signos de alarma, registrar y enviar las muestras.</p></div>
+        </div>
+      </section>
+
+      <!-- ============ 4.3 Monitorización quimio/radio ============ -->
+      <section class="mt-14">
+        <div class="flex items-center gap-3">
+          <span class="grid h-8 w-8 place-items-center rounded-lg bg-purple-100 dark:bg-purple-500/15 text-purple-600 dark:text-purple-300 font-bold text-sm">4.3</span>
+          <h2 class="text-xl font-bold text-slate-900 dark:text-white">Monitorización durante quimioterapia y radioterapia</h2>
+        </div>
+        <p class="mt-3 text-slate-700 dark:text-slate-300 leading-relaxed">
+          Seguimiento clínico y analítico regular del paciente oncológico para evaluar la respuesta del tumor (reducción de masa tumoral),
+          monitorear los efectos secundarios (mielosupresión, toxicidad hepática o renal) y realizar los ajustes necesarios de dosis o pautas según la evolución.
+        </p>
+
+        <figure class="mt-5">
+          <div class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+            <div class="relative aspect-[16/9] bg-slate-100 dark:bg-slate-800">
+              <img src="IMG/oncologia/quimioterapia.webp" alt="Monitorización durante quimioterapia" class="absolute inset-0 h-full w-full object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-xs text-slate-400 p-3"><svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>IMG/oncologia/quimioterapia.webp</span></div>
+            </div>
+          </div>
+        </figure>
+
+        <div class="mt-5 grid sm:grid-cols-3 gap-3">
+          <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-200 dark:ring-sky-500/30 p-4"><p class="text-xs font-bold uppercase tracking-wide text-sky-700 dark:text-sky-300">Valoración inicial</p><p class="mt-1 text-sm text-slate-700 dark:text-slate-300">Evaluación integral: constantes vitales, laboratorios y evolución clínica para confirmar condiciones óptimas. Se indaga sobre antecedentes y reacciones previas y se instruye sobre el proceso de vigilancia.</p></div>
+          <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-200 dark:ring-amber-500/30 p-4"><p class="text-xs font-bold uppercase tracking-wide text-amber-700 dark:text-amber-300">Vigilancia en el tratamiento</p><p class="mt-1 text-sm text-slate-700 dark:text-slate-300">Observación continua de la respuesta y detección temprana de toxicidad: náuseas, vómitos, fatiga, mucositis, alteraciones cutáneas o mielosupresión. Soporte emocional y medidas de confort.</p></div>
+          <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-200 dark:ring-emerald-500/30 p-4"><p class="text-xs font-bold uppercase tracking-wide text-emerald-700 dark:text-emerald-300">Cuidados posteriores</p><p class="mt-1 text-sm text-slate-700 dark:text-slate-300">Registro de hallazgos, notificación de anomalías, programación de controles y adiestramiento de la familia sobre cuidados domiciliarios, señales de alarma y adherencia terapéutica.</p></div>
+        </div>
+      </section>
+
+      <!-- ============ 4.4 Cribado cánceres frecuentes ============ -->
+      <section class="mt-14">
+        <div class="flex items-center gap-3">
+          <span class="grid h-8 w-8 place-items-center rounded-lg bg-purple-100 dark:bg-purple-500/15 text-purple-600 dark:text-purple-300 font-bold text-sm">4.4</span>
+          <h2 class="text-xl font-bold text-slate-900 dark:text-white">Cribado de los cánceres más frecuentes</h2>
+        </div>
+
+        <div class="mt-5 grid sm:grid-cols-2 gap-4">
+          <div class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+            <div class="relative aspect-[16/9] bg-slate-100 dark:bg-slate-800">
+              <img src="IMG/oncologia/cancer-colorrectal.webp" alt="Cáncer colorrectal" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-[0.65rem] text-slate-400 p-2"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>IMG/oncologia/cancer-colorrectal.webp</span></div>
+            </div>
+            <div class="p-4"><h4 class="font-bold text-slate-900 dark:text-white">Cáncer colorrectal</h4><p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Test de sangre oculta en heces (sangrados microscópicos) y colonoscopia (visualización directa de la mucosa, biopsias o polipectomías).</p></div>
+          </div>
+          <div class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+            <div class="relative aspect-[16/9] bg-slate-100 dark:bg-slate-800">
+              <img src="IMG/oncologia/cancer-mama.webp" alt="Cáncer de mama" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-[0.65rem] text-slate-400 p-2"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>IMG/oncologia/cancer-mama.webp</span></div>
+            </div>
+            <div class="p-4"><h4 class="font-bold text-slate-900 dark:text-white">Cáncer de mama</h4><p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Mamografías (radiografía especializada) y ecografías mamarias para caracterizar nódulos y lesiones no palpables.</p></div>
+          </div>
+          <div class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+            <div class="relative aspect-[16/9] bg-slate-100 dark:bg-slate-800">
+              <img src="IMG/oncologia/cancer-pulmon.webp" alt="Cáncer de pulmón" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-[0.65rem] text-slate-400 p-2"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>IMG/oncologia/cancer-pulmon.webp</span></div>
+            </div>
+            <div class="p-4"><h4 class="font-bold text-slate-900 dark:text-white">Cáncer de pulmón</h4><p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Radiografías de tórax y tomografías computarizadas (TC) de baja dosis en poblaciones de riesgo (fumadores).</p></div>
+          </div>
+          <div class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+            <div class="relative aspect-[16/9] bg-slate-100 dark:bg-slate-800">
+              <img src="IMG/oncologia/cancer-piel.webp" alt="Cáncer de piel" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-[0.65rem] text-slate-400 p-2"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>IMG/oncologia/cancer-piel.webp</span></div>
+            </div>
+            <div class="p-4"><h4 class="font-bold text-slate-900 dark:text-white">Cáncer de piel</h4><p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Exámenes dermatológicos periódicos (clínica visual y dermatoscópica), confirmados con biopsias cutáneas ante lesiones sospechosas.</p></div>
+          </div>
+        </div>
+
+        <h3 class="mt-6 font-semibold text-slate-900 dark:text-white text-sm">Cuidados de enfermería en el cribado</h3>
+        <div class="mt-3 grid sm:grid-cols-3 gap-3">
+          <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-200 dark:ring-sky-500/30 p-4"><p class="text-xs font-bold uppercase tracking-wide text-sky-700 dark:text-sky-300">Antes</p><p class="mt-1 text-sm text-slate-700 dark:text-slate-300">Recepción del paciente: confirmar identidad, analizar antecedentes y factores de riesgo, verificar pautas preparatorias e instruir sobre el valor del tamizaje como detección precoz.</p></div>
+          <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-200 dark:ring-amber-500/30 p-4"><p class="text-xs font-bold uppercase tracking-wide text-amber-700 dark:text-amber-300">Durante</p><p class="mt-1 text-sm text-slate-700 dark:text-slate-300">Salvaguardar el bienestar físico y la protección con normas de bioseguridad, monitorización continua, contención emocional y correcta recolección, rotulado y preservación de las muestras.</p></div>
+          <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-200 dark:ring-emerald-500/30 p-4"><p class="text-xs font-bold uppercase tracking-wide text-emerald-700 dark:text-emerald-300">Después</p><p class="mt-1 text-sm text-slate-700 dark:text-slate-300">Vigilar la recuperación, detectar complicaciones, asegurar la estabilidad antes del egreso y capacitar sobre informes, seguimiento, estilos de vida saludables y señales de alerta.</p></div>
+        </div>
+      </section>
+
+      <div class="mt-12 flex items-center justify-between border-t border-slate-200 dark:border-slate-800 pt-6">
+        <a href="autoinmunes.html" class="text-sm text-slate-500 hover:text-indigo-600 dark:hover:text-indigo-400">← Trastornos autoinmunitarios</a>
+        <a href="neurologia.html"
+           class="inline-flex items-center gap-2 rounded-full bg-indigo-600 px-5 py-2.5 text-white text-sm font-semibold hover:bg-indigo-700">
+          Neurología avanzada →
+        </a>
+      </div>
+    </div>
+  </main>
+</div>
+<script>
+  function toggleTheme(){
+    const html = document.documentElement;
+    html.classList.toggle('dark');
+    localStorage.theme = html.classList.contains('dark') ? 'dark' : 'light';
+  }
+</script>
+
+  <!-- ===== Lightbox: clic en una imagen para ampliarla ===== -->
+  <div id="lightbox" class="fixed inset-0 z-[60] hidden items-center justify-center bg-black/80 backdrop-blur-sm p-4 cursor-zoom-out" onclick="closeLightbox()">
+    <button onclick="closeLightbox()" aria-label="Cerrar"
+            class="absolute top-4 right-4 h-11 w-11 rounded-full bg-white/10 hover:bg-white/20 ring-1 ring-white/30 text-white grid place-items-center">
+      <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <figure class="flex flex-col items-center gap-3" onclick="event.stopPropagation()">
+      <img id="lightbox-img" src="" alt="" class="max-h-[85vh] max-w-[92vw] rounded-xl shadow-2xl object-contain">
+      <figcaption id="lightbox-cap" class="text-sm text-white/80"></figcaption>
+    </figure>
+  </div>
+  <script>
+    (function(){
+      const box = document.getElementById('lightbox');
+      const big = document.getElementById('lightbox-img');
+      const cap = document.getElementById('lightbox-cap');
+      document.querySelectorAll('main img').forEach(function(el){
+        el.classList.add('cursor-zoom-in');
+        el.addEventListener('click', function(ev){
+          ev.preventDefault(); ev.stopPropagation();
+          big.src = el.currentSrc || el.src;
+          big.alt = el.alt || '';
+          cap.textContent = el.alt || '';
+          box.classList.remove('hidden'); box.classList.add('flex');
+          document.body.style.overflow = 'hidden';
+        });
+      });
+      window.closeLightbox = function(){
+        box.classList.add('hidden'); box.classList.remove('flex');
+        document.body.style.overflow = '';
+      };
+      document.addEventListener('keydown', function(e){ if(e.key === 'Escape') window.closeLightbox(); });
+    })();
+  </script>
+</body>
+</html>

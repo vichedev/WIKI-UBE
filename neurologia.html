@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neurología avanzada · Medios de Diagnóstico</title>
+  <script>
+    if (localStorage.theme === 'dark' ||
+        (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = { darkMode: 'class' }</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style> body { font-family: 'Inter', system-ui, sans-serif; } </style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-200 transition-colors duration-300">
+<div class="min-h-screen flex">
+
+  <!-- ============ BARRA LATERAL ============ -->
+  <aside id="sidebar"
+         class="fixed lg:sticky top-0 z-40 h-screen w-72 shrink-0 -translate-x-full lg:translate-x-0
+                transition-transform bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800 flex flex-col">
+    <div class="px-5 py-5 border-b border-slate-100 dark:border-slate-800">
+      <a href="index.html" class="flex items-center gap-3">
+        <span class="h-10 w-10 rounded-xl bg-indigo-600 text-white flex items-center justify-center">
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12h4l2 5 4-12 2 7h6"/></svg>
+        </span>
+        <span>
+          <span class="block font-extrabold text-slate-800 dark:text-white leading-tight">Wiki Diagnóstico</span>
+          <span class="block text-xs text-slate-400">UEPD-04 · Medios de Diagnóstico</span>
+        </span>
+      </a>
+    </div>
+    <nav class="flex-1 overflow-y-auto px-3 py-4 space-y-1 text-sm">
+      <a href="index.html"        class="block rounded-lg px-3 py-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Carátula</a>
+      <a href="introduccion.html" class="block rounded-lg px-3 py-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Introducción</a>
+      <a href="examenes.html"     class="block rounded-lg px-3 py-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Exámenes</a>
+      <p class="px-3 pt-3 pb-1 text-xs font-semibold uppercase tracking-wide text-slate-400">Exámenes en detalle</p>
+      <a href="hemograma.html"   class="block rounded-lg px-3 py-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Hemograma con diferencial</a>
+      <a href="componentes.html" class="block rounded-lg px-3 py-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Componentes de la sangre</a>
+      <a href="frotis.html"      class="block rounded-lg px-3 py-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Frotis sanguíneo</a>
+      <a href="medulograma.html" class="block rounded-lg px-3 py-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Medulograma</a>
+      <p class="px-3 pt-3 pb-1 text-xs font-semibold uppercase tracking-wide text-slate-400">Otros estudios</p>
+      <a href="fluidos.html" class="block rounded-lg px-3 py-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Análisis de fluidos biológicos</a>
+      <p class="px-3 pt-3 pb-1 text-xs font-semibold uppercase tracking-wide text-slate-400">Diagnóstico clínico</p>
+      <a href="embarazo.html"    class="block rounded-lg px-3 py-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Diagnóstico en el embarazo</a>
+      <a href="autoinmunes.html" class="block rounded-lg px-3 py-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Trastornos autoinmunitarios</a>
+      <a href="oncologia.html"  class="block rounded-lg px-3 py-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Oncología y neoplasias</a>
+      <a href="neurologia.html" class="block rounded-lg px-3 py-2 font-semibold bg-indigo-50 dark:bg-indigo-500/15 text-indigo-700 dark:text-indigo-300">Neurología avanzada</a>
+      <p class="px-3 pt-3 pb-1 text-xs font-semibold uppercase tracking-wide text-slate-400">Recursos</p>
+      <a href="enlaces.html" class="block rounded-lg px-3 py-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Enlaces y referencias</a>
+    </nav>
+    <div class="px-4 py-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
+      <span class="text-xs text-slate-400">© Proyecto académico</span>
+      <button onclick="toggleTheme()" aria-label="Cambiar tema"
+              class="h-9 w-9 rounded-full grid place-items-center ring-1 ring-slate-200 dark:ring-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 transition text-slate-600 dark:text-slate-300">
+        <svg class="dark:hidden h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="hidden dark:block h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path stroke-linecap="round" d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </button>
+    </div>
+  </aside>
+
+  <button onclick="document.getElementById('sidebar').classList.toggle('-translate-x-full')"
+          class="lg:hidden fixed bottom-5 right-5 z-50 h-12 w-12 rounded-full bg-indigo-600 text-white shadow-lg grid place-items-center">
+    <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+  </button>
+
+  <!-- ============ CONTENIDO ============ -->
+  <main class="flex-1 min-w-0">
+    <div class="max-w-4xl mx-auto px-6 py-10 lg:py-14">
+
+      <nav class="text-xs text-slate-400 mb-3">Inicio / <span class="text-slate-600 dark:text-slate-300">Neurología avanzada</span></nav>
+
+      <div class="flex items-center gap-4">
+        <div class="h-12 w-1.5 rounded-full bg-cyan-500"></div>
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">Medios diagnósticos en neurología avanzada</h1>
+      </div>
+
+      <!-- Introducción -->
+      <section class="mt-8">
+        <p class="text-slate-700 dark:text-slate-300 leading-relaxed">
+          El diagnóstico de los trastornos del sistema nervioso requiere un <strong class="text-slate-900 dark:text-white">examen clínico exhaustivo</strong>
+          (evaluación de reflejos, pares craneales, fuerza y cognición) como paso previo y fundamental para guiar el uso racional de las pruebas neurobiológicas complementarias.
+        </p>
+      </section>
+
+      <!-- ============ 5.1 Laboratorio y biomarcadores ============ -->
+      <section class="mt-12">
+        <div class="flex items-center gap-3">
+          <span class="grid h-8 w-8 place-items-center rounded-lg bg-cyan-100 dark:bg-cyan-500/15 text-cyan-600 dark:text-cyan-300 font-bold text-sm">5.1</span>
+          <h2 class="text-xl font-bold text-slate-900 dark:text-white">Análisis de laboratorio y biomarcadores</h2>
+        </div>
+
+        <figure class="mt-5">
+          <div class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+            <div class="relative aspect-[16/9] bg-slate-100 dark:bg-slate-800">
+              <img src="IMG/neurologia/biomarcadores.webp" alt="Análisis de laboratorio y biomarcadores" class="absolute inset-0 h-full w-full object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-xs text-slate-400 p-3"><svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>IMG/neurologia/biomarcadores.webp</span></div>
+            </div>
+          </div>
+        </figure>
+
+        <div class="mt-5 grid sm:grid-cols-2 gap-4">
+          <div class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 p-5">
+            <h3 class="font-bold text-slate-900 dark:text-white">Monitoreo metabólico y hematológico</h3>
+            <p class="mt-1 text-sm text-slate-700 dark:text-slate-300">Hemograma completo (con grupo sanguíneo y factor Rh) y mediciones de función renal (urea, creatinina), glucosa y electrolitos séricos para descartar encefalopatías metabólicas.</p>
+          </div>
+          <div class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 p-5">
+            <h3 class="font-bold text-slate-900 dark:text-white">Biomarcadores y marcadores tumorales</h3>
+            <p class="mt-1 text-sm text-slate-700 dark:text-slate-300">Detección de proteínas o péptidos en sangre como indicadores de neurodegeneración avanzada (p. ej. Alzheimer) o monitorización de marcadores oncológicos (AFP, CEA, beta-hCG) para identificar precozmente neoplasias del sistema nervioso.</p>
+          </div>
+        </div>
+
+        <h3 class="mt-6 font-semibold text-slate-900 dark:text-white text-sm">Cuidados de enfermería en el monitoreo metabólico, hematológico y de biomarcadores</h3>
+        <div class="mt-3 grid sm:grid-cols-3 gap-3">
+          <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-200 dark:ring-sky-500/30 p-4"><p class="text-xs font-bold uppercase tracking-wide text-sky-700 dark:text-sky-300">Antes</p><p class="mt-1 text-sm text-slate-700 dark:text-slate-300">Verificar identidad, revisar la solicitud y antecedentes que influyan en los resultados, confirmar ayuno o suspensión de fármacos y explicar la finalidad de los análisis para reducir la ansiedad.</p></div>
+          <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-200 dark:ring-amber-500/30 p-4"><p class="text-xs font-bold uppercase tracking-wide text-amber-700 dark:text-amber-300">Durante</p><p class="mt-1 text-sm text-slate-700 dark:text-slate-300">Aplicar asepsia y bioseguridad, verificar la identificación de los tubos y el manejo del material, y vigilar reacciones adversas como mareos, ansiedad o síncope vasovagal.</p></div>
+          <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-200 dark:ring-emerald-500/30 p-4"><p class="text-xs font-bold uppercase tracking-wide text-emerald-700 dark:text-emerald-300">Después</p><p class="mt-1 text-sm text-slate-700 dark:text-slate-300">Vigilar el sitio de punción (sangrado, hematomas), garantizar el envío correcto de las muestras, registrar las intervenciones y orientar sobre resultados y seguimiento.</p></div>
+        </div>
+      </section>
+
+      <!-- ============ 5.2 Punción lumbar y LCR ============ -->
+      <section class="mt-14">
+        <div class="flex items-center gap-3">
+          <span class="grid h-8 w-8 place-items-center rounded-lg bg-cyan-100 dark:bg-cyan-500/15 text-cyan-600 dark:text-cyan-300 font-bold text-sm">5.2</span>
+          <h2 class="text-xl font-bold text-slate-900 dark:text-white">Punción lumbar y líquido cefalorraquídeo (LCR)</h2>
+        </div>
+
+        <div class="mt-4 grid lg:grid-cols-2 gap-4">
+          <div class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+            <div class="relative aspect-[16/9] bg-slate-100 dark:bg-slate-800">
+              <img src="IMG/neurologia/puncion-lumbar.webp" alt="Punción lumbar" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-[0.65rem] text-slate-400 p-2"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>IMG/neurologia/puncion-lumbar.webp</span></div>
+            </div>
+          </div>
+          <div class="rounded-2xl bg-cyan-50 dark:bg-cyan-500/10 ring-1 ring-cyan-200 dark:ring-cyan-500/30 p-5">
+            <h3 class="font-bold text-slate-900 dark:text-white">Concepto</h3>
+            <p class="mt-1 text-sm text-slate-700 dark:text-slate-300">Procedimiento invasivo que introduce una aguja espinal en el espacio subaracnoideo (entre L3-L4 o L4-L5) para extraer una muestra de LCR para análisis bioquímico, citológico y microbiológico.</p>
+          </div>
+        </div>
+
+        <h3 class="mt-5 font-bold text-slate-900 dark:text-white">Utilidad clínica</h3>
+        <div class="mt-3 grid sm:grid-cols-2 gap-3">
+          <div class="flex gap-3 rounded-xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 px-4 py-3"><span class="h-2 w-2 mt-2 rounded-full bg-cyan-500 shrink-0"></span><span class="text-sm text-slate-700 dark:text-slate-300">Diagnóstico definitivo de procesos infecciosos como la meningitis.</span></div>
+          <div class="flex gap-3 rounded-xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 px-4 py-3"><span class="h-2 w-2 mt-2 rounded-full bg-cyan-500 shrink-0"></span><span class="text-sm text-slate-700 dark:text-slate-300">Diagnóstico y seguimiento de enfermedades desmielinizantes como la esclerosis múltiple.</span></div>
+          <div class="flex gap-3 rounded-xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 px-4 py-3"><span class="h-2 w-2 mt-2 rounded-full bg-cyan-500 shrink-0"></span><span class="text-sm text-slate-700 dark:text-slate-300">Identificación de hemorragias subaracnoideas ocultas.</span></div>
+          <div class="flex gap-3 rounded-xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 px-4 py-3"><span class="h-2 w-2 mt-2 rounded-full bg-cyan-500 shrink-0"></span><span class="text-sm text-slate-700 dark:text-slate-300">Evaluación y medición directa de la presión intracraneal.</span></div>
+        </div>
+
+        <h3 class="mt-6 font-semibold text-slate-900 dark:text-white text-sm">Acciones y cuidados de enfermería en la punción lumbar</h3>
+        <div class="mt-3 grid sm:grid-cols-3 gap-3">
+          <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-200 dark:ring-sky-500/30 p-4"><p class="text-xs font-bold uppercase tracking-wide text-sky-700 dark:text-sky-300">Antes</p><p class="mt-1 text-sm text-slate-700 dark:text-slate-300">Verificar el consentimiento informado, comprobar ausencia de alergias a anestésicos o antisépticos, revisar las pruebas de coagulación y explicar los pasos para mitigar la ansiedad.</p></div>
+          <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-200 dark:ring-amber-500/30 p-4"><p class="text-xs font-bold uppercase tracking-wide text-amber-700 dark:text-amber-300">Durante</p><p class="mt-1 text-sm text-slate-700 dark:text-slate-300">Posicionar al paciente en posición fetal (decúbito lateral con rodillas al pecho) o sentado con la espalda arqueada para abrir los espacios intervertebrales, con estricta asepsia.</p></div>
+          <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-200 dark:ring-emerald-500/30 p-4"><p class="text-xs font-bold uppercase tracking-wide text-emerald-700 dark:text-emerald-300">Después</p><p class="mt-1 text-sm text-slate-700 dark:text-slate-300">Reposo absoluto en decúbito supino durante varias horas para evitar la pérdida de presión licuoral, hidratación oral abundante y vigilancia de la cefalea post-punción.</p></div>
+        </div>
+      </section>
+
+      <!-- ============ 5.3 Neuroimagen ============ -->
+      <section class="mt-14">
+        <div class="flex items-center gap-3">
+          <span class="grid h-8 w-8 place-items-center rounded-lg bg-cyan-100 dark:bg-cyan-500/15 text-cyan-600 dark:text-cyan-300 font-bold text-sm">5.3</span>
+          <h2 class="text-xl font-bold text-slate-900 dark:text-white">Medios diagnósticos por imagen (neuroimagen)</h2>
+        </div>
+
+        <div class="mt-5 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+            <div class="relative aspect-[16/10] bg-slate-100 dark:bg-slate-800">
+              <img src="IMG/neurologia/tomografia.webp" alt="Tomografía axial computarizada" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-[0.65rem] text-slate-400 p-2"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>IMG/neurologia/tomografia.webp</span></div>
+            </div>
+            <div class="p-4"><h4 class="font-bold text-slate-900 dark:text-white">Tomografía axial computarizada (TC)</h4><p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Técnica rápida con rayos X. Examen de elección en emergencias para evaluar hueso, descartar masas y diferenciar un ACV hemorrágico de uno isquémico.</p></div>
+          </div>
+          <div class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+            <div class="relative aspect-[16/10] bg-slate-100 dark:bg-slate-800">
+              <img src="IMG/neurologia/resonancia.webp" alt="Resonancia magnética nuclear" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-[0.65rem] text-slate-400 p-2"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>IMG/neurologia/resonancia.webp</span></div>
+            </div>
+            <div class="p-4"><h4 class="font-bold text-slate-900 dark:text-white">Resonancia magnética nuclear (RMN)</h4><p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Campos magnéticos y radiofrecuencia (sin radiación). Altísima resolución para tejidos blandos, tronco cerebral y estructuras internas.</p></div>
+          </div>
+          <div class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+            <div class="relative aspect-[16/10] bg-slate-100 dark:bg-slate-800">
+              <img src="IMG/neurologia/pet.webp" alt="Tomografía por emisión de positrones" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-[0.65rem] text-slate-400 p-2"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>IMG/neurologia/pet.webp</span></div>
+            </div>
+            <div class="p-4"><h4 class="font-bold text-slate-900 dark:text-white">Tomografía por emisión de positrones (PET)</h4><p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Imagen funcional que mide la actividad metabólica (consumo de glucosa). Clave en focos epilépticos y estadificación oncológica.</p></div>
+          </div>
+          <div class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+            <div class="relative aspect-[16/10] bg-slate-100 dark:bg-slate-800">
+              <img src="IMG/neurologia/angiografia.webp" alt="Angiografía cerebral" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-[0.65rem] text-slate-400 p-2"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>IMG/neurologia/angiografia.webp</span></div>
+            </div>
+            <div class="p-4"><h4 class="font-bold text-slate-900 dark:text-white">Arteriograma / angiografía cerebral</h4><p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Visualización dinámica e invasiva de los vasos cerebrales con contraste. Estándar de oro para aneurismas y malformaciones arteriovenosas (MAV).</p></div>
+          </div>
+          <div class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+            <div class="relative aspect-[16/10] bg-slate-100 dark:bg-slate-800">
+              <img src="IMG/neurologia/ultrasonido-transfontanelar.webp" alt="Ultrasonido transfontanelar" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-[0.65rem] text-slate-400 p-2"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>IMG/neurologia/ultrasonido-transfontanelar.webp</span></div>
+            </div>
+            <div class="p-4"><h4 class="font-bold text-slate-900 dark:text-white">Ultrasonido transfontanelar</h4><p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Ecografía inocua en menores de 2 años; usa la fontanela como ventana acústica para detectar hidrocefalia, hemorragias o malformaciones.</p></div>
+          </div>
+        </div>
+
+        <h3 class="mt-6 font-semibold text-slate-900 dark:text-white text-sm">Cuidados de enfermería en los estudios de neuroimagen</h3>
+        <div class="mt-3 grid sm:grid-cols-3 gap-3">
+          <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-200 dark:ring-sky-500/30 p-4"><p class="text-xs font-bold uppercase tracking-wide text-sky-700 dark:text-sky-300">Antes</p><p class="mt-1 text-sm text-slate-700 dark:text-slate-300">Verificar identidad y antecedentes (alergias a contraste, función renal, implantes metálicos), comprobar ayuno o retiro de objetos metálicos e informar sobre el procedimiento para reducir la ansiedad.</p></div>
+          <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-200 dark:ring-amber-500/30 p-4"><p class="text-xs font-bold uppercase tracking-wide text-amber-700 dark:text-amber-300">Durante</p><p class="mt-1 text-sm text-slate-700 dark:text-slate-300">Mantener seguridad y bioseguridad, supervisar el posicionamiento para imágenes de calidad y vigilar reacciones adversas, especialmente con medios de contraste.</p></div>
+          <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-200 dark:ring-emerald-500/30 p-4"><p class="text-xs font-bold uppercase tracking-wide text-emerald-700 dark:text-emerald-300">Después</p><p class="mt-1 text-sm text-slate-700 dark:text-slate-300">Monitorizar el estado clínico y posibles efectos del contraste, verificar estabilidad antes del alta, fomentar hidratación y registrar el procedimiento y el seguimiento.</p></div>
+        </div>
+      </section>
+
+      <!-- ============ 5.4 Pruebas electrofisiológicas ============ -->
+      <section class="mt-14">
+        <div class="flex items-center gap-3">
+          <span class="grid h-8 w-8 place-items-center rounded-lg bg-cyan-100 dark:bg-cyan-500/15 text-cyan-600 dark:text-cyan-300 font-bold text-sm">5.4</span>
+          <h2 class="text-xl font-bold text-slate-900 dark:text-white">Pruebas electrofisiológicas (eléctricas)</h2>
+        </div>
+
+        <div class="mt-5 grid sm:grid-cols-3 gap-4">
+          <div class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+            <div class="relative aspect-[16/10] bg-slate-100 dark:bg-slate-800">
+              <img src="IMG/neurologia/eeg.webp" alt="Electroencefalograma" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-[0.65rem] text-slate-400 p-2"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>IMG/neurologia/eeg.webp</span></div>
+            </div>
+            <div class="p-4"><h4 class="font-bold text-slate-900 dark:text-white">Electroencefalograma (EEG)</h4><p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Registro de la actividad bioeléctrica de la corteza cerebral. Esencial en el diagnóstico de la epilepsia, evaluación de comas y trastornos del sueño.</p></div>
+          </div>
+          <div class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+            <div class="relative aspect-[16/10] bg-slate-100 dark:bg-slate-800">
+              <img src="IMG/neurologia/emg.webp" alt="Electromiograma" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-[0.65rem] text-slate-400 p-2"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>IMG/neurologia/emg.webp</span></div>
+            </div>
+            <div class="p-4"><h4 class="font-bold text-slate-900 dark:text-white">Electromiograma (EMG)</h4><p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Analiza la salud de las fibras musculares y las neuronas motoras, evaluando la unión neuromuscular y los nervios periféricos.</p></div>
+          </div>
+          <div class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+            <div class="relative aspect-[16/10] bg-slate-100 dark:bg-slate-800">
+              <img src="IMG/neurologia/potenciales-evocados.webp" alt="Potenciales evocados" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-[0.65rem] text-slate-400 p-2"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>IMG/neurologia/potenciales-evocados.webp</span></div>
+            </div>
+            <div class="p-4"><h4 class="font-bold text-slate-900 dark:text-white">Potenciales evocados</h4><p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Registro de la respuesta del SNC ante estímulos sensoriales (visuales, auditivos o somatosensoriales). Útil para evidenciar desmielinización subclínica en la esclerosis múltiple.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ 5.5 Anatomía patológica ============ -->
+      <section class="mt-14">
+        <div class="flex items-center gap-3">
+          <span class="grid h-8 w-8 place-items-center rounded-lg bg-cyan-100 dark:bg-cyan-500/15 text-cyan-600 dark:text-cyan-300 font-bold text-sm">5.5</span>
+          <h2 class="text-xl font-bold text-slate-900 dark:text-white">Anatomía patológica (biopsias tisulares neurológicas)</h2>
+        </div>
+        <p class="mt-3 text-slate-700 dark:text-slate-300 leading-relaxed">
+          Técnicas invasivas reservadas para casos complejos donde los estudios analíticos y de neuroimagen no logran ser concluyentes
+          para determinar la causa exacta de una lesión nerviosa o muscular.
+        </p>
+
+        <div class="mt-5 grid sm:grid-cols-3 gap-4">
+          <div class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+            <div class="relative aspect-[16/10] bg-slate-100 dark:bg-slate-800">
+              <img src="IMG/neurologia/biopsia-musculo.webp" alt="Biopsia de músculo" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-[0.65rem] text-slate-400 p-2"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>IMG/neurologia/biopsia-musculo.webp</span></div>
+            </div>
+            <div class="p-4"><h4 class="font-bold text-slate-900 dark:text-white">Biopsia de músculo</h4><p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Extracción de tejido muscular para identificar patrones inflamatorios (miositis) o distrofias musculares genéticas.</p></div>
+          </div>
+          <div class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+            <div class="relative aspect-[16/10] bg-slate-100 dark:bg-slate-800">
+              <img src="IMG/neurologia/biopsia-nervio.webp" alt="Biopsia de nervio" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-[0.65rem] text-slate-400 p-2"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>IMG/neurologia/biopsia-nervio.webp</span></div>
+            </div>
+            <div class="p-4"><h4 class="font-bold text-slate-900 dark:text-white">Biopsia de nervio</h4><p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Remoción de un nervio periférico (habitualmente el sural) para diagnosticar neuropatías periféricas complejas o vasculitis.</p></div>
+          </div>
+          <div class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+            <div class="relative aspect-[16/10] bg-slate-100 dark:bg-slate-800">
+              <img src="IMG/neurologia/biopsia-piel.webp" alt="Biopsia de piel" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-[0.65rem] text-slate-400 p-2"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>IMG/neurologia/biopsia-piel.webp</span></div>
+            </div>
+            <div class="p-4"><h4 class="font-bold text-slate-900 dark:text-white">Biopsia de piel</h4><p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Técnica mínimamente invasiva para cuantificar la densidad de fibras nerviosas pequeñas intraepidérmicas y confirmar una neuropatía de fibra pequeña.</p></div>
+          </div>
+        </div>
+
+        <h3 class="mt-6 font-semibold text-slate-900 dark:text-white text-sm">Cuidados de enfermería en las biopsias tisulares neurológicas</h3>
+        <div class="mt-3 grid sm:grid-cols-3 gap-3">
+          <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-200 dark:ring-sky-500/30 p-4"><p class="text-xs font-bold uppercase tracking-wide text-sky-700 dark:text-sky-300">Antes</p><p class="mt-1 text-sm text-slate-700 dark:text-slate-300">Verificar identidad, antecedentes, alergias y fármacos de riesgo (especialmente anticoagulantes), confirmar el consentimiento informado e informar sobre el objetivo y los cuidados posteriores.</p></div>
+          <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-200 dark:ring-amber-500/30 p-4"><p class="text-xs font-bold uppercase tracking-wide text-amber-700 dark:text-amber-300">Durante</p><p class="mt-1 text-sm text-slate-700 dark:text-slate-300">Mantener bioseguridad y asepsia, colaborar con el equipo, vigilar dolor, sangrado o reacciones adversas y brindar apoyo emocional para el confort.</p></div>
+          <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-200 dark:ring-emerald-500/30 p-4"><p class="text-xs font-bold uppercase tracking-wide text-emerald-700 dark:text-emerald-300">Después</p><p class="mt-1 text-sm text-slate-700 dark:text-slate-300">Monitorizar signos vitales y complicaciones (hemorragias, hematomas, infección), realizar cuidados locales, educar sobre signos de alarma y enviar la muestra a histopatología.</p></div>
+        </div>
+      </section>
+
+      <div class="mt-12 flex items-center justify-between border-t border-slate-200 dark:border-slate-800 pt-6">
+        <a href="oncologia.html" class="text-sm text-slate-500 hover:text-indigo-600 dark:hover:text-indigo-400">← Oncología y neoplasias</a>
+        <a href="enlaces.html"
+           class="inline-flex items-center gap-2 rounded-full bg-indigo-600 px-5 py-2.5 text-white text-sm font-semibold hover:bg-indigo-700">
+          Enlaces y referencias →
+        </a>
+      </div>
+    </div>
+  </main>
+</div>
+<script>
+  function toggleTheme(){
+    const html = document.documentElement;
+    html.classList.toggle('dark');
+    localStorage.theme = html.classList.contains('dark') ? 'dark' : 'light';
+  }
+</script>
+
+  <!-- ===== Lightbox: clic en una imagen para ampliarla ===== -->
+  <div id="lightbox" class="fixed inset-0 z-[60] hidden items-center justify-center bg-black/80 backdrop-blur-sm p-4 cursor-zoom-out" onclick="closeLightbox()">
+    <button onclick="closeLightbox()" aria-label="Cerrar"
+            class="absolute top-4 right-4 h-11 w-11 rounded-full bg-white/10 hover:bg-white/20 ring-1 ring-white/30 text-white grid place-items-center">
+      <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <figure class="flex flex-col items-center gap-3" onclick="event.stopPropagation()">
+      <img id="lightbox-img" src="" alt="" class="max-h-[85vh] max-w-[92vw] rounded-xl shadow-2xl object-contain">
+      <figcaption id="lightbox-cap" class="text-sm text-white/80"></figcaption>
+    </figure>
+  </div>
+  <script>
+    (function(){
+      const box = document.getElementById('lightbox');
+      const big = document.getElementById('lightbox-img');
+      const cap = document.getElementById('lightbox-cap');
+      document.querySelectorAll('main img').forEach(function(el){
+        el.classList.add('cursor-zoom-in');
+        el.addEventListener('click', function(ev){
+          ev.preventDefault(); ev.stopPropagation();
+          big.src = el.currentSrc || el.src;
+          big.alt = el.alt || '';
+          cap.textContent = el.alt || '';
+          box.classList.remove('hidden'); box.classList.add('flex');
+          document.body.style.overflow = 'hidden';
+        });
+      });
+      window.closeLightbox = function(){
+        box.classList.add('hidden'); box.classList.remove('flex');
+        document.body.style.overflow = '';
+      };
+      document.addEventListener('keydown', function(e){ if(e.key === 'Escape') window.closeLightbox(); });
+    })();
+  </script>
+</body>
+</html>

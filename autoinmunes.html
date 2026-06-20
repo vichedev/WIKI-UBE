@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Frotis sanguíneo · Medios de Diagnóstico</title>
+  <title>Trastornos autoinmunitarios · Medios de Diagnóstico</title>
   <script>
     if (localStorage.theme === 'dark' ||
         (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
@@ -41,13 +41,13 @@
       <p class="px-3 pt-3 pb-1 text-xs font-semibold uppercase tracking-wide text-slate-400">Exámenes en detalle</p>
       <a href="hemograma.html"   class="block rounded-lg px-3 py-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Hemograma con diferencial</a>
       <a href="componentes.html" class="block rounded-lg px-3 py-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Componentes de la sangre</a>
-      <a href="frotis.html"      class="block rounded-lg px-3 py-2 font-semibold bg-violet-50 dark:bg-violet-500/15 text-violet-700 dark:text-violet-300">Frotis sanguíneo</a>
+      <a href="frotis.html"      class="block rounded-lg px-3 py-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Frotis sanguíneo</a>
       <a href="medulograma.html" class="block rounded-lg px-3 py-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Medulograma</a>
       <p class="px-3 pt-3 pb-1 text-xs font-semibold uppercase tracking-wide text-slate-400">Otros estudios</p>
       <a href="fluidos.html" class="block rounded-lg px-3 py-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Análisis de fluidos biológicos</a>
       <p class="px-3 pt-3 pb-1 text-xs font-semibold uppercase tracking-wide text-slate-400">Diagnóstico clínico</p>
       <a href="embarazo.html"    class="block rounded-lg px-3 py-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Diagnóstico en el embarazo</a>
-      <a href="autoinmunes.html" class="block rounded-lg px-3 py-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Trastornos autoinmunitarios</a>
+      <a href="autoinmunes.html" class="block rounded-lg px-3 py-2 font-semibold bg-indigo-50 dark:bg-indigo-500/15 text-indigo-700 dark:text-indigo-300">Trastornos autoinmunitarios</a>
       <a href="oncologia.html"  class="block rounded-lg px-3 py-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Oncología y neoplasias</a>
       <a href="neurologia.html" class="block rounded-lg px-3 py-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Neurología avanzada</a>
       <p class="px-3 pt-3 pb-1 text-xs font-semibold uppercase tracking-wide text-slate-400">Recursos</p>
@@ -70,107 +70,90 @@
 
   <!-- ============ CONTENIDO ============ -->
   <main class="flex-1 min-w-0">
-    <div class="max-w-3xl mx-auto px-6 py-10 lg:py-14">
+    <div class="max-w-4xl mx-auto px-6 py-10 lg:py-14">
 
-      <nav class="text-xs text-slate-400 mb-3">Inicio / Exámenes / <span class="text-slate-600 dark:text-slate-300">Frotis sanguíneo</span></nav>
+      <nav class="text-xs text-slate-400 mb-3">Inicio / <span class="text-slate-600 dark:text-slate-300">Trastornos autoinmunitarios</span></nav>
 
       <div class="flex items-center gap-4">
-        <div class="h-12 w-1.5 rounded-full bg-violet-500"></div>
-        <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">Frotis sanguíneo</h1>
+        <div class="h-12 w-1.5 rounded-full bg-fuchsia-500"></div>
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">Fisiopatología y diagnóstico de trastornos autoinmunitarios</h1>
       </div>
 
-      <!-- Imagen -->
-      <figure class="mt-6 overflow-hidden rounded-2xl ring-1 ring-slate-200 dark:ring-slate-800">
-        <div class="relative aspect-[16/9] bg-slate-100 dark:bg-slate-800">
-          <img src="IMG/frotis/frotis.webp" alt="Frotis sanguíneo" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-          <div class="absolute inset-0 hidden flex-col items-center justify-center gap-2 text-center text-sm text-slate-400 p-4">
-            <svg class="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
-            <span>Coloca la imagen en <strong>IMG/frotis/frotis.webp</strong></span>
-          </div>
-        </div>
-      </figure>
-
-      <!-- Descripción -->
+      <!-- Introducción -->
       <section class="mt-8">
-        <h2 class="text-xl font-bold text-slate-900 dark:text-white">Descripción</h2>
-        <p class="mt-2 text-slate-700 dark:text-slate-300 leading-relaxed">
-          Es una técnica de laboratorio que consiste en extender una gota de sangre sobre un
-          <strong class="text-slate-900 dark:text-white">portaobjetos de vidrio</strong>, teñirla con colorantes especiales y observarla
-          al <strong class="text-slate-900 dark:text-white">microscopio</strong>, lo que permite evaluar la morfología y las
-          características de todas las células presentes en la sangre. En la <strong class="text-slate-900 dark:text-white">serie roja</strong>
-          se analiza el tamaño, el color, la forma y la presencia de inclusiones anormales dentro de los glóbulos rojos, además de medir
-          la cantidad de hemoglobina que contienen y el porcentaje del volumen sanguíneo que ocupan, así como la actividad de la médula
-          ósea a través de los glóbulos rojos inmaduros. A partir de esos datos se calculan índices que permiten clasificar las anemias
-          según el tamaño y el contenido de hemoglobina de los glóbulos rojos, lo que orienta directamente hacia la causa del problema.
-          En la <strong class="text-slate-900 dark:text-white">serie blanca</strong> se identifican y cuentan los distintos tipos de
-          células defensivas, cada una con una función específica frente a bacterias, parásitos o respuestas alérgicas, y la aparición
-          de formas inmaduras en sangre es una señal de infección activa. Las <strong class="text-slate-900 dark:text-white">plaquetas</strong>
-          se evalúan en cuanto a su cantidad y tamaño, siendo su disminución severa un riesgo importante de sangrado espontáneo.
+        <p class="text-slate-700 dark:text-slate-300 leading-relaxed">
+          Disfunción del sistema inmunitario adaptativo caracterizada por la <strong class="text-slate-900 dark:text-white">pérdida de la autotolerancia</strong>,
+          lo que induce una respuesta efectora lesiva que ataca y destruye las células y tejidos propios del organismo.
         </p>
       </section>
 
-      <!-- Para qué sirve -->
+      <!-- ¿Qué causa? -->
       <section class="mt-8">
-        <h2 class="text-xl font-bold text-slate-900 dark:text-white">¿Para qué sirve?</h2>
-        <div class="mt-3 rounded-2xl bg-violet-50 dark:bg-violet-500/10 ring-1 ring-violet-100 dark:ring-violet-500/30 p-5">
-          <ul class="space-y-2 text-slate-700 dark:text-slate-300 text-sm">
-            <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 rounded-full bg-violet-500 shrink-0"></span><span>Evaluar la forma y tamaño de las células sanguíneas.</span></li>
-            <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 rounded-full bg-violet-500 shrink-0"></span><span>Diagnosticar anemias.</span></li>
-            <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 rounded-full bg-violet-500 shrink-0"></span><span>Detectar infecciones parasitarias.</span></li>
-            <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 rounded-full bg-violet-500 shrink-0"></span><span>Identificar enfermedades hematológicas.</span></li>
-          </ul>
+        <div class="rounded-2xl bg-fuchsia-50 dark:bg-fuchsia-500/10 ring-1 ring-fuchsia-200 dark:ring-fuchsia-500/30 p-5">
+          <h2 class="font-bold text-slate-900 dark:text-white">¿Qué lo causa?</h2>
+          <p class="mt-2 text-sm text-slate-700 dark:text-slate-300">Posibles desencadenantes incluyen <strong class="text-slate-900 dark:text-white">infecciones</strong>, <strong class="text-slate-900 dark:text-white">fármacos</strong> y <strong class="text-slate-900 dark:text-white">factores genéticos</strong>.</p>
         </div>
       </section>
 
-      <!-- Cuidados de enfermería -->
+      <!-- Ejemplos comunes -->
       <section class="mt-10">
-        <h2 class="text-xl font-bold text-slate-900 dark:text-white">Cuidados de enfermería</h2>
-        <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">Indicaciones que debe cumplir la enfermería con el paciente.</p>
+        <h2 class="text-xl font-bold text-slate-900 dark:text-white">Ejemplos más comunes</h2>
+        <div class="mt-4 grid sm:grid-cols-2 gap-4">
 
-        <div class="mt-5 grid gap-4">
           <div class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
-            <div class="bg-emerald-500 px-5 py-2.5 text-white font-semibold">Antes del examen</div>
-            <ul class="p-5 space-y-2 text-sm text-slate-700 dark:text-slate-300">
-              <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 rounded-full bg-emerald-500 shrink-0"></span><span>Informar al paciente sobre el procedimiento.</span></li>
-              <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 rounded-full bg-emerald-500 shrink-0"></span><span>Verificar la orden médica.</span></li>
-            </ul>
+            <div class="relative aspect-[16/9] bg-slate-100 dark:bg-slate-800">
+              <img src="IMG/autoinmunes/graves.webp" alt="Enfermedad de Graves" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-[0.65rem] text-slate-400 p-2"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>IMG/autoinmunes/graves.webp</span></div>
+            </div>
+            <div class="p-5"><h3 class="font-bold text-slate-900 dark:text-white">Enfermedad de Graves</h3><p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Autoanticuerpos estimulan el receptor de la hormona tiroidea (TSH), causando un hipertiroidismo primario.</p></div>
           </div>
+
           <div class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
-            <div class="bg-amber-500 px-5 py-2.5 text-white font-semibold">Durante el examen</div>
-            <ul class="p-5 space-y-2 text-sm text-slate-700 dark:text-slate-300">
-              <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 rounded-full bg-amber-500 shrink-0"></span><span>Obtener la muestra siguiendo normas de bioseguridad.</span></li>
-              <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 rounded-full bg-amber-500 shrink-0"></span><span>Preparar adecuadamente la lámina.</span></li>
-            </ul>
+            <div class="relative aspect-[16/9] bg-slate-100 dark:bg-slate-800">
+              <img src="IMG/autoinmunes/artritis-reumatoide.webp" alt="Artritis reumatoide" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-[0.65rem] text-slate-400 p-2"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>IMG/autoinmunes/artritis-reumatoide.webp</span></div>
+            </div>
+            <div class="p-5"><h3 class="font-bold text-slate-900 dark:text-white">Artritis reumatoide</h3><p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Ataque autoinmune crónico contra la membrana sinovial de las articulaciones, provocando inflamación, dolor y destrucción del cartílago.</p></div>
           </div>
+
           <div class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
-            <div class="bg-sky-500 px-5 py-2.5 text-white font-semibold">Después del examen</div>
-            <ul class="p-5 space-y-2 text-sm text-slate-700 dark:text-slate-300">
-              <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 rounded-full bg-sky-500 shrink-0"></span><span>Desechar materiales según protocolo.</span></li>
-              <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 rounded-full bg-sky-500 shrink-0"></span><span>Vigilar el sitio de punción.</span></li>
-            </ul>
+            <div class="relative aspect-[16/9] bg-slate-100 dark:bg-slate-800">
+              <img src="IMG/autoinmunes/lupus.webp" alt="Lupus eritematoso sistémico" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-[0.65rem] text-slate-400 p-2"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>IMG/autoinmunes/lupus.webp</span></div>
+            </div>
+            <div class="p-5"><h3 class="font-bold text-slate-900 dark:text-white">Lupus eritematoso sistémico (LES)</h3><p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Producción generalizada de anticuerpos antinucleares que forman inmunocomplejos, dañando múltiples sistemas (riñón, piel, articulaciones, vasos sanguíneos).</p></div>
+          </div>
+
+          <div class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+            <div class="relative aspect-[16/9] bg-slate-100 dark:bg-slate-800">
+              <img src="IMG/autoinmunes/diabetes-tipo-1.webp" alt="Diabetes tipo 1" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-[0.65rem] text-slate-400 p-2"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>IMG/autoinmunes/diabetes-tipo-1.webp</span></div>
+            </div>
+            <div class="p-5"><h3 class="font-bold text-slate-900 dark:text-white">Diabetes tipo 1</h3><p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Destrucción citotóxica selectiva mediada por células T contra las células beta de los islotes pancreáticos, produciendo una deficiencia absoluta de insulina.</p></div>
           </div>
         </div>
       </section>
 
-      <!-- Referencias -->
-      <div class="mt-8 flex flex-wrap gap-2">
-        <a href="https://medlineplus.gov/spanish/pruebas-de-laboratorio/frotis-de-sangre/" target="_blank" rel="noopener"
-           class="inline-flex items-center gap-2 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 ring-1 ring-slate-200 dark:ring-slate-700 px-4 py-2 text-sm font-medium hover:bg-slate-200 dark:hover:bg-slate-700 transition">
-          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H18v4.5M18 6l-7 7M11 5H7a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-4"/></svg>
-          MedlinePlus — Frotis de sangre
-        </a>
-        <a href="https://www.quironsalud.com/es/pruebas-diagnosticas/frotis-sanguineo" target="_blank" rel="noopener"
-           class="inline-flex items-center gap-2 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 ring-1 ring-slate-200 dark:ring-slate-700 px-4 py-2 text-sm font-medium hover:bg-slate-200 dark:hover:bg-slate-700 transition">
-          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H18v4.5M18 6l-7 7M11 5H7a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-4"/></svg>
-          Quirónsalud — Frotis sanguíneo
-        </a>
-      </div>
+      <!-- Abordaje diagnóstico y terapéutico -->
+      <section class="mt-12">
+        <h2 class="text-xl font-bold text-slate-900 dark:text-white">Abordaje diagnóstico y terapéutico</h2>
+        <div class="mt-4 grid sm:grid-cols-2 gap-4">
+          <div class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-sky-200 dark:ring-sky-500/30 p-5">
+            <span class="inline-flex rounded-full bg-sky-100 dark:bg-sky-500/15 text-sky-700 dark:text-sky-300 px-3 py-1 text-xs font-semibold">Diagnóstico</span>
+            <p class="mt-2 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">Se fundamenta en la sospecha clínica respaldada por análisis de sangre específicos, buscando la presencia de <strong class="text-slate-900 dark:text-white">autoanticuerpos</strong> (anticuerpos antinucleares — ANA, factor reumatoide, anti-CCP) junto con <strong class="text-slate-900 dark:text-white">reactantes de fase aguda</strong> (PCR y VSG).</p>
+          </div>
+          <div class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-emerald-200 dark:ring-emerald-500/30 p-5">
+            <span class="inline-flex rounded-full bg-emerald-100 dark:bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 px-3 py-1 text-xs font-semibold">Tratamiento</span>
+            <p class="mt-2 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">Se orienta a modular la respuesta inmune aberrante empleando medicamentos <strong class="text-slate-900 dark:text-white">inmunosupresores</strong>, <strong class="text-slate-900 dark:text-white">corticoides</strong> y <strong class="text-slate-900 dark:text-white">terapias biológicas dirigidas</strong> para controlar los brotes y mantener la remisión de la enfermedad.</p>
+          </div>
+        </div>
+      </section>
 
       <div class="mt-12 flex items-center justify-between border-t border-slate-200 dark:border-slate-800 pt-6">
-        <a href="componentes.html" class="text-sm text-slate-500 hover:text-indigo-600 dark:hover:text-indigo-400">← Componentes de la sangre</a>
-        <a href="medulograma.html"
+        <a href="embarazo.html" class="text-sm text-slate-500 hover:text-indigo-600 dark:hover:text-indigo-400">← Diagnóstico en el embarazo</a>
+        <a href="oncologia.html"
            class="inline-flex items-center gap-2 rounded-full bg-indigo-600 px-5 py-2.5 text-white text-sm font-semibold hover:bg-indigo-700">
-          Siguiente: Medulograma →
+          Oncología y neoplasias →
         </a>
       </div>
     </div>
