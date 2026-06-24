@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema osteomioarticular (SOMA) · Medios de Diagnóstico</title>
+  <script>
+    if (localStorage.theme === 'dark' ||
+        (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = { darkMode: 'class' }</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style> body { font-family: 'Inter', system-ui, sans-serif; } </style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-200 transition-colors duration-300">
+<div class="min-h-screen flex">
+
+  <!-- ============ BARRA LATERAL ============ -->
+  <aside id="sidebar"
+         class="fixed lg:sticky top-0 z-40 h-screen w-72 shrink-0 -translate-x-full lg:translate-x-0
+                transition-transform bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800 flex flex-col">
+    <div class="px-5 py-5 border-b border-slate-100 dark:border-slate-800">
+      <a href="index.html" class="flex items-center gap-3">
+        <span class="h-10 w-10 rounded-xl bg-indigo-600 text-white flex items-center justify-center">
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12h4l2 5 4-12 2 7h6"/></svg>
+        </span>
+        <span>
+          <span class="block font-extrabold text-slate-800 dark:text-white leading-tight">Wiki Diagnóstico</span>
+          <span class="block text-xs text-slate-400">UEPD-04 · Medios de Diagnóstico</span>
+        </span>
+      </a>
+    </div>
+    <nav class="flex-1 overflow-y-auto px-3 py-4 space-y-1 text-sm">
+      <a href="index.html"        class="block rounded-lg px-3 py-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Carátula</a>
+      <a href="introduccion.html" class="block rounded-lg px-3 py-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Introducción</a>
+      <p class="px-3 pt-3 pb-1 text-xs font-semibold uppercase tracking-wide text-slate-400">Exámenes en detalle</p>
+      <a href="componentes.html" class="block rounded-lg px-3 py-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Componentes de la sangre</a>
+      <a href="hemograma.html"   class="block rounded-lg px-3 py-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Hemograma con diferencial</a>
+      <a href="fluidos.html" class="block rounded-lg px-3 py-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Análisis de fluidos biológicos</a>
+      <a href="frotis.html"      class="block rounded-lg px-3 py-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Frotis sanguíneo</a>
+      <a href="medulograma.html" class="block rounded-lg px-3 py-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Medulograma</a>
+      <p class="px-3 pt-3 pb-1 text-xs font-semibold uppercase tracking-wide text-slate-400">Diagnóstico clínico</p>
+      <a href="embarazo.html"    class="block rounded-lg px-3 py-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Diagnóstico en el embarazo</a>
+      <a href="autoinmunes.html" class="block rounded-lg px-3 py-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Trastornos autoinmunitarios</a>
+      <a href="oncologia.html"  class="block rounded-lg px-3 py-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Oncología y neoplasias</a>
+      <a href="neurologia.html" class="block rounded-lg px-3 py-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Neurología avanzada</a>
+      <a href="soma.html" class="block rounded-lg px-3 py-2 font-semibold bg-indigo-50 dark:bg-indigo-500/15 text-indigo-700 dark:text-indigo-300">Sistema osteomioarticular</a>
+      <p class="px-3 pt-3 pb-1 text-xs font-semibold uppercase tracking-wide text-slate-400">Recursos</p>
+      <a href="enlaces.html" class="block rounded-lg px-3 py-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Enlaces y referencias</a>
+    </nav>
+    <div class="px-4 py-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
+      <span class="text-xs text-slate-400">© Proyecto académico</span>
+      <button onclick="toggleTheme()" aria-label="Cambiar tema"
+              class="h-9 w-9 rounded-full grid place-items-center ring-1 ring-slate-200 dark:ring-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 transition text-slate-600 dark:text-slate-300">
+        <svg class="dark:hidden h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="hidden dark:block h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path stroke-linecap="round" d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </button>
+    </div>
+  </aside>
+
+  <button onclick="document.getElementById('sidebar').classList.toggle('-translate-x-full')"
+          class="lg:hidden fixed bottom-5 right-5 z-50 h-12 w-12 rounded-full bg-indigo-600 text-white shadow-lg grid place-items-center">
+    <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+  </button>
+
+  <!-- ============ CONTENIDO ============ -->
+  <main class="flex-1 min-w-0">
+    <div class="max-w-4xl mx-auto px-6 py-10 lg:py-14">
+
+      <nav class="text-xs text-slate-400 mb-3">Inicio / <span class="text-slate-600 dark:text-slate-300">Sistema osteomioarticular (SOMA)</span></nav>
+
+      <div class="flex items-center gap-4">
+        <div class="h-12 w-1.5 rounded-full bg-orange-500"></div>
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">Estudios diagnósticos del sistema osteomioarticular (SOMA)</h1>
+      </div>
+
+      <!-- Introducción -->
+      <section class="mt-8">
+        <h2 class="text-xl font-bold text-slate-900 dark:text-white">Diagnóstico de los trastornos musculoesqueléticos</h2>
+        <p class="mt-2 text-slate-700 dark:text-slate-300 leading-relaxed">
+          Los trastornos musculoesqueléticos comprenden diversas afecciones que afectan a los huesos, las articulaciones,
+          los músculos y los tejidos conectivos. Estos trastornos pueden provocar dolor y pérdida de función, y se encuentran
+          entre las afecciones más incapacitantes y costosas.
+        </p>
+        <a href="https://www.ncbi.nlm.nih.gov/books/NBK559512/" target="_blank" rel="noopener" class="mt-2 inline-flex items-center gap-1 text-xs font-medium text-orange-600 dark:text-orange-400 hover:underline">Fuente: NCBI Bookshelf ↗</a>
+      </section>
+
+      <!-- ============ Pruebas de laboratorio ============ -->
+      <section class="mt-12">
+        <p class="text-sm font-semibold uppercase tracking-wide text-orange-600 dark:text-orange-400">Pruebas adicionales para confirmar el diagnóstico</p>
+        <div class="mt-2 flex items-center gap-3">
+          <div class="h-8 w-1.5 rounded-full bg-orange-500"></div>
+          <h2 class="text-xl font-bold text-slate-900 dark:text-white">Pruebas de laboratorio</h2>
+        </div>
+
+        <div class="mt-5 space-y-4">
+
+          <article class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden grid md:grid-cols-[38%_1fr]">
+            <div class="relative aspect-[4/3] md:aspect-auto bg-slate-100 dark:bg-slate-800 min-h-[10rem]">
+              <img src="IMG/soma/vsg.png" alt="Velocidad de sedimentación globular (VSG)" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-[0.65rem] text-slate-400 p-2"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>IMG/soma/vsg.png</span></div>
+            </div>
+            <div class="p-5">
+              <h3 class="font-bold text-slate-900 dark:text-white">Velocidad de Sedimentación Globular (VSG)</h3>
+              <p class="mt-1 text-sm text-slate-700 dark:text-slate-300">Es un análisis de sangre que mide la rapidez con la que los glóbulos rojos se depositan en el fondo de un tubo de ensayo. Valores elevados pueden indicar la presencia de inflamación, infección o enfermedades autoinmunes.</p>
+              <a href="https://www.ncbi.nlm.nih.gov/books/NBK557485/" target="_blank" rel="noopener" class="mt-2 inline-flex items-center gap-1 text-xs font-medium text-orange-600 dark:text-orange-400 hover:underline">Fuente: NCBI Bookshelf ↗</a>
+            </div>
+          </article>
+
+          <article class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden grid md:grid-cols-[38%_1fr]">
+            <div class="relative aspect-[4/3] md:aspect-auto bg-slate-100 dark:bg-slate-800 min-h-[10rem]">
+              <img src="IMG/soma/creatinquinasa.jpeg" alt="Creatinquinasa (CK)" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-[0.65rem] text-slate-400 p-2"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>IMG/soma/creatinquinasa.jpeg</span></div>
+            </div>
+            <div class="p-5">
+              <h3 class="font-bold text-slate-900 dark:text-white">Creatinquinasa (CK)</h3>
+              <p class="mt-1 text-sm text-slate-700 dark:text-slate-300">Es una enzima presente principalmente en los músculos. Su aumento en la sangre puede indicar daño o destrucción muscular causada por lesiones, enfermedades musculares o ejercicio intenso. La CK se encuentra en el corazón, el cerebro, el músculo esquelético y otros tejidos; ante una lesión o daño muscular se liberan en sangre cantidades importantes de CK.</p>
+              <a href="https://www.labtestsonline.es/tests/creatina-quinasa" target="_blank" rel="noopener" class="mt-2 inline-flex items-center gap-1 text-xs font-medium text-orange-600 dark:text-orange-400 hover:underline">Fuente: Lab Tests Online ↗</a>
+            </div>
+          </article>
+
+          <article class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden grid md:grid-cols-[38%_1fr]">
+            <div class="relative aspect-[4/3] md:aspect-auto bg-slate-100 dark:bg-slate-800 min-h-[10rem]">
+              <img src="IMG/soma/factor-reumatoide.jpeg" alt="Factor reumatoide y anti-CCP" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-[0.65rem] text-slate-400 p-2"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>IMG/soma/factor-reumatoide.jpeg</span></div>
+            </div>
+            <div class="p-5">
+              <h3 class="font-bold text-slate-900 dark:text-white">Factor Reumatoide (FR) y anticuerpo anti-CCP</h3>
+              <p class="mt-1 text-sm text-slate-700 dark:text-slate-300">Son pruebas utilizadas para ayudar en el diagnóstico de la artritis reumatoide. La presencia de estos anticuerpos sugiere una respuesta anormal del sistema inmunitario contra las articulaciones.</p>
+              <a href="https://medlineplus.gov/spanish/pruebas-de-laboratorio/prueba-de-anticuerpos-antipeptido-ciclico-citrulinado-anti-ccp/" target="_blank" rel="noopener" class="mt-2 inline-flex items-center gap-1 text-xs font-medium text-orange-600 dark:text-orange-400 hover:underline">Fuente: MedlinePlus ↗</a>
+            </div>
+          </article>
+
+          <article class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden grid md:grid-cols-[38%_1fr]">
+            <div class="relative aspect-[4/3] md:aspect-auto bg-slate-100 dark:bg-slate-800 min-h-[10rem]">
+              <img src="IMG/soma/ana-antiadn.jpeg" alt="Anticuerpos antinucleares (ANA) y anti-ADN" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-[0.65rem] text-slate-400 p-2"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>IMG/soma/ana-antiadn.jpeg</span></div>
+            </div>
+            <div class="p-5">
+              <h3 class="font-bold text-slate-900 dark:text-white">Anticuerpos antinucleares (ANA) y anti-ADN</h3>
+              <p class="mt-1 text-sm text-slate-700 dark:text-slate-300">Son pruebas empleadas para detectar enfermedades autoinmunes, especialmente el lupus eritematoso sistémico.</p>
+              <a href="https://www.reumatologiaclinica.org/es-anticuerpos-antinucleares-articulo-S1699258X09002435" target="_blank" rel="noopener" class="mt-2 inline-flex items-center gap-1 text-xs font-medium text-orange-600 dark:text-orange-400 hover:underline">Fuente: Reumatología Clínica ↗</a>
+            </div>
+          </article>
+
+          <article class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden grid md:grid-cols-[38%_1fr]">
+            <div class="relative aspect-[4/3] md:aspect-auto bg-slate-100 dark:bg-slate-800 min-h-[10rem]">
+              <img src="IMG/soma/hla-b27.jpeg" alt="HLA-B27" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-[0.65rem] text-slate-400 p-2"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>IMG/soma/hla-b27.jpeg</span></div>
+            </div>
+            <div class="p-5">
+              <h3 class="font-bold text-slate-900 dark:text-white">HLA-B27</h3>
+              <p class="mt-1 text-sm text-slate-700 dark:text-slate-300">Es un marcador genético relacionado con algunas enfermedades inflamatorias de las articulaciones, como la espondilitis anquilosante. Su función principal es ayudar al sistema inmune a reconocer microorganismos y diferenciarlos de nuestras propias células.</p>
+              <a href="https://reumatologomanuelromero.com/hla-b27-todo-lo-que-debes-saber-sobre-este-marcador-genetico/" target="_blank" rel="noopener" class="mt-2 inline-flex items-center gap-1 text-xs font-medium text-orange-600 dark:text-orange-400 hover:underline">Fuente: Dr. Manuel Romero ↗</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ============ Imagenología ============ -->
+      <section class="mt-12">
+        <div class="flex items-center gap-3">
+          <div class="h-8 w-1.5 rounded-full bg-orange-500"></div>
+          <h2 class="text-xl font-bold text-slate-900 dark:text-white">Imagenología</h2>
+        </div>
+        <div class="mt-5 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+
+          <div class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+            <div class="relative aspect-[16/10] bg-slate-100 dark:bg-slate-800">
+              <img src="IMG/soma/radiografia.jpeg" alt="Radiografía" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-[0.65rem] text-slate-400 p-2"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>IMG/soma/radiografia.jpeg</span></div>
+            </div>
+            <div class="p-4"><h3 class="font-bold text-slate-900 dark:text-white">Radiografía</h3><p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Utiliza rayos X para obtener imágenes de huesos y articulaciones; permite identificar fracturas, deformidades, infecciones y tumores óseos.</p><a href="https://www.cun.es/diccionario-medico/terminos/radiografia" target="_blank" rel="noopener" class="mt-2 inline-block text-xs font-medium text-orange-600 dark:text-orange-400 hover:underline">Fuente: CUN ↗</a></div>
+          </div>
+
+          <div class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+            <div class="relative aspect-[16/10] bg-slate-100 dark:bg-slate-800">
+              <img src="IMG/soma/ecografia.jpeg" alt="Ecografía" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-[0.65rem] text-slate-400 p-2"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>IMG/soma/ecografia.jpeg</span></div>
+            </div>
+            <div class="p-4"><h3 class="font-bold text-slate-900 dark:text-white">Ecografía</h3><p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Emplea ondas sonoras de alta frecuencia para visualizar músculos, tendones, ligamentos y articulaciones sin radiación; el eco se procesa para formar la imagen.</p><a href="https://canalsalud.imq.es/blog/que-es-ecografia-tipos" target="_blank" rel="noopener" class="mt-2 inline-block text-xs font-medium text-orange-600 dark:text-orange-400 hover:underline">Fuente: IMQ ↗</a></div>
+          </div>
+
+          <div class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+            <div class="relative aspect-[16/10] bg-slate-100 dark:bg-slate-800">
+              <img src="IMG/soma/gammagrafia.jpeg" alt="Gammagrafía ósea" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-[0.65rem] text-slate-400 p-2"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>IMG/soma/gammagrafia.jpeg</span></div>
+            </div>
+            <div class="p-4"><h3 class="font-bold text-slate-900 dark:text-white">Gammagrafía ósea</h3><p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Utiliza pequeñas cantidades de material radiactivo para detectar alteraciones en la actividad metabólica de los huesos, como fracturas ocultas, infecciones o tumores.</p><a href="https://www.mayoclinic.org/es/tests-procedures/bone-scan/about/pac-20393136" target="_blank" rel="noopener" class="mt-2 inline-block text-xs font-medium text-orange-600 dark:text-orange-400 hover:underline">Fuente: Mayo Clinic ↗</a></div>
+          </div>
+
+          <div class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+            <div class="relative aspect-[16/10] bg-slate-100 dark:bg-slate-800">
+              <img src="IMG/soma/tomografia.jpeg" alt="Tomografía computarizada (TC)" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-[0.65rem] text-slate-400 p-2"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>IMG/soma/tomografia.jpeg</span></div>
+            </div>
+            <div class="p-4"><h3 class="font-bold text-slate-900 dark:text-white">Tomografía computarizada (TC)</h3><p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Combina rayos X y tecnología informática para obtener imágenes detalladas de huesos, músculos, grasa y órganos. Ofrece mayor detalle que las radiografías convencionales.</p><a href="https://www.hopkinsmedicine.org/health/treatment-tests-and-therapies/computed-tomography-ct-or-cat-scan-of-the-bones" target="_blank" rel="noopener" class="mt-2 inline-block text-xs font-medium text-orange-600 dark:text-orange-400 hover:underline">Fuente: Johns Hopkins ↗</a></div>
+          </div>
+
+          <div class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+            <div class="relative aspect-[16/10] bg-slate-100 dark:bg-slate-800">
+              <img src="IMG/soma/resonancia.jpeg" alt="Resonancia magnética (RM)" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-[0.65rem] text-slate-400 p-2"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>IMG/soma/resonancia.jpeg</span></div>
+            </div>
+            <div class="p-4"><h3 class="font-bold text-slate-900 dark:text-white">Resonancia magnética (RM)</h3><p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Utiliza campos magnéticos y ondas de radio para obtener imágenes detalladas de músculos, tendones, ligamentos, médula espinal y articulaciones.</p><a href="https://www.mayoclinic.org/es/tests-procedures/mri/about/pac-20384768" target="_blank" rel="noopener" class="mt-2 inline-block text-xs font-medium text-orange-600 dark:text-orange-400 hover:underline">Fuente: Mayo Clinic ↗</a></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ Anatomía patológica ============ -->
+      <section class="mt-12">
+        <div class="flex items-center gap-3">
+          <div class="h-8 w-1.5 rounded-full bg-orange-500"></div>
+          <h2 class="text-xl font-bold text-slate-900 dark:text-white">Estudios anatomopatológicos</h2>
+        </div>
+        <article class="mt-5 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden grid md:grid-cols-[38%_1fr]">
+          <div class="relative aspect-[4/3] md:aspect-auto bg-slate-100 dark:bg-slate-800 min-h-[10rem]">
+            <img src="IMG/soma/biopsia.jpeg" alt="Biopsia" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-[0.65rem] text-slate-400 p-2"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>IMG/soma/biopsia.jpeg</span></div>
+          </div>
+          <div class="p-5">
+            <h3 class="font-bold text-slate-900 dark:text-white">Biopsia</h3>
+            <p class="mt-1 text-sm text-slate-700 dark:text-slate-300">Procedimiento mediante el cual se extrae una pequeña muestra de tejido para ser analizada en el laboratorio y determinar la presencia de enfermedades, infecciones o tumores. Se realiza cuando se detectan áreas sospechosas o ante síntomas de ciertas afecciones; existen diferentes tipos de biopsias.</p>
+            <a href="https://my.clevelandclinic.org/health/diagnostics/15458-biopsy-overview" target="_blank" rel="noopener" class="mt-2 inline-flex items-center gap-1 text-xs font-medium text-orange-600 dark:text-orange-400 hover:underline">Fuente: Cleveland Clinic ↗</a>
+          </div>
+        </article>
+      </section>
+
+      <!-- ============ Estudios neurológicos ============ -->
+      <section class="mt-12">
+        <div class="flex items-center gap-3">
+          <div class="h-8 w-1.5 rounded-full bg-orange-500"></div>
+          <h2 class="text-xl font-bold text-slate-900 dark:text-white">Estudios neurológicos</h2>
+        </div>
+        <div class="mt-5 grid sm:grid-cols-2 gap-4">
+          <div class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+            <div class="relative aspect-[16/9] bg-slate-100 dark:bg-slate-800">
+              <img src="IMG/soma/electromiografia.jpeg" alt="Electromiografía (EMG)" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-[0.65rem] text-slate-400 p-2"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>IMG/soma/electromiografia.jpeg</span></div>
+            </div>
+            <div class="p-4"><h3 class="font-bold text-slate-900 dark:text-white">Electromiografía (EMG)</h3><p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Registra la actividad eléctrica producida por los músculos para evaluar su funcionamiento y detectar enfermedades neuromusculares mediante electrodos que detectan las señales eléctricas.</p><a href="https://www.hmhospitales.com/blog/electromiorama-que-es-para-sirve/" target="_blank" rel="noopener" class="mt-2 inline-block text-xs font-medium text-orange-600 dark:text-orange-400 hover:underline">Fuente: HM Hospitales ↗</a></div>
+          </div>
+          <div class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+            <div class="relative aspect-[16/9] bg-slate-100 dark:bg-slate-800">
+              <img src="IMG/soma/electroneurografia.jpeg" alt="Electroneurografía" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-[0.65rem] text-slate-400 p-2"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>IMG/soma/electroneurografia.jpeg</span></div>
+            </div>
+            <div class="p-4"><h3 class="font-bold text-slate-900 dark:text-white">Electroneurografía</h3><p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Estudio que mide la velocidad y calidad de la conducción de los impulsos nerviosos a través de los nervios periféricos.</p><a href="https://www.hpshospitales.com/2019/05/21/la-electroneurografia-detecta-danos-de-los-nervios-perifericos/" target="_blank" rel="noopener" class="mt-2 inline-block text-xs font-medium text-orange-600 dark:text-orange-400 hover:underline">Fuente: HPS Hospitales ↗</a></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ Radiología musculoesquelética ============ -->
+      <section class="mt-12">
+        <div class="flex items-center gap-3">
+          <div class="h-8 w-1.5 rounded-full bg-orange-500"></div>
+          <h2 class="text-xl font-bold text-slate-900 dark:text-white">Radiología musculoesquelética</h2>
+        </div>
+        <article class="mt-5 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden grid md:grid-cols-[38%_1fr]">
+          <div class="relative aspect-[4/3] md:aspect-auto bg-slate-100 dark:bg-slate-800 min-h-[10rem]">
+            <img src="IMG/soma/proyecciones.png" alt="Proyecciones radiográficas" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-[0.65rem] text-slate-400 p-2"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>IMG/soma/proyecciones.png</span></div>
+          </div>
+          <div class="p-5">
+            <h3 class="font-bold text-slate-900 dark:text-white">Proyecciones radiográficas</h3>
+            <p class="mt-1 text-sm text-slate-700 dark:text-slate-300">Son las diferentes posiciones utilizadas para obtener imágenes radiológicas desde distintos ángulos, permitiendo una mejor evaluación de las estructuras anatómicas. Como: bloques y cuerdas de sujeción.</p>
+            <a href="https://wvs.academy/learn/companion-animals/diagnostic-imaging/radiography/fundamentals-of-radiography/radiographic-views-and-positioning" target="_blank" rel="noopener" class="mt-2 inline-flex items-center gap-1 text-xs font-medium text-orange-600 dark:text-orange-400 hover:underline">Fuente: WVS Academy ↗</a>
+          </div>
+        </article>
+      </section>
+
+      <!-- ============ Estudios radiológicos / densidades ============ -->
+      <section class="mt-12">
+        <div class="flex items-center gap-3">
+          <div class="h-8 w-1.5 rounded-full bg-orange-500"></div>
+          <h2 class="text-xl font-bold text-slate-900 dark:text-white">Estudios radiológicos de los trastornos musculoesqueléticos</h2>
+        </div>
+        <p class="mt-3 text-slate-700 dark:text-slate-300 leading-relaxed">
+          Son técnicas de diagnóstico por imágenes utilizadas para evaluar enfermedades, traumatismos y el desgaste natural
+          de huesos, articulaciones, músculos, tendones y ligamentos. Permiten a los médicos confirmar lesiones (fracturas,
+          esguinces) y enfermedades degenerativas como artritis y artrosis.
+        </p>
+
+        <h3 class="mt-6 font-bold text-slate-900 dark:text-white">Densidades básicas</h3>
+        <div class="mt-3 space-y-2">
+          <div class="flex items-center gap-3 rounded-xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 px-4 py-3"><span class="h-6 w-6 rounded-md bg-black ring-1 ring-slate-300 dark:ring-slate-600 shrink-0"></span><span class="text-sm text-slate-700 dark:text-slate-300"><strong class="text-slate-900 dark:text-white">Aire (negro):</strong> la menor absorción de rayos X (aire de los pulmones, gas intestinal).</span></div>
+          <div class="flex items-center gap-3 rounded-xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 px-4 py-3"><span class="h-6 w-6 rounded-md bg-slate-600 ring-1 ring-slate-300 dark:ring-slate-600 shrink-0"></span><span class="text-sm text-slate-700 dark:text-slate-300"><strong class="text-slate-900 dark:text-white">Grasa (gris):</strong> absorbe algo más de radiación (en abdomen, rodeando las vísceras).</span></div>
+          <div class="flex items-center gap-3 rounded-xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 px-4 py-3"><span class="h-6 w-6 rounded-md bg-slate-400 ring-1 ring-slate-300 dark:ring-slate-600 shrink-0"></span><span class="text-sm text-slate-700 dark:text-slate-300"><strong class="text-slate-900 dark:text-white">Agua (gris claro):</strong> mayor absorción (vísceras, músculos, vasos).</span></div>
+          <div class="flex items-center gap-3 rounded-xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 px-4 py-3"><span class="h-6 w-6 rounded-md bg-slate-200 ring-1 ring-slate-300 dark:ring-slate-600 shrink-0"></span><span class="text-sm text-slate-700 dark:text-slate-300"><strong class="text-slate-900 dark:text-white">Calcio (blanco claro):</strong> gran absorción (huesos, tejidos calcificados).</span></div>
+          <div class="flex items-center gap-3 rounded-xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 px-4 py-3"><span class="h-6 w-6 rounded-md bg-white ring-1 ring-slate-300 dark:ring-slate-600 shrink-0"></span><span class="text-sm text-slate-700 dark:text-slate-300"><strong class="text-slate-900 dark:text-white">Metal (blanco brillante):</strong> no existe en el organismo de forma natural (artefactos, marcapasos, contrastes, grapas).</span></div>
+        </div>
+
+        <div class="mt-5 grid sm:grid-cols-2 gap-4">
+          <div class="relative aspect-[16/10] rounded-2xl bg-slate-100 dark:bg-slate-800 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+            <img src="IMG/soma/densidades-aire.jpeg" alt="Densidades radiológicas" class="absolute inset-0 h-full w-full object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-[0.65rem] text-slate-400 p-2"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>IMG/soma/densidades-aire.jpeg</span></div>
+          </div>
+          <div class="relative aspect-[16/10] rounded-2xl bg-slate-100 dark:bg-slate-800 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+            <img src="IMG/soma/densidades-metal.jpeg" alt="Densidades radiológicas (escala)" class="absolute inset-0 h-full w-full object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-[0.65rem] text-slate-400 p-2"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>IMG/soma/densidades-metal.jpeg</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ Técnica de lectura ABC'S ============ -->
+      <section class="mt-12">
+        <div class="flex items-center gap-3">
+          <div class="h-8 w-1.5 rounded-full bg-orange-500"></div>
+          <h2 class="text-xl font-bold text-slate-900 dark:text-white">Técnica de lectura: ABC'S</h2>
+        </div>
+        <div class="mt-4 grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
+          <div class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 p-4"><span class="grid h-9 w-9 place-items-center rounded-lg bg-orange-100 dark:bg-orange-500/15 text-orange-600 dark:text-orange-300 font-extrabold">A</span><h3 class="mt-2 font-bold text-slate-900 dark:text-white">Alineación</h3><p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Evalúa la posición y organización normal de los huesos y articulaciones.</p></div>
+          <div class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 p-4"><span class="grid h-9 w-9 place-items-center rounded-lg bg-orange-100 dark:bg-orange-500/15 text-orange-600 dark:text-orange-300 font-extrabold">B</span><h3 class="mt-2 font-bold text-slate-900 dark:text-white">Bone (hueso)</h3><p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Analiza el tamaño, forma, densidad e integridad de los huesos.</p></div>
+          <div class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 p-4"><span class="grid h-9 w-9 place-items-center rounded-lg bg-orange-100 dark:bg-orange-500/15 text-orange-600 dark:text-orange-300 font-extrabold">C</span><h3 class="mt-2 font-bold text-slate-900 dark:text-white">Cartilage (cartílago)</h3><p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Examina los espacios articulares y el estado del cartílago.</p></div>
+          <div class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 p-4"><span class="grid h-9 w-9 place-items-center rounded-lg bg-orange-100 dark:bg-orange-500/15 text-orange-600 dark:text-orange-300 font-extrabold">S</span><h3 class="mt-2 font-bold text-slate-900 dark:text-white">Soft tissues</h3><p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Valora músculos, tendones, ligamentos y otros tejidos blandos que rodean las estructuras óseas.</p></div>
+        </div>
+
+        <h3 class="mt-8 font-bold text-slate-900 dark:text-white">Signos radiológicos de patología</h3>
+        <div class="mt-3 grid sm:grid-cols-2 gap-3">
+          <div class="flex gap-3 rounded-xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 px-4 py-3"><span class="h-2 w-2 mt-2 rounded-full bg-orange-500 shrink-0"></span><span class="text-sm text-slate-700 dark:text-slate-300"><strong class="text-slate-900 dark:text-white">Tamaño:</strong> identifica alteraciones por aumento o disminución del tamaño normal de los huesos por malformaciones, enfermedades o traumatismos.</span></div>
+          <div class="flex gap-3 rounded-xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 px-4 py-3"><span class="h-2 w-2 mt-2 rounded-full bg-orange-500 shrink-0"></span><span class="text-sm text-slate-700 dark:text-slate-300"><strong class="text-slate-900 dark:text-white">Forma:</strong> evalúa deformidades, curvaturas, angulaciones y fracturas que modifican la estructura normal del hueso.</span></div>
+          <div class="flex gap-3 rounded-xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 px-4 py-3"><span class="h-2 w-2 mt-2 rounded-full bg-orange-500 shrink-0"></span><span class="text-sm text-slate-700 dark:text-slate-300"><strong class="text-slate-900 dark:text-white">Densidad:</strong> analiza la cantidad de mineral del hueso; puede estar disminuida (osteopenia u osteoporosis) o aumentada (osteoesclerosis).</span></div>
+          <div class="flex gap-3 rounded-xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 px-4 py-3"><span class="h-2 w-2 mt-2 rounded-full bg-orange-500 shrink-0"></span><span class="text-sm text-slate-700 dark:text-slate-300"><strong class="text-slate-900 dark:text-white">Número:</strong> determina la presencia de huesos ausentes, incompletos o adicionales respecto a la anatomía normal.</span></div>
+        </div>
+
+        <h3 class="mt-8 font-bold text-slate-900 dark:text-white">Semiología de las partes blandas</h3>
+        <div class="mt-3 grid sm:grid-cols-2 gap-4">
+          <div class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 p-5">
+            <h4 class="font-semibold text-slate-900 dark:text-white">Densidad</h4>
+            <p class="text-xs text-slate-500 dark:text-slate-400">Materiales o estructuras anormales en los tejidos blandos:</p>
+            <ul class="mt-2 space-y-1.5 text-sm text-slate-700 dark:text-slate-300">
+              <li class="flex gap-2"><span class="text-orange-500 shrink-0">•</span><strong class="text-slate-900 dark:text-white">Calcificaciones:</strong>&nbsp;depósitos anormales de calcio.</li>
+              <li class="flex gap-2"><span class="text-orange-500 shrink-0">•</span><strong class="text-slate-900 dark:text-white">Osificaciones:</strong>&nbsp;formación de tejido óseo fuera del esqueleto.</li>
+              <li class="flex gap-2"><span class="text-orange-500 shrink-0">•</span><strong class="text-slate-900 dark:text-white">Cuerpos extraños:</strong>&nbsp;objetos ajenos al organismo visibles en las imágenes.</li>
+            </ul>
+          </div>
+          <div class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 p-5">
+            <h4 class="font-semibold text-slate-900 dark:text-white">Tamaño</h4>
+            <p class="text-xs text-slate-500 dark:text-slate-400">Cambios en el volumen de los tejidos blandos:</p>
+            <ul class="mt-2 space-y-1.5 text-sm text-slate-700 dark:text-slate-300">
+              <li class="flex gap-2"><span class="text-orange-500 shrink-0">•</span><strong class="text-slate-900 dark:text-white">Hipertrofia:</strong>&nbsp;aumento de tamaño por uso excesivo, inflamación o aumento de la vascularización.</li>
+              <li class="flex gap-2"><span class="text-orange-500 shrink-0">•</span><strong class="text-slate-900 dark:text-white">Atrofia:</strong>&nbsp;disminución de tamaño por desuso, inmovilización o daño nervioso.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ Exámenes diagnósticos del SOMA ============ -->
+      <section class="mt-12">
+        <div class="flex items-center gap-3">
+          <div class="h-8 w-1.5 rounded-full bg-orange-500"></div>
+          <h2 class="text-xl font-bold text-slate-900 dark:text-white">Exámenes diagnósticos para trastornos del SOMA</h2>
+        </div>
+        <p class="mt-3 text-slate-700 dark:text-slate-300 leading-relaxed">
+          El sistema osteomioarticular es el conjunto de estructuras del cuerpo humano que incluye los huesos, los músculos y
+          las articulaciones, junto con los tejidos que los unen y protegen (tendones, ligamentos y cartílagos). Funciona de
+          manera integrada para permitir el movimiento, mantener la postura, dar soporte al cuerpo y proteger los órganos
+          internos. Los huesos forman la estructura rígida, los músculos generan la fuerza mediante su contracción y las
+          articulaciones permiten la unión y movilidad entre los huesos.
+        </p>
+      </section>
+
+      <!-- ============ Densitometría ósea ============ -->
+      <section class="mt-12">
+        <div class="flex items-center gap-3">
+          <div class="h-8 w-1.5 rounded-full bg-orange-500"></div>
+          <h2 class="text-xl font-bold text-slate-900 dark:text-white">Densitometría ósea</h2>
+        </div>
+        <p class="mt-3 text-slate-700 dark:text-slate-300 leading-relaxed">
+          Es un examen de diagnóstico por imágenes que mide la densidad mineral de los huesos (cantidad de minerales,
+          principalmente calcio). Se realiza mediante absorciometría de rayos X de energía dual (DEXA o DXA), con dosis muy
+          bajas de radiación. Es el método más preciso y confiable para detectar la pérdida de masa ósea, diagnosticar
+          osteopenia y osteoporosis y valorar el riesgo de fracturas; generalmente se examinan la columna lumbar y la cadera.
+          Es una prueba rápida, indolora, no invasiva y segura.
+        </p>
+
+        <div class="mt-5 grid lg:grid-cols-2 gap-4">
+          <div class="rounded-2xl bg-orange-50 dark:bg-orange-500/10 ring-1 ring-orange-200 dark:ring-orange-500/30 p-5">
+            <h3 class="font-bold text-slate-900 dark:text-white">¿Para qué sirve?</h3>
+            <ul class="mt-2 space-y-1.5 text-sm text-slate-700 dark:text-slate-300">
+              <li class="flex gap-2"><span class="text-orange-500 shrink-0">•</span>Detectar la pérdida de masa ósea en etapas tempranas.</li>
+              <li class="flex gap-2"><span class="text-orange-500 shrink-0">•</span>Diagnosticar osteopenia y osteoporosis.</li>
+              <li class="flex gap-2"><span class="text-orange-500 shrink-0">•</span>Evaluar el riesgo de fracturas óseas.</li>
+              <li class="flex gap-2"><span class="text-orange-500 shrink-0">•</span>Monitorear la evolución de pacientes con enfermedades óseas.</li>
+              <li class="flex gap-2"><span class="text-orange-500 shrink-0">•</span>Determinar la eficacia del tratamiento para la osteoporosis.</li>
+              <li class="flex gap-2"><span class="text-orange-500 shrink-0">•</span>Identificar alteraciones en personas con factores de riesgo (menopausia, envejecimiento, antecedentes familiares o uso prolongado de corticosteroides).</li>
+            </ul>
+          </div>
+          <div class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 p-5">
+            <h3 class="font-bold text-slate-900 dark:text-white">Procedimiento</h3>
+            <ol class="mt-2 space-y-1.5 text-sm text-slate-700 dark:text-slate-300 list-decimal list-inside">
+              <li>El paciente es recibido y se le explica el procedimiento.</li>
+              <li>Se le solicita retirar objetos metálicos (joyas, cinturones o prendas con cremalleras).</li>
+              <li>El paciente se acuesta sobre una mesa especial del equipo de densitometría.</li>
+              <li>Un brazo del aparato se desplaza lentamente sobre las áreas a evaluar (columna lumbar y cadera).</li>
+              <li>El equipo emite una cantidad mínima de rayos X y registra las imágenes.</li>
+              <li>El paciente debe permanecer inmóvil para obtener resultados precisos.</li>
+              <li>Una computadora procesa las imágenes y calcula la densidad mineral ósea.</li>
+              <li>El examen dura entre 10 y 30 minutos y no produce dolor ni molestias.</li>
+            </ol>
+          </div>
+        </div>
+
+        <h3 class="mt-6 font-semibold text-slate-900 dark:text-white text-sm">Intervenciones de enfermería</h3>
+        <div class="mt-3 grid sm:grid-cols-3 gap-3">
+          <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-200 dark:ring-sky-500/30 p-4"><p class="text-xs font-bold uppercase tracking-wide text-sky-700 dark:text-sky-300">Antes</p><p class="mt-1 text-sm text-slate-700 dark:text-slate-300">Verificar identidad y orden médica, explicar el examen y su finalidad, indagar embarazo (usa rayos X), recomendar evitar suplementos de calcio 24 h antes, confirmar estudios recientes con contraste o medicina nuclear, retirar objetos metálicos y brindar apoyo emocional.</p></div>
+          <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-200 dark:ring-amber-500/30 p-4"><p class="text-xs font-bold uppercase tracking-wide text-amber-700 dark:text-amber-300">Durante</p><p class="mt-1 text-sm text-slate-700 dark:text-slate-300">Colaborar en la correcta colocación del paciente, indicar la importancia de permanecer inmóvil, vigilar su estado general, dar comodidad y seguridad, y apoyar ante ansiedad o temor.</p></div>
+          <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-200 dark:ring-emerald-500/30 p-4"><p class="text-xs font-bold uppercase tracking-wide text-emerald-700 dark:text-emerald-300">Después</p><p class="mt-1 text-sm text-slate-700 dark:text-slate-300">Informar que puede retomar sus actividades y alimentación habitual, orientar sobre la interpretación de resultados, registrar el examen y educar sobre salud ósea (calcio, vitamina D, ejercicio, evitar tabaco/alcohol y prevenir caídas).</p></div>
+        </div>
+      </section>
+
+      <!-- ============ Electromiografía ============ -->
+      <section class="mt-12">
+        <div class="flex items-center gap-3">
+          <div class="h-8 w-1.5 rounded-full bg-orange-500"></div>
+          <h2 class="text-xl font-bold text-slate-900 dark:text-white">Electromiografía (EMG)</h2>
+        </div>
+        <p class="mt-3 text-slate-700 dark:text-slate-300 leading-relaxed">
+          La electromiografía (EMG) es un estudio diagnóstico que evalúa el funcionamiento de los músculos y los nervios que
+          los controlan, registrando la actividad eléctrica que producen los músculos en reposo y durante la contracción.
+          Generalmente se realiza junto con los estudios de conducción nerviosa, que miden la velocidad y capacidad con la
+          que los nervios transmiten los impulsos eléctricos.
+        </p>
+
+        <div class="mt-5 grid lg:grid-cols-2 gap-4">
+          <div class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 p-5">
+            <h3 class="font-bold text-slate-900 dark:text-white">Procedimiento</h3>
+            <ol class="mt-2 space-y-1.5 text-sm text-slate-700 dark:text-slate-300 list-decimal list-inside">
+              <li>El paciente se coloca en una posición cómoda.</li>
+              <li>Se limpian las zonas a estudiar.</li>
+              <li>Se colocan electrodos sobre la piel para evaluar la conducción nerviosa.</li>
+              <li>Se introducen agujas finas en determinados músculos.</li>
+              <li>Se registran las señales eléctricas musculares.</li>
+              <li>El especialista interpreta los resultados obtenidos.</li>
+            </ol>
+          </div>
+          <div class="rounded-2xl bg-orange-50 dark:bg-orange-500/10 ring-1 ring-orange-200 dark:ring-orange-500/30 p-5">
+            <h3 class="font-bold text-slate-900 dark:text-white">¿Para qué sirve?</h3>
+            <ul class="mt-2 space-y-1.5 text-sm text-slate-700 dark:text-slate-300">
+              <li class="flex gap-2"><span class="text-orange-500 shrink-0">•</span>Diagnosticar enfermedades musculares y nerviosas.</li>
+              <li class="flex gap-2"><span class="text-orange-500 shrink-0">•</span>Detectar lesiones o compresiones nerviosas.</li>
+              <li class="flex gap-2"><span class="text-orange-500 shrink-0">•</span>Evaluar debilidad muscular, hormigueo o pérdida de sensibilidad.</li>
+              <li class="flex gap-2"><span class="text-orange-500 shrink-0">•</span>Diagnosticar síndrome del túnel carpiano, neuropatías, radiculopatías y miopatías.</li>
+              <li class="flex gap-2"><span class="text-orange-500 shrink-0">•</span>Determinar la localización y gravedad del daño nervioso.</li>
+              <li class="flex gap-2"><span class="text-orange-500 shrink-0">•</span>Monitorear la evolución de enfermedades neuromusculares.</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3 class="mt-6 font-semibold text-slate-900 dark:text-white text-sm">Intervenciones de enfermería</h3>
+        <div class="mt-3 grid sm:grid-cols-3 gap-3">
+          <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-200 dark:ring-sky-500/30 p-4"><p class="text-xs font-bold uppercase tracking-wide text-sky-700 dark:text-sky-300">Antes</p><p class="mt-1 text-sm text-slate-700 dark:text-slate-300">Verificar identidad y orden médica, explicar el examen y las molestias leves, indicar acudir con la piel limpia y sin cremas, investigar trastornos hemorrágicos, uso de anticoagulantes o marcapasos, y brindar apoyo emocional.</p></div>
+          <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-200 dark:ring-amber-500/30 p-4"><p class="text-xs font-bold uppercase tracking-wide text-amber-700 dark:text-amber-300">Durante</p><p class="mt-1 text-sm text-slate-700 dark:text-slate-300">Colocar al paciente en posición cómoda, proporcionar tranquilidad, vigilar su tolerancia (dolor o malestar), colaborar con el especialista y mantener asepsia y bioseguridad.</p></div>
+          <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-200 dark:ring-emerald-500/30 p-4"><p class="text-xs font-bold uppercase tracking-wide text-emerald-700 dark:text-emerald-300">Después</p><p class="mt-1 text-sm text-slate-700 dark:text-slate-300">Evaluar dolor, sangrado o hematomas en las zonas de inserción, informar que las molestias leves son temporales, recomendar reanudar actividades, aplicar compresas frías si es necesario, vigilar signos de infección y registrar el procedimiento.</p></div>
+        </div>
+      </section>
+
+      <div class="mt-12 flex items-center justify-between border-t border-slate-200 dark:border-slate-800 pt-6">
+        <a href="neurologia.html" class="text-sm text-slate-500 hover:text-indigo-600 dark:hover:text-indigo-400">← Neurología avanzada</a>
+        <a href="enlaces.html"
+           class="inline-flex items-center gap-2 rounded-full bg-indigo-600 px-5 py-2.5 text-white text-sm font-semibold hover:bg-indigo-700">
+          Enlaces y referencias →
+        </a>
+      </div>
+    </div>
+  </main>
+</div>
+<script>
+  function toggleTheme(){
+    const html = document.documentElement;
+    html.classList.toggle('dark');
+    localStorage.theme = html.classList.contains('dark') ? 'dark' : 'light';
+  }
+</script>
+
+  <!-- ===== Lightbox: clic en una imagen para ampliarla ===== -->
+  <div id="lightbox" class="fixed inset-0 z-[60] hidden items-center justify-center bg-black/80 backdrop-blur-sm p-4 cursor-zoom-out" onclick="closeLightbox()">
+    <button onclick="closeLightbox()" aria-label="Cerrar"
+            class="absolute top-4 right-4 h-11 w-11 rounded-full bg-white/10 hover:bg-white/20 ring-1 ring-white/30 text-white grid place-items-center">
+      <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <figure class="flex flex-col items-center gap-3" onclick="event.stopPropagation()">
+      <img id="lightbox-img" src="" alt="" class="max-h-[85vh] max-w-[92vw] rounded-xl shadow-2xl object-contain">
+      <figcaption id="lightbox-cap" class="text-sm text-white/80"></figcaption>
+    </figure>
+  </div>
+  <script>
+    (function(){
+      const box = document.getElementById('lightbox');
+      const big = document.getElementById('lightbox-img');
+      const cap = document.getElementById('lightbox-cap');
+      document.querySelectorAll('main img').forEach(function(el){
+        el.classList.add('cursor-zoom-in');
+        el.addEventListener('click', function(ev){
+          ev.preventDefault(); ev.stopPropagation();
+          big.src = el.currentSrc || el.src;
+          big.alt = el.alt || '';
+          cap.textContent = el.alt || '';
+          box.classList.remove('hidden'); box.classList.add('flex');
+          document.body.style.overflow = 'hidden';
+        });
+      });
+      window.closeLightbox = function(){
+        box.classList.add('hidden'); box.classList.remove('flex');
+        document.body.style.overflow = '';
+      };
+      document.addEventListener('keydown', function(e){ if(e.key === 'Escape') window.closeLightbox(); });
+    })();
+  </script>
+</body>
+</html>
