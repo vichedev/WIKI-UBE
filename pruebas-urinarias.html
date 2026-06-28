@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pruebas diagnósticas del sistema urinario · Medios de Diagnóstico</title>
+  <script>
+    if (localStorage.theme === 'dark' ||
+        (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = { darkMode: 'class' }</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style> body { font-family: 'Inter', system-ui, sans-serif; } </style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-200 transition-colors duration-300">
+<div class="min-h-screen flex">
+
+  <!-- ============ BARRA LATERAL ============ -->
+  <aside id="sidebar"
+         class="fixed lg:sticky top-0 z-40 h-screen w-72 shrink-0 -translate-x-full lg:translate-x-0
+                transition-transform bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800 flex flex-col">
+    <div class="px-5 py-5 border-b border-slate-100 dark:border-slate-800">
+      <a href="index.html" class="flex items-center gap-3">
+        <span class="h-10 w-10 rounded-xl bg-indigo-600 text-white flex items-center justify-center">
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12h4l2 5 4-12 2 7h6"/></svg>
+        </span>
+        <span>
+          <span class="block font-extrabold text-slate-800 dark:text-white leading-tight">Wiki Diagnóstico</span>
+          <span class="block text-xs text-slate-400">UEPD-04 · Medios de Diagnóstico</span>
+        </span>
+      </a>
+    </div>
+    <nav class="flex-1 overflow-y-auto px-3 py-4 space-y-1 text-sm">
+      <a href="index.html"        class="block rounded-lg px-3 py-2 font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Carátula</a>
+      <a href="introduccion.html" class="block rounded-lg px-3 py-2 font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Introducción</a>
+      <div class="my-2 border-t border-slate-100 dark:border-slate-800"></div>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-sky-50 dark:hover:bg-sky-500/10 group-open:bg-sky-50 dark:group-open:bg-sky-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-sky-500"></span>
+            <span class="truncate text-sm font-semibold text-sky-700 dark:text-sky-300">Fluidos corporales</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-sky-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-sky-100 dark:border-sky-500/30 pl-2">
+          <a href="componentes.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-sky-50 dark:hover:bg-sky-500/10 hover:text-sky-700 dark:hover:text-sky-300 transition">Componentes de la sangre</a>
+          <a href="hemograma.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-sky-50 dark:hover:bg-sky-500/10 hover:text-sky-700 dark:hover:text-sky-300 transition">Hemograma con diferencial</a>
+          <a href="fluidos.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-sky-50 dark:hover:bg-sky-500/10 hover:text-sky-700 dark:hover:text-sky-300 transition">Análisis de fluidos biológicos</a>
+          <a href="frotis.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-sky-50 dark:hover:bg-sky-500/10 hover:text-sky-700 dark:hover:text-sky-300 transition">Frotis sanguíneo</a>
+        </div>
+      </details>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-emerald-50 dark:hover:bg-emerald-500/10 group-open:bg-emerald-50 dark:group-open:bg-emerald-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-emerald-500"></span>
+            <span class="truncate text-sm font-semibold text-emerald-700 dark:text-emerald-300">Medulograma</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-emerald-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-emerald-100 dark:border-emerald-500/30 pl-2">
+          <a href="medulograma.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-emerald-50 dark:hover:bg-emerald-500/10 hover:text-emerald-700 dark:hover:text-emerald-300 transition">Medulograma</a>
+        </div>
+      </details>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-rose-50 dark:hover:bg-rose-500/10 group-open:bg-rose-50 dark:group-open:bg-rose-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-rose-500"></span>
+            <span class="truncate text-sm font-semibold text-rose-700 dark:text-rose-300">Embarazo</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-rose-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-rose-100 dark:border-rose-500/30 pl-2">
+          <a href="embarazo.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-rose-50 dark:hover:bg-rose-500/10 hover:text-rose-700 dark:hover:text-rose-300 transition">Diagnóstico en el embarazo</a>
+        </div>
+      </details>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-fuchsia-50 dark:hover:bg-fuchsia-500/10 group-open:bg-fuchsia-50 dark:group-open:bg-fuchsia-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-fuchsia-500"></span>
+            <span class="truncate text-sm font-semibold text-fuchsia-700 dark:text-fuchsia-300">Trastornos autoinmunitarios</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-fuchsia-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-fuchsia-100 dark:border-fuchsia-500/30 pl-2">
+          <a href="autoinmunes.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-fuchsia-50 dark:hover:bg-fuchsia-500/10 hover:text-fuchsia-700 dark:hover:text-fuchsia-300 transition">Trastornos autoinmunitarios</a>
+        </div>
+      </details>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-purple-50 dark:hover:bg-purple-500/10 group-open:bg-purple-50 dark:group-open:bg-purple-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-purple-500"></span>
+            <span class="truncate text-sm font-semibold text-purple-700 dark:text-purple-300">Neoplasias</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-purple-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-purple-100 dark:border-purple-500/30 pl-2">
+          <a href="oncologia.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-purple-50 dark:hover:bg-purple-500/10 hover:text-purple-700 dark:hover:text-purple-300 transition">Oncología y neoplasias</a>
+        </div>
+      </details>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-orange-50 dark:hover:bg-orange-500/10 group-open:bg-orange-50 dark:group-open:bg-orange-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-orange-500"></span>
+            <span class="truncate text-sm font-semibold text-orange-700 dark:text-orange-300">Sistema osteomioarticular</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-orange-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-orange-100 dark:border-orange-500/30 pl-2">
+          <a href="soma.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-orange-50 dark:hover:bg-orange-500/10 hover:text-orange-700 dark:hover:text-orange-300 transition">Sistema osteomioarticular</a>
+        </div>
+      </details>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-cyan-50 dark:hover:bg-cyan-500/10 group-open:bg-cyan-50 dark:group-open:bg-cyan-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-cyan-500"></span>
+            <span class="truncate text-sm font-semibold text-cyan-700 dark:text-cyan-300">Estudios neurológicos</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-cyan-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-cyan-100 dark:border-cyan-500/30 pl-2">
+          <a href="neurologia.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-cyan-50 dark:hover:bg-cyan-500/10 hover:text-cyan-700 dark:hover:text-cyan-300 transition">Neurología avanzada</a>
+        </div>
+      </details>
+      <details class="group" open>
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-teal-50 dark:hover:bg-teal-500/10 group-open:bg-teal-50 dark:group-open:bg-teal-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-teal-500"></span>
+            <span class="truncate text-sm font-semibold text-teal-700 dark:text-teal-300">Sistema genitourinario</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-teal-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-teal-100 dark:border-teal-500/30 pl-2">
+          <a href="genitourinario.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-teal-50 dark:hover:bg-teal-500/10 hover:text-teal-700 dark:hover:text-teal-300 transition">Sistema genitourinario</a>
+          <a href="pruebas-urinarias.html" class="block rounded-lg px-3 py-1.5 font-semibold bg-teal-100 dark:bg-teal-500/20 text-teal-800 dark:text-teal-200">Pruebas diagnósticas urinarias</a>
+        </div>
+      </details>
+      <div class="my-2 border-t border-slate-100 dark:border-slate-800"></div>
+      <a href="enlaces.html" class="block rounded-lg px-3 py-2 font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Enlaces y referencias</a>
+    </nav>
+    <div class="px-4 py-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
+      <span class="text-xs text-slate-400">© Proyecto académico</span>
+      <button onclick="toggleTheme()" aria-label="Cambiar tema"
+              class="h-9 w-9 rounded-full grid place-items-center ring-1 ring-slate-200 dark:ring-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 transition text-slate-600 dark:text-slate-300">
+        <svg class="dark:hidden h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="hidden dark:block h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path stroke-linecap="round" d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </button>
+    </div>
+  </aside>
+
+  <button onclick="document.getElementById('sidebar').classList.toggle('-translate-x-full')"
+          class="lg:hidden fixed bottom-5 right-5 z-50 h-12 w-12 rounded-full bg-indigo-600 text-white shadow-lg grid place-items-center">
+    <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+  </button>
+
+  <!-- ============ CONTENIDO ============ -->
+  <main class="flex-1 min-w-0">
+    <div class="max-w-4xl mx-auto px-6 py-10 lg:py-14">
+
+      <nav class="text-xs text-slate-400 mb-3">Inicio / <a href="genitourinario.html" class="hover:text-teal-600 dark:hover:text-teal-400">Sistema genitourinario</a> / <span class="text-slate-600 dark:text-slate-300">Pruebas diagnósticas</span></nav>
+
+      <div class="flex items-center gap-4">
+        <div class="h-12 w-1.5 rounded-full bg-teal-500"></div>
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">Pruebas diagnósticas del sistema urinario</h1>
+      </div>
+
+      <section class="mt-8">
+        <p class="text-slate-700 dark:text-slate-300 leading-relaxed">
+          Continuación del estudio del <a href="genitourinario.html" class="font-medium text-teal-600 dark:text-teal-400 hover:underline">sistema genitourinario</a>:
+          aquí se reúnen las principales pruebas de laboratorio, marcadores y estudios de imagen empleados para evaluar
+          la función y la estructura del aparato urinario.
+        </p>
+      </section>
+
+      <!-- ============ Urocultivo ============ -->
+      <section class="mt-12">
+        <div class="flex items-center gap-3">
+          <div class="h-8 w-1.5 rounded-full bg-teal-500"></div>
+          <h2 class="text-xl font-bold text-slate-900 dark:text-white">Urocultivo</h2>
+        </div>
+        <p class="mt-3 text-slate-700 dark:text-slate-300 leading-relaxed">Es una prueba microbiológica que identifica las bacterias presentes en la orina y confirma la presencia de una infección urinaria, permitiendo conocer el microorganismo causante para recetar el tratamiento adecuado.</p>
+        <a href="https://policlinicametropolitana.org/blogs/blog/urocultivo-preparacion-procedimiento-y-resultados" target="_blank" rel="noopener" class="mt-1 inline-block text-xs font-medium text-teal-600 dark:text-teal-400 hover:underline">Fuente: Policlínica Metropolitana ↗</a>
+
+        <div class="mt-4 grid sm:grid-cols-2 gap-4">
+          <div class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 p-5"><h3 class="font-bold text-slate-900 dark:text-white">Objetivo</h3><p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Confirmar infecciones urinarias y determinar el microorganismo causante.</p></div>
+          <div class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 p-5"><h3 class="font-bold text-slate-900 dark:text-white">Interpretación</h3><ul class="mt-1 space-y-1 text-sm text-slate-600 dark:text-slate-400"><li>≥100.000 UFC/mL: indica infección urinaria.</li><li>1.000 – 100.000 UFC/mL: significativo si hay síntomas.</li><li>Por catéter, ≥1.000 UFC/mL se considera positivo.</li></ul></div>
+        </div>
+
+        <h3 class="mt-6 font-bold text-slate-900 dark:text-white">Bacterias más frecuentes</h3>
+        <div class="mt-3 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
+          <div class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden"><div class="relative aspect-square bg-slate-100 dark:bg-slate-800"><img src="IMG/genitourinario/ecoli.webp" alt="Escherichia coli" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-[0.6rem] text-slate-400 p-1"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>ecoli.jpeg</span></div></div><p class="px-2 py-2 text-center text-xs font-semibold text-slate-700 dark:text-slate-300">Escherichia coli</p></div>
+          <div class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden"><div class="relative aspect-square bg-slate-100 dark:bg-slate-800"><img src="IMG/genitourinario/klebsiella.webp" alt="Klebsiella" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-[0.6rem] text-slate-400 p-1"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>klebsiella.jpeg</span></div></div><p class="px-2 py-2 text-center text-xs font-semibold text-slate-700 dark:text-slate-300">Klebsiella</p></div>
+          <div class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden"><div class="relative aspect-square bg-slate-100 dark:bg-slate-800"><img src="IMG/genitourinario/enterococcus.webp" alt="Enterococcus" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-[0.6rem] text-slate-400 p-1"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>enterococcus.jpeg</span></div></div><p class="px-2 py-2 text-center text-xs font-semibold text-slate-700 dark:text-slate-300">Enterococcus</p></div>
+          <div class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden"><div class="relative aspect-square bg-slate-100 dark:bg-slate-800"><img src="IMG/genitourinario/proteus.webp" alt="Proteus" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-[0.6rem] text-slate-400 p-1"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>proteus.jpeg</span></div></div><p class="px-2 py-2 text-center text-xs font-semibold text-slate-700 dark:text-slate-300">Proteus</p></div>
+          <div class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden"><div class="relative aspect-square bg-slate-100 dark:bg-slate-800"><img src="IMG/genitourinario/pseudomonas.webp" alt="Pseudomonas" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-[0.6rem] text-slate-400 p-1"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>pseudomonas.jpeg</span></div></div><p class="px-2 py-2 text-center text-xs font-semibold text-slate-700 dark:text-slate-300">Pseudomonas</p></div>
+        </div>
+      </section>
+
+      <!-- ============ Creatinina en orina ============ -->
+      <section class="mt-12">
+        <div class="flex items-center gap-3">
+          <div class="h-8 w-1.5 rounded-full bg-teal-500"></div>
+          <h2 class="text-xl font-bold text-slate-900 dark:text-white">Creatinina en orina</h2>
+        </div>
+        <div class="mt-4 grid lg:grid-cols-2 gap-5 items-start">
+          <div>
+            <p class="text-slate-700 dark:text-slate-300 leading-relaxed">Mide la cantidad de creatinina eliminada por los riñones durante 24 horas. La creatinina es un producto de desecho que el cuerpo produce al usar los músculos; los riñones sanos la extraen de la sangre y la eliminan en la orina, por lo que permite saber si los riñones funcionan con normalidad.</p>
+            <a href="https://schospitalib.staywellsolutionsonline.com/RelatedItems/167,creatinine_urine_ES" target="_blank" rel="noopener" class="mt-1 inline-block text-xs font-medium text-teal-600 dark:text-teal-400 hover:underline">Fuente: StayWell ↗</a>
+            <div class="mt-3 grid grid-cols-2 gap-3">
+              <div class="rounded-xl bg-teal-50 dark:bg-teal-500/10 ring-1 ring-teal-200 dark:ring-teal-500/30 p-3"><p class="text-xs font-bold uppercase tracking-wide text-teal-700 dark:text-teal-300">Hombres</p><p class="mt-1 text-sm text-slate-700 dark:text-slate-300">14 – 26 mg/kg/día</p></div>
+              <div class="rounded-xl bg-teal-50 dark:bg-teal-500/10 ring-1 ring-teal-200 dark:ring-teal-500/30 p-3"><p class="text-xs font-bold uppercase tracking-wide text-teal-700 dark:text-teal-300">Mujeres</p><p class="mt-1 text-sm text-slate-700 dark:text-slate-300">11 – 20 mg/kg/día</p></div>
+            </div>
+            <p class="mt-3 text-sm text-slate-600 dark:text-slate-400"><strong class="text-slate-800 dark:text-slate-200">Utilidad:</strong> evaluar la función renal, detectar insuficiencia renal y medir la capacidad de filtración.</p>
+          </div>
+          <figure>
+            <div class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+              <div class="relative aspect-[16/10] bg-slate-100 dark:bg-slate-800">
+                <img src="IMG/genitourinario/creatinina-orina.webp" alt="Creatinina en orina" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-xs text-slate-400 p-3"><svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>IMG/genitourinario/creatinina-orina.webp</span></div>
+              </div>
+            </div>
+          </figure>
+        </div>
+      </section>
+
+      <!-- ============ Recolección 24h + electrolitos ============ -->
+      <section class="mt-12">
+        <div class="flex items-center gap-3">
+          <div class="h-8 w-1.5 rounded-full bg-teal-500"></div>
+          <h2 class="text-xl font-bold text-slate-900 dark:text-white">Recolección de orina de 24 horas</h2>
+        </div>
+        <div class="mt-4 grid lg:grid-cols-2 gap-5 items-start">
+          <figure>
+            <div class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+              <div class="relative aspect-[16/10] bg-slate-100 dark:bg-slate-800">
+                <img src="IMG/genitourinario/orina-24h.webp" alt="Recolección de orina de 24 horas" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-xs text-slate-400 p-3"><svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>IMG/genitourinario/orina-24h.webp</span></div>
+              </div>
+            </div>
+          </figure>
+          <div>
+            <p class="text-slate-700 dark:text-slate-300 leading-relaxed">Consiste en recolectar toda la orina producida durante un día completo. Se usa para medir sustancias como proteínas, creatinina, sodio o calcio, ayudando a diagnosticar enfermedades renales, hipertensión o problemas con la formación de cálculos.</p>
+            <a href="https://www.ncbi.nlm.nih.gov/books/NBK482482/" target="_blank" rel="noopener" class="mt-1 inline-block text-xs font-medium text-teal-600 dark:text-teal-400 hover:underline">Fuente: NCBI Bookshelf ↗</a>
+            <p class="mt-3 text-sm text-slate-600 dark:text-slate-400"><strong class="text-slate-800 dark:text-slate-200">Permite medir:</strong> creatinina, proteínas, electrolitos y otras sustancias excretadas por los riñones.</p>
+          </div>
+        </div>
+
+        <h3 class="mt-6 font-bold text-slate-900 dark:text-white">Electrolitos en orina</h3>
+        <p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Minerales eliminados por los riñones cuya medición ayuda a valorar el equilibrio hidroelectrolítico.</p>
+        <div class="mt-3 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
+          <div class="rounded-xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 p-4 text-center"><p class="font-bold text-teal-700 dark:text-teal-300">Sodio (Na⁺)</p><p class="mt-1 text-sm text-slate-600 dark:text-slate-400">40 – 220 mEq/día</p></div>
+          <div class="rounded-xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 p-4 text-center"><p class="font-bold text-teal-700 dark:text-teal-300">Potasio (K⁺)</p><p class="mt-1 text-sm text-slate-600 dark:text-slate-400">25 – 125 mEq/día</p></div>
+          <div class="rounded-xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 p-4 text-center"><p class="font-bold text-teal-700 dark:text-teal-300">Cloruro (Cl⁻)</p><p class="mt-1 text-sm text-slate-600 dark:text-slate-400">110 – 250 mEq/día</p></div>
+          <div class="rounded-xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 p-4 text-center"><p class="font-bold text-teal-700 dark:text-teal-300">Calcio (Ca²⁺)</p><p class="mt-1 text-sm text-slate-600 dark:text-slate-400">100 – 300 mg/día</p></div>
+          <div class="rounded-xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 p-4 text-center"><p class="font-bold text-teal-700 dark:text-teal-300">Fósforo (P)</p><p class="mt-1 text-sm text-slate-600 dark:text-slate-400">0.5 – 1.5 g/día</p></div>
+        </div>
+      </section>
+
+      <!-- ============ Función renal en sangre ============ -->
+      <section class="mt-12">
+        <div class="flex items-center gap-3">
+          <div class="h-8 w-1.5 rounded-full bg-teal-500"></div>
+          <h2 class="text-xl font-bold text-slate-900 dark:text-white">Pruebas de función renal en sangre</h2>
+        </div>
+        <p class="mt-3 text-slate-700 dark:text-slate-300 leading-relaxed">Análisis de sangre y/o orina que evalúan el funcionamiento de los riñones. La mayoría miden el funcionamiento de los glomérulos —pequeños filtros que limpian la sangre— y la eficiencia con la que eliminan los desechos.</p>
+        <div class="mt-4 grid sm:grid-cols-2 gap-4">
+          <div class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 p-5"><h3 class="font-bold text-slate-900 dark:text-white">Creatinina sérica</h3><p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Análisis de sangre que verifica cómo filtran los riñones. Suele formar parte del perfil metabólico básico (BMP) o completo (CMP) en chequeos de rutina.</p><a href="https://www.kidney.org/es/kidney-topics/creatinina-serica-en-sangre" target="_blank" rel="noopener" class="mt-2 inline-block text-xs font-medium text-teal-600 dark:text-teal-400 hover:underline">Fuente: National Kidney Foundation ↗</a></div>
+          <div class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 p-5"><h3 class="font-bold text-slate-900 dark:text-white">Nitrógeno ureico sanguíneo (BUN)</h3><p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Mide la cantidad de nitrógeno ureico en sangre, un desecho que se genera al descomponer las proteínas. Se forma en el hígado y los riñones lo filtran y eliminan por la orina.</p><a href="https://my.clevelandclinic.org/health/diagnostics/17684-blood-urea-nitrogen-bun-test" target="_blank" rel="noopener" class="mt-2 inline-block text-xs font-medium text-teal-600 dark:text-teal-400 hover:underline">Fuente: Cleveland Clinic ↗</a></div>
+        </div>
+      </section>
+
+      <!-- ============ PSA ============ -->
+      <section class="mt-12">
+        <div class="flex items-center gap-3">
+          <div class="h-8 w-1.5 rounded-full bg-teal-500"></div>
+          <h2 class="text-xl font-bold text-slate-900 dark:text-white">Antígeno prostático específico (PSA)</h2>
+        </div>
+        <div class="mt-4 grid lg:grid-cols-2 gap-5 items-start">
+          <div>
+            <p class="text-slate-700 dark:text-slate-300 leading-relaxed">El PSA es una proteína que producen las células normales y malignas de la próstata. El cáncer de próstata y afecciones benignas (hiperplasia prostática benigna y prostatitis) aumentan sus concentraciones en sangre.</p>
+            <a href="https://www.cancer.gov/espanol/tipos/prostata/hoja-informativa-psa" target="_blank" rel="noopener" class="mt-1 inline-block text-xs font-medium text-teal-600 dark:text-teal-400 hover:underline">Fuente: Instituto Nacional del Cáncer ↗</a>
+            <div class="mt-3 rounded-xl bg-teal-50 dark:bg-teal-500/10 ring-1 ring-teal-200 dark:ring-teal-500/30 p-3 text-sm text-slate-700 dark:text-slate-300"><strong class="text-teal-700 dark:text-teal-300">Valor normal:</strong> menor de 4 ng/mL. <strong class="text-teal-700 dark:text-teal-300">Utilidad:</strong> detección precoz del cáncer de próstata y seguimiento de enfermedades prostáticas.</div>
+            <p class="mt-3 text-sm text-slate-600 dark:text-slate-400"><strong class="text-slate-800 dark:text-slate-200">Factores que pueden elevarlo:</strong> hiperplasia prostática benigna, prostatitis, procedimientos urológicos recientes, eyaculación reciente y montar bicicleta.</p>
+          </div>
+          <figure>
+            <div class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+              <div class="relative aspect-[16/10] bg-slate-100 dark:bg-slate-800">
+                <img src="IMG/genitourinario/psa.webp" alt="Antígeno prostático específico (PSA)" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-xs text-slate-400 p-3"><svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>IMG/genitourinario/psa.webp</span></div>
+              </div>
+            </div>
+          </figure>
+        </div>
+      </section>
+
+      <!-- ============ Estudios de imagen ============ -->
+      <section class="mt-12">
+        <div class="flex items-center gap-3">
+          <div class="h-8 w-1.5 rounded-full bg-teal-500"></div>
+          <h2 class="text-xl font-bold text-slate-900 dark:text-white">Estudios de imagen del sistema urinario</h2>
+        </div>
+        <p class="mt-3 text-slate-700 dark:text-slate-300 leading-relaxed">Permiten evaluar la estructura y función de los riñones, uréteres, vejiga y uretra, ayudando a diagnosticar infecciones, cálculos, tumores, obstrucciones y enfermedades renales.</p>
+
+        <div class="mt-5 space-y-4">
+
+          <article class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden grid md:grid-cols-[40%_1fr]">
+            <div class="relative aspect-[4/3] md:aspect-auto bg-slate-100 dark:bg-slate-800 min-h-[11rem]"><img src="IMG/genitourinario/ecografia-renal.webp" alt="Ecografía renal" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-[0.65rem] text-slate-400 p-2"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>IMG/genitourinario/ecografia-renal.webp</span></div></div>
+            <div class="p-5">
+              <h3 class="font-bold text-slate-900 dark:text-white">Ecografía renal</h3>
+              <p class="mt-1 text-sm text-slate-700 dark:text-slate-300">Utiliza ondas sonoras de alta frecuencia (ultrasonido) para obtener imágenes de los riñones y vías urinarias en tiempo real, aplicando gel y deslizando un transductor sobre la piel.</p>
+              <p class="mt-2 text-sm text-slate-600 dark:text-slate-400"><strong class="text-slate-800 dark:text-slate-200">Permite observar:</strong> tamaño y forma de los riñones, quistes, tumores, dilatación de vías urinarias, litiasis y obstrucciones. <strong class="text-slate-800 dark:text-slate-200">Ventajas:</strong> no usa radiación, es indolora, rápida y segura.</p>
+              <a href="https://www.quironsalud.com/es/pruebas-diagnosticas/ecografia-renal" target="_blank" rel="noopener" class="mt-2 inline-block text-xs font-medium text-teal-600 dark:text-teal-400 hover:underline">Fuente: Quirónsalud ↗</a>
+            </div>
+          </article>
+
+          <article class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden grid md:grid-cols-[40%_1fr]">
+            <div class="relative aspect-[4/3] md:aspect-auto bg-slate-100 dark:bg-slate-800 min-h-[11rem]"><img src="IMG/genitourinario/tac.webp" alt="Tomografía axial computarizada (TAC)" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-[0.65rem] text-slate-400 p-2"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>IMG/genitourinario/tac.webp</span></div></div>
+            <div class="p-5">
+              <h3 class="font-bold text-slate-900 dark:text-white">Tomografía axial computarizada (TAC)</h3>
+              <p class="mt-1 text-sm text-slate-700 dark:text-slate-300">Usa rayos X y una computadora para crear imágenes detalladas y vistas tridimensionales de los órganos urinarios desde diferentes ángulos. A veces se usa un medio de contraste para destacar tejidos y órganos.</p>
+              <p class="mt-2 text-sm text-slate-600 dark:text-slate-400"><strong class="text-slate-800 dark:text-slate-200">Permite observar:</strong> cálculos muy pequeños, tumores, quistes, traumatismos y obstrucciones. <strong class="text-slate-800 dark:text-slate-200">Ventajas:</strong> alta precisión y detecta lesiones pequeñas. <strong class="text-slate-800 dark:text-slate-200">Desventajas:</strong> usa radiación y puede requerir contraste.</p>
+              <a href="https://www.cancer.gov/espanol/publicaciones/diccionarios/diccionario-cancer/def/tomografia-axial-computarizada" target="_blank" rel="noopener" class="mt-2 inline-block text-xs font-medium text-teal-600 dark:text-teal-400 hover:underline">Fuente: Instituto Nacional del Cáncer ↗</a>
+            </div>
+          </article>
+
+          <article class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden grid md:grid-cols-[40%_1fr]">
+            <div class="relative aspect-[4/3] md:aspect-auto bg-slate-100 dark:bg-slate-800 min-h-[11rem]"><img src="IMG/genitourinario/rmn.webp" alt="Resonancia magnética nuclear (RMN)" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-[0.65rem] text-slate-400 p-2"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>IMG/genitourinario/rmn.webp</span></div></div>
+            <div class="p-5">
+              <h3 class="font-bold text-slate-900 dark:text-white">Resonancia magnética nuclear (RMN)</h3>
+              <p class="mt-1 text-sm text-slate-700 dark:text-slate-300">Utiliza un potente campo magnético y ondas de radio para obtener imágenes detalladas.</p>
+              <p class="mt-2 text-sm text-slate-600 dark:text-slate-400"><strong class="text-slate-800 dark:text-slate-200">Permite observar:</strong> tumores renales, quistes complejos, vasos sanguíneos renales y malformaciones congénitas. <strong class="text-slate-800 dark:text-slate-200">Ventajas:</strong> no usa radiación y visualiza muy bien los tejidos blandos. <strong class="text-slate-800 dark:text-slate-200">Desventajas:</strong> más costosa y de mayor duración.</p>
+              <a href="https://www.msdmanuals.com/es/hogar/temas-especiales/pruebas-de-diagn%C3%B3stico-por-la-imagen-habituales/resonancia-magn%C3%A9tica-nuclear-rmn" target="_blank" rel="noopener" class="mt-2 inline-block text-xs font-medium text-teal-600 dark:text-teal-400 hover:underline">Fuente: Manual MSD ↗</a>
+            </div>
+          </article>
+
+          <article class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden grid md:grid-cols-[40%_1fr]">
+            <div class="relative aspect-[4/3] md:aspect-auto bg-slate-100 dark:bg-slate-800 min-h-[11rem]"><img src="IMG/genitourinario/urograma.webp" alt="Urograma descendente" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-[0.65rem] text-slate-400 p-2"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>IMG/genitourinario/urograma.webp</span></div></div>
+            <div class="p-5">
+              <h3 class="font-bold text-slate-900 dark:text-white">Urograma descendente (urografía excretora)</h3>
+              <p class="mt-1 text-sm text-slate-700 dark:text-slate-300">Estudio radiológico con contraste intravenoso que permite visualizar el recorrido de la orina. El contraste se filtra por los riñones e ilumina estructuras difíciles de ver en una radiografía convencional; se toman radiografías seriadas.</p>
+              <p class="mt-2 text-sm text-slate-600 dark:text-slate-400"><strong class="text-slate-800 dark:text-slate-200">Evalúa:</strong> riñones, pelvis renal, uréteres y vejiga. <strong class="text-slate-800 dark:text-slate-200">Diagnostica:</strong> obstrucciones, cálculos, tumores y malformaciones.</p>
+              <a href="https://www.cun.es/diccionario-medico/terminos/urografia-descendente" target="_blank" rel="noopener" class="mt-2 inline-block text-xs font-medium text-teal-600 dark:text-teal-400 hover:underline">Fuente: CUN ↗</a>
+            </div>
+          </article>
+
+          <article class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden grid md:grid-cols-[40%_1fr]">
+            <div class="relative aspect-[4/3] md:aspect-auto bg-slate-100 dark:bg-slate-800 min-h-[11rem]"><img src="IMG/genitourinario/uretrocistografia.webp" alt="Uretrocistografía miccional" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-[0.65rem] text-slate-400 p-2"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>IMG/genitourinario/uretrocistografia.webp</span></div></div>
+            <div class="p-5">
+              <h3 class="font-bold text-slate-900 dark:text-white">Uretrocistografía miccional</h3>
+              <p class="mt-1 text-sm text-slate-700 dark:text-slate-300">Prueba radiológica que estudia la vejiga y la uretra durante la micción. Se introduce una sonda, se llena la vejiga con contraste y se toman radiografías mientras el paciente orina.</p>
+              <p class="mt-2 text-sm text-slate-600 dark:text-slate-400"><strong class="text-slate-800 dark:text-slate-200">Diagnostica:</strong> reflujo vesicoureteral (la orina regresa hacia uréteres o riñones), estenosis uretral (estrechamiento) y alteraciones estructurales o funcionales de la vejiga.</p>
+              <a href="https://medlineplus.gov/spanish/ency/article/003784.htm" target="_blank" rel="noopener" class="mt-2 inline-block text-xs font-medium text-teal-600 dark:text-teal-400 hover:underline">Fuente: MedlinePlus ↗</a>
+            </div>
+          </article>
+
+          <article class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden grid md:grid-cols-[40%_1fr]">
+            <div class="relative aspect-[4/3] md:aspect-auto bg-slate-100 dark:bg-slate-800 min-h-[11rem]"><img src="IMG/genitourinario/gammagrafia-renal.webp" alt="Gammagrafía renal" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-[0.65rem] text-slate-400 p-2"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>IMG/genitourinario/gammagrafia-renal.webp</span></div></div>
+            <div class="p-5">
+              <h3 class="font-bold text-slate-900 dark:text-white">Gammagrafía renal</h3>
+              <p class="mt-1 text-sm text-slate-700 dark:text-slate-300">Estudio de medicina nuclear que evalúa la función de los riñones mediante radiofármacos seguros. Se inyecta el radiofármaco, llega a los riñones y una cámara especial detecta la radiación emitida.</p>
+              <p class="mt-2 text-sm text-slate-600 dark:text-slate-400"><strong class="text-slate-800 dark:text-slate-200">Evalúa:</strong> flujo sanguíneo renal, filtración, función de cada riñón por separado y obstrucciones. <strong class="text-slate-800 dark:text-slate-200">Ventaja:</strong> permite evaluar la función, no solo la anatomía.</p>
+              <a href="https://medlineplus.gov/spanish/ency/article/003790.htm" target="_blank" rel="noopener" class="mt-2 inline-block text-xs font-medium text-teal-600 dark:text-teal-400 hover:underline">Fuente: MedlinePlus ↗</a>
+            </div>
+          </article>
+
+          <article class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden grid md:grid-cols-[40%_1fr]">
+            <div class="relative aspect-[4/3] md:aspect-auto bg-slate-100 dark:bg-slate-800 min-h-[11rem]"><img src="IMG/genitourinario/biopsia-renal.webp" alt="Biopsia renal" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-[0.65rem] text-slate-400 p-2"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>IMG/genitourinario/biopsia-renal.webp</span></div></div>
+            <div class="p-5">
+              <h3 class="font-bold text-slate-900 dark:text-white">Biopsia renal</h3>
+              <p class="mt-1 text-sm text-slate-700 dark:text-slate-300">Procedimiento invasivo que obtiene una pequeña muestra de tejido renal para analizarla al microscopio. Se administra anestesia local y se introduce una aguja especial guiada por ecografía para extraer la muestra.</p>
+              <p class="mt-2 text-sm text-slate-600 dark:text-slate-400"><strong class="text-slate-800 dark:text-slate-200">Diagnostica:</strong> glomerulonefritis, síndrome nefrótico, enfermedad renal crónica, tumores y rechazo de trasplante. <strong class="text-slate-800 dark:text-slate-200">Ventaja:</strong> método más preciso para conocer la causa exacta. <strong class="text-slate-800 dark:text-slate-200">Riesgos:</strong> sangrado, dolor local y hematuria transitoria.</p>
+              <a href="https://www.mayoclinic.org/es/tests-procedures/kidney-biopsy/about/pac-20394494" target="_blank" rel="noopener" class="mt-2 inline-block text-xs font-medium text-teal-600 dark:text-teal-400 hover:underline">Fuente: Mayo Clinic ↗</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ============ Tabla diferencial ============ -->
+      <section class="mt-12">
+        <div class="flex items-center gap-3">
+          <div class="h-8 w-1.5 rounded-full bg-teal-500"></div>
+          <h2 class="text-xl font-bold text-slate-900 dark:text-white">Tabla diferencial</h2>
+        </div>
+        <figure class="mt-4">
+          <div class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+            <div class="relative aspect-[16/9] bg-slate-100 dark:bg-slate-800">
+              <img src="IMG/genitourinario/tabla-diferencial.webp" alt="Tabla diferencial de estudios del sistema urinario" class="absolute inset-0 h-full w-full object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-xs text-slate-400 p-3"><svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>IMG/genitourinario/tabla-diferencial.webp</span></div>
+            </div>
+          </div>
+          <figcaption class="mt-2 text-center text-sm text-slate-500 dark:text-slate-400">Tabla diferencial de los estudios del sistema urinario.</figcaption>
+        </figure>
+      </section>
+
+      <div class="mt-12 flex items-center justify-between border-t border-slate-200 dark:border-slate-800 pt-6">
+        <a href="genitourinario.html" class="text-sm text-slate-500 hover:text-indigo-600 dark:hover:text-indigo-400">← Sistema genitourinario</a>
+        <a href="enlaces.html"
+           class="inline-flex items-center gap-2 rounded-full bg-indigo-600 px-5 py-2.5 text-white text-sm font-semibold hover:bg-indigo-700">
+          Enlaces y referencias →
+        </a>
+      </div>
+    </div>
+  </main>
+</div>
+<script>
+  function toggleTheme(){
+    const html = document.documentElement;
+    html.classList.toggle('dark');
+    localStorage.theme = html.classList.contains('dark') ? 'dark' : 'light';
+  }
+</script>
+
+  <!-- ===== Lightbox: clic en una imagen para ampliarla ===== -->
+  <div id="lightbox" class="fixed inset-0 z-[60] hidden items-center justify-center bg-black/80 backdrop-blur-sm p-4 cursor-zoom-out" onclick="closeLightbox()">
+    <button onclick="closeLightbox()" aria-label="Cerrar"
+            class="absolute top-4 right-4 h-11 w-11 rounded-full bg-white/10 hover:bg-white/20 ring-1 ring-white/30 text-white grid place-items-center">
+      <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <figure class="flex flex-col items-center gap-3" onclick="event.stopPropagation()">
+      <img id="lightbox-img" src="" alt="" class="max-h-[85vh] max-w-[92vw] rounded-xl shadow-2xl object-contain">
+      <figcaption id="lightbox-cap" class="text-sm text-white/80"></figcaption>
+    </figure>
+  </div>
+  <script>
+    (function(){
+      const box = document.getElementById('lightbox');
+      const big = document.getElementById('lightbox-img');
+      const cap = document.getElementById('lightbox-cap');
+      document.querySelectorAll('main img').forEach(function(el){
+        el.classList.add('cursor-zoom-in');
+        el.addEventListener('click', function(ev){
+          ev.preventDefault(); ev.stopPropagation();
+          big.src = el.currentSrc || el.src;
+          big.alt = el.alt || '';
+          cap.textContent = el.alt || '';
+          box.classList.remove('hidden'); box.classList.add('flex');
+          document.body.style.overflow = 'hidden';
+        });
+      });
+      window.closeLightbox = function(){
+        box.classList.add('hidden'); box.classList.remove('flex');
+        document.body.style.overflow = '';
+      };
+      document.addEventListener('keydown', function(e){ if(e.key === 'Escape') window.closeLightbox(); });
+    })();
+  </script>
+</body>
+</html>
