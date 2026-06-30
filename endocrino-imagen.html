@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estudios imagenológicos · Sistema endocrino-metabólico</title>
+  <script>
+    if (localStorage.theme === 'dark' ||
+        (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = { darkMode: 'class' }</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style> body { font-family: 'Inter', system-ui, sans-serif; } </style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-200 transition-colors duration-300">
+<div class="min-h-screen flex">
+
+  <!-- ============ BARRA LATERAL ============ -->
+  <aside id="sidebar"
+         class="fixed lg:sticky top-0 z-40 h-screen w-72 shrink-0 -translate-x-full lg:translate-x-0
+                transition-transform bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800 flex flex-col">
+    <div class="px-5 py-5 border-b border-slate-100 dark:border-slate-800">
+      <a href="index.html" class="flex items-center gap-3">
+        <span class="h-10 w-10 rounded-xl bg-indigo-600 text-white flex items-center justify-center">
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12h4l2 5 4-12 2 7h6"/></svg>
+        </span>
+        <span>
+          <span class="block font-extrabold text-slate-800 dark:text-white leading-tight">Wiki Diagnóstico</span>
+          <span class="block text-xs text-slate-400">UEPD-04 · Medios de Diagnóstico</span>
+        </span>
+      </a>
+    </div>
+    <nav class="flex-1 overflow-y-auto px-3 py-4 space-y-1 text-sm">
+      <a href="index.html"        class="block rounded-lg px-3 py-2 font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Carátula</a>
+      <a href="introduccion.html" class="block rounded-lg px-3 py-2 font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Introducción</a>
+      <div class="my-2 border-t border-slate-100 dark:border-slate-800"></div>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-sky-50 dark:hover:bg-sky-500/10 group-open:bg-sky-50 dark:group-open:bg-sky-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-sky-500"></span>
+            <span class="truncate text-sm font-semibold text-sky-700 dark:text-sky-300">Fluidos corporales</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-sky-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-sky-100 dark:border-sky-500/30 pl-2">
+          <a href="componentes.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-sky-50 dark:hover:bg-sky-500/10 hover:text-sky-700 dark:hover:text-sky-300 transition">Componentes de la sangre</a>
+          <a href="hemograma.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-sky-50 dark:hover:bg-sky-500/10 hover:text-sky-700 dark:hover:text-sky-300 transition">Hemograma con diferencial</a>
+          <a href="fluidos.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-sky-50 dark:hover:bg-sky-500/10 hover:text-sky-700 dark:hover:text-sky-300 transition">Análisis de fluidos biológicos</a>
+          <a href="frotis.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-sky-50 dark:hover:bg-sky-500/10 hover:text-sky-700 dark:hover:text-sky-300 transition">Frotis sanguíneo</a>
+        </div>
+      </details>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-emerald-50 dark:hover:bg-emerald-500/10 group-open:bg-emerald-50 dark:group-open:bg-emerald-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-emerald-500"></span>
+            <span class="truncate text-sm font-semibold text-emerald-700 dark:text-emerald-300">Medulograma</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-emerald-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-emerald-100 dark:border-emerald-500/30 pl-2">
+          <a href="medulograma.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-emerald-50 dark:hover:bg-emerald-500/10 hover:text-emerald-700 dark:hover:text-emerald-300 transition">Medulograma</a>
+        </div>
+      </details>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-rose-50 dark:hover:bg-rose-500/10 group-open:bg-rose-50 dark:group-open:bg-rose-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-rose-500"></span>
+            <span class="truncate text-sm font-semibold text-rose-700 dark:text-rose-300">Embarazo</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-rose-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-rose-100 dark:border-rose-500/30 pl-2">
+          <a href="embarazo.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-rose-50 dark:hover:bg-rose-500/10 hover:text-rose-700 dark:hover:text-rose-300 transition">Diagnóstico en el embarazo</a>
+        </div>
+      </details>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-fuchsia-50 dark:hover:bg-fuchsia-500/10 group-open:bg-fuchsia-50 dark:group-open:bg-fuchsia-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-fuchsia-500"></span>
+            <span class="truncate text-sm font-semibold text-fuchsia-700 dark:text-fuchsia-300">Trastornos autoinmunitarios</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-fuchsia-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-fuchsia-100 dark:border-fuchsia-500/30 pl-2">
+          <a href="autoinmunes.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-fuchsia-50 dark:hover:bg-fuchsia-500/10 hover:text-fuchsia-700 dark:hover:text-fuchsia-300 transition">Trastornos autoinmunitarios</a>
+        </div>
+      </details>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-purple-50 dark:hover:bg-purple-500/10 group-open:bg-purple-50 dark:group-open:bg-purple-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-purple-500"></span>
+            <span class="truncate text-sm font-semibold text-purple-700 dark:text-purple-300">Neoplasias</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-purple-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-purple-100 dark:border-purple-500/30 pl-2">
+          <a href="oncologia.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-purple-50 dark:hover:bg-purple-500/10 hover:text-purple-700 dark:hover:text-purple-300 transition">Oncología y neoplasias</a>
+        </div>
+      </details>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-orange-50 dark:hover:bg-orange-500/10 group-open:bg-orange-50 dark:group-open:bg-orange-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-orange-500"></span>
+            <span class="truncate text-sm font-semibold text-orange-700 dark:text-orange-300">Sistema osteomioarticular</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-orange-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-orange-100 dark:border-orange-500/30 pl-2">
+          <a href="soma.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-orange-50 dark:hover:bg-orange-500/10 hover:text-orange-700 dark:hover:text-orange-300 transition">Sistema osteomioarticular</a>
+        </div>
+      </details>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-cyan-50 dark:hover:bg-cyan-500/10 group-open:bg-cyan-50 dark:group-open:bg-cyan-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-cyan-500"></span>
+            <span class="truncate text-sm font-semibold text-cyan-700 dark:text-cyan-300">Estudios neurológicos</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-cyan-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-cyan-100 dark:border-cyan-500/30 pl-2">
+          <a href="neurologia.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-cyan-50 dark:hover:bg-cyan-500/10 hover:text-cyan-700 dark:hover:text-cyan-300 transition">Neurología avanzada</a>
+        </div>
+      </details>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-teal-50 dark:hover:bg-teal-500/10 group-open:bg-teal-50 dark:group-open:bg-teal-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-teal-500"></span>
+            <span class="truncate text-sm font-semibold text-teal-700 dark:text-teal-300">Sistema genitourinario</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-teal-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-teal-100 dark:border-teal-500/30 pl-2">
+          <a href="genitourinario.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-teal-50 dark:hover:bg-teal-500/10 hover:text-teal-700 dark:hover:text-teal-300 transition">Sistema genitourinario</a>
+          <a href="pruebas-urinarias.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-teal-50 dark:hover:bg-teal-500/10 hover:text-teal-700 dark:hover:text-teal-300 transition">Pruebas diagnósticas urinarias</a>
+        </div>
+      </details>
+      <details class="group" open>
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-amber-50 dark:hover:bg-amber-500/10 group-open:bg-amber-50 dark:group-open:bg-amber-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-amber-500"></span>
+            <span class="truncate text-sm font-semibold text-amber-700 dark:text-amber-300">Sistema endocrino-metabólico</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-amber-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-amber-100 dark:border-amber-500/30 pl-2">
+          <a href="endocrino.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-amber-50 dark:hover:bg-amber-500/10 hover:text-amber-700 dark:hover:text-amber-300 transition">Estudios de laboratorio</a>
+          <a href="endocrino-imagen.html" class="block rounded-lg px-3 py-1.5 font-semibold bg-amber-100 dark:bg-amber-500/20 text-amber-800 dark:text-amber-200">Estudios imagenológicos</a>
+          <a href="endocrino-patologia.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-amber-50 dark:hover:bg-amber-500/10 hover:text-amber-700 dark:hover:text-amber-300 transition">Estudios anatomopatológicos</a>
+        </div>
+      </details>
+      <div class="my-2 border-t border-slate-100 dark:border-slate-800"></div>
+      <a href="enlaces.html" class="block rounded-lg px-3 py-2 font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Enlaces y referencias</a>
+    </nav>
+    <div class="px-4 py-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
+      <span class="text-xs text-slate-400">© Proyecto académico</span>
+      <button onclick="toggleTheme()" aria-label="Cambiar tema"
+              class="h-9 w-9 rounded-full grid place-items-center ring-1 ring-slate-200 dark:ring-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 transition text-slate-600 dark:text-slate-300">
+        <svg class="dark:hidden h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="hidden dark:block h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path stroke-linecap="round" d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </button>
+    </div>
+  </aside>
+
+  <button onclick="document.getElementById('sidebar').classList.toggle('-translate-x-full')"
+          class="lg:hidden fixed bottom-5 right-5 z-50 h-12 w-12 rounded-full bg-indigo-600 text-white shadow-lg grid place-items-center">
+    <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+  </button>
+
+  <!-- ============ CONTENIDO ============ -->
+  <main class="flex-1 min-w-0">
+    <div class="max-w-4xl mx-auto px-6 py-10 lg:py-14">
+
+      <nav class="text-xs text-slate-400 mb-3">Inicio / Sistema endocrino-metabólico / <span class="text-slate-600 dark:text-slate-300">Estudios imagenológicos</span></nav>
+
+      <div class="flex items-center gap-4">
+        <div class="h-12 w-1.5 rounded-full bg-amber-500"></div>
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">Estudios imagenológicos</h1>
+      </div>
+      <p class="mt-2 text-amber-700 dark:text-amber-300 font-semibold">Sistema endocrino-metabólico · 11 estudios de imagen</p>
+      <p class="mt-4 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">Los estudios de imagen permiten valorar la estructura y el funcionamiento de las glándulas endocrinas (tiroides, paratiroides, suprarrenales, páncreas, hipófisis) y del hueso, detectar tumores y guiar biopsias. A continuación, cada estudio con su utilidad e indicaciones antes, durante y después.</p>
+
+      <div class="mt-8 space-y-6">
+
+        <!-- Ecografía tiroidea -->
+        <article class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="grid md:grid-cols-[36%_1fr]">
+            <div class="relative aspect-[16/11] md:aspect-auto bg-slate-100 dark:bg-slate-800 min-h-[12rem]"><img src="IMG/endocrino/eco-tiroidea.webp" alt="Ecografía tiroidea" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-[0.65rem] text-slate-400 p-2"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>eco-tiroidea.webp</span></div></div>
+            <div class="p-5">
+              <h3 class="font-bold text-lg text-slate-900 dark:text-white">1 · Ecografía tiroidea</h3>
+              <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">Estudio de imagen que usa ondas sonoras (ultrasonido), sin radiación, para observar la glándula tiroides y evaluar su tamaño, forma y estructura. Es fundamental para detectar nódulos, apoyar la obtención de muestras para estudio citopatológico, el seguimiento posoperatorio (detectar y confirmar recidivas cervicales precozmente), el diagnóstico y la monitorización de enfermedades benignas difusas y nodulares, y como apoyo a tratamientos mínimamente invasivos.</p>
+              <p class="mt-3 text-xs font-bold uppercase tracking-wide text-amber-700 dark:text-amber-300">¿Para qué sirve?</p>
+              <p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Detectar nódulos tiroideos, identificar quistes, diagnosticar bocio, evaluar inflamación de la tiroides (tiroiditis) y guiar biopsias por aspiración (PAAF).</p>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 p-5 grid sm:grid-cols-2 gap-3 text-sm">
+            <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Resultados normales</p><p class="text-slate-600 dark:text-slate-400">La tiroides tiene tamaño, forma y posición normales.</p></div>
+            <div class="rounded-xl bg-rose-50 dark:bg-rose-500/10 ring-1 ring-rose-100 dark:ring-rose-500/20 p-3"><p class="font-bold text-rose-700 dark:text-rose-300 mb-1">Resultados anormales</p><p class="text-slate-600 dark:text-slate-400">Quistes (nódulos con líquido), bocio (agrandamiento), nódulos tiroideos, tiroiditis o cáncer tiroideo (estos dos requieren biopsia).</p></div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 p-5 grid sm:grid-cols-3 gap-3 text-xs">
+            <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes</p><p class="text-slate-600 dark:text-slate-400">No requiere ayuno. Retirar collares o accesorios del cuello.</p></div>
+            <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3"><p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante</p><p class="text-slate-600 dark:text-slate-400">El paciente se acuesta con el cuello extendido, se aplica gel conductor y el transductor se desliza sobre el cuello.</p></div>
+            <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después</p><p class="text-slate-600 dark:text-slate-400">Puede continuar sus actividades normalmente. No necesita cuidados especiales.</p></div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 px-5 py-3 text-xs text-slate-500 dark:text-slate-400 flex flex-wrap gap-x-4 gap-y-1">
+            <span class="font-semibold">Fuentes:</span>
+            <a href="https://www.elsevier.es/es-revista-revista-medica-clinica-las-condes-202-articulo-ecografia-tiroides-S071686401830083X" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">elsevier.es</a>
+            <a href="https://medlineplus.gov/spanish/ency/article/003776.htm" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">medlineplus.gov</a>
+          </div>
+        </article>
+
+        <!-- Ecografía paratiroidea -->
+        <article class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="grid md:grid-cols-[36%_1fr]">
+            <div class="relative aspect-[16/11] md:aspect-auto bg-slate-100 dark:bg-slate-800 min-h-[12rem]"><img src="IMG/endocrino/eco-paratiroidea.webp" alt="Ecografía paratiroidea" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-[0.65rem] text-slate-400 p-2"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>eco-paratiroidea.webp</span></div></div>
+            <div class="p-5">
+              <h3 class="font-bold text-lg text-slate-900 dark:text-white">2 · Ecografía paratiroidea</h3>
+              <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">Permite observar las glándulas paratiroides, encargadas de regular el calcio y el fósforo del organismo. Las paratiroides normales no suelen ser visibles; su agrandamiento, característico del hiperparatiroidismo, sí se observa con frecuencia como masas hipoecoicas (gris oscuro) adyacentes a la glándula tiroides.</p>
+              <p class="mt-3 text-xs font-bold uppercase tracking-wide text-amber-700 dark:text-amber-300">¿Para qué sirve?</p>
+              <p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Detectar adenomas paratiroideos, diagnosticar hiperparatiroidismo y localizar glándulas aumentadas de tamaño antes de una cirugía.</p>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 p-5 grid sm:grid-cols-3 gap-3 text-xs">
+            <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes</p><p class="text-slate-600 dark:text-slate-400">No requiere preparación especial.</p></div>
+            <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3"><p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante</p><p class="text-slate-600 dark:text-slate-400">Similar a la ecografía tiroidea; se examina la región del cuello.</p></div>
+            <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después</p><p class="text-slate-600 dark:text-slate-400">Cuidados inmediatos: no existen restricciones.</p></div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 px-5 py-3 text-xs text-slate-500 dark:text-slate-400 flex flex-wrap gap-x-4 gap-y-1">
+            <span class="font-semibold">Fuente:</span>
+            <a href="https://www.drfrancishall.co.nz/ultrasound-scan-of-the-thyroid-and-parathyroids/" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">drfrancishall.co.nz</a>
+          </div>
+        </article>
+
+        <!-- Ecografía suprarrenal -->
+        <article class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="grid md:grid-cols-[36%_1fr]">
+            <div class="relative aspect-[16/11] md:aspect-auto bg-slate-100 dark:bg-slate-800 min-h-[12rem]"><img src="IMG/endocrino/eco-suprarrenal.webp" alt="Ecografía suprarrenal" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-[0.65rem] text-slate-400 p-2"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>eco-suprarrenal.webp</span></div></div>
+            <div class="p-5">
+              <h3 class="font-bold text-lg text-slate-900 dark:text-white">3 · Ecografía suprarrenal</h3>
+              <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">Estudio mediante ultrasonido que evalúa las glándulas suprarrenales, ubicadas encima de los riñones. El ecografista usa un transductor de alta frecuencia para obtener imágenes transversales en diferentes planos, lo que permite una evaluación precisa de su tamaño, forma, ecotextura y vascularización.</p>
+              <p class="mt-3 text-xs font-bold uppercase tracking-wide text-amber-700 dark:text-amber-300">¿Para qué sirve?</p>
+              <p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Detectar tumores, observar quistes, identificar hemorragias y valorar el aumento de tamaño de las glándulas.</p>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 p-5 grid sm:grid-cols-3 gap-3 text-xs">
+            <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes</p><p class="text-slate-600 dark:text-slate-400">Ayuno de 6–8 horas (según indicación médica).</p></div>
+            <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3"><p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante</p><p class="text-slate-600 dark:text-slate-400">Se aplica gel en el abdomen y el especialista mueve el transductor.</p></div>
+            <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después</p><p class="text-slate-600 dark:text-slate-400">Alimentación normal.</p></div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 px-5 py-3 text-xs text-slate-500 dark:text-slate-400 flex flex-wrap gap-x-4 gap-y-1">
+            <span class="font-semibold">Fuente:</span>
+            <a href="https://radiopaedia.org/articles/adrenal-gland-ultrasound-1" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">radiopaedia.org</a>
+          </div>
+        </article>
+
+        <!-- Ecografía pancreática -->
+        <article class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="grid md:grid-cols-[36%_1fr]">
+            <div class="relative aspect-[16/11] md:aspect-auto bg-slate-100 dark:bg-slate-800 min-h-[12rem]"><img src="IMG/endocrino/eco-pancreatica.webp" alt="Ecografía pancreática" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-[0.65rem] text-slate-400 p-2"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>eco-pancreatica.webp</span></div></div>
+            <div class="p-5">
+              <h3 class="font-bold text-lg text-slate-900 dark:text-white">4 · Ecografía pancreática</h3>
+              <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">Permite visualizar el páncreas, órgano que produce insulina y enzimas digestivas. Se usa para evaluar tumores malignos del páncreas, pancreatitis y sus complicaciones, y otras patologías pancreáticas.</p>
+              <p class="mt-3 text-xs font-bold uppercase tracking-wide text-amber-700 dark:text-amber-300">¿Para qué sirve?</p>
+              <p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Diagnosticar pancreatitis, detectar tumores, identificar quistes y evaluar alteraciones pancreáticas.</p>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 p-5">
+            <p class="text-xs font-bold uppercase tracking-wide text-amber-700 dark:text-amber-300">Patologías y hallazgos ecográficos</p>
+            <div class="mt-2 grid sm:grid-cols-2 gap-3 text-sm">
+              <div class="rounded-xl bg-slate-50 dark:bg-slate-800/50 ring-1 ring-slate-200 dark:ring-slate-700 p-3"><p class="font-bold text-slate-700 dark:text-slate-200">Pancreatitis aguda</p><p class="text-slate-600 dark:text-slate-400">Páncreas inflamado e hipoecoico, con edema en los tejidos circundantes.</p></div>
+              <div class="rounded-xl bg-slate-50 dark:bg-slate-800/50 ring-1 ring-slate-200 dark:ring-slate-700 p-3"><p class="font-bold text-slate-700 dark:text-slate-200">Pancreatitis crónica</p><p class="text-slate-600 dark:text-slate-400">Glándula de forma irregular, calcificaciones y dilatación del conducto pancreático.</p></div>
+              <div class="rounded-xl bg-slate-50 dark:bg-slate-800/50 ring-1 ring-slate-200 dark:ring-slate-700 p-3"><p class="font-bold text-slate-700 dark:text-slate-200">Pseudoquiste pancreático</p><p class="text-slate-600 dark:text-slate-400">Saco bien definido, hipoecoico o anecoico, lleno de líquido, adyacente al páncreas.</p></div>
+              <div class="rounded-xl bg-slate-50 dark:bg-slate-800/50 ring-1 ring-slate-200 dark:ring-slate-700 p-3"><p class="font-bold text-slate-700 dark:text-slate-200">Quistes pancreáticos</p><p class="text-slate-600 dark:text-slate-400">Pueden aparecer anecoicos o con detritos internos en las imágenes de ultrasonido.</p></div>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 p-5 grid sm:grid-cols-3 gap-3 text-xs">
+            <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes</p><p class="text-slate-600 dark:text-slate-400">Ayuno de 6–8 horas.</p></div>
+            <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3"><p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante</p><p class="text-slate-600 dark:text-slate-400">Se examina el abdomen superior.</p></div>
+            <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después</p><p class="text-slate-600 dark:text-slate-400">Puede comer normalmente.</p></div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 px-5 py-3 text-xs text-slate-500 dark:text-slate-400 flex flex-wrap gap-x-4 gap-y-1">
+            <span class="font-semibold">Fuente:</span>
+            <a href="https://radiopaedia.org/articles/pancreatic-ultrasound" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">radiopaedia.org</a>
+          </div>
+        </article>
+
+        <!-- Ecografía pélvica -->
+        <article class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="grid md:grid-cols-[36%_1fr]">
+            <div class="relative aspect-[16/11] md:aspect-auto bg-slate-100 dark:bg-slate-800 min-h-[12rem]"><img src="IMG/endocrino/eco-pelvica.webp" alt="Ecografía pélvica" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-[0.65rem] text-slate-400 p-2"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>eco-pelvica.webp</span></div></div>
+            <div class="p-5">
+              <h3 class="font-bold text-lg text-slate-900 dark:text-white">5 · Ecografía pélvica</h3>
+              <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">Estudio mediante ultrasonido que evalúa los órganos de la pelvis (útero, ovarios, trompas de Falopio, vejiga y tejidos circundantes). En endocrinología se usa principalmente para valorar los ovarios, especialmente en el síndrome de ovario poliquístico. Ayuda a detectar fibromas, enfermedad inflamatoria pélvica y ciertos tipos de cáncer.</p>
+              <p class="mt-3 text-xs font-bold uppercase tracking-wide text-amber-700 dark:text-amber-300">¿Para qué sirve?</p>
+              <p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Diagnosticar ovario poliquístico, detectar quistes ováricos, evaluar útero y ovarios e investigar alteraciones hormonales.</p>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 p-5 grid sm:grid-cols-3 gap-3 text-xs">
+            <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes</p><p class="text-slate-600 dark:text-slate-400">Puede requerir vejiga llena (ecografía abdominal); para la transvaginal suele solicitarse vejiga vacía.</p></div>
+            <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3"><p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante</p><p class="text-slate-600 dark:text-slate-400">Se coloca el transductor sobre el abdomen o por vía vaginal.</p></div>
+            <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después</p><p class="text-slate-600 dark:text-slate-400">Sin restricciones.</p></div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 px-5 py-3 text-xs text-slate-500 dark:text-slate-400 flex flex-wrap gap-x-4 gap-y-1">
+            <span class="font-semibold">Fuente:</span>
+            <a href="https://www.apollohospitals.com/es/diagnostics-investigations/pelvic-ultrasound" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">apollohospitals.com</a>
+          </div>
+        </article>
+
+        <!-- Doppler tiroideo -->
+        <article class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="grid md:grid-cols-[36%_1fr]">
+            <div class="relative aspect-[16/11] md:aspect-auto bg-slate-100 dark:bg-slate-800 min-h-[12rem]"><img src="IMG/endocrino/doppler-tiroideo.png" alt="Doppler tiroideo" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-[0.65rem] text-slate-400 p-2"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>doppler-tiroideo.png</span></div></div>
+            <div class="p-5">
+              <h3 class="font-bold text-lg text-slate-900 dark:text-white">6 · Doppler tiroideo</h3>
+              <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">Ecografía especial que estudia el flujo sanguíneo de la glándula tiroides, usando ondas sonoras para generar imágenes de la tiroides a nivel del cuello.</p>
+              <p class="mt-3 text-xs font-bold uppercase tracking-wide text-amber-700 dark:text-amber-300">¿Cuándo se utiliza?</p>
+              <ul class="mt-1 space-y-1 text-sm text-slate-600 dark:text-slate-400">
+                <li class="flex gap-2"><span class="text-amber-500">1.</span>Observar enfermedades difusas de la glándula (hipertiroidismo, hipotiroidismo y vascularización glandular).</li>
+                <li class="flex gap-2"><span class="text-amber-500">2.</span>Nódulos tiroideos, definiendo el riesgo de malignidad del nódulo.</li>
+              </ul>
+              <p class="mt-3 text-xs font-bold uppercase tracking-wide text-amber-700 dark:text-amber-300">¿Para qué sirve?</p>
+              <p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Evaluar la vascularización, diagnosticar hipertiroidismo, diferenciar nódulos benignos de malignos y valorar inflamaciones.</p>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 p-5 grid sm:grid-cols-3 gap-3 text-xs">
+            <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes</p><p class="text-slate-600 dark:text-slate-400">No requiere ayuno ni suspender medicamentos. Usar ropa de cuello holgado y retirar collares.</p></div>
+            <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3"><p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante</p><p class="text-slate-600 dark:text-slate-400">Boca arriba, se aplica gel en el cuello y se pasa un transductor; se escucha el sonido del flujo sanguíneo.</p></div>
+            <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después</p><p class="text-slate-600 dark:text-slate-400">Se limpia el gel y se retoman las actividades de inmediato, sin efectos secundarios.</p></div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 px-5 py-3 text-xs text-slate-500 dark:text-slate-400 flex flex-wrap gap-x-4 gap-y-1">
+            <span class="font-semibold">Fuente:</span>
+            <a href="https://resobert.es/pruebas-radiologicas/eco-doppler-tiroides/" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">resobert.es</a>
+          </div>
+        </article>
+
+        <!-- TC -->
+        <article class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="grid md:grid-cols-[36%_1fr]">
+            <div class="relative aspect-[16/11] md:aspect-auto bg-slate-100 dark:bg-slate-800 min-h-[12rem]"><img src="IMG/endocrino/tc.png" alt="Tomografía computarizada" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-[0.65rem] text-slate-400 p-2"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>tc.webp</span></div></div>
+            <div class="p-5">
+              <h3 class="font-bold text-lg text-slate-900 dark:text-white">7 · Tomografía computarizada (TC)</h3>
+              <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">Utiliza rayos X y una computadora para obtener imágenes detalladas del interior del cuerpo en cortes transversales (imágenes tomográficas), más detalladas que las radiografías convencionales. Los cortes sucesivos se "apilan" digitalmente para formar una imagen tridimensional que facilita identificar estructuras, tumores o anomalías.</p>
+              <p class="mt-3 text-xs font-bold uppercase tracking-wide text-amber-700 dark:text-amber-300">¿Para qué sirve?</p>
+              <p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Detectar tumores endocrinos, evaluar glándulas suprarrenales, estudiar el páncreas y buscar metástasis.</p>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 p-5 grid sm:grid-cols-3 gap-3 text-xs">
+            <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes</p><p class="text-slate-600 dark:text-slate-400">Ayuno si se administra contraste. Informar alergias o embarazo.</p></div>
+            <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3"><p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante</p><p class="text-slate-600 dark:text-slate-400">El paciente permanece acostado mientras la camilla se desplaza por el tomógrafo.</p></div>
+            <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después</p><p class="text-slate-600 dark:text-slate-400">Beber abundante agua si recibió contraste.</p></div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 px-5 py-3 text-xs text-slate-500 dark:text-slate-400 flex flex-wrap gap-x-4 gap-y-1">
+            <span class="font-semibold">Fuente:</span>
+            <a href="https://www.nibib.nih.gov/espanol/temas-cientificos/tomograf%C3%ADa-computarizada-tc" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">nibib.nih.gov</a>
+          </div>
+        </article>
+
+        <!-- RM -->
+        <article class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="grid md:grid-cols-[36%_1fr]">
+            <div class="relative aspect-[16/11] md:aspect-auto bg-slate-100 dark:bg-slate-800 min-h-[12rem]"><img src="IMG/endocrino/rm.jpg" alt="Resonancia magnética" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-[0.65rem] text-slate-400 p-2"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>rm.webp</span></div></div>
+            <div class="p-5">
+              <h3 class="font-bold text-lg text-slate-900 dark:text-white">8 · Resonancia magnética (RM)</h3>
+              <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">Utiliza un potente campo magnético y ondas de radio para obtener imágenes de alta resolución. Es una manera no invasiva de examinar órganos, tejidos y el sistema esquelético, y ayuda a diagnosticar diversas afecciones.</p>
+              <p class="mt-3 text-xs font-bold uppercase tracking-wide text-amber-700 dark:text-amber-300">¿Para qué sirve?</p>
+              <p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Estudiar la hipófisis, evaluar glándulas suprarrenales, detectar tumores endocrinos y analizar tejidos blandos.</p>
+              <p class="mt-2 text-xs text-slate-500 dark:text-slate-400"><strong class="text-emerald-600 dark:text-emerald-400">Ventajas:</strong> no utiliza radiación y ofrece excelente calidad de imagen.</p>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 p-5 grid sm:grid-cols-3 gap-3 text-xs">
+            <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes</p><p class="text-slate-600 dark:text-slate-400">Retirar objetos metálicos. Informar si tiene marcapasos o implantes.</p></div>
+            <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3"><p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante</p><p class="text-slate-600 dark:text-slate-400">Permanecer inmóvil dentro del equipo.</p></div>
+            <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después</p><p class="text-slate-600 dark:text-slate-400">No requiere cuidados especiales.</p></div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 px-5 py-3 text-xs text-slate-500 dark:text-slate-400 flex flex-wrap gap-x-4 gap-y-1">
+            <span class="font-semibold">Fuente:</span>
+            <a href="https://www.mayoclinic.org/es/tests-procedures/mri/about/pac-20384768" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">mayoclinic.org</a>
+          </div>
+        </article>
+
+        <!-- Gammagrafía tiroidea -->
+        <article class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="grid md:grid-cols-[36%_1fr]">
+            <div class="relative aspect-[16/11] md:aspect-auto bg-slate-100 dark:bg-slate-800 min-h-[12rem]"><img src="IMG/endocrino/gammagrafia-tiroidea.png" alt="Gammagrafía tiroidea" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-[0.65rem] text-slate-400 p-2"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>gammagrafia-tiroidea.webp</span></div></div>
+            <div class="p-5">
+              <h3 class="font-bold text-lg text-slate-900 dark:text-white">9 · Gammagrafía tiroidea</h3>
+              <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">Estudio de medicina nuclear que usa una pequeña cantidad de material radiactivo para evaluar el funcionamiento de la tiroides. Estudia su estructura y función de forma no invasiva: se obtienen imágenes precisas con una cámara especial que detecta las señales que emite la sustancia radiactiva inyectada en dosis bajas.</p>
+              <p class="mt-3 text-xs font-bold uppercase tracking-wide text-amber-700 dark:text-amber-300">¿Para qué sirve?</p>
+              <p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Identificar nódulos calientes y fríos, diagnosticar hipertiroidismo y evaluar la función tiroidea.</p>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 p-5 grid sm:grid-cols-3 gap-3 text-xs">
+            <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes</p><p class="text-slate-600 dark:text-slate-400">Evitar medicamentos con yodo si el médico lo indica. Informar embarazo o lactancia.</p></div>
+            <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3"><p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante</p><p class="text-slate-600 dark:text-slate-400">Se administra el radiofármaco y luego se obtienen imágenes con una cámara gamma.</p></div>
+            <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después</p><p class="text-slate-600 dark:text-slate-400">Beber abundante agua para eliminar el radiofármaco.</p></div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 px-5 py-3 text-xs text-slate-500 dark:text-slate-400 flex flex-wrap gap-x-4 gap-y-1">
+            <span class="font-semibold">Fuente:</span>
+            <a href="https://www.quironsalud.com/es/pruebas-diagnosticas/gammagrafia-tiroides" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">quironsalud.com</a>
+          </div>
+        </article>
+
+        <!-- PET-CT -->
+        <article class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="grid md:grid-cols-[36%_1fr]">
+            <div class="relative aspect-[16/11] md:aspect-auto bg-slate-100 dark:bg-slate-800 min-h-[12rem]"><img src="IMG/endocrino/pet-ct.png" alt="PET-CT" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-[0.65rem] text-slate-400 p-2"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>pet-ct.webp</span></div></div>
+            <div class="p-5">
+              <h3 class="font-bold text-lg text-slate-900 dark:text-white">10 · PET-CT</h3>
+              <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">Combina la tomografía por emisión de positrones (PET), que muestra la actividad metabólica y evidencia las diferencias entre tejido sano y enfermo, con la TC, que aporta la anatomía y localiza con precisión las anomalías observadas en la PET. Es una técnica sencilla, indolora y segura; la exposición a la radiación no es suficiente para provocar daños y el radiofármaco se usa en dosis pequeñas y de vida media corta (110 minutos).</p>
+              <p class="mt-3 text-xs font-bold uppercase tracking-wide text-amber-700 dark:text-amber-300">¿Para qué sirve?</p>
+              <p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Detectar tumores endocrinos, buscar metástasis, evaluar la respuesta al tratamiento e identificar recurrencias del cáncer.</p>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 p-5 grid sm:grid-cols-3 gap-3 text-xs">
+            <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes</p><p class="text-slate-600 dark:text-slate-400">Ayuno de 4–6 horas. Control de glucosa en pacientes diabéticos.</p></div>
+            <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3"><p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante</p><p class="text-slate-600 dark:text-slate-400">Se inyecta un radiofármaco y se espera aproximadamente una hora antes del estudio.</p></div>
+            <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después</p><p class="text-slate-600 dark:text-slate-400">Beber abundante agua. Evitar contacto cercano con embarazadas y niños durante algunas horas, según indicación médica.</p></div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 px-5 py-3 text-xs text-slate-500 dark:text-slate-400 flex flex-wrap gap-x-4 gap-y-1">
+            <span class="font-semibold">Fuente:</span>
+            <a href="https://www.solca.med.ec/pet-scan/" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">solca.med.ec</a>
+          </div>
+        </article>
+
+        <!-- Densitometría -->
+        <article class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="grid md:grid-cols-[36%_1fr]">
+            <div class="relative aspect-[16/11] md:aspect-auto bg-slate-100 dark:bg-slate-800 min-h-[12rem]"><img src="IMG/endocrino/densitometria.png" alt="Densitometría ósea (DEXA)" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-[0.65rem] text-slate-400 p-2"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>densitometria.webp</span></div></div>
+            <div class="p-5">
+              <h3 class="font-bold text-lg text-slate-900 dark:text-white">11 · Densitometría ósea (DEXA)</h3>
+              <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">Estudio que mide la densidad mineral de los huesos mediante una dosis muy baja de rayos X. Los huesos con más minerales son más densos, más fuertes y menos propensos a quebrarse; la medición muestra su fortaleza y grosor (masa o densidad ósea).</p>
+              <p class="mt-3 text-xs font-bold uppercase tracking-wide text-amber-700 dark:text-amber-300">¿Para qué sirve?</p>
+              <p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Diagnosticar osteoporosis, detectar osteopenia, valorar el riesgo de fracturas y controlar la respuesta al tratamiento.</p>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 p-5 grid sm:grid-cols-3 gap-3 text-xs">
+            <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes</p><p class="text-slate-600 dark:text-slate-400">No tomar suplementos de calcio 24 horas antes (si el médico lo indica). Usar ropa sin piezas metálicas.</p></div>
+            <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3"><p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante</p><p class="text-slate-600 dark:text-slate-400">El paciente permanece acostado mientras el equipo escanea la columna y la cadera.</p></div>
+            <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después</p><p class="text-slate-600 dark:text-slate-400">Puede realizar sus actividades normales.</p></div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 px-5 py-3 text-xs text-slate-500 dark:text-slate-400 flex flex-wrap gap-x-4 gap-y-1">
+            <span class="font-semibold">Fuente:</span>
+            <a href="https://medlineplus.gov/spanish/pruebas-de-laboratorio/densitometria-osea/" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">medlineplus.gov</a>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="mt-12 flex items-center justify-between border-t border-slate-200 dark:border-slate-800 pt-6">
+        <a href="endocrino.html" class="text-sm text-slate-500 hover:text-indigo-600 dark:hover:text-indigo-400">← Estudios de laboratorio</a>
+        <a href="endocrino-patologia.html"
+           class="inline-flex items-center gap-2 rounded-full bg-indigo-600 px-5 py-2.5 text-white text-sm font-semibold hover:bg-indigo-700">
+          Estudios anatomopatológicos →
+        </a>
+      </div>
+    </div>
+  </main>
+</div>
+<script>
+  function toggleTheme(){
+    const html = document.documentElement;
+    html.classList.toggle('dark');
+    localStorage.theme = html.classList.contains('dark') ? 'dark' : 'light';
+  }
+</script>
+
+  <!-- ===== Lightbox: clic en una imagen para ampliarla ===== -->
+  <div id="lightbox" class="fixed inset-0 z-[60] hidden items-center justify-center bg-black/80 backdrop-blur-sm p-4 cursor-zoom-out" onclick="closeLightbox()">
+    <button onclick="closeLightbox()" aria-label="Cerrar"
+            class="absolute top-4 right-4 h-11 w-11 rounded-full bg-white/10 hover:bg-white/20 ring-1 ring-white/30 text-white grid place-items-center">
+      <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <figure class="flex flex-col items-center gap-3" onclick="event.stopPropagation()">
+      <img id="lightbox-img" src="" alt="" class="max-h-[85vh] max-w-[92vw] rounded-xl shadow-2xl object-contain">
+      <figcaption id="lightbox-cap" class="text-sm text-white/80"></figcaption>
+    </figure>
+  </div>
+  <script>
+    (function(){
+      const box = document.getElementById('lightbox');
+      const big = document.getElementById('lightbox-img');
+      const cap = document.getElementById('lightbox-cap');
+      document.querySelectorAll('main img').forEach(function(el){
+        el.classList.add('cursor-zoom-in');
+        el.addEventListener('click', function(ev){
+          ev.preventDefault(); ev.stopPropagation();
+          big.src = el.currentSrc || el.src;
+          big.alt = el.alt || '';
+          cap.textContent = el.alt || '';
+          box.classList.remove('hidden'); box.classList.add('flex');
+          document.body.style.overflow = 'hidden';
+        });
+      });
+      window.closeLightbox = function(){
+        box.classList.add('hidden'); box.classList.remove('flex');
+        document.body.style.overflow = '';
+      };
+      document.addEventListener('keydown', function(e){ if(e.key === 'Escape') window.closeLightbox(); });
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laboratorio: glucosa y lípidos · Sistema endocrino-metabólico</title>
+  <script>
+    if (localStorage.theme === 'dark' ||
+        (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = { darkMode: 'class' }</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style> body { font-family: 'Inter', system-ui, sans-serif; } </style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-200 transition-colors duration-300">
+<div class="min-h-screen flex">
+
+  <!-- ============ BARRA LATERAL ============ -->
+  <aside id="sidebar"
+         class="fixed lg:sticky top-0 z-40 h-screen w-72 shrink-0 -translate-x-full lg:translate-x-0
+                transition-transform bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800 flex flex-col">
+    <div class="px-5 py-5 border-b border-slate-100 dark:border-slate-800">
+      <a href="index.html" class="flex items-center gap-3">
+        <span class="h-10 w-10 rounded-xl bg-indigo-600 text-white flex items-center justify-center">
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12h4l2 5 4-12 2 7h6"/></svg>
+        </span>
+        <span>
+          <span class="block font-extrabold text-slate-800 dark:text-white leading-tight">Wiki Diagnóstico</span>
+          <span class="block text-xs text-slate-400">UEPD-04 · Medios de Diagnóstico</span>
+        </span>
+      </a>
+    </div>
+    <nav class="flex-1 overflow-y-auto px-3 py-4 space-y-1 text-sm">
+      <a href="index.html"        class="block rounded-lg px-3 py-2 font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Carátula</a>
+      <a href="introduccion.html" class="block rounded-lg px-3 py-2 font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Introducción</a>
+      <div class="my-2 border-t border-slate-100 dark:border-slate-800"></div>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-sky-50 dark:hover:bg-sky-500/10 group-open:bg-sky-50 dark:group-open:bg-sky-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-sky-500"></span>
+            <span class="truncate text-sm font-semibold text-sky-700 dark:text-sky-300">Fluidos corporales</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-sky-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-sky-100 dark:border-sky-500/30 pl-2">
+          <a href="componentes.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-sky-50 dark:hover:bg-sky-500/10 hover:text-sky-700 dark:hover:text-sky-300 transition">Componentes de la sangre</a>
+          <a href="hemograma.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-sky-50 dark:hover:bg-sky-500/10 hover:text-sky-700 dark:hover:text-sky-300 transition">Hemograma con diferencial</a>
+          <a href="fluidos.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-sky-50 dark:hover:bg-sky-500/10 hover:text-sky-700 dark:hover:text-sky-300 transition">Análisis de fluidos biológicos</a>
+          <a href="frotis.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-sky-50 dark:hover:bg-sky-500/10 hover:text-sky-700 dark:hover:text-sky-300 transition">Frotis sanguíneo</a>
+        </div>
+      </details>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-emerald-50 dark:hover:bg-emerald-500/10 group-open:bg-emerald-50 dark:group-open:bg-emerald-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-emerald-500"></span>
+            <span class="truncate text-sm font-semibold text-emerald-700 dark:text-emerald-300">Medulograma</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-emerald-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-emerald-100 dark:border-emerald-500/30 pl-2">
+          <a href="medulograma.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-emerald-50 dark:hover:bg-emerald-500/10 hover:text-emerald-700 dark:hover:text-emerald-300 transition">Medulograma</a>
+        </div>
+      </details>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-rose-50 dark:hover:bg-rose-500/10 group-open:bg-rose-50 dark:group-open:bg-rose-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-rose-500"></span>
+            <span class="truncate text-sm font-semibold text-rose-700 dark:text-rose-300">Embarazo</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-rose-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-rose-100 dark:border-rose-500/30 pl-2">
+          <a href="embarazo.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-rose-50 dark:hover:bg-rose-500/10 hover:text-rose-700 dark:hover:text-rose-300 transition">Diagnóstico en el embarazo</a>
+        </div>
+      </details>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-fuchsia-50 dark:hover:bg-fuchsia-500/10 group-open:bg-fuchsia-50 dark:group-open:bg-fuchsia-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-fuchsia-500"></span>
+            <span class="truncate text-sm font-semibold text-fuchsia-700 dark:text-fuchsia-300">Trastornos autoinmunitarios</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-fuchsia-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-fuchsia-100 dark:border-fuchsia-500/30 pl-2">
+          <a href="autoinmunes.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-fuchsia-50 dark:hover:bg-fuchsia-500/10 hover:text-fuchsia-700 dark:hover:text-fuchsia-300 transition">Trastornos autoinmunitarios</a>
+        </div>
+      </details>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-purple-50 dark:hover:bg-purple-500/10 group-open:bg-purple-50 dark:group-open:bg-purple-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-purple-500"></span>
+            <span class="truncate text-sm font-semibold text-purple-700 dark:text-purple-300">Neoplasias</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-purple-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-purple-100 dark:border-purple-500/30 pl-2">
+          <a href="oncologia.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-purple-50 dark:hover:bg-purple-500/10 hover:text-purple-700 dark:hover:text-purple-300 transition">Oncología y neoplasias</a>
+        </div>
+      </details>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-orange-50 dark:hover:bg-orange-500/10 group-open:bg-orange-50 dark:group-open:bg-orange-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-orange-500"></span>
+            <span class="truncate text-sm font-semibold text-orange-700 dark:text-orange-300">Sistema osteomioarticular</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-orange-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-orange-100 dark:border-orange-500/30 pl-2">
+          <a href="soma.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-orange-50 dark:hover:bg-orange-500/10 hover:text-orange-700 dark:hover:text-orange-300 transition">Sistema osteomioarticular</a>
+        </div>
+      </details>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-cyan-50 dark:hover:bg-cyan-500/10 group-open:bg-cyan-50 dark:group-open:bg-cyan-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-cyan-500"></span>
+            <span class="truncate text-sm font-semibold text-cyan-700 dark:text-cyan-300">Estudios neurológicos</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-cyan-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-cyan-100 dark:border-cyan-500/30 pl-2">
+          <a href="neurologia.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-cyan-50 dark:hover:bg-cyan-500/10 hover:text-cyan-700 dark:hover:text-cyan-300 transition">Neurología avanzada</a>
+        </div>
+      </details>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-teal-50 dark:hover:bg-teal-500/10 group-open:bg-teal-50 dark:group-open:bg-teal-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-teal-500"></span>
+            <span class="truncate text-sm font-semibold text-teal-700 dark:text-teal-300">Sistema genitourinario</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-teal-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-teal-100 dark:border-teal-500/30 pl-2">
+          <a href="genitourinario.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-teal-50 dark:hover:bg-teal-500/10 hover:text-teal-700 dark:hover:text-teal-300 transition">Sistema genitourinario</a>
+          <a href="pruebas-urinarias.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-teal-50 dark:hover:bg-teal-500/10 hover:text-teal-700 dark:hover:text-teal-300 transition">Pruebas diagnósticas urinarias</a>
+        </div>
+      </details>
+      <details class="group" open>
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-amber-50 dark:hover:bg-amber-500/10 group-open:bg-amber-50 dark:group-open:bg-amber-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-amber-500"></span>
+            <span class="truncate text-sm font-semibold text-amber-700 dark:text-amber-300">Sistema endocrino-metabólico</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-amber-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-amber-100 dark:border-amber-500/30 pl-2">
+          <a href="endocrino.html" class="block rounded-lg px-3 py-1.5 font-semibold bg-amber-100 dark:bg-amber-500/20 text-amber-800 dark:text-amber-200">Estudios de laboratorio</a>
+          <a href="endocrino-imagen.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-amber-50 dark:hover:bg-amber-500/10 hover:text-amber-700 dark:hover:text-amber-300 transition">Estudios imagenológicos</a>
+          <a href="endocrino-patologia.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-amber-50 dark:hover:bg-amber-500/10 hover:text-amber-700 dark:hover:text-amber-300 transition">Estudios anatomopatológicos</a>
+        </div>
+      </details>
+      <div class="my-2 border-t border-slate-100 dark:border-slate-800"></div>
+      <a href="enlaces.html" class="block rounded-lg px-3 py-2 font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Enlaces y referencias</a>
+    </nav>
+    <div class="px-4 py-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
+      <span class="text-xs text-slate-400">© Proyecto académico</span>
+      <button onclick="toggleTheme()" aria-label="Cambiar tema"
+              class="h-9 w-9 rounded-full grid place-items-center ring-1 ring-slate-200 dark:ring-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 transition text-slate-600 dark:text-slate-300">
+        <svg class="dark:hidden h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="hidden dark:block h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path stroke-linecap="round" d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </button>
+    </div>
+  </aside>
+
+  <button onclick="document.getElementById('sidebar').classList.toggle('-translate-x-full')"
+          class="lg:hidden fixed bottom-5 right-5 z-50 h-12 w-12 rounded-full bg-indigo-600 text-white shadow-lg grid place-items-center">
+    <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+  </button>
+
+  <!-- ============ CONTENIDO ============ -->
+  <main class="flex-1 min-w-0">
+    <div class="max-w-4xl mx-auto px-6 py-10 lg:py-14">
+
+      <nav class="text-xs text-slate-400 mb-3">Inicio / Sistema endocrino-metabólico / <span class="text-slate-600 dark:text-slate-300">Estudios de laboratorio</span></nav>
+
+      <div class="flex items-center gap-4">
+        <div class="h-12 w-1.5 rounded-full bg-amber-500"></div>
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">Estudios de laboratorio</h1>
+      </div>
+      <p class="mt-2 text-amber-700 dark:text-amber-300 font-semibold">Sistema endocrino-metabólico · Metabolismo de la glucosa, perfil lipídico, función tiroidea, ácido úrico, electrolitos, gasometría y microalbuminuria</p>
+
+      <!-- Intro -->
+      <section class="mt-8 grid lg:grid-cols-[1fr_38%] gap-6 items-start">
+        <div>
+          <p class="text-slate-700 dark:text-slate-300 leading-relaxed">
+            El <strong class="text-slate-900 dark:text-white">sistema endocrino-metabólico</strong> es el conjunto de glándulas endocrinas,
+            hormonas y órganos que trabajan de manera coordinada para regular el metabolismo del organismo, mantener el equilibrio interno
+            (homeostasis) y controlar el crecimiento, el desarrollo, la reproducción y el aprovechamiento de los nutrientes obtenidos de los
+            alimentos. Produce y libera hormonas directamente al torrente sanguíneo, que actúan como mensajeros químicos regulando la
+            utilización de la glucosa, el metabolismo de grasas y proteínas, el equilibrio de líquidos y electrolitos, la temperatura
+            corporal y la producción de energía.
+          </p>
+        </div>
+        <figure class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="relative aspect-[4/3] bg-slate-100 dark:bg-slate-800">
+            <img src="IMG/endocrino/sistema-endocrino.webp" alt="Sistema endocrino" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-xs text-slate-400 p-3"><svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>IMG/endocrino/sistema-endocrino.webp</span></div>
+          </div>
+        </figure>
+      </section>
+
+      <section class="mt-6">
+        <h2 class="font-bold text-slate-900 dark:text-white">Funciones principales del sistema</h2>
+        <div class="mt-3 grid sm:grid-cols-2 gap-2 text-sm text-slate-700 dark:text-slate-300">
+          <div class="flex gap-2 rounded-xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 px-4 py-2.5"><span class="text-amber-500 shrink-0">•</span>Regular la glucosa en sangre (insulina y glucagón).</div>
+          <div class="flex gap-2 rounded-xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 px-4 py-2.5"><span class="text-amber-500 shrink-0">•</span>Controlar el metabolismo de carbohidratos, proteínas y lípidos.</div>
+          <div class="flex gap-2 rounded-xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 px-4 py-2.5"><span class="text-amber-500 shrink-0">•</span>Mantener el equilibrio de agua, sales minerales y presión arterial.</div>
+          <div class="flex gap-2 rounded-xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 px-4 py-2.5"><span class="text-amber-500 shrink-0">•</span>Regular el crecimiento y desarrollo corporal.</div>
+          <div class="flex gap-2 rounded-xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 px-4 py-2.5"><span class="text-amber-500 shrink-0">•</span>Controlar el metabolismo basal y la producción de energía.</div>
+          <div class="flex gap-2 rounded-xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 px-4 py-2.5"><span class="text-amber-500 shrink-0">•</span>Participar en la respuesta al estrés (cortisol y adrenalina).</div>
+          <div class="flex gap-2 rounded-xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 px-4 py-2.5"><span class="text-amber-500 shrink-0">•</span>Regular la reproducción y el desarrollo sexual.</div>
+          <div class="flex gap-2 rounded-xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 px-4 py-2.5"><span class="text-amber-500 shrink-0">•</span>Mantener la homeostasis del organismo.</div>
+        </div>
+      </section>
+
+      <!-- Mapa de la sección -->
+      <section class="mt-8 rounded-2xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-200 dark:ring-amber-500/30 p-5">
+        <h2 class="font-bold text-amber-800 dark:text-amber-200">El tema se divide en 3 secciones</h2>
+        <div class="mt-3 grid sm:grid-cols-3 gap-2 text-sm">
+          <span class="rounded-lg bg-white dark:bg-slate-900 ring-1 ring-amber-200 dark:ring-amber-500/30 px-3 py-2 font-semibold text-amber-700 dark:text-amber-300">1 · Estudios de laboratorio <span class="text-slate-400 font-normal">(estás aquí)</span></span>
+          <a href="endocrino-imagen.html" class="rounded-lg bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 px-3 py-2 text-slate-700 dark:text-slate-300 hover:ring-amber-300 transition">2 · Estudios imagenológicos →</a>
+          <a href="endocrino-patologia.html" class="rounded-lg bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 px-3 py-2 text-slate-700 dark:text-slate-300 hover:ring-amber-300 transition">3 · Estudios anatomopatológicos →</a>
+        </div>
+      </section>
+
+      <!-- ============ METABOLISMO DE LA GLUCOSA ============ -->
+      <section class="mt-14">
+        <div class="flex items-center gap-3">
+          <span class="grid h-9 w-9 place-items-center rounded-xl bg-amber-500 text-white font-extrabold">1</span>
+          <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Metabolismo de la glucosa</h2>
+        </div>
+        <p class="mt-3 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+          Conjunto de procesos bioquímicos mediante los cuales el organismo obtiene, transporta, utiliza, almacena y produce glucosa para
+          satisfacer las necesidades energéticas de las células. La glucosa es el principal combustible del cuerpo y la fuente de energía
+          preferida del cerebro, los glóbulos rojos y los músculos durante la actividad física. Proviene principalmente de los carbohidratos
+          de la alimentación: tras la digestión se absorbe en el intestino delgado y se transporta por la sangre hacia los tejidos. Su
+          concentración se mantiene en rango normal gracias a la <strong class="text-slate-900 dark:text-white">insulina</strong> (favorece la
+          entrada de glucosa a las células y reduce la glucemia) y el <strong class="text-slate-900 dark:text-white">glucagón</strong>
+          (estimula la liberación de glucosa almacenada en el hígado cuando la glucemia disminuye).
+        </p>
+
+        <div class="mt-5 grid md:grid-cols-2 gap-4">
+          <div class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 p-5">
+            <h3 class="font-bold text-slate-900 dark:text-white">Funciones</h3>
+            <ul class="mt-2 space-y-1 text-sm text-slate-600 dark:text-slate-400">
+              <li class="flex gap-2"><span class="text-amber-500">•</span>Proporcionar energía a todas las células del organismo.</li>
+              <li class="flex gap-2"><span class="text-amber-500">•</span>Mantener la glucosa en sangre dentro de valores normales (homeostasis).</li>
+              <li class="flex gap-2"><span class="text-amber-500">•</span>Almacenar el exceso como glucógeno en hígado y músculos.</li>
+              <li class="flex gap-2"><span class="text-amber-500">•</span>Liberar glucosa durante el ayuno o el ejercicio.</li>
+              <li class="flex gap-2"><span class="text-amber-500">•</span>Garantizar el suministro continuo de energía al cerebro y al sistema nervioso.</li>
+              <li class="flex gap-2"><span class="text-amber-500">•</span>Participar en la síntesis de grasas cuando hay exceso de glucosa.</li>
+            </ul>
+          </div>
+          <div class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 p-5">
+            <h3 class="font-bold text-slate-900 dark:text-white">Proceso del metabolismo de la glucosa</h3>
+            <ol class="mt-2 space-y-1 text-sm text-slate-600 dark:text-slate-400 list-decimal list-inside">
+              <li>Los carbohidratos ingeridos se convierten en glucosa durante la digestión.</li>
+              <li>La glucosa se absorbe en el intestino delgado y pasa a la sangre.</li>
+              <li>El páncreas libera insulina cuando aumenta la glucosa en sangre.</li>
+              <li>La insulina facilita el ingreso de glucosa a las células para producir energía.</li>
+              <li>El exceso de glucosa se almacena como glucógeno o se transforma en grasa.</li>
+              <li>Cuando la glucosa disminuye, el páncreas libera glucagón, que estimula al hígado a liberar glucosa.</li>
+            </ol>
+          </div>
+        </div>
+
+        <div class="mt-4 overflow-x-auto rounded-2xl ring-1 ring-slate-200 dark:ring-slate-800">
+          <table class="w-full text-sm text-left">
+            <caption class="px-4 py-2 text-left text-xs font-semibold text-slate-500 dark:text-slate-400 bg-white dark:bg-slate-900">Valores de referencia orientativos</caption>
+            <thead class="bg-amber-50 dark:bg-amber-500/10 text-amber-800 dark:text-amber-200"><tr><th class="px-4 py-2 font-semibold">Prueba</th><th class="px-4 py-2 font-semibold">Valores normales</th></tr></thead>
+            <tbody class="divide-y divide-slate-200 dark:divide-slate-800 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300">
+              <tr><td class="px-4 py-2">Glucemia en ayunas</td><td class="px-4 py-2">70–99 mg/dL</td></tr>
+              <tr><td class="px-4 py-2">Glucemia posprandial (2 horas)</td><td class="px-4 py-2">Menor de 140 mg/dL</td></tr>
+              <tr><td class="px-4 py-2">HbA1c</td><td class="px-4 py-2">Menor del 5,7 %</td></tr>
+              <tr><td class="px-4 py-2">Insulina basal</td><td class="px-4 py-2">2–25 µUI/mL (según el laboratorio)</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Glucemia en ayunas -->
+        <article class="mt-6 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="grid md:grid-cols-[34%_1fr]">
+            <div class="relative aspect-[4/3] md:aspect-auto bg-slate-100 dark:bg-slate-800 min-h-[12rem]"><img src="IMG/endocrino/glucemia-ayunas.webp" alt="Glucemia en ayunas" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-[0.65rem] text-slate-400 p-2"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>glucemia-ayunas.webp</span></div></div>
+            <div class="p-5">
+              <h3 class="font-bold text-lg text-slate-900 dark:text-white">Glucemia en ayunas</h3>
+              <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">Examen que mide la concentración de glucosa en sangre tras un ayuno de 8 a 12 horas. Es una de las pruebas más utilizadas para evaluar el metabolismo de la glucosa y para el diagnóstico y seguimiento de la diabetes mellitus y la prediabetes.</p>
+              <p class="mt-3 text-xs font-bold uppercase tracking-wide text-amber-700 dark:text-amber-300">Funciones</p>
+              <ul class="mt-1 space-y-1 text-sm text-slate-600 dark:text-slate-400">
+                <li class="flex gap-2"><span class="text-amber-500">•</span>Medir la glucosa en condiciones basales (ayuno).</li>
+                <li class="flex gap-2"><span class="text-amber-500">•</span>Detectar alteraciones del metabolismo de la glucosa.</li>
+                <li class="flex gap-2"><span class="text-amber-500">•</span>Diagnosticar prediabetes y diabetes mellitus y evaluar el riesgo de desarrollarla.</li>
+                <li class="flex gap-2"><span class="text-amber-500">•</span>Monitorear el tratamiento y servir de prueba inicial para otros estudios (p. ej. HOMA-IR).</li>
+              </ul>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 p-5 space-y-4">
+            <div>
+              <p class="text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">Valores de referencia</p>
+              <div class="mt-2 flex flex-wrap gap-2 text-xs">
+                <span class="rounded-full bg-emerald-100 dark:bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 px-2.5 py-1 font-medium">Normal: 70–99 mg/dL</span>
+                <span class="rounded-full bg-amber-100 dark:bg-amber-500/15 text-amber-700 dark:text-amber-300 px-2.5 py-1 font-medium">Prediabetes: 100–125</span>
+                <span class="rounded-full bg-rose-100 dark:bg-rose-500/15 text-rose-700 dark:text-rose-300 px-2.5 py-1 font-medium">Diabetes: ≥126 (confirmar)</span>
+                <span class="rounded-full bg-sky-100 dark:bg-sky-500/15 text-sky-700 dark:text-sky-300 px-2.5 py-1 font-medium">Hipoglucemia: &lt;70</span>
+              </div>
+            </div>
+            <div class="grid sm:grid-cols-3 gap-3 text-xs">
+              <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes</p><p class="text-slate-600 dark:text-slate-400">Ayuno de 8–12 h (solo agua). Evitar alcohol 24 h antes y ejercicio intenso el día previo. Informar la medicación y no fumar antes de la toma.</p></div>
+              <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3"><p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante</p><p class="text-slate-600 dark:text-slate-400">Verificar identidad, explicar el examen y extraer sangre venosa del brazo con material estéril. Dura pocos minutos; puede haber leve molestia.</p></div>
+              <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después</p><p class="text-slate-600 dark:text-slate-400">Aplicar presión en el sitio de punción, reanudar alimentación y actividades, hidratarse y acudir a consulta para interpretar los resultados.</p></div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Glucemia posprandial -->
+        <article class="mt-6 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="grid md:grid-cols-[34%_1fr]">
+            <div class="relative aspect-[4/3] md:aspect-auto bg-slate-100 dark:bg-slate-800 min-h-[12rem]"><img src="IMG/endocrino/glucemia-posprandial.webp" alt="Glucemia posprandial" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-[0.65rem] text-slate-400 p-2"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>glucemia-posprandial.webp</span></div></div>
+            <div class="p-5">
+              <h3 class="font-bold text-lg text-slate-900 dark:text-white">Glucemia posprandial</h3>
+              <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">Mide la glucosa en sangre 2 horas después de ingerir una comida o una solución con glucosa. Evalúa la capacidad del organismo para regular la glucemia mediante la insulina; muy usada en el diagnóstico y control de la diabetes.</p>
+              <p class="mt-3 text-xs font-bold uppercase tracking-wide text-amber-700 dark:text-amber-300">Funciones</p>
+              <ul class="mt-1 space-y-1 text-sm text-slate-600 dark:text-slate-400">
+                <li class="flex gap-2"><span class="text-amber-500">•</span>Evaluar cómo el organismo procesa la glucosa después de comer.</li>
+                <li class="flex gap-2"><span class="text-amber-500">•</span>Detectar alteraciones en la producción o acción de la insulina.</li>
+                <li class="flex gap-2"><span class="text-amber-500">•</span>Diagnosticar diabetes y prediabetes y monitorear el tratamiento.</li>
+                <li class="flex gap-2"><span class="text-amber-500">•</span>Valorar el control glucémico junto con la glucemia en ayunas y la HbA1c.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 p-5 space-y-4">
+            <div>
+              <p class="text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">Valores normales (2 h después de comer)</p>
+              <div class="mt-2 flex flex-wrap gap-2 text-xs">
+                <span class="rounded-full bg-emerald-100 dark:bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 px-2.5 py-1 font-medium">Normal: &lt;140 mg/dL</span>
+                <span class="rounded-full bg-amber-100 dark:bg-amber-500/15 text-amber-700 dark:text-amber-300 px-2.5 py-1 font-medium">Prediabetes: 140–199</span>
+                <span class="rounded-full bg-rose-100 dark:bg-rose-500/15 text-rose-700 dark:text-rose-300 px-2.5 py-1 font-medium">Diabetes: ≥200</span>
+              </div>
+            </div>
+            <div class="grid sm:grid-cols-3 gap-3 text-xs">
+              <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes</p><p class="text-slate-600 dark:text-slate-400">Verificar identidad y orden médica, explicar el examen y asegurar que ingirió la comida o carga de glucosa del protocolo. Registrar la hora de inicio; no comer, fumar ni hacer ejercicio durante la espera.</p></div>
+              <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3"><p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante</p><p class="text-slate-600 dark:text-slate-400">Comprobar que pasaron ~2 h desde la comida, higiene de manos y bioseguridad, venopunción aséptica, rotular la muestra y enviarla. Observar el estado del paciente.</p></div>
+              <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después</p><p class="text-slate-600 dark:text-slate-400">Presión y apósito en el sitio; verificar que no haya mareos o debilidad; reanudar dieta y actividades; registrar y orientar sobre la interpretación.</p></div>
+            </div>
+          </div>
+        </article>
+
+        <!-- HbA1c -->
+        <article class="mt-6 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="grid md:grid-cols-[34%_1fr]">
+            <div class="relative aspect-[4/3] md:aspect-auto bg-slate-100 dark:bg-slate-800 min-h-[12rem]"><img src="IMG/endocrino/hba1c.webp" alt="Hemoglobina glucosilada" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-[0.65rem] text-slate-400 p-2"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>hba1c.webp</span></div></div>
+            <div class="p-5">
+              <h3 class="font-bold text-lg text-slate-900 dark:text-white">Hemoglobina glucosilada (HbA1c)</h3>
+              <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">Mide el porcentaje de hemoglobina unida a glucosa en los glóbulos rojos. Como los eritrocitos viven ~120 días, refleja el promedio de glucemia de los últimos 2 a 3 meses. No requiere ayuno y evalúa el control glucémico a largo plazo sin verse afectada por variaciones diarias.</p>
+              <p class="mt-3 text-xs font-bold uppercase tracking-wide text-amber-700 dark:text-amber-300">Funciones</p>
+              <ul class="mt-1 space-y-1 text-sm text-slate-600 dark:text-slate-400">
+                <li class="flex gap-2"><span class="text-amber-500">•</span>Evaluar el control de la glucosa a largo plazo en la diabetes.</li>
+                <li class="flex gap-2"><span class="text-amber-500">•</span>Diagnosticar diabetes y prediabetes y valorar la eficacia del tratamiento.</li>
+                <li class="flex gap-2"><span class="text-amber-500">•</span>Detectar el riesgo de complicaciones crónicas (retinopatía, nefropatía, neuropatía).</li>
+                <li class="flex gap-2"><span class="text-amber-500">•</span>Orientar el ajuste del tratamiento para mejorar el control metabólico.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 p-5 space-y-4">
+            <div>
+              <p class="text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">Valores de referencia</p>
+              <div class="mt-2 flex flex-wrap gap-2 text-xs">
+                <span class="rounded-full bg-emerald-100 dark:bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 px-2.5 py-1 font-medium">Normal: &lt;5,7 %</span>
+                <span class="rounded-full bg-amber-100 dark:bg-amber-500/15 text-amber-700 dark:text-amber-300 px-2.5 py-1 font-medium">Prediabetes: 5,7–6,4 %</span>
+                <span class="rounded-full bg-rose-100 dark:bg-rose-500/15 text-rose-700 dark:text-rose-300 px-2.5 py-1 font-medium">Diabetes: ≥6,5 %</span>
+                <span class="rounded-full bg-sky-100 dark:bg-sky-500/15 text-sky-700 dark:text-sky-300 px-2.5 py-1 font-medium">Meta de control: &lt;7 %</span>
+              </div>
+            </div>
+            <div class="grid sm:grid-cols-3 gap-3 text-xs">
+              <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes</p><p class="text-slate-600 dark:text-slate-400">No requiere ayuno; mantener alimentación y medicación habitual. Revisar antecedentes de anemia, hemorragias o transfusiones que puedan alterar el resultado.</p></div>
+              <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3"><p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante</p><p class="text-slate-600 dark:text-slate-400">Lavado de manos, EPP y venopunción aséptica. Obtener sangre venosa suficiente, rotular el tubo y enviarlo en condiciones adecuadas.</p></div>
+              <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después</p><p class="text-slate-600 dark:text-slate-400">Presión y apósito; vigilar mareos o reacciones; registrar e informar que puede continuar su actividad normal. El médico interpreta el resultado.</p></div>
+            </div>
+          </div>
+        </article>
+
+        <!-- CTOG -->
+        <article class="mt-6 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="grid md:grid-cols-[34%_1fr]">
+            <div class="relative aspect-[4/3] md:aspect-auto bg-slate-100 dark:bg-slate-800 min-h-[12rem]"><img src="IMG/endocrino/ctog.webp" alt="Curva de tolerancia oral a la glucosa" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-[0.65rem] text-slate-400 p-2"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>ctog.webp</span></div></div>
+            <div class="p-5">
+              <h3 class="font-bold text-lg text-slate-900 dark:text-white">Curva de tolerancia oral a la glucosa (CTOG / PTOG)</h3>
+              <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">Evalúa la capacidad del organismo para metabolizar la glucosa tras una carga estandarizada por vía oral. Se mide la glucemia en ayunas y, tras ingerir una solución con ~75 g de glucosa (adultos), se repite habitualmente a las 2 horas. Diagnostica diabetes, prediabetes y diabetes gestacional, sobre todo cuando otras pruebas son dudosas.</p>
+              <p class="mt-3 text-xs font-bold uppercase tracking-wide text-amber-700 dark:text-amber-300">Funciones</p>
+              <ul class="mt-1 space-y-1 text-sm text-slate-600 dark:text-slate-400">
+                <li class="flex gap-2"><span class="text-amber-500">•</span>Diagnosticar diabetes cuando otras pruebas no son concluyentes.</li>
+                <li class="flex gap-2"><span class="text-amber-500">•</span>Detectar prediabetes/intolerancia a la glucosa y diabetes gestacional.</li>
+                <li class="flex gap-2"><span class="text-amber-500">•</span>Valorar la respuesta del organismo a la insulina.</li>
+                <li class="flex gap-2"><span class="text-amber-500">•</span>Identificar alteraciones tempranas del metabolismo de los carbohidratos.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 p-5 space-y-4">
+            <div>
+              <p class="text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">Valores de referencia</p>
+              <div class="mt-2 flex flex-wrap gap-2 text-xs">
+                <span class="rounded-full bg-emerald-100 dark:bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 px-2.5 py-1 font-medium">Normal 2 h: &lt;140 mg/dL</span>
+                <span class="rounded-full bg-amber-100 dark:bg-amber-500/15 text-amber-700 dark:text-amber-300 px-2.5 py-1 font-medium">Prediabetes: 140–199</span>
+                <span class="rounded-full bg-rose-100 dark:bg-rose-500/15 text-rose-700 dark:text-rose-300 px-2.5 py-1 font-medium">Diabetes: ≥200</span>
+                <span class="rounded-full bg-slate-100 dark:bg-slate-700/40 text-slate-600 dark:text-slate-300 px-2.5 py-1 font-medium">Ayuno basal normal: 70–99</span>
+              </div>
+            </div>
+            <div class="grid sm:grid-cols-3 gap-3 text-xs">
+              <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes</p><p class="text-slate-600 dark:text-slate-400">Ayuno de 8–12 h y alimentación habitual los 3 días previos. Revisar fármacos que alteren la glucemia; evitar tabaco y alcohol. Preparar el material para varias tomas.</p></div>
+              <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3"><p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante</p><p class="text-slate-600 dark:text-slate-400">Muestra basal en ayunas; ingerir 75 g de glucosa en ~5 min. Reposo 2 h sin comer, beber (salvo agua), fumar ni ejercitarse. Tomar muestras en los tiempos del protocolo y vigilar náuseas, mareos o vómitos.</p></div>
+              <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después</p><p class="text-slate-600 dark:text-slate-400">Presión y apósito; verificar estabilidad; reanudar dieta y actividades; registrar y enviar correctamente las muestras. El médico establece el diagnóstico.</p></div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Insulina basal -->
+        <article class="mt-6 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="grid md:grid-cols-[34%_1fr]">
+            <div class="relative aspect-[4/3] md:aspect-auto bg-slate-100 dark:bg-slate-800 min-h-[12rem]"><img src="IMG/endocrino/insulina-basal.webp" alt="Insulina basal" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-[0.65rem] text-slate-400 p-2"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>insulina-basal.webp</span></div></div>
+            <div class="p-5">
+              <h3 class="font-bold text-lg text-slate-900 dark:text-white">Insulina basal</h3>
+              <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">Mide la insulina en sangre en ayuno (8–12 h). La insulina, producida por las células beta del páncreas, facilita la entrada de glucosa a las células. Evalúa la función pancreática, detecta resistencia a la insulina y apoya el diagnóstico de diabetes, prediabetes y síndrome metabólico.</p>
+              <p class="mt-3 text-xs font-bold uppercase tracking-wide text-amber-700 dark:text-amber-300">Funciones</p>
+              <ul class="mt-1 space-y-1 text-sm text-slate-600 dark:text-slate-400">
+                <li class="flex gap-2"><span class="text-amber-500">•</span>Evaluar la producción de insulina y la función de las células beta.</li>
+                <li class="flex gap-2"><span class="text-amber-500">•</span>Detectar resistencia a la insulina y síndrome metabólico.</li>
+                <li class="flex gap-2"><span class="text-amber-500">•</span>Apoyar el diagnóstico de diabetes y prediabetes.</li>
+                <li class="flex gap-2"><span class="text-amber-500">•</span>Contribuir al cálculo del índice HOMA-IR.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 p-5 space-y-4">
+            <div>
+              <p class="text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">Valores de referencia</p>
+              <div class="mt-2 flex flex-wrap gap-2 text-xs">
+                <span class="rounded-full bg-emerald-100 dark:bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 px-2.5 py-1 font-medium">Normal: 2–25 µUI/mL</span>
+                <span class="rounded-full bg-sky-100 dark:bg-sky-500/15 text-sky-700 dark:text-sky-300 px-2.5 py-1 font-medium">Baja: &lt;2 (↓ producción)</span>
+                <span class="rounded-full bg-rose-100 dark:bg-rose-500/15 text-rose-700 dark:text-rose-300 px-2.5 py-1 font-medium">Elevada: &gt;25 (resistencia, obesidad, insulinoma)</span>
+              </div>
+            </div>
+            <div class="grid sm:grid-cols-3 gap-3 text-xs">
+              <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes</p><p class="text-slate-600 dark:text-slate-400">Ayuno de 8–12 h (solo agua). Revisar fármacos que modifiquen insulina o glucosa; evitar ejercicio intenso y alcohol el día previo.</p></div>
+              <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3"><p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante</p><p class="text-slate-600 dark:text-slate-400">Lavado de manos, EPP y venopunción aséptica. Colocar la muestra en el tubo, identificarla y enviarla a tiempo. Vigilar mareos o ansiedad.</p></div>
+              <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después</p><p class="text-slate-600 dark:text-slate-400">Presión y apósito; comprobar estabilidad; reanudar alimentación y actividades; registrar y orientar a consulta para interpretar resultados.</p></div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Péptido C -->
+        <article class="mt-6 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="grid md:grid-cols-[34%_1fr]">
+            <div class="relative aspect-[4/3] md:aspect-auto bg-slate-100 dark:bg-slate-800 min-h-[12rem]"><img src="IMG/endocrino/peptido-c.webp" alt="Péptido C" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-[0.65rem] text-slate-400 p-2"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>peptido-c.webp</span></div></div>
+            <div class="p-5">
+              <h3 class="font-bold text-lg text-slate-900 dark:text-white">Péptido C</h3>
+              <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">Fragmento de proteína que se libera junto con la insulina cuando el páncreas la produce: la proinsulina se divide en insulina y péptido C en cantidades iguales, por lo que medirlo indica cuánta insulina produce el páncreas de forma natural. Evalúa la función de las células beta y diferencia los tipos de diabetes.</p>
+              <p class="mt-3 text-xs font-bold uppercase tracking-wide text-amber-700 dark:text-amber-300">Funciones</p>
+              <ul class="mt-1 space-y-1 text-sm text-slate-600 dark:text-slate-400">
+                <li class="flex gap-2"><span class="text-amber-500">•</span>Evaluar la producción natural de insulina y la función de las células beta.</li>
+                <li class="flex gap-2"><span class="text-amber-500">•</span>Diferenciar la diabetes tipo 1 de la tipo 2 y detectar resistencia/insulinoma.</li>
+                <li class="flex gap-2"><span class="text-amber-500">•</span>Controlar la función pancreática en pacientes tratados con insulina.</li>
+                <li class="flex gap-2"><span class="text-amber-500">•</span>Apoyar el estudio de hipoglucemias de origen desconocido.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 p-5 space-y-4">
+            <div>
+              <p class="text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">Valores de referencia</p>
+              <div class="mt-2 flex flex-wrap gap-2 text-xs">
+                <span class="rounded-full bg-emerald-100 dark:bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 px-2.5 py-1 font-medium">Normal en ayunas: 0,5–2,0 ng/mL</span>
+                <span class="rounded-full bg-sky-100 dark:bg-sky-500/15 text-sky-700 dark:text-sky-300 px-2.5 py-1 font-medium">Disminuido: &lt;0,5 (↓ insulina, DM1)</span>
+                <span class="rounded-full bg-rose-100 dark:bg-rose-500/15 text-rose-700 dark:text-rose-300 px-2.5 py-1 font-medium">Elevado: &gt;2,0 (resistencia)</span>
+              </div>
+            </div>
+            <div class="grid sm:grid-cols-3 gap-3 text-xs">
+              <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes</p><p class="text-slate-600 dark:text-slate-400">Generalmente ayuno de 8–12 h (solo agua). Revisar fármacos que modifiquen la secreción de insulina y antecedentes metabólicos.</p></div>
+              <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3"><p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante</p><p class="text-slate-600 dark:text-slate-400">Lavado de manos, EPP y venopunción aséptica. Recolectar en el tubo indicado, rotular y enviar. Vigilar mareos o ansiedad.</p></div>
+              <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después</p><p class="text-slate-600 dark:text-slate-400">Presión y apósito; comprobar estabilidad; reanudar alimentación y actividades; registrar. El médico interpreta el resultado.</p></div>
+            </div>
+          </div>
+        </article>
+
+        <!-- HOMA-IR -->
+        <article class="mt-6 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="grid md:grid-cols-[34%_1fr]">
+            <div class="relative aspect-[4/3] md:aspect-auto bg-slate-100 dark:bg-slate-800 min-h-[12rem]"><img src="IMG/endocrino/homa-ir.png" alt="Índice HOMA-IR" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-[0.65rem] text-slate-400 p-2"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>homa-ir.webp</span></div></div>
+            <div class="p-5">
+              <h3 class="font-bold text-lg text-slate-900 dark:text-white">Índice HOMA-IR</h3>
+              <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">El HOMA-IR (<em>Homeostatic Model Assessment of Insulin Resistance</em>) estima la resistencia a la insulina a partir de la glucosa e insulina en ayunas. No es un examen independiente sino un índice matemático; es muy útil en prediabetes, diabetes tipo 2, obesidad y síndrome metabólico.</p>
+              <p class="mt-3 text-xs font-bold uppercase tracking-wide text-amber-700 dark:text-amber-300">Funciones</p>
+              <ul class="mt-1 space-y-1 text-sm text-slate-600 dark:text-slate-400">
+                <li class="flex gap-2"><span class="text-amber-500">•</span>Evaluar la resistencia a la insulina y alteraciones tempranas de la glucosa.</li>
+                <li class="flex gap-2"><span class="text-amber-500">•</span>Apoyar el diagnóstico de prediabetes, DM2 y síndrome metabólico.</li>
+                <li class="flex gap-2"><span class="text-amber-500">•</span>Monitorear la respuesta a dieta, fármacos y ejercicio.</li>
+                <li class="flex gap-2"><span class="text-amber-500">•</span>Estimar el riesgo cardiovascular asociado a la resistencia a la insulina.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 p-5 space-y-4">
+            <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-200 dark:ring-amber-500/30 px-3 py-2 text-xs text-slate-700 dark:text-slate-300"><strong class="text-amber-700 dark:text-amber-300">Fórmula:</strong> HOMA-IR = [Glucosa en ayunas (mg/dL) × Insulina basal (µUI/mL)] ÷ 405</div>
+            <div>
+              <p class="text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">Valores de referencia</p>
+              <div class="mt-2 flex flex-wrap gap-2 text-xs">
+                <span class="rounded-full bg-emerald-100 dark:bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 px-2.5 py-1 font-medium">Normal: &lt;2,0</span>
+                <span class="rounded-full bg-amber-100 dark:bg-amber-500/15 text-amber-700 dark:text-amber-300 px-2.5 py-1 font-medium">Resistencia leve: 2,0–2,9</span>
+                <span class="rounded-full bg-rose-100 dark:bg-rose-500/15 text-rose-700 dark:text-rose-300 px-2.5 py-1 font-medium">Moderada/alta: ≥3,0</span>
+              </div>
+            </div>
+            <div class="grid sm:grid-cols-3 gap-3 text-xs">
+              <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes</p><p class="text-slate-600 dark:text-slate-400">Ayuno de 8–12 h (solo agua). Revisar fármacos que alteren glucosa o insulina; evitar alcohol y ejercicio intenso el día previo.</p></div>
+              <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3"><p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante</p><p class="text-slate-600 dark:text-slate-400">Venopunción aséptica para medir glucosa e insulina en ayunas. Rotular e identificar las muestras y vigilar reacciones adversas.</p></div>
+              <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después</p><p class="text-slate-600 dark:text-slate-400">Presión y apósito; reanudar actividad; registrar. El índice lo calcula el laboratorio/profesional y lo interpreta el médico.</p></div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- ============ PERFIL LIPÍDICO ============ -->
+      <section class="mt-14">
+        <div class="flex items-center gap-3">
+          <span class="grid h-9 w-9 place-items-center rounded-xl bg-amber-500 text-white font-extrabold">2</span>
+          <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Perfil lipídico</h2>
+        </div>
+        <div class="mt-3 grid lg:grid-cols-[1fr_36%] gap-6 items-start">
+          <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+            Conjunto de exámenes que mide la concentración de las principales grasas de la sangre: colesterol total, HDL, LDL, VLDL y
+            triglicéridos. Permite evaluar el metabolismo de los lípidos, detectar dislipidemias y estimar el riesgo cardiovascular (infarto de
+            miocardio, accidente cerebrovascular). También se usa en el seguimiento de diabetes, hipertensión, obesidad y síndrome metabólico.
+            <strong class="text-slate-900 dark:text-white">Requiere ayuno de 9 a 12 horas.</strong>
+          </p>
+          <figure class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+            <div class="relative aspect-[4/3] bg-slate-100 dark:bg-slate-800"><img src="IMG/endocrino/perfil_lipidico.png" alt="Perfil lipídico" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-[0.65rem] text-slate-400 p-2"><svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>IMG/endocrino/perfil-lipidico.webp</span></div></div>
+          </figure>
+        </div>
+
+        <div class="mt-5 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 p-5">
+          <h3 class="font-bold text-slate-900 dark:text-white">Funciones</h3>
+          <div class="mt-2 grid sm:grid-cols-2 gap-x-6 gap-y-1 text-sm text-slate-600 dark:text-slate-400">
+            <div class="flex gap-2"><span class="text-amber-500">•</span>Evaluar los niveles de colesterol y triglicéridos en la sangre.</div>
+            <div class="flex gap-2"><span class="text-amber-500">•</span>Detectar alteraciones del metabolismo de los lípidos (dislipidemias).</div>
+            <div class="flex gap-2"><span class="text-amber-500">•</span>Determinar el riesgo de enfermedades cardiovasculares.</div>
+            <div class="flex gap-2"><span class="text-amber-500">•</span>Diagnosticar hipercolesterolemia e hipertrigliceridemia.</div>
+            <div class="flex gap-2"><span class="text-amber-500">•</span>Monitorear la eficacia del tratamiento con dieta, ejercicio y medicamentos.</div>
+            <div class="flex gap-2"><span class="text-amber-500">•</span>Identificar factores de riesgo de infarto de miocardio y accidente cerebrovascular.</div>
+            <div class="flex gap-2"><span class="text-amber-500">•</span>Complementar la evaluación de pacientes con diabetes, hipertensión, obesidad y síndrome metabólico.</div>
+            <div class="flex gap-2"><span class="text-amber-500">•</span>Orientar las decisiones terapéuticas para prevenir complicaciones cardiovasculares.</div>
+          </div>
+        </div>
+
+        <div class="mt-4 overflow-x-auto rounded-2xl ring-1 ring-slate-200 dark:ring-slate-800">
+          <table class="w-full text-sm text-left">
+            <thead class="bg-amber-50 dark:bg-amber-500/10 text-amber-800 dark:text-amber-200"><tr><th class="px-4 py-2 font-semibold">Parámetro</th><th class="px-4 py-2 font-semibold">Valor normal</th><th class="px-4 py-2 font-semibold">Función</th></tr></thead>
+            <tbody class="divide-y divide-slate-200 dark:divide-slate-800 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300">
+              <tr><td class="px-4 py-2 font-semibold text-slate-900 dark:text-white">Colesterol total</td><td class="px-4 py-2">&lt;200 mg/dL (límite 200–239; alto ≥240)</td><td class="px-4 py-2">Suma de HDL, LDL y VLDL; riesgo cardiovascular global.</td></tr>
+              <tr><td class="px-4 py-2 font-semibold text-slate-900 dark:text-white">HDL (bueno)</td><td class="px-4 py-2">H: &gt;40; M: &gt;50 mg/dL (protector ≥60)</td><td class="px-4 py-2">Recoge el colesterol de los tejidos y lo lleva al hígado.</td></tr>
+              <tr><td class="px-4 py-2 font-semibold text-slate-900 dark:text-white">LDL (malo)</td><td class="px-4 py-2">Óptimo &lt;100; alto 160–189 mg/dL</td><td class="px-4 py-2">Lleva colesterol a las células; en exceso forma placas de ateroma.</td></tr>
+              <tr><td class="px-4 py-2 font-semibold text-slate-900 dark:text-white">VLDL</td><td class="px-4 py-2">5–40 mg/dL</td><td class="px-4 py-2">Transporta triglicéridos del hígado a los tejidos; se convierte en LDL.</td></tr>
+              <tr><td class="px-4 py-2 font-semibold text-slate-900 dark:text-white">Triglicéridos</td><td class="px-4 py-2">&lt;150 (alto 200–499; muy alto ≥500)</td><td class="px-4 py-2">Principal reserva de energía; riesgo cardiovascular y metabólico.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="mt-3 grid sm:grid-cols-3 gap-3 text-xs">
+          <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes (perfil)</p><p class="text-slate-600 dark:text-slate-400">Confirmar ayuno de 9–12 h. Evitar alcohol y ejercicio intenso el día anterior; revisar fármacos que alteren los resultados.</p></div>
+          <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3"><p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante</p><p class="text-slate-600 dark:text-slate-400">Lavado de manos, EPP y venopunción aséptica. Rotular el tubo y enviarlo. Vigilar el estado del paciente.</p></div>
+          <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después</p><p class="text-slate-600 dark:text-slate-400">Presión y apósito; verificar estabilidad; reanudar alimentación; registrar. El médico interpreta los resultados.</p></div>
+        </div>
+
+        <!-- Colesterol total -->
+        <article class="mt-6 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="grid md:grid-cols-[34%_1fr]">
+            <div class="relative aspect-[4/3] md:aspect-auto bg-slate-100 dark:bg-slate-800 min-h-[12rem]"><img src="IMG/endocrino/colesterol-total.png" alt="Colesterol total" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display=&#39;none&#39;; this.nextElementSibling.style.display=&#39;flex&#39;;"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-[0.65rem] text-slate-400 p-2"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>colesterol-total.webp</span></div></div>
+            <div class="p-5">
+            <h3 class="font-bold text-lg text-slate-900 dark:text-white">Colesterol total</h3>
+            <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">Examen que mide la cantidad total de colesterol presente en la sangre, incluyendo el HDL (bueno), el LDL (malo) y el VLDL. El colesterol es una sustancia grasa indispensable: participa en la formación de las membranas celulares y en la producción de hormonas esteroideas, vitamina D y ácidos biliares. Sin embargo, cuando sus niveles son elevados aumenta el riesgo de enfermedades cardiovasculares como el infarto de miocardio y el accidente cerebrovascular.</p>
+            <p class="mt-3 text-xs font-bold uppercase tracking-wide text-amber-700 dark:text-amber-300">Funciones</p>
+            <div class="mt-1 grid sm:grid-cols-2 gap-x-6 gap-y-1 text-sm text-slate-600 dark:text-slate-400">
+              <div class="flex gap-2"><span class="text-amber-500">•</span>Evaluar la cantidad total de colesterol en la sangre.</div>
+              <div class="flex gap-2"><span class="text-amber-500">•</span>Determinar el riesgo de enfermedades cardiovasculares.</div>
+              <div class="flex gap-2"><span class="text-amber-500">•</span>Detectar alteraciones del metabolismo de los lípidos.</div>
+              <div class="flex gap-2"><span class="text-amber-500">•</span>Apoyar el diagnóstico de hipercolesterolemia.</div>
+              <div class="flex gap-2"><span class="text-amber-500">•</span>Monitorear la eficacia del tratamiento con dieta, ejercicio o medicamentos.</div>
+              <div class="flex gap-2"><span class="text-amber-500">•</span>Complementar el perfil lipídico para una valoración integral.</div>
+              <div class="flex gap-2"><span class="text-amber-500">•</span>Contribuir a la prevención de enfermedades cardiovasculares.</div>
+            </div>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 p-5 space-y-4">
+            <div>
+              <p class="text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">Valores de referencia</p>
+              <div class="mt-2 flex flex-wrap gap-2 text-xs">
+                <span class="rounded-full bg-emerald-100 dark:bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 px-2.5 py-1 font-medium">Deseable (normal): &lt;200 mg/dL</span>
+                <span class="rounded-full bg-amber-100 dark:bg-amber-500/15 text-amber-700 dark:text-amber-300 px-2.5 py-1 font-medium">Límite alto: 200–239</span>
+                <span class="rounded-full bg-rose-100 dark:bg-rose-500/15 text-rose-700 dark:text-rose-300 px-2.5 py-1 font-medium">Alto: ≥240</span>
+              </div>
+            </div>
+            <div class="grid sm:grid-cols-3 gap-3 text-xs">
+              <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes</p><p class="text-slate-600 dark:text-slate-400">Verificar identidad y orden médica, explicar el procedimiento, confirmar ayuno de 9–12 h, revisar fármacos que puedan alterar los resultados y preparar el material con normas de bioseguridad.</p></div>
+              <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3"><p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante</p><p class="text-slate-600 dark:text-slate-400">Lavado de manos, EPP y venopunción con técnica aséptica. Rotular correctamente el tubo, enviarlo al laboratorio y vigilar el estado del paciente durante la extracción.</p></div>
+              <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después</p><p class="text-slate-600 dark:text-slate-400">Aplicar presión y apósito limpio; verificar estabilidad; indicar que puede reanudar su alimentación habitual salvo otra indicación; registrar e informar que el médico interpretará los resultados.</p></div>
+            </div>
+          </div>
+        </article>
+
+        <!-- HDL -->
+        <article class="mt-4 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="grid md:grid-cols-[34%_1fr]">
+            <div class="relative aspect-[4/3] md:aspect-auto bg-slate-100 dark:bg-slate-800 min-h-[12rem]"><img src="IMG/endocrino/hdl.jpg" alt="HDL — colesterol bueno" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display=&#39;none&#39;; this.nextElementSibling.style.display=&#39;flex&#39;;"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-[0.65rem] text-slate-400 p-2"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>hdl.webp</span></div></div>
+            <div class="p-5">
+            <h3 class="font-bold text-lg text-slate-900 dark:text-white">HDL — Lipoproteína de alta densidad <span class="text-sm font-normal text-emerald-600 dark:text-emerald-400">(colesterol «bueno»)</span></h3>
+            <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">Examen que mide la cantidad de colesterol transportado por las lipoproteínas de alta densidad en la sangre. Su principal función es recoger el exceso de colesterol de los tejidos y las arterias y transportarlo hacia el hígado para su eliminación, ayudando a prevenir la formación de placas de grasa en los vasos sanguíneos y reduciendo el riesgo de enfermedades cardiovasculares.</p>
+            <p class="mt-3 text-xs font-bold uppercase tracking-wide text-amber-700 dark:text-amber-300">Funciones</p>
+            <div class="mt-1 grid sm:grid-cols-2 gap-x-6 gap-y-1 text-sm text-slate-600 dark:text-slate-400">
+              <div class="flex gap-2"><span class="text-amber-500">•</span>Transportar el exceso de colesterol desde los tejidos hacia el hígado.</div>
+              <div class="flex gap-2"><span class="text-amber-500">•</span>Favorecer la eliminación del colesterol del organismo.</div>
+              <div class="flex gap-2"><span class="text-amber-500">•</span>Proteger las arterias de la acumulación de grasa.</div>
+              <div class="flex gap-2"><span class="text-amber-500">•</span>Reducir el riesgo de enfermedades cardiovasculares.</div>
+              <div class="flex gap-2"><span class="text-amber-500">•</span>Complementar la evaluación del perfil lipídico.</div>
+              <div class="flex gap-2"><span class="text-amber-500">•</span>Monitorear el riesgo cardiovascular y la respuesta al tratamiento.</div>
+            </div>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 p-5 space-y-4">
+            <div>
+              <p class="text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">Valores de referencia</p>
+              <div class="mt-2 flex flex-wrap gap-2 text-xs">
+                <span class="rounded-full bg-emerald-100 dark:bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 px-2.5 py-1 font-medium">Hombres: &gt;40 mg/dL</span>
+                <span class="rounded-full bg-emerald-100 dark:bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 px-2.5 py-1 font-medium">Mujeres: &gt;50 mg/dL</span>
+                <span class="rounded-full bg-sky-100 dark:bg-sky-500/15 text-sky-700 dark:text-sky-300 px-2.5 py-1 font-medium">Protector: ≥60</span>
+                <span class="rounded-full bg-rose-100 dark:bg-rose-500/15 text-rose-700 dark:text-rose-300 px-2.5 py-1 font-medium">Bajo (más riesgo): &lt;40 H / &lt;50 M</span>
+              </div>
+            </div>
+            <div class="grid sm:grid-cols-3 gap-3 text-xs">
+              <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes</p><p class="text-slate-600 dark:text-slate-400">Verificar identidad y orden médica, explicar el procedimiento, confirmar ayuno de 9–12 h cuando forme parte del perfil lipídico, revisar fármacos que modifiquen los resultados y preparar el material con bioseguridad.</p></div>
+              <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3"><p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante</p><p class="text-slate-600 dark:text-slate-400">Lavado de manos, EPP y venopunción con técnica aséptica. Rotular el tubo, enviarlo al laboratorio y vigilar el estado del paciente durante la extracción.</p></div>
+              <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después</p><p class="text-slate-600 dark:text-slate-400">Presión y apósito limpio; verificar estabilidad; indicar que puede reanudar su alimentación salvo otra indicación; registrar e informar que el médico interpretará los resultados.</p></div>
+            </div>
+          </div>
+        </article>
+
+        <!-- LDL -->
+        <article class="mt-4 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="grid md:grid-cols-[34%_1fr]">
+            <div class="relative aspect-[4/3] md:aspect-auto bg-slate-100 dark:bg-slate-800 min-h-[12rem]"><img src="IMG/endocrino/ldl.jpg" alt="LDL — colesterol malo" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display=&#39;none&#39;; this.nextElementSibling.style.display=&#39;flex&#39;;"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-[0.65rem] text-slate-400 p-2"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>ldl.webp</span></div></div>
+            <div class="p-5">
+            <h3 class="font-bold text-lg text-slate-900 dark:text-white">LDL — Lipoproteína de baja densidad <span class="text-sm font-normal text-rose-600 dark:text-rose-400">(colesterol «malo»)</span></h3>
+            <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">Examen que mide la cantidad de colesterol transportado por las lipoproteínas de baja densidad en la sangre. Su función es llevar el colesterol desde el hígado hacia las células del organismo; sin embargo, cuando sus niveles son elevados, el colesterol puede acumularse en las paredes de las arterias formando placas de ateroma que aumentan el riesgo de enfermedades cardiovasculares, como infarto de miocardio y accidente cerebrovascular.</p>
+            <p class="mt-3 text-xs font-bold uppercase tracking-wide text-amber-700 dark:text-amber-300">Funciones</p>
+            <div class="mt-1 grid sm:grid-cols-2 gap-x-6 gap-y-1 text-sm text-slate-600 dark:text-slate-400">
+              <div class="flex gap-2"><span class="text-amber-500">•</span>Transportar el colesterol desde el hígado hacia las células del organismo.</div>
+              <div class="flex gap-2"><span class="text-amber-500">•</span>Participar en la formación de membranas celulares.</div>
+              <div class="flex gap-2"><span class="text-amber-500">•</span>Contribuir a la producción de hormonas esteroideas.</div>
+              <div class="flex gap-2"><span class="text-amber-500">•</span>Apoyar la síntesis de vitamina D.</div>
+              <div class="flex gap-2"><span class="text-amber-500">•</span>Evaluar el riesgo de enfermedades cardiovasculares.</div>
+              <div class="flex gap-2"><span class="text-amber-500">•</span>Complementar el estudio del perfil lipídico.</div>
+              <div class="flex gap-2"><span class="text-amber-500">•</span>Monitorear la respuesta al tratamiento para disminuir el colesterol.</div>
+            </div>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 p-5 space-y-4">
+            <div>
+              <p class="text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">Valores de referencia</p>
+              <div class="mt-2 flex flex-wrap gap-2 text-xs">
+                <span class="rounded-full bg-emerald-100 dark:bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 px-2.5 py-1 font-medium">Óptimo: &lt;100 mg/dL</span>
+                <span class="rounded-full bg-emerald-100 dark:bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 px-2.5 py-1 font-medium">Casi óptimo: 100–129</span>
+                <span class="rounded-full bg-amber-100 dark:bg-amber-500/15 text-amber-700 dark:text-amber-300 px-2.5 py-1 font-medium">Límite alto: 130–159</span>
+                <span class="rounded-full bg-rose-100 dark:bg-rose-500/15 text-rose-700 dark:text-rose-300 px-2.5 py-1 font-medium">Alto: 160–189</span>
+                <span class="rounded-full bg-rose-100 dark:bg-rose-500/15 text-rose-700 dark:text-rose-300 px-2.5 py-1 font-medium">Muy alto: ≥190</span>
+              </div>
+            </div>
+            <div class="grid sm:grid-cols-3 gap-3 text-xs">
+              <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes</p><p class="text-slate-600 dark:text-slate-400">Verificar identidad y orden médica, explicar el procedimiento, confirmar ayuno de 9–12 h cuando forme parte del perfil lipídico, revisar fármacos que alteren los resultados y preparar el material con bioseguridad.</p></div>
+              <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3"><p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante</p><p class="text-slate-600 dark:text-slate-400">Lavado de manos, EPP y venopunción con técnica aséptica. Rotular el tubo, enviarlo al laboratorio y vigilar el estado del paciente durante la extracción.</p></div>
+              <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después</p><p class="text-slate-600 dark:text-slate-400">Presión y apósito limpio; verificar estabilidad; indicar que puede reanudar su alimentación salvo otra indicación; registrar e informar que el médico interpretará los resultados.</p></div>
+            </div>
+          </div>
+        </article>
+
+        <!-- VLDL -->
+        <article class="mt-4 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="grid md:grid-cols-[34%_1fr]">
+            <div class="relative aspect-[4/3] md:aspect-auto bg-slate-100 dark:bg-slate-800 min-h-[12rem]"><img src="IMG/endocrino/vldl.jpg" alt="VLDL" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display=&#39;none&#39;; this.nextElementSibling.style.display=&#39;flex&#39;;"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-[0.65rem] text-slate-400 p-2"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>vldl.webp</span></div></div>
+            <div class="p-5">
+            <h3 class="font-bold text-lg text-slate-900 dark:text-white">VLDL — Lipoproteína de muy baja densidad</h3>
+            <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">Tipo de lipoproteína producida principalmente por el hígado. Su función principal es transportar triglicéridos desde el hígado hacia los tejidos del cuerpo. Forma parte del perfil lipídico y, cuando se encuentra elevada, se asocia con un mayor riesgo de enfermedades cardiovasculares debido a su transformación en LDL en la sangre.</p>
+            <p class="mt-3 text-xs font-bold uppercase tracking-wide text-amber-700 dark:text-amber-300">Funciones</p>
+            <div class="mt-1 grid sm:grid-cols-2 gap-x-6 gap-y-1 text-sm text-slate-600 dark:text-slate-400">
+              <div class="flex gap-2"><span class="text-amber-500">•</span>Transportar triglicéridos desde el hígado hacia los tejidos.</div>
+              <div class="flex gap-2"><span class="text-amber-500">•</span>Proveer energía a las células a través de los ácidos grasos.</div>
+              <div class="flex gap-2"><span class="text-amber-500">•</span>Participar en el metabolismo de las grasas.</div>
+              <div class="flex gap-2"><span class="text-amber-500">•</span>Convertirse en LDL en la circulación sanguínea.</div>
+              <div class="flex gap-2"><span class="text-amber-500">•</span>Contribuir al equilibrio del metabolismo lipídico.</div>
+              <div class="flex gap-2"><span class="text-amber-500">•</span>Evaluar el riesgo cardiovascular dentro del perfil lipídico.</div>
+            </div>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 p-5 space-y-4">
+            <div>
+              <p class="text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">Valores de referencia</p>
+              <div class="mt-2 flex flex-wrap gap-2 text-xs">
+                <span class="rounded-full bg-emerald-100 dark:bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 px-2.5 py-1 font-medium">Normal: 5–40 mg/dL</span>
+                <span class="rounded-full bg-rose-100 dark:bg-rose-500/15 text-rose-700 dark:text-rose-300 px-2.5 py-1 font-medium">Elevado: &gt;40 (más riesgo cardiovascular)</span>
+              </div>
+            </div>
+            <div class="grid sm:grid-cols-3 gap-3 text-xs">
+              <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes</p><p class="text-slate-600 dark:text-slate-400">Verificar identidad y orden médica, explicar el procedimiento, confirmar ayuno de 9–12 h si forma parte del perfil lipídico, revisar fármacos que alteren los resultados y preparar el material con bioseguridad.</p></div>
+              <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3"><p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante</p><p class="text-slate-600 dark:text-slate-400">Lavado de manos, EPP y venopunción con técnica aséptica. Rotular el tubo, enviarlo al laboratorio y vigilar el estado del paciente durante la extracción.</p></div>
+              <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después</p><p class="text-slate-600 dark:text-slate-400">Presión y apósito limpio; verificar estabilidad; indicar que puede retomar su alimentación si no hay contraindicación; registrar e informar que el médico interpretará los resultados.</p></div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Triglicéridos -->
+        <article class="mt-4 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="grid md:grid-cols-[34%_1fr]">
+            <div class="relative aspect-[4/3] md:aspect-auto bg-slate-100 dark:bg-slate-800 min-h-[12rem]"><img src="IMG/endocrino/trigliceridos.jpg" alt="Triglicéridos" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display=&#39;none&#39;; this.nextElementSibling.style.display=&#39;flex&#39;;"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-[0.65rem] text-slate-400 p-2"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>trigliceridos.webp</span></div></div>
+            <div class="p-5">
+            <h3 class="font-bold text-lg text-slate-900 dark:text-white">Triglicéridos</h3>
+            <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">Los triglicéridos son el principal tipo de grasa que circula en la sangre y constituyen la principal reserva de energía del organismo. Se forman a partir del exceso de calorías consumidas (especialmente azúcares y grasas) y se almacenan en el tejido adiposo. Su medición forma parte del perfil lipídico y permite evaluar el riesgo cardiovascular y metabólico.</p>
+            <p class="mt-3 text-xs font-bold uppercase tracking-wide text-amber-700 dark:text-amber-300">Funciones</p>
+            <div class="mt-1 grid sm:grid-cols-2 gap-x-6 gap-y-1 text-sm text-slate-600 dark:text-slate-400">
+              <div class="flex gap-2"><span class="text-amber-500">•</span>Almacenar energía en forma de grasa en el organismo.</div>
+              <div class="flex gap-2"><span class="text-amber-500">•</span>Proporcionar energía entre las comidas.</div>
+              <div class="flex gap-2"><span class="text-amber-500">•</span>Transportar energía a través de la sangre.</div>
+              <div class="flex gap-2"><span class="text-amber-500">•</span>Participar en el metabolismo de los lípidos.</div>
+              <div class="flex gap-2"><span class="text-amber-500">•</span>Proteger órganos mediante el tejido adiposo.</div>
+              <div class="flex gap-2"><span class="text-amber-500">•</span>Evaluar el riesgo de enfermedades cardiovasculares.</div>
+              <div class="flex gap-2"><span class="text-amber-500">•</span>Identificar alteraciones metabólicas como obesidad y diabetes.</div>
+            </div>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 p-5 space-y-4">
+            <div>
+              <p class="text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">Valores de referencia</p>
+              <div class="mt-2 flex flex-wrap gap-2 text-xs">
+                <span class="rounded-full bg-emerald-100 dark:bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 px-2.5 py-1 font-medium">Normal: &lt;150 mg/dL</span>
+                <span class="rounded-full bg-amber-100 dark:bg-amber-500/15 text-amber-700 dark:text-amber-300 px-2.5 py-1 font-medium">Límite alto: 150–199</span>
+                <span class="rounded-full bg-rose-100 dark:bg-rose-500/15 text-rose-700 dark:text-rose-300 px-2.5 py-1 font-medium">Alto: 200–499</span>
+                <span class="rounded-full bg-rose-100 dark:bg-rose-500/15 text-rose-700 dark:text-rose-300 px-2.5 py-1 font-medium">Muy alto: ≥500</span>
+              </div>
+            </div>
+            <div class="grid sm:grid-cols-3 gap-3 text-xs">
+              <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes</p><p class="text-slate-600 dark:text-slate-400">Verificar identidad y orden médica, explicar el procedimiento y confirmar ayuno de 9–12 h. Recomendar evitar alcohol y comidas grasosas el día anterior, revisar fármacos que alteren los resultados y preparar el material con bioseguridad.</p></div>
+              <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3"><p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante</p><p class="text-slate-600 dark:text-slate-400">Lavado de manos, EPP y venopunción con técnica aséptica. Rotular el tubo, enviarlo al laboratorio y vigilar el estado del paciente durante la extracción.</p></div>
+              <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después</p><p class="text-slate-600 dark:text-slate-400">Presión y apósito limpio; verificar estabilidad; indicar que puede retomar su alimentación si no hay contraindicación; registrar e informar que el médico interpretará los resultados.</p></div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Lipoproteínas / Lp(a) -->
+        <div class="mt-4 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 p-5">
+          <h3 class="font-bold text-lg text-slate-900 dark:text-white">Lipoproteína (a) y lipoproteínas</h3>
+          <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">El análisis de lipoproteína mide su nivel en sangre; un valor alto indica mayor riesgo de enfermedad cardíaca y accidente cerebrovascular. Las lipoproteínas son partículas de proteínas y grasas que transportan colesterol a las células: los dos grupos principales son las <strong class="text-emerald-600 dark:text-emerald-400">HDL</strong> («bueno») y las <strong class="text-rose-600 dark:text-rose-400">LDL</strong> («malo»).</p>
+          <p class="mt-2 text-sm text-slate-600 dark:text-slate-400">Niveles altos de partículas LDL hacen que el colesterol se acumule en las arterias formando bloqueos (placas): la <strong class="text-slate-800 dark:text-slate-200">ateroesclerosis</strong> o endurecimiento arterial, que vuelve las arterias gruesas y menos flexibles. Puede causar:</p>
+          <div class="mt-2 grid sm:grid-cols-2 gap-2 text-sm text-slate-600 dark:text-slate-400">
+            <div class="flex gap-2"><span class="text-amber-500">•</span>Enfermedad de las arterias coronarias.</div>
+            <div class="flex gap-2"><span class="text-amber-500">•</span>Ataque cardíaco.</div>
+            <div class="flex gap-2"><span class="text-amber-500">•</span>Accidente cerebrovascular.</div>
+            <div class="flex gap-2"><span class="text-amber-500">•</span>Enfermedad arterial periférica y otras enfermedades circulatorias.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ FUNCIÓN TIROIDEA ============ -->
+      <section class="mt-14">
+        <div class="flex items-center gap-3">
+          <span class="grid h-9 w-9 place-items-center rounded-xl bg-amber-500 text-white font-extrabold">3</span>
+          <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Función tiroidea</h2>
+        </div>
+        <section class="mt-4 grid lg:grid-cols-[1fr_36%] gap-6 items-start">
+          <div>
+            <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+              La tiroides es una glándula endocrina con forma de mariposa, ubicada en la parte frontal del cuello. Se encarga de producir
+              las hormonas <strong class="text-slate-900 dark:text-white">T3 y T4</strong>, que regulan el metabolismo del cuerpo y ayudan a
+              controlar funciones como la temperatura corporal; además, influye en la fertilidad. Los síntomas de problemas de tiroides
+              —aumento o pérdida de peso, piel seca o dificultad para concentrarse— aparecen cuando la glándula produce hormonas en exceso o
+              en defecto. Los trastornos más comunes son el hipotiroidismo y el hipertiroidismo.
+            </p>
+            <p class="mt-3 text-xs font-bold uppercase tracking-wide text-amber-700 dark:text-amber-300">Funciones de la tiroides en el cuerpo</p>
+            <div class="mt-2 flex flex-wrap gap-2 text-xs">
+              <span class="rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 px-2.5 py-1">Metabolismo corporal</span>
+              <span class="rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 px-2.5 py-1">Ritmo cardíaco</span>
+              <span class="rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 px-2.5 py-1">Temperatura corporal</span>
+              <span class="rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 px-2.5 py-1">Digestión</span>
+              <span class="rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 px-2.5 py-1">Respiración</span>
+              <span class="rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 px-2.5 py-1">Fertilidad</span>
+              <span class="rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 px-2.5 py-1">Mantenimiento de huesos y piel</span>
+            </div>
+            <p class="mt-2 text-xs text-slate-500 dark:text-slate-400">Además, la tiroides desempeña un papel en el control del desarrollo del cerebro y la actividad mental.</p>
+          </div>
+          <figure class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+            <div class="relative aspect-[4/3] bg-slate-100 dark:bg-slate-800"><img src="IMG/endocrino/funcion-tiroidea.png" alt="Glándula tiroides" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-[0.65rem] text-slate-400 p-2"><svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>IMG/endocrino/funcion-tiroidea.webp</span></div></div>
+          </figure>
+        </section>
+
+        <!-- TSH -->
+        <article class="mt-6 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 p-5">
+          <h3 class="font-bold text-lg text-slate-900 dark:text-white">TSH (hormona estimulante de la tiroides)</h3>
+          <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">Sirve para evaluar la función de la tiroides. La solicita el médico general o el endocrinólogo para determinar si la glándula funciona correctamente, para el control de enfermedades como el hipotiroidismo o el hipertiroidismo, o en el seguimiento del cáncer diferenciado de tiroides (folicular o papilar). Se pide cuando surgen síntomas como cambios de peso, bocio, piel seca, latidos cardíacos acelerados, cansancio o temblores en las manos.</p>
+          <p class="mt-3 text-xs font-bold uppercase tracking-wide text-amber-700 dark:text-amber-300">Para qué sirve — ayuda a diagnosticar</p>
+          <div class="mt-1 grid sm:grid-cols-2 gap-1.5 text-sm text-slate-600 dark:text-slate-400">
+            <div class="flex gap-2"><span class="text-amber-500">•</span>Hipotiroidismo primario, congénito, clínico o subclínico.</div>
+            <div class="flex gap-2"><span class="text-amber-500">•</span>Hipertiroidismo clínico, subclínico o central.</div>
+            <div class="flex gap-2"><span class="text-amber-500">•</span>Enfermedad de Graves.</div>
+            <div class="flex gap-2"><span class="text-amber-500">•</span>Tiroiditis de Hashimoto.</div>
+            <div class="flex gap-2"><span class="text-amber-500">•</span>Cáncer de tiroides.</div>
+            <div class="flex gap-2"><span class="text-amber-500">•</span>Nódulo o quiste en la tiroides.</div>
+            <div class="flex gap-2"><span class="text-amber-500">•</span>Tumor en la hipófisis o adenoma pituitario.</div>
+            <div class="flex gap-2"><span class="text-amber-500">•</span>Acompañar la eficacia del tratamiento tiroideo.</div>
+          </div>
+          <div class="mt-4 overflow-x-auto rounded-xl ring-1 ring-slate-200 dark:ring-slate-800">
+            <table class="w-full text-sm text-left">
+              <caption class="px-4 py-2 text-left text-xs font-semibold text-slate-500 dark:text-slate-400 bg-white dark:bg-slate-900">Valores normales de la TSH según la edad y condición fisiológica</caption>
+              <thead class="bg-amber-50 dark:bg-amber-500/10 text-amber-800 dark:text-amber-200"><tr><th class="px-4 py-2 font-semibold">Grupo</th><th class="px-4 py-2 font-semibold">Valor</th></tr></thead>
+              <tbody class="divide-y divide-slate-200 dark:divide-slate-800 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300">
+                <tr><td class="px-4 py-2">Recién nacidos (0–5 días)</td><td class="px-4 py-2">0,7–15,2 mUI/L</td></tr>
+                <tr><td class="px-4 py-2">Lactantes (6 días–3 meses)</td><td class="px-4 py-2">0,7–11,0 mUI/L</td></tr>
+                <tr><td class="px-4 py-2">Niños (4 meses–12 años)</td><td class="px-4 py-2">0,7–6,4 mUI/L</td></tr>
+                <tr><td class="px-4 py-2">Adolescentes (13–18 años)</td><td class="px-4 py-2">0,5–4,3 mUI/L</td></tr>
+                <tr><td class="px-4 py-2">Adultos (19–64 años)</td><td class="px-4 py-2">0,4–4,0 mUI/L</td></tr>
+                <tr><td class="px-4 py-2">Adultos mayores (≥65 años)</td><td class="px-4 py-2">0,4–6,0 mUI/L (pueden aceptarse valores ligeramente más elevados según el estado de salud y el criterio clínico)</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+        <!-- T4 libre -->
+        <article class="mt-4 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 p-5">
+          <h3 class="font-bold text-lg text-slate-900 dark:text-white">T4 libre</h3>
+          <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">La T4 es la hormona principal producida por la tiroides; la prueba mide su nivel en una muestra de sangre. Demasiada o muy poca T4 puede ser signo de un problema de tiroides. Las hormonas tiroideas afectan casi cada órgano y controlan funciones importantes como la respiración, la frecuencia cardiaca, el peso, la digestión y el estado de ánimo (en niños, también el crecimiento). Hay dos formas de T4 en la sangre:</p>
+          <div class="mt-3 grid sm:grid-cols-2 gap-3 text-sm">
+            <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300">T4 libre</p><p class="text-slate-600 dark:text-slate-400">Forma activa de la tiroxina que entra en los tejidos del cuerpo donde se necesita.</p></div>
+            <div class="rounded-xl bg-slate-50 dark:bg-slate-800/50 ring-1 ring-slate-200 dark:ring-slate-700 p-3"><p class="font-bold text-slate-700 dark:text-slate-200">T4 ligada</p><p class="text-slate-600 dark:text-slate-400">Tiroxina unida a proteínas que no entra a los tejidos; permanece como «suministro de respaldo» hasta que los tejidos la necesiten.</p></div>
+          </div>
+          <p class="mt-3 text-xs font-bold uppercase tracking-wide text-amber-700 dark:text-amber-300">¿Para qué se usa? — diagnosticar</p>
+          <ul class="mt-1 space-y-1 text-sm text-slate-600 dark:text-slate-400">
+            <li class="flex gap-2"><span class="text-amber-500">•</span><strong class="text-slate-700 dark:text-slate-300">Hipotiroidismo</strong> (tiroides hipoactiva): la glándula no produce suficiente hormona para las necesidades del cuerpo.</li>
+            <li class="flex gap-2"><span class="text-amber-500">•</span><strong class="text-slate-700 dark:text-slate-300">Hipertiroidismo</strong> (tiroides hiperactiva): produce más hormona de la que el cuerpo necesita.</li>
+          </ul>
+          <p class="mt-3 text-xs font-bold uppercase tracking-wide text-amber-700 dark:text-amber-300">Ayuda a saber más sobre</p>
+          <ul class="mt-1 space-y-1 text-sm text-slate-600 dark:text-slate-400">
+            <li class="flex gap-2"><span class="text-amber-500">•</span>Otras afecciones tiroideas como nódulos (crecimientos no cancerosos) o bocio, que a veces causan T4 alta.</li>
+            <li class="flex gap-2"><span class="text-amber-500">•</span>Trastornos de la glándula pituitaria que producen demasiada o muy poca TSH.</li>
+            <li class="flex gap-2"><span class="text-amber-500">•</span>Trastornos del hipotálamo, área del cerebro que controla la pituitaria y otras funciones.</li>
+            <li class="flex gap-2"><span class="text-amber-500">•</span>Examinar al recién nacido para detectar hipotiroidismo congénito.</li>
+            <li class="flex gap-2"><span class="text-amber-500">•</span>Controlar la T4 en quienes toman medicamentos con hormona tiroidea para el hipotiroidismo.</li>
+            <li class="flex gap-2"><span class="text-amber-500">•</span>En ciertos casos, se hace dentro del grupo de pruebas de función tiroidea.</li>
+          </ul>
+        </article>
+
+        <!-- T4 total -->
+        <article class="mt-4 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 p-5">
+          <h3 class="font-bold text-lg text-slate-900 dark:text-white">T4 total</h3>
+          <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">Prueba que mide la concentración total de tiroxina en la sangre, incluyendo la fracción unida a proteínas transportadoras y la fracción circulante. Se usa para evaluar la función de la glándula tiroides y apoyar el diagnóstico y seguimiento de enfermedades tiroideas.</p>
+          <div class="mt-3 overflow-x-auto rounded-xl ring-1 ring-slate-200 dark:ring-slate-800">
+            <table class="w-full text-sm text-left">
+              <caption class="px-4 py-2 text-left text-xs font-semibold text-slate-500 dark:text-slate-400 bg-white dark:bg-slate-900">Valores normales (pueden variar entre laboratorios)</caption>
+              <thead class="bg-amber-50 dark:bg-amber-500/10 text-amber-800 dark:text-amber-200"><tr><th class="px-4 py-2 font-semibold">Grupo</th><th class="px-4 py-2 font-semibold">Valor</th></tr></thead>
+              <tbody class="divide-y divide-slate-200 dark:divide-slate-800 text-slate-700 dark:text-slate-300">
+                <tr><td class="px-4 py-2">Recién nacidos</td><td class="px-4 py-2">11,0–22,0 µg/dL</td></tr>
+                <tr><td class="px-4 py-2">Lactantes (1–12 meses)</td><td class="px-4 py-2">8,2–16,6 µg/dL</td></tr>
+                <tr><td class="px-4 py-2">Niños (1–5 años)</td><td class="px-4 py-2">7,3–15,0 µg/dL</td></tr>
+                <tr><td class="px-4 py-2">Niños (6–12 años)</td><td class="px-4 py-2">6,4–13,3 µg/dL</td></tr>
+                <tr><td class="px-4 py-2">Adolescentes (13–18 años)</td><td class="px-4 py-2">5,9–13,2 µg/dL</td></tr>
+                <tr><td class="px-4 py-2">Adultos</td><td class="px-4 py-2">4,5–12,5 µg/dL (58–161 nmol/L)</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="mt-3 grid sm:grid-cols-2 gap-3 text-sm">
+            <div class="rounded-xl bg-rose-50 dark:bg-rose-500/10 ring-1 ring-rose-100 dark:ring-rose-500/20 p-3"><p class="font-bold text-rose-700 dark:text-rose-300">Valores elevados</p><p class="text-slate-600 dark:text-slate-400">Hipertiroidismo, aumento de las proteínas transportadoras, embarazo o uso de ciertos medicamentos.</p></div>
+            <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300">Valores disminuidos</p><p class="text-slate-600 dark:text-slate-400">Hipotiroidismo, desnutrición, enfermedades sistémicas o disminución de las proteínas transportadoras.</p></div>
+          </div>
+          <p class="mt-2 text-xs text-slate-500 dark:text-slate-400 italic">La interpretación de la T4 total debe considerar la historia clínica, el examen físico y otros estudios de laboratorio.</p>
+        </article>
+
+        <!-- T3 libre -->
+        <article class="mt-4 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 p-5">
+          <h3 class="font-bold text-lg text-slate-900 dark:text-white">T3 libre</h3>
+          <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">Fracción de la triyodotironina que circula sin estar unida a proteínas transportadoras. Al estar libre, es la forma biológicamente activa que ingresa a las células y ejerce sus efectos. Participa en la regulación del metabolismo, el consumo de oxígeno, la producción de energía, la temperatura corporal, la función cardiovascular y el desarrollo del sistema nervioso. Es especialmente útil para evaluar la función tiroidea y diagnosticar el hipertiroidismo y, en menor medida, el hipotiroidismo.</p>
+          <div class="mt-3 overflow-x-auto rounded-xl ring-1 ring-slate-200 dark:ring-slate-800">
+            <table class="w-full text-sm text-left">
+              <caption class="px-4 py-2 text-left text-xs font-semibold text-slate-500 dark:text-slate-400 bg-white dark:bg-slate-900">Valores normales (varían según laboratorio y metodología)</caption>
+              <thead class="bg-amber-50 dark:bg-amber-500/10 text-amber-800 dark:text-amber-200"><tr><th class="px-4 py-2 font-semibold">Grupo</th><th class="px-4 py-2 font-semibold">Valor</th></tr></thead>
+              <tbody class="divide-y divide-slate-200 dark:divide-slate-800 text-slate-700 dark:text-slate-300">
+                <tr><td class="px-4 py-2">Recién nacidos</td><td class="px-4 py-2">2,5–9,3 pg/mL</td></tr>
+                <tr><td class="px-4 py-2">Niños</td><td class="px-4 py-2">3,0–7,0 pg/mL</td></tr>
+                <tr><td class="px-4 py-2">Adolescentes</td><td class="px-4 py-2">2,8–6,5 pg/mL</td></tr>
+                <tr><td class="px-4 py-2">Adultos</td><td class="px-4 py-2">2,3–4,2 pg/mL (3,5–6,5 pmol/L)</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="mt-3 grid sm:grid-cols-2 gap-3 text-sm">
+            <div class="rounded-xl bg-rose-50 dark:bg-rose-500/10 ring-1 ring-rose-100 dark:ring-rose-500/20 p-3"><p class="font-bold text-rose-700 dark:text-rose-300 mb-1">T3 libre elevada</p><p class="text-slate-600 dark:text-slate-400">Hipertiroidismo, enfermedad de Graves, adenoma tóxico, fase inicial de algunos trastornos tiroideos o consumo excesivo de hormonas tiroideas.</p></div>
+            <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">T3 libre disminuida</p><p class="text-slate-600 dark:text-slate-400">Hipotiroidismo, enfermedades sistémicas graves (síndrome del eutiroideo enfermo), ayuno prolongado o desnutrición, y fármacos como glucocorticoides o amiodarona.</p></div>
+          </div>
+        </article>
+
+        <!-- T3 total -->
+        <article class="mt-4 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 p-5">
+          <h3 class="font-bold text-lg text-slate-900 dark:text-white">T3 total</h3>
+          <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">Prueba que mide la concentración total de triyodotironina en la sangre (fracción unida a proteínas + fracción libre). La T3 es la hormona tiroidea con mayor actividad biológica y participa en la regulación del metabolismo, el crecimiento, la producción de calor, el consumo de oxígeno y el funcionamiento de diversos órganos. Se usa principalmente para apoyar el diagnóstico y seguimiento del hipertiroidismo y otras alteraciones tiroideas.</p>
+          <div class="mt-3 overflow-x-auto rounded-xl ring-1 ring-slate-200 dark:ring-slate-800">
+            <table class="w-full text-sm text-left">
+              <caption class="px-4 py-2 text-left text-xs font-semibold text-slate-500 dark:text-slate-400 bg-white dark:bg-slate-900">Valores normales (varían según laboratorio)</caption>
+              <thead class="bg-amber-50 dark:bg-amber-500/10 text-amber-800 dark:text-amber-200"><tr><th class="px-4 py-2 font-semibold">Grupo</th><th class="px-4 py-2 font-semibold">Valor</th></tr></thead>
+              <tbody class="divide-y divide-slate-200 dark:divide-slate-800 text-slate-700 dark:text-slate-300">
+                <tr><td class="px-4 py-2">Recién nacidos</td><td class="px-4 py-2">105–269 ng/dL</td></tr>
+                <tr><td class="px-4 py-2">Niños</td><td class="px-4 py-2">105–245 ng/dL</td></tr>
+                <tr><td class="px-4 py-2">Adolescentes</td><td class="px-4 py-2">95–230 ng/dL</td></tr>
+                <tr><td class="px-4 py-2">Adultos</td><td class="px-4 py-2">80–200 ng/dL (1,2–3,1 nmol/L)</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="mt-3 grid sm:grid-cols-2 gap-3 text-sm">
+            <div class="rounded-xl bg-rose-50 dark:bg-rose-500/10 ring-1 ring-rose-100 dark:ring-rose-500/20 p-3"><p class="font-bold text-rose-700 dark:text-rose-300 mb-1">T3 total elevada</p><p class="text-slate-600 dark:text-slate-400">Hipertiroidismo, enfermedad de Graves, bocio multinodular tóxico, embarazo o aumento de las proteínas transportadoras, y administración excesiva de hormonas tiroideas.</p></div>
+            <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">T3 total disminuida</p><p class="text-slate-600 dark:text-slate-400">Hipotiroidismo, enfermedades sistémicas graves, desnutrición o ayuno prolongado, disminución de las proteínas transportadoras y ciertos medicamentos.</p></div>
+          </div>
+          <p class="mt-2 text-xs text-slate-500 dark:text-slate-400 italic"><strong class="text-slate-600 dark:text-slate-300">Consideraciones importantes:</strong> la interpretación de la T3 libre y la T3 total debe hacerse junto con la evaluación clínica y otras pruebas de función tiroidea, ya que diversos factores fisiológicos y patológicos modifican sus concentraciones.</p>
+        </article>
+
+        <!-- Anti-receptor TSH -->
+        <article class="mt-4 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 p-5">
+          <h3 class="font-bold text-lg text-slate-900 dark:text-white">Anticuerpos contra el receptor de TSH (TRAb)</h3>
+          <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">Anticuerpos que se dirigen específicamente al receptor de TSH en la superficie de las células tiroideas, receptor fundamental para regular la producción de hormonas tiroideas. Son del tipo IgG y pueden reaccionar con diferentes partes del receptor, lo que explica su capacidad variada de estimular o inhibir la función tiroidea. Interfieren de dos maneras principales:</p>
+          <div class="mt-3 grid sm:grid-cols-2 gap-3 text-sm">
+            <div class="rounded-xl bg-rose-50 dark:bg-rose-500/10 ring-1 ring-rose-100 dark:ring-rose-500/20 p-3"><p class="font-bold text-rose-700 dark:text-rose-300 mb-1">Estimulación</p><p class="text-slate-600 dark:text-slate-400">Imitan la acción de la TSH y estimulan de manera inapropiada la producción de hormonas, llevando a hipertiroidismo. Es la principal causa de la enfermedad de Graves-Basedow.</p></div>
+            <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Bloqueo</p><p class="text-slate-600 dark:text-slate-400">Se unen al receptor impidiendo la unión de la TSH e inhibiendo la producción hormonal, lo que puede resultar en hipotiroidismo. Implicado en la tiroiditis de Hashimoto.</p></div>
+          </div>
+          <p class="mt-3 text-xs font-bold uppercase tracking-wide text-amber-700 dark:text-amber-300">¿Por qué se realiza? — utilidad clínica</p>
+          <div class="mt-2 grid sm:grid-cols-3 gap-3 text-xs">
+            <div class="rounded-xl bg-slate-50 dark:bg-slate-800/50 ring-1 ring-slate-200 dark:ring-slate-700 p-3"><p class="font-bold text-slate-700 dark:text-slate-200 mb-1">Diagnóstico</p><p class="text-slate-600 dark:text-slate-400">Particularmente útil para la enfermedad de Graves-Basedow; su presencia con taquicardia, pérdida de peso o bocio sugiere fuertemente el diagnóstico.</p></div>
+            <div class="rounded-xl bg-slate-50 dark:bg-slate-800/50 ring-1 ring-slate-200 dark:ring-slate-700 p-3"><p class="font-bold text-slate-700 dark:text-slate-200 mb-1">Monitoreo del tratamiento</p><p class="text-slate-600 dark:text-slate-400">Con antitiroideos, la disminución de los títulos indica remisión; niveles persistentemente elevados aumentan el riesgo de recaída.</p></div>
+            <div class="rounded-xl bg-slate-50 dark:bg-slate-800/50 ring-1 ring-slate-200 dark:ring-slate-700 p-3"><p class="font-bold text-slate-700 dark:text-slate-200 mb-1">Pronóstico</p><p class="text-slate-600 dark:text-slate-400">Niveles bajos o indetectables se asocian a mayor probabilidad de remisión; títulos elevados sugieren un curso más agresivo.</p></div>
+          </div>
+          <p class="mt-3 text-xs font-bold uppercase tracking-wide text-amber-700 dark:text-amber-300">¿Qué indican los resultados?</p>
+          <div class="mt-2 grid sm:grid-cols-2 gap-3 text-sm">
+            <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Positivos</p><p class="text-slate-600 dark:text-slate-400"><strong>Graves-Basedow:</strong> muy frecuente (70–90 % de los pacientes). <strong>Tiroiditis de Hashimoto:</strong> en algunos casos, en menor proporción. <strong>Tiroiditis crónica atrófica:</strong> suelen estar presentes y pueden bloquear la función.</p></div>
+            <div class="rounded-xl bg-slate-50 dark:bg-slate-800/50 ring-1 ring-slate-200 dark:ring-slate-700 p-3"><p class="font-bold text-slate-700 dark:text-slate-200 mb-1">Negativos</p><p class="text-slate-600 dark:text-slate-400">No descartan enfermedad autoinmune. Pueden darse en fases tempranas de Graves o Hashimoto (niveles bajos o indetectables) o por disfunción tiroidea de causa no autoinmune (medicamentos, deficiencias nutricionales).</p></div>
+          </div>
+        </article>
+
+        <!-- Tiroglobulina -->
+        <article class="mt-4 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 p-5">
+          <h3 class="font-bold text-lg text-slate-900 dark:text-white">Tiroglobulina</h3>
+          <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">Proteína producida por la glándula tiroides que participa en la producción de las hormonas tiroideas. El examen se indica para evaluar la respuesta del cáncer de tiroides al tratamiento e identificar su recurrencia tras la extirpación quirúrgica de la glándula. Sus alteraciones no siempre indican cáncer, pues también se elevan en otros problemas como el hipertiroidismo y la tiroiditis.</p>
+          <p class="mt-3 text-xs font-bold uppercase tracking-wide text-amber-700 dark:text-amber-300">Cuándo realizarse el examen</p>
+          <ul class="mt-1 space-y-1 text-sm text-slate-600 dark:text-slate-400">
+            <li class="flex gap-2"><span class="text-amber-500">•</span>Evaluar la respuesta al tratamiento del cáncer de tiroides, sobre todo tras la extirpación de la glándula.</li>
+            <li class="flex gap-2"><span class="text-amber-500">•</span>Identificar la recurrencia del cáncer tras la cirugía (método de seguimiento).</li>
+            <li class="flex gap-2"><span class="text-amber-500">•</span>Ayudar en el diagnóstico de la tirotoxicosis facticia (exceso de hormonas por medicamentos como la levotiroxina).</li>
+          </ul>
+          <div class="mt-3 flex flex-wrap gap-2 text-xs">
+            <span class="rounded-full bg-emerald-100 dark:bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 px-2.5 py-1 font-medium">Referencia: 3,5–77 ng/mL (varía según laboratorio y método)</span>
+          </div>
+          <p class="mt-3 text-xs font-bold uppercase tracking-wide text-amber-700 dark:text-amber-300">Causas de tiroglobulina alta</p>
+          <div class="mt-1 grid sm:grid-cols-2 gap-1.5 text-sm text-slate-600 dark:text-slate-400">
+            <div class="flex gap-2"><span class="text-amber-500">•</span>Medicamentos antitiroideos (metamizol, propiltiouracilo).</div>
+            <div class="flex gap-2"><span class="text-amber-500">•</span>Hipertiroidismo, por estimulación excesiva de la tiroides.</div>
+            <div class="flex gap-2"><span class="text-amber-500">•</span>Tiroiditis (inflamación de la glándula).</div>
+            <div class="flex gap-2"><span class="text-amber-500">•</span>Traumas en la tiroides (cirugía o biopsia).</div>
+            <div class="flex gap-2"><span class="text-amber-500">•</span>Enfermedad renal crónica.</div>
+            <div class="flex gap-2"><span class="text-amber-500">•</span>Adenoma hipofisario que provoca producción excesiva de TSH.</div>
+          </div>
+          <p class="mt-2 text-xs text-slate-500 dark:text-slate-400 italic">Aunque puede elevarse en el cáncer de tiroides, este examen no confirma el diagnóstico: se requieren otros estudios como la biopsia para identificar el tumor.</p>
+        </article>
+      </section>
+
+      <!-- ============ ÁCIDO ÚRICO ============ -->
+      <section class="mt-14">
+        <div class="flex items-center gap-3">
+          <span class="grid h-9 w-9 place-items-center rounded-xl bg-amber-500 text-white font-extrabold">4</span>
+          <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Ácido úrico</h2>
+        </div>
+        <div class="mt-4 grid lg:grid-cols-[1fr_34%] gap-5 items-start">
+          <div>
+            <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">Sustancia formada tras la digestión de las proteínas, que generan purinas; en exceso forman cristales que se acumulan en las articulaciones causando dolor intenso. Normalmente se elimina por los riñones en la orina, pero ante problemas renales, exceso de proteínas o sobreproducción se acumula en articulaciones, tendones y riñones, originando la artritis gotosa (gota). Se mide en sangre u orina.</p>
+            <p class="mt-3 text-sm text-slate-600 dark:text-slate-400"><strong class="text-slate-800 dark:text-slate-200">Síntomas de niveles altos (más frecuente en hombres):</strong> dolor e hinchazón de una articulación (dedos, rodillas, tobillos, talón), dificultad de movimiento, enrojecimiento y calor local, deformación articular y aparición frecuente de cálculos renales con dolor lumbar y dificultad para orinar.</p>
+            <p class="mt-2 text-sm text-slate-600 dark:text-slate-400"><strong class="text-slate-800 dark:text-slate-200">Causas:</strong> exceso de alimentos ricos en purinas (carnes rojas, mariscos, pescados), alcohol, dieta rica en grasas saturadas, obesidad, insuficiencia renal, diabetes, factores genéticos y fármacos (diuréticos, betabloqueadores, inmunosupresores como ciclosporina o tacrolimus).</p>
+          </div>
+          <figure class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+            <div class="relative aspect-[4/3] bg-slate-100 dark:bg-slate-800"><img src="IMG/endocrino/acido-urico.webp" alt="Ácido úrico" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-[0.65rem] text-slate-400 p-2"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>acido-urico.webp</span></div></div>
+          </figure>
+        </div>
+      </section>
+
+      <!-- ============ ELECTROLITOS SÉRICOS ============ -->
+      <section class="mt-14">
+        <div class="flex items-center gap-3">
+          <span class="grid h-9 w-9 place-items-center rounded-xl bg-amber-500 text-white font-extrabold">5</span>
+          <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Electrolitos séricos</h2>
+        </div>
+        <p class="mt-3 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">Minerales cargados eléctricamente (iones del plasma) que regulan funciones vitales como la hidratación, la actividad muscular, la función nerviosa y el equilibrio ácido-base, permitiendo la transmisión de impulsos eléctricos y la regulación de procesos fisiológicos esenciales.</p>
+        <div class="mt-4 grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+          <div class="rounded-xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 p-4"><p class="font-bold text-amber-700 dark:text-amber-300">Sodio (Na⁺)</p><p class="text-xs text-slate-500 dark:text-slate-400">135–145 mEq/L</p><p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Regula el agua corporal, la función nerviosa y la presión arterial.</p></div>
+          <div class="rounded-xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 p-4"><p class="font-bold text-amber-700 dark:text-amber-300">Potasio (K⁺)</p><p class="text-xs text-slate-500 dark:text-slate-400">3,5–5,0 mEq/L</p><p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Contracción muscular, ritmo cardíaco y equilibrio osmótico intracelular.</p></div>
+          <div class="rounded-xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 p-4"><p class="font-bold text-amber-700 dark:text-amber-300">Cloro (Cl⁻)</p><p class="text-xs text-slate-500 dark:text-slate-400">98–107 mEq/L</p><p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Mantiene el equilibrio ácido-base y la hidratación.</p></div>
+          <div class="rounded-xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 p-4"><p class="font-bold text-amber-700 dark:text-amber-300">Calcio (Ca²⁺)</p><p class="text-xs text-slate-500 dark:text-slate-400">8,5–10,5 mg/dL</p><p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Función muscular y nerviosa, coagulación y salud ósea.</p></div>
+          <div class="rounded-xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 p-4"><p class="font-bold text-amber-700 dark:text-amber-300">Magnesio (Mg²⁺)</p><p class="text-xs text-slate-500 dark:text-slate-400">1,7–2,2 mg/dL</p><p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Producción de energía, control muscular y equilibrio electrolítico.</p></div>
+          <div class="rounded-xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 p-4"><p class="font-bold text-amber-700 dark:text-amber-300">Bicarbonato (HCO₃⁻)</p><p class="text-xs text-slate-500 dark:text-slate-400">22–28 mEq/L</p><p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Regula el pH sanguíneo y el equilibrio ácido-base.</p></div>
+        </div>
+        <p class="mt-3 text-xs text-slate-500 dark:text-slate-400">También pueden evaluarse el fosfato (HPO₄²⁻) y, en algunos casos, el hierro o el CO₂ para estudios de equilibrio ácido-base.</p>
+        <div class="mt-4 grid md:grid-cols-2 gap-4">
+          <div class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 p-5">
+            <h3 class="font-bold text-slate-900 dark:text-white">Importancia clínica</h3>
+            <ul class="mt-2 space-y-1 text-sm text-slate-600 dark:text-slate-400">
+              <li class="flex gap-2"><span class="text-amber-500">•</span>Detectar desequilibrios que afectan músculos, corazón y nervios.</li>
+              <li class="flex gap-2"><span class="text-amber-500">•</span>Diagnosticar y monitorear enfermedades renales, cardíacas y metabólicas.</li>
+              <li class="flex gap-2"><span class="text-amber-500">•</span>Evaluar deshidratación, hipertensión y trastornos hormonales.</li>
+              <li class="flex gap-2"><span class="text-amber-500">•</span>Identificar alteraciones del equilibrio ácido-base.</li>
+            </ul>
+          </div>
+          <div class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 p-5">
+            <h3 class="font-bold text-slate-900 dark:text-white">Consecuencias de los desequilibrios</h3>
+            <ul class="mt-2 space-y-1 text-sm text-slate-600 dark:text-slate-400">
+              <li class="flex gap-2"><span class="text-rose-500">•</span>Hipo/hipernatremia: confusión, debilidad, convulsiones.</li>
+              <li class="flex gap-2"><span class="text-rose-500">•</span>Hipo/hiperpotasemia: arritmias cardíacas, debilidad muscular.</li>
+              <li class="flex gap-2"><span class="text-rose-500">•</span>Hipo/hipercalcemia: espasmos musculares, problemas cardíacos.</li>
+              <li class="flex gap-2"><span class="text-rose-500">•</span>Deshidratación o sobrehidratación: afectan presión arterial y función renal.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ GASOMETRÍA / MICROALBUMINURIA ============ -->
+      <section class="mt-14">
+        <div class="flex items-center gap-3">
+          <span class="grid h-9 w-9 place-items-center rounded-xl bg-amber-500 text-white font-extrabold">6</span>
+          <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Gasometría arterial y microalbuminuria</h2>
+        </div>
+        <div class="mt-4 grid lg:grid-cols-2 gap-5">
+          <article class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 p-5">
+            <h3 class="font-bold text-lg text-slate-900 dark:text-white">Gasometría arterial</h3>
+            <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">Mide la cantidad de oxígeno y dióxido de carbono y la acidez (pH) de la sangre. La muestra se toma generalmente de una arteria —radial (muñeca), femoral (ingle) o braquial (brazo)—; a veces se usa sangre venosa. Evalúa enfermedades respiratorias, la eficacia de la oxigenoterapia o ventilación, y el equilibrio ácido-base (función pulmonar, renal y estado metabólico).</p>
+            <p class="mt-3 text-xs font-bold uppercase tracking-wide text-amber-700 dark:text-amber-300">Preparación</p>
+            <p class="mt-1 text-sm text-slate-600 dark:text-slate-400">No requiere preparación especial. Si recibe oxigenoterapia, la concentración de oxígeno debe mantenerse constante 20 min antes. Informar si toma anticoagulantes (p. ej. ácido acetilsalicílico).</p>
+            <div class="mt-3 overflow-x-auto rounded-xl ring-1 ring-slate-200 dark:ring-slate-800">
+              <table class="w-full text-sm text-left">
+                <caption class="px-4 py-2 text-left text-xs font-semibold text-slate-500 dark:text-slate-400 bg-white dark:bg-slate-900">Resultados normales (a nivel del mar)</caption>
+                <thead class="bg-amber-50 dark:bg-amber-500/10 text-amber-800 dark:text-amber-200"><tr><th class="px-4 py-2 font-semibold">Parámetro</th><th class="px-4 py-2 font-semibold">Valor</th></tr></thead>
+                <tbody class="divide-y divide-slate-200 dark:divide-slate-800 text-slate-700 dark:text-slate-300">
+                  <tr><td class="px-4 py-2">PaO₂ (oxígeno)</td><td class="px-4 py-2">75–100 mmHg</td></tr>
+                  <tr><td class="px-4 py-2">PaCO₂ (dióxido de carbono)</td><td class="px-4 py-2">38–42 mmHg</td></tr>
+                  <tr><td class="px-4 py-2">pH arterial</td><td class="px-4 py-2">7,38–7,42</td></tr>
+                  <tr><td class="px-4 py-2">SaO₂ (saturación)</td><td class="px-4 py-2">94–100 %</td></tr>
+                  <tr><td class="px-4 py-2">HCO₃ (bicarbonato)</td><td class="px-4 py-2">22–28 mmol/L</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="mt-2 text-xs text-slate-500 dark:text-slate-400">A altitudes de 900 m (3.000 pies) o más, el valor de oxígeno es más bajo.</p>
+          </article>
+          <article class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 p-5">
+            <h3 class="font-bold text-lg text-slate-900 dark:text-white">Microalbuminuria</h3>
+            <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">Aumento de albúmina en la orina por encima de lo normal (&lt;30 mg/24 h), por cambios que alteran la filtración glomerular, la permeabilidad y la presión del glomérulo (diabetes, hipertensión, glomerulonefritis). Es un marcador temprano de daño renal.</p>
+            <p class="mt-3 text-xs font-bold uppercase tracking-wide text-amber-700 dark:text-amber-300">Diagnóstico</p>
+            <p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Se hace con el examen de microalbuminuria en orina; si es necesario, el nefrólogo solicita la orina de 24 horas (se recolecta toda la orina del día y se analiza la albúmina excretada).</p>
+            <div class="mt-3 flex flex-wrap gap-2 text-xs">
+              <span class="rounded-full bg-emerald-100 dark:bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 px-2.5 py-1 font-medium">Normal: &lt;30 mg/24 h</span>
+              <span class="rounded-full bg-amber-100 dark:bg-amber-500/15 text-amber-700 dark:text-amber-300 px-2.5 py-1 font-medium">Microalbuminuria: 30–300 mg/24 h</span>
+              <span class="rounded-full bg-sky-100 dark:bg-sky-500/15 text-sky-700 dark:text-sky-300 px-2.5 py-1 font-medium">Confirmar repitiendo a los 3 meses</span>
+            </div>
+            <p class="mt-3 text-sm text-slate-600 dark:text-slate-400"><strong class="text-slate-800 dark:text-slate-200">Causas:</strong> diabetes descompensada, hipertensión, enfermedades cardiovasculares (insuficiencia cardíaca), insuficiencia renal crónica, alimentación rica en proteínas y glomerulonefritis.</p>
+          </article>
+        </div>
+      </section>
+
+      <div class="mt-12 flex items-center justify-between border-t border-slate-200 dark:border-slate-800 pt-6">
+        <a href="pruebas-urinarias.html" class="text-sm text-slate-500 hover:text-indigo-600 dark:hover:text-indigo-400">← Pruebas diagnósticas urinarias</a>
+        <a href="endocrino-imagen.html"
+           class="inline-flex items-center gap-2 rounded-full bg-indigo-600 px-5 py-2.5 text-white text-sm font-semibold hover:bg-indigo-700">
+          Estudios imagenológicos →
+        </a>
+      </div>
+    </div>
+  </main>
+</div>
+<script>
+  function toggleTheme(){
+    const html = document.documentElement;
+    html.classList.toggle('dark');
+    localStorage.theme = html.classList.contains('dark') ? 'dark' : 'light';
+  }
+</script>
+
+  <!-- ===== Lightbox: clic en una imagen para ampliarla ===== -->
+  <div id="lightbox" class="fixed inset-0 z-[60] hidden items-center justify-center bg-black/80 backdrop-blur-sm p-4 cursor-zoom-out" onclick="closeLightbox()">
+    <button onclick="closeLightbox()" aria-label="Cerrar"
+            class="absolute top-4 right-4 h-11 w-11 rounded-full bg-white/10 hover:bg-white/20 ring-1 ring-white/30 text-white grid place-items-center">
+      <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <figure class="flex flex-col items-center gap-3" onclick="event.stopPropagation()">
+      <img id="lightbox-img" src="" alt="" class="max-h-[85vh] max-w-[92vw] rounded-xl shadow-2xl object-contain">
+      <figcaption id="lightbox-cap" class="text-sm text-white/80"></figcaption>
+    </figure>
+  </div>
+  <script>
+    (function(){
+      const box = document.getElementById('lightbox');
+      const big = document.getElementById('lightbox-img');
+      const cap = document.getElementById('lightbox-cap');
+      document.querySelectorAll('main img').forEach(function(el){
+        el.classList.add('cursor-zoom-in');
+        el.addEventListener('click', function(ev){
+          ev.preventDefault(); ev.stopPropagation();
+          big.src = el.currentSrc || el.src;
+          big.alt = el.alt || '';
+          cap.textContent = el.alt || '';
+          box.classList.remove('hidden'); box.classList.add('flex');
+          document.body.style.overflow = 'hidden';
+        });
+      });
+      window.closeLightbox = function(){
+        box.classList.add('hidden'); box.classList.remove('flex');
+        document.body.style.overflow = '';
+      };
+      document.addEventListener('keydown', function(e){ if(e.key === 'Escape') window.closeLightbox(); });
+    })();
+  </script>
+</body>
+</html>

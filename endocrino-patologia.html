@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estudios anatomopatológicos · Sistema endocrino-metabólico</title>
+  <script>
+    if (localStorage.theme === 'dark' ||
+        (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = { darkMode: 'class' }</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style> body { font-family: 'Inter', system-ui, sans-serif; } </style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-200 transition-colors duration-300">
+<div class="min-h-screen flex">
+
+  <!-- ============ BARRA LATERAL ============ -->
+  <aside id="sidebar"
+         class="fixed lg:sticky top-0 z-40 h-screen w-72 shrink-0 -translate-x-full lg:translate-x-0
+                transition-transform bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800 flex flex-col">
+    <div class="px-5 py-5 border-b border-slate-100 dark:border-slate-800">
+      <a href="index.html" class="flex items-center gap-3">
+        <span class="h-10 w-10 rounded-xl bg-indigo-600 text-white flex items-center justify-center">
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12h4l2 5 4-12 2 7h6"/></svg>
+        </span>
+        <span>
+          <span class="block font-extrabold text-slate-800 dark:text-white leading-tight">Wiki Diagnóstico</span>
+          <span class="block text-xs text-slate-400">UEPD-04 · Medios de Diagnóstico</span>
+        </span>
+      </a>
+    </div>
+    <nav class="flex-1 overflow-y-auto px-3 py-4 space-y-1 text-sm">
+      <a href="index.html"        class="block rounded-lg px-3 py-2 font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Carátula</a>
+      <a href="introduccion.html" class="block rounded-lg px-3 py-2 font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Introducción</a>
+      <div class="my-2 border-t border-slate-100 dark:border-slate-800"></div>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-sky-50 dark:hover:bg-sky-500/10 group-open:bg-sky-50 dark:group-open:bg-sky-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-sky-500"></span>
+            <span class="truncate text-sm font-semibold text-sky-700 dark:text-sky-300">Fluidos corporales</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-sky-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-sky-100 dark:border-sky-500/30 pl-2">
+          <a href="componentes.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-sky-50 dark:hover:bg-sky-500/10 hover:text-sky-700 dark:hover:text-sky-300 transition">Componentes de la sangre</a>
+          <a href="hemograma.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-sky-50 dark:hover:bg-sky-500/10 hover:text-sky-700 dark:hover:text-sky-300 transition">Hemograma con diferencial</a>
+          <a href="fluidos.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-sky-50 dark:hover:bg-sky-500/10 hover:text-sky-700 dark:hover:text-sky-300 transition">Análisis de fluidos biológicos</a>
+          <a href="frotis.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-sky-50 dark:hover:bg-sky-500/10 hover:text-sky-700 dark:hover:text-sky-300 transition">Frotis sanguíneo</a>
+        </div>
+      </details>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-emerald-50 dark:hover:bg-emerald-500/10 group-open:bg-emerald-50 dark:group-open:bg-emerald-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-emerald-500"></span>
+            <span class="truncate text-sm font-semibold text-emerald-700 dark:text-emerald-300">Medulograma</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-emerald-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-emerald-100 dark:border-emerald-500/30 pl-2">
+          <a href="medulograma.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-emerald-50 dark:hover:bg-emerald-500/10 hover:text-emerald-700 dark:hover:text-emerald-300 transition">Medulograma</a>
+        </div>
+      </details>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-rose-50 dark:hover:bg-rose-500/10 group-open:bg-rose-50 dark:group-open:bg-rose-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-rose-500"></span>
+            <span class="truncate text-sm font-semibold text-rose-700 dark:text-rose-300">Embarazo</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-rose-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-rose-100 dark:border-rose-500/30 pl-2">
+          <a href="embarazo.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-rose-50 dark:hover:bg-rose-500/10 hover:text-rose-700 dark:hover:text-rose-300 transition">Diagnóstico en el embarazo</a>
+        </div>
+      </details>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-fuchsia-50 dark:hover:bg-fuchsia-500/10 group-open:bg-fuchsia-50 dark:group-open:bg-fuchsia-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-fuchsia-500"></span>
+            <span class="truncate text-sm font-semibold text-fuchsia-700 dark:text-fuchsia-300">Trastornos autoinmunitarios</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-fuchsia-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-fuchsia-100 dark:border-fuchsia-500/30 pl-2">
+          <a href="autoinmunes.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-fuchsia-50 dark:hover:bg-fuchsia-500/10 hover:text-fuchsia-700 dark:hover:text-fuchsia-300 transition">Trastornos autoinmunitarios</a>
+        </div>
+      </details>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-purple-50 dark:hover:bg-purple-500/10 group-open:bg-purple-50 dark:group-open:bg-purple-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-purple-500"></span>
+            <span class="truncate text-sm font-semibold text-purple-700 dark:text-purple-300">Neoplasias</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-purple-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-purple-100 dark:border-purple-500/30 pl-2">
+          <a href="oncologia.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-purple-50 dark:hover:bg-purple-500/10 hover:text-purple-700 dark:hover:text-purple-300 transition">Oncología y neoplasias</a>
+        </div>
+      </details>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-orange-50 dark:hover:bg-orange-500/10 group-open:bg-orange-50 dark:group-open:bg-orange-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-orange-500"></span>
+            <span class="truncate text-sm font-semibold text-orange-700 dark:text-orange-300">Sistema osteomioarticular</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-orange-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-orange-100 dark:border-orange-500/30 pl-2">
+          <a href="soma.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-orange-50 dark:hover:bg-orange-500/10 hover:text-orange-700 dark:hover:text-orange-300 transition">Sistema osteomioarticular</a>
+        </div>
+      </details>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-cyan-50 dark:hover:bg-cyan-500/10 group-open:bg-cyan-50 dark:group-open:bg-cyan-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-cyan-500"></span>
+            <span class="truncate text-sm font-semibold text-cyan-700 dark:text-cyan-300">Estudios neurológicos</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-cyan-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-cyan-100 dark:border-cyan-500/30 pl-2">
+          <a href="neurologia.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-cyan-50 dark:hover:bg-cyan-500/10 hover:text-cyan-700 dark:hover:text-cyan-300 transition">Neurología avanzada</a>
+        </div>
+      </details>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-teal-50 dark:hover:bg-teal-500/10 group-open:bg-teal-50 dark:group-open:bg-teal-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-teal-500"></span>
+            <span class="truncate text-sm font-semibold text-teal-700 dark:text-teal-300">Sistema genitourinario</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-teal-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-teal-100 dark:border-teal-500/30 pl-2">
+          <a href="genitourinario.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-teal-50 dark:hover:bg-teal-500/10 hover:text-teal-700 dark:hover:text-teal-300 transition">Sistema genitourinario</a>
+          <a href="pruebas-urinarias.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-teal-50 dark:hover:bg-teal-500/10 hover:text-teal-700 dark:hover:text-teal-300 transition">Pruebas diagnósticas urinarias</a>
+        </div>
+      </details>
+      <details class="group" open>
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-amber-50 dark:hover:bg-amber-500/10 group-open:bg-amber-50 dark:group-open:bg-amber-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-amber-500"></span>
+            <span class="truncate text-sm font-semibold text-amber-700 dark:text-amber-300">Sistema endocrino-metabólico</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-amber-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-amber-100 dark:border-amber-500/30 pl-2">
+          <a href="endocrino.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-amber-50 dark:hover:bg-amber-500/10 hover:text-amber-700 dark:hover:text-amber-300 transition">Estudios de laboratorio</a>
+          <a href="endocrino-imagen.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-amber-50 dark:hover:bg-amber-500/10 hover:text-amber-700 dark:hover:text-amber-300 transition">Estudios imagenológicos</a>
+          <a href="endocrino-patologia.html" class="block rounded-lg px-3 py-1.5 font-semibold bg-amber-100 dark:bg-amber-500/20 text-amber-800 dark:text-amber-200">Estudios anatomopatológicos</a>
+        </div>
+      </details>
+      <div class="my-2 border-t border-slate-100 dark:border-slate-800"></div>
+      <a href="enlaces.html" class="block rounded-lg px-3 py-2 font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Enlaces y referencias</a>
+    </nav>
+    <div class="px-4 py-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
+      <span class="text-xs text-slate-400">© Proyecto académico</span>
+      <button onclick="toggleTheme()" aria-label="Cambiar tema"
+              class="h-9 w-9 rounded-full grid place-items-center ring-1 ring-slate-200 dark:ring-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 transition text-slate-600 dark:text-slate-300">
+        <svg class="dark:hidden h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="hidden dark:block h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path stroke-linecap="round" d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </button>
+    </div>
+  </aside>
+
+  <button onclick="document.getElementById('sidebar').classList.toggle('-translate-x-full')"
+          class="lg:hidden fixed bottom-5 right-5 z-50 h-12 w-12 rounded-full bg-indigo-600 text-white shadow-lg grid place-items-center">
+    <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+  </button>
+
+  <!-- ============ CONTENIDO ============ -->
+  <main class="flex-1 min-w-0">
+    <div class="max-w-4xl mx-auto px-6 py-10 lg:py-14">
+
+      <nav class="text-xs text-slate-400 mb-3">Inicio / Sistema endocrino-metabólico / <span class="text-slate-600 dark:text-slate-300">Estudios anatomopatológicos</span></nav>
+
+      <div class="flex items-center gap-4">
+        <div class="h-12 w-1.5 rounded-full bg-amber-500"></div>
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">Estudios anatomopatológicos</h1>
+      </div>
+      <p class="mt-2 text-amber-700 dark:text-amber-300 font-semibold">Sistema endocrino-metabólico · Biopsias y estudio de tejidos</p>
+
+      <!-- ============ BAAF ============ -->
+      <section class="mt-10">
+        <article class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="grid lg:grid-cols-[36%_1fr]">
+            <div class="relative aspect-[4/3] lg:aspect-auto bg-slate-100 dark:bg-slate-800 min-h-[12rem]"><img src="IMG/endocrino/baaf.webp" alt="Biopsia por aspiración con aguja fina" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-[0.65rem] text-slate-400 p-2"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>baaf.webp</span></div></div>
+            <div class="p-5">
+              <h2 class="text-xl font-bold text-slate-900 dark:text-white">Biopsia por aspiración con aguja fina (BAAF)</h2>
+              <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">Procedimiento mínimamente invasivo utilizado para obtener muestras celulares de órganos o lesiones con fines diagnósticos. Se emplea principalmente en nódulos tiroideos, aunque también puede realizarse en ganglios linfáticos, mama, glándulas salivales y otros órganos.</p>
+              <p class="mt-3 text-xs font-bold uppercase tracking-wide text-amber-700 dark:text-amber-300">¿En qué consiste?</p>
+              <p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Introducir una aguja fina dentro del nódulo o lesión, generalmente guiada por ecografía, para aspirar células que posteriormente se envían al laboratorio para su análisis citológico.</p>
+              <p class="mt-3 text-xs font-bold uppercase tracking-wide text-amber-700 dark:text-amber-300">Pasos del procedimiento</p>
+              <ol class="mt-1 space-y-1 text-sm text-slate-600 dark:text-slate-400 list-decimal list-inside">
+                <li>Colocar al paciente en la posición adecuada.</li>
+                <li>Limpiar y desinfectar la piel.</li>
+                <li>Localizar la lesión mediante palpación o ecografía.</li>
+                <li>Introducir la aguja fina.</li>
+                <li>Aspirar las células.</li>
+                <li>Colocar la muestra en portaobjetos y enviarla al laboratorio.</li>
+              </ol>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 p-5 grid sm:grid-cols-3 gap-3 text-xs">
+            <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes de la BAAF</p><p class="text-slate-600 dark:text-slate-400">Verificar identidad y orden médica; explicar el procedimiento y obtener el consentimiento informado; revisar antecedentes, alergias y medicamentos (especialmente anticoagulantes); valorar signos vitales; preparar el material estéril; colocar al paciente en decúbito supino con ligera extensión del cuello y mantener asepsia y antisepsia.</p></div>
+            <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3"><p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante la BAAF</p><p class="text-slate-600 dark:text-slate-400">Brindar apoyo emocional; asistir al médico; mantener el campo estéril; vigilar el estado general; indicar que permanezca inmóvil; identificar y rotular correctamente las muestras y prepararlas para su envío al laboratorio de anatomía patológica.</p></div>
+            <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después de la BAAF</p><p class="text-slate-600 dark:text-slate-400">Aplicar presión y apósito si es necesario; vigilar complicaciones (sangrado, hematoma, dolor intenso, mareo o dificultad respiratoria); controlar signos vitales; informar sobre molestias normales y evitar esfuerzos 24 h; explicar signos de alarma y registrar el procedimiento y la evolución.</p></div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 px-5 py-3 text-xs text-slate-500 dark:text-slate-400 flex flex-wrap gap-x-4 gap-y-1">
+            <span class="font-semibold">Fuentes:</span>
+            <a href="https://medlineplus.gov/spanish/ency/article/003899.htm" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">medlineplus.gov</a>
+            <a href="https://www.thyroidcancer.com/blog/thyroid-biopsy-results-explained-what-your-report-really-means" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">thyroidcancer.com</a>
+          </div>
+        </article>
+
+        <!-- Sistema Bethesda -->
+        <div class="mt-6 grid lg:grid-cols-[1fr_30%] gap-5 items-start">
+          <div>
+            <h2 class="text-xl font-bold text-slate-900 dark:text-white">Sistema Bethesda</h2>
+            <p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Estandariza la interpretación de las biopsias tiroideas y orienta el manejo clínico.</p>
+            <div class="mt-3 overflow-x-auto rounded-2xl ring-1 ring-slate-200 dark:ring-slate-800">
+              <table class="w-full text-sm text-left">
+                <thead class="bg-amber-50 dark:bg-amber-500/10 text-amber-800 dark:text-amber-200"><tr><th class="px-4 py-2 font-semibold">Cat.</th><th class="px-4 py-2 font-semibold">Significado · riesgo de cáncer</th><th class="px-4 py-2 font-semibold">Conducta</th></tr></thead>
+                <tbody class="divide-y divide-slate-200 dark:divide-slate-800 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300">
+                  <tr><td class="px-4 py-2 font-semibold">I</td><td class="px-4 py-2">Muestra insuficiente para diagnóstico</td><td class="px-4 py-2">Repetir la biopsia</td></tr>
+                  <tr><td class="px-4 py-2 font-semibold">II</td><td class="px-4 py-2">Lesión benigna · &lt;3 %</td><td class="px-4 py-2">Seguimiento ecográfico</td></tr>
+                  <tr><td class="px-4 py-2 font-semibold">III</td><td class="px-4 py-2">Atipia de significado indeterminado (AUS/FLUS) · 5–15 %</td><td class="px-4 py-2">Repetir la biopsia o estudios complementarios</td></tr>
+                  <tr><td class="px-4 py-2 font-semibold">IV</td><td class="px-4 py-2">Neoplasia folicular o sospecha · 15–30 %</td><td class="px-4 py-2">Generalmente cirugía para confirmar</td></tr>
+                  <tr><td class="px-4 py-2 font-semibold">V</td><td class="px-4 py-2">Sospechoso de malignidad · 60–75 %</td><td class="px-4 py-2">Tratamiento quirúrgico</td></tr>
+                  <tr><td class="px-4 py-2 font-semibold">VI</td><td class="px-4 py-2">Maligno (carcinoma papilar de tiroides) · &gt;97 %</td><td class="px-4 py-2">Cirugía; pronóstico favorable con tratamiento oportuno</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <figure class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+            <div class="relative aspect-[3/4] bg-slate-100 dark:bg-slate-800"><img src="IMG/endocrino/bethesda..png" alt="Sistema Bethesda" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-[0.65rem] text-slate-400 p-2"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>bethesda.webp</span></div></div>
+          </figure>
+        </div>
+      </section>
+
+      <!-- ============ BIOPSIAS ============ -->
+      <section class="mt-12">
+        <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Biopsias de glándulas endocrinas</h2>
+
+        <!-- Biopsia suprarrenal -->
+        <article class="mt-5 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="grid lg:grid-cols-[36%_1fr]">
+            <div class="relative aspect-[4/3] lg:aspect-auto bg-slate-100 dark:bg-slate-800 min-h-[12rem]"><img src="IMG/endocrino/biopsia-suprarrenal.webp" alt="Biopsia suprarrenal" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-[0.65rem] text-slate-400 p-2"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>biopsia-suprarrenal.webp</span></div></div>
+            <div class="p-5">
+              <h3 class="font-bold text-lg text-slate-900 dark:text-white">Biopsia suprarrenal</h3>
+              <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">Procedimiento intervencionista (percutáneo) para obtener muestras de tejido de las glándulas suprarrenales con fines diagnósticos. Se emplea principalmente ante sospecha de enfermedad metastásica, ya que permite confirmar el diagnóstico, establecer la estadificación y orientar el tratamiento. Su utilidad es limitada en otras patologías como adenomas, infecciones, hemorragias o tumores primarios.</p>
+              <div class="mt-3 grid sm:grid-cols-2 gap-3 text-sm">
+                <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300">Indicaciones</p><p class="text-slate-600 dark:text-slate-400">Nódulos o tumores suprarrenales de origen indeterminado.</p></div>
+                <div class="rounded-xl bg-rose-50 dark:bg-rose-500/10 ring-1 ring-rose-100 dark:ring-rose-500/20 p-3"><p class="font-bold text-rose-700 dark:text-rose-300">Contraindicaciones</p><p class="text-slate-600 dark:text-slate-400">Evaluación individual. En sospecha de feocromocitoma se realiza con extrema precaución, controlando la presión arterial mediante anestesia adecuada.</p></div>
+              </div>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 p-5">
+            <p class="text-xs font-bold uppercase tracking-wide text-amber-700 dark:text-amber-300">Procedimiento</p>
+            <ol class="mt-1 space-y-1 text-sm text-slate-600 dark:text-slate-400 list-decimal list-inside">
+              <li><strong class="text-slate-700 dark:text-slate-300">Preparación:</strong> revisar historia clínica, estudios de imagen y pruebas de coagulación; consentimiento informado; ayuno de 6–8 h si se usa sedación y suspensión temporal de anticoagulantes cuando esté indicado.</li>
+              <li><strong class="text-slate-700 dark:text-slate-300">Posicionamiento:</strong> decúbito prono, lateral o supino, según la localización de la lesión.</li>
+              <li><strong class="text-slate-700 dark:text-slate-300">Localización:</strong> identificar la glándula por TC o ecografía para elegir la vía de acceso más segura.</li>
+              <li><strong class="text-slate-700 dark:text-slate-300">Asepsia y anestesia:</strong> desinfección, campo estéril y anestesia local, con sedación ligera cuando sea necesario.</li>
+              <li><strong class="text-slate-700 dark:text-slate-300">Obtención de la muestra:</strong> aguja guiada por imágenes para una o varias muestras (análisis citológico e histopatológico).</li>
+              <li><strong class="text-slate-700 dark:text-slate-300">Retiro de la aguja:</strong> extracción cuidadosa y presión para prevenir el sangrado.</li>
+            </ol>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 p-5 grid sm:grid-cols-3 gap-3 text-xs">
+            <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes</p><p class="text-slate-600 dark:text-slate-400">Verificar identidad, orden y consentimiento informado; explicar el procedimiento para disminuir la ansiedad; revisar antecedentes, alergias, medicamentos y coagulación; confirmar ayuno, controlar signos vitales y canalizar vía venosa si está indicada.</p></div>
+            <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3"><p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante</p><p class="text-slate-600 dark:text-slate-400">Colocar al paciente en la posición indicada; mantener técnica estéril y asistir al médico; vigilar continuamente signos vitales, dolor o reacciones adversas; brindar apoyo emocional e identificar correctamente las muestras antes de enviarlas.</p></div>
+            <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después</p><p class="text-slate-600 dark:text-slate-400">Vigilar periódicamente signos vitales y complicaciones (hemorragia, hematoma, dolor intenso, alteraciones de la presión, neumotórax o infección); mantener reposo según indicación; educar sobre cuidados domiciliarios y signos de alarma (fiebre, sangrado, disnea o dolor intenso).</p></div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 px-5 py-3 text-xs text-slate-500 dark:text-slate-400 flex flex-wrap gap-x-4 gap-y-1">
+            <span class="font-semibold">Fuentes:</span>
+            <a href="https://www.mskcc.org/es/pdf/cancer-care/patient-education/needle-biopsy-lung-pleura-mediastinum-adrenal-glands?mode=large" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">mskcc.org</a>
+            <a href="https://radiopaedia.org/articles/ct-guided-adrenal-biopsy" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">radiopaedia.org</a>
+            <a href="https://www.mskcc.org/es/cancer-care/patient-education/needle-biopsy-lung-pleura-mediastinum-adrenal-glands" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">mskcc.org (es)</a>
+          </div>
+        </article>
+
+        <!-- Biopsia hipofisaria -->
+        <article class="mt-5 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="grid lg:grid-cols-[36%_1fr]">
+            <div class="relative aspect-[4/3] lg:aspect-auto bg-slate-100 dark:bg-slate-800 min-h-[12rem]"><img src="IMG/endocrino/biopsia-hipofisaria.webp" alt="Biopsia hipofisaria" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-[0.65rem] text-slate-400 p-2"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>biopsia-hipofisaria.webp</span></div></div>
+            <div class="p-5">
+              <h3 class="font-bold text-lg text-slate-900 dark:text-white">Biopsia hipofisaria</h3>
+              <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">Procedimiento diagnóstico poco frecuente que consiste en obtener una muestra de tejido de la hipófisis para su análisis microscópico. Generalmente se realiza durante una cirugía transesfenoidal, ya que la mayoría de los tumores hipofisarios se diagnostican mediante estudios hormonales y resonancia magnética. El análisis histopatológico e inmunohistoquímico confirma el diagnóstico y orienta el tratamiento.</p>
+              <p class="mt-2 text-sm text-slate-600 dark:text-slate-400">Está indicada ante lesiones de origen incierto, sospecha de tumores poco frecuentes, metástasis, procesos inflamatorios o infecciosos, o cuando los estudios de imagen no son concluyentes. Antes se realizan pruebas hormonales, estudios de imagen y exámenes de laboratorio para valorar las condiciones del paciente.</p>
+              <p class="mt-2 text-sm text-slate-600 dark:text-slate-400">Se efectúa bajo anestesia general mediante <strong class="text-slate-700 dark:text-slate-300">cirugía transesfenoidal</strong>, accediendo a la hipófisis a través de la cavidad nasal y el seno esfenoidal, evitando abrir el cráneo. El neurocirujano obtiene la muestra, la envía al laboratorio y controla el sangrado antes de trasladar al paciente a recuperación.</p>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 p-5 grid sm:grid-cols-3 gap-3 text-xs">
+            <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes</p><p class="text-slate-600 dark:text-slate-400">Verificar identidad y consentimiento informado; revisar exámenes de laboratorio; controlar signos vitales y confirmar el ayuno; brindar educación y apoyo emocional.</p></div>
+            <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3"><p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante</p><p class="text-slate-600 dark:text-slate-400">Colaborar con el equipo quirúrgico; mantener técnica estéril; monitorizar continuamente los signos vitales; verificar la correcta identificación y envío de la muestra.</p></div>
+            <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después</p><p class="text-slate-600 dark:text-slate-400">Vigilar el estado neurológico y signos vitales; observar sangrado nasal, fuga de LCR y alteraciones del equilibrio hídrico (riesgo de diabetes insípida); medicación prescrita y cabecera elevada. Alarma: fiebre, cefalea intensa, alteraciones visuales, líquido claro por la nariz o sangrado abundante.</p></div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 px-5 py-3 text-xs text-slate-500 dark:text-slate-400 flex flex-wrap gap-x-4 gap-y-1">
+            <span class="font-semibold">Fuentes:</span>
+            <a href="https://www.msdmanuals.com/es/professional/trastornos-neurol%C3%B3gicos/tumores-intracraneanos-y-espinales/tumores-hipofisarios" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">msdmanuals.com (neuro)</a>
+            <a href="https://www.msdmanuals.com/es/professional/trastornos-endocrinol%C3%B3gicos-y-metab%C3%B3licos/trastornos-hipofisarios/lesiones-hipofisarias" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">msdmanuals.com (endo)</a>
+            <a href="https://medlineplus.gov/spanish/ency/article/003416.htm" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">medlineplus.gov</a>
+          </div>
+        </article>
+
+        <!-- Biopsia pancreática -->
+        <article class="mt-5 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="grid lg:grid-cols-[36%_1fr]">
+            <div class="relative aspect-[4/3] lg:aspect-auto bg-slate-100 dark:bg-slate-800 min-h-[12rem]"><img src="IMG/endocrino/biopsia-pancreatica.png" alt="Biopsia pancreática" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-[0.65rem] text-slate-400 p-2"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>biopsia-pancreatica.webp</span></div></div>
+            <div class="p-5">
+              <h3 class="font-bold text-lg text-slate-900 dark:text-white">Biopsia pancreática</h3>
+              <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">Consiste en obtener una muestra de tejido del páncreas para su análisis en laboratorio. Se realiza principalmente ante sospecha de cáncer de páncreas, con el fin de confirmar el diagnóstico, identificar el tipo de lesión y planificar el tratamiento. La elección de la técnica depende del estado general del paciente, la localización de la lesión y el tamaño del tumor.</p>
+              <p class="mt-3 text-xs font-bold uppercase tracking-wide text-amber-700 dark:text-amber-300">Tipos de biopsia pancreática</p>
+              <ul class="mt-1 space-y-1 text-sm text-slate-600 dark:text-slate-400">
+                <li class="flex gap-2"><span class="text-amber-500">•</span><strong class="text-slate-700 dark:text-slate-300">Ecografía endoscópica (EUS):</strong> endoscopio con ultrasonido para visualizar el páncreas y muestrear áreas sospechosas.</li>
+                <li class="flex gap-2"><span class="text-amber-500">•</span><strong class="text-slate-700 dark:text-slate-300">CPRE:</strong> endoscopia + rayos X para evaluar los conductos pancreáticos y biliares y tomar muestras de lesiones.</li>
+                <li class="flex gap-2"><span class="text-amber-500">•</span><strong class="text-slate-700 dark:text-slate-300">Biopsia percutánea:</strong> aguja fina a través de la piel, guiada por ecografía o tomografía computarizada.</li>
+                <li class="flex gap-2"><span class="text-amber-500">•</span><strong class="text-slate-700 dark:text-slate-300">Biopsia quirúrgica:</strong> por laparoscopia, para evaluar el páncreas y estructuras vecinas ante sospecha de diseminación tumoral.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 px-5 pt-4 pb-1">
+            <p class="text-xs font-bold uppercase tracking-wide text-amber-700 dark:text-amber-300">Preparación del paciente</p>
+            <p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Se evalúa el estado de salud, antecedentes médicos, alergias y medicamentos (especialmente anticoagulantes). Si se usará sedación, se recomienda ayuno de 6–8 h y suspensión temporal de los anticoagulantes bajo indicación médica.</p>
+          </div>
+          <div class="p-5 grid sm:grid-cols-3 gap-3 text-xs">
+            <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes</p><p class="text-slate-600 dark:text-slate-400">Verificar identidad y consentimiento informado; revisar historia clínica, alergias y medicamentos; preparar el material y brindar información para disminuir la ansiedad.</p></div>
+            <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3"><p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante</p><p class="text-slate-600 dark:text-slate-400">Mantener técnica estéril y monitorizar continuamente los signos vitales; administrar y vigilar la sedación; brindar apoyo y asistir al médico; verificar la identificación y el envío de la biopsia.</p></div>
+            <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después</p><p class="text-slate-600 dark:text-slate-400">Observar hasta la recuperación y controlar periódicamente los signos vitales; vigilar dolor abdominal intenso, hemorragia, fiebre, pancreatitis, infección o perforación; educar sobre signos de alarma (dolor intenso, vómitos persistentes, fiebre o sangrado).</p></div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 px-5 py-3 text-xs text-slate-500 dark:text-slate-400 flex flex-wrap gap-x-4 gap-y-1">
+            <span class="font-semibold">Fuentes:</span>
+            <a href="https://hisarhospital.com/en/what-is-pancreatic-biopsy/" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">hisarhospital.com</a>
+            <a href="https://es.providence.org/services/pancreas-biopsy" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">providence.org</a>
+            <a href="https://www.sciencedirect.com/topics/medicine-and-dentistry/pancreas-biopsy" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">sciencedirect.com</a>
+          </div>
+        </article>
+      </section>
+
+      <!-- ============ ESTUDIO DEL TEJIDO ============ -->
+      <section class="mt-12">
+        <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Estudio del tejido</h2>
+
+        <!-- Histopatología -->
+        <article class="mt-5 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="grid lg:grid-cols-[36%_1fr]">
+            <div class="relative aspect-[4/3] lg:aspect-auto bg-slate-100 dark:bg-slate-800 min-h-[12rem]"><img src="IMG/endocrino/histopatologia.webp" alt="Estudio histopatológico" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-[0.65rem] text-slate-400 p-2"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>histopatologia.webp</span></div></div>
+            <div class="p-5">
+              <h3 class="font-bold text-lg text-slate-900 dark:text-white">Estudio histopatológico</h3>
+              <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">Estudio microscópico de los tejidos corporales para identificar signos de enfermedad (infecciones, depósitos anormales y cambios celulares característicos del cáncer).</p>
+              <p class="mt-3 text-xs font-bold uppercase tracking-wide text-amber-700 dark:text-amber-300">Importancia</p>
+              <p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Es el método de referencia para el diagnóstico de numerosas enfermedades, especialmente el cáncer. Junto con la biopsia, diferencia tumores benignos de malignos, establece el estadio y la agresividad, y orienta el tratamiento.</p>
+              <p class="mt-3 text-xs font-bold uppercase tracking-wide text-amber-700 dark:text-amber-300">¿Cómo se realiza?</p>
+              <p class="mt-1 text-sm text-slate-600 dark:text-slate-400">La realizan patólogos y personal especializado. La muestra (endoscopia, colonoscopia, colposcopia o biopsias) se procesa, se corta en secciones muy delgadas, se tiñe y se examina al microscopio para identificar alteraciones y emitir el diagnóstico.</p>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 p-5">
+            <p class="text-xs font-bold uppercase tracking-wide text-amber-700 dark:text-amber-300">También es útil para diagnosticar</p>
+            <div class="mt-2 grid sm:grid-cols-2 gap-3 text-sm">
+              <div class="rounded-xl bg-slate-50 dark:bg-slate-800/50 ring-1 ring-slate-200 dark:ring-slate-700 p-3"><p class="font-bold text-slate-700 dark:text-slate-200">Enfermedades infecciosas</p><p class="text-slate-600 dark:text-slate-400">Tuberculosis, infecciones parasitarias, <em>Helicobacter pylori</em> y fascitis necrosante.</p></div>
+              <div class="rounded-xl bg-slate-50 dark:bg-slate-800/50 ring-1 ring-slate-200 dark:ring-slate-700 p-3"><p class="font-bold text-slate-700 dark:text-slate-200">Enfermedades inflamatorias</p><p class="text-slate-600 dark:text-slate-400">Sarcoidosis, enfermedad de Crohn, colitis ulcerosa y vasculitis.</p></div>
+              <div class="rounded-xl bg-slate-50 dark:bg-slate-800/50 ring-1 ring-slate-200 dark:ring-slate-700 p-3"><p class="font-bold text-slate-700 dark:text-slate-200">Enfermedades autoinmunes</p><p class="text-slate-600 dark:text-slate-400">Enfermedad celíaca, psoriasis, esclerodermia, hepatitis autoinmune y nefritis lúpica.</p></div>
+              <div class="rounded-xl bg-slate-50 dark:bg-slate-800/50 ring-1 ring-slate-200 dark:ring-slate-700 p-3"><p class="font-bold text-slate-700 dark:text-slate-200">Específicas de órganos</p><p class="text-slate-600 dark:text-slate-400">Endometriosis, fibromas uterinos y úlceras.</p></div>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 p-5 grid sm:grid-cols-3 gap-3 text-xs">
+            <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes</p><p class="text-slate-600 dark:text-slate-400">Verificar identidad y solicitud del estudio; preparar el material y el recipiente con fijador; explicar el procedimiento y mantener asepsia; revisar los datos clínicos relevantes.</p></div>
+            <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3"><p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante</p><p class="text-slate-600 dark:text-slate-400">Mantener técnica estéril; asistir en la obtención de la muestra; identificar y conservar correctamente el tejido; enviarlo al laboratorio de anatomía patológica.</p></div>
+            <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después</p><p class="text-slate-600 dark:text-slate-400">Vigilar al paciente y el sitio de la biopsia; controlar signos vitales cuando sea necesario; observar sangrado, dolor o signos de infección; registrar el procedimiento y dar las indicaciones correspondientes.</p></div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 px-5 py-3 text-xs text-slate-500 dark:text-slate-400 flex flex-wrap gap-x-4 gap-y-1">
+            <span class="font-semibold">Fuentes:</span>
+            <a href="https://www.verywellhealth.com/histopathology-2252152" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">verywellhealth.com</a>
+            <a href="https://www.rcpath.org/discover-pathology/news/fact-sheets/histopathology.html" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">rcpath.org</a>
+            <a href="https://www.cancer.gov/espanol/cancer/diagnostico-estadificacion/diagnostico" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">cancer.gov</a>
+          </div>
+        </article>
+
+        <!-- Inmunohistoquímica -->
+        <article class="mt-5 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="grid lg:grid-cols-[36%_1fr]">
+            <div class="relative aspect-[4/3] lg:aspect-auto bg-slate-100 dark:bg-slate-800 min-h-[12rem]"><img src="IMG/endocrino/inmunohistoquimica.webp" alt="Inmunohistoquímica" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-[0.65rem] text-slate-400 p-2"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>inmunohistoquimica.webp</span></div></div>
+            <div class="p-5">
+              <h3 class="font-bold text-lg text-slate-900 dark:text-white">Inmunohistoquímica (IHC)</h3>
+              <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">Técnica de laboratorio que detecta antígenos específicos en muestras de tejido mediante la unión entre antígenos y anticuerpos. Se usan anticuerpos marcados con enzimas o colorantes fluorescentes, lo que permite visualizar proteínas o marcadores específicos al microscopio con alta precisión.</p>
+              <p class="mt-3 text-xs font-bold uppercase tracking-wide text-amber-700 dark:text-amber-300">¿Cómo funciona?</p>
+              <ol class="mt-1 space-y-1 text-sm text-slate-600 dark:text-slate-400 list-decimal list-inside">
+                <li><strong class="text-slate-700 dark:text-slate-300">Preparación de la muestra:</strong> el tejido (de biopsia) se fija, se corta en secciones finas y se coloca sobre un portaobjetos.</li>
+                <li><strong class="text-slate-700 dark:text-slate-300">Recuperación del antígeno:</strong> calor o sustancias químicas para exponer los antígenos.</li>
+                <li><strong class="text-slate-700 dark:text-slate-300">Anticuerpo primario:</strong> se une específicamente al antígeno de interés.</li>
+                <li><strong class="text-slate-700 dark:text-slate-300">Anticuerpo secundario:</strong> se une al primario y contiene un marcador detectable.</li>
+                <li><strong class="text-slate-700 dark:text-slate-300">Detección:</strong> reacción que genera color o fluorescencia para observar el antígeno.</li>
+                <li><strong class="text-slate-700 dark:text-slate-300">Interpretación:</strong> el patólogo analiza el patrón de tinción para determinar la presencia y distribución del antígeno.</li>
+              </ol>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 p-5">
+            <p class="text-xs font-bold uppercase tracking-wide text-amber-700 dark:text-amber-300">Importancia y usos</p>
+            <p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Herramienta fundamental en anatomía patológica: identifica proteínas específicas, diagnostica y clasifica tumores, determina el origen de lesiones, evalúa el pronóstico y orienta el tratamiento. Además, se utiliza para:</p>
+            <div class="mt-2 grid sm:grid-cols-2 gap-1.5 text-sm text-slate-600 dark:text-slate-400">
+              <div class="flex gap-2"><span class="text-amber-500">•</span>Diagnosticar y clasificar diferentes tipos de cáncer.</div>
+              <div class="flex gap-2"><span class="text-amber-500">•</span>Detectar marcadores tumorales como HER2 y CD20.</div>
+              <div class="flex gap-2"><span class="text-amber-500">•</span>Diagnosticar enfermedades autoinmunes.</div>
+              <div class="flex gap-2"><span class="text-amber-500">•</span>Identificar infecciones por bacterias, virus o parásitos.</div>
+              <div class="flex gap-2"><span class="text-amber-500">•</span>Determinar la extensión y agresividad del cáncer.</div>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 p-5 grid sm:grid-cols-3 gap-3 text-xs">
+            <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes</p><p class="text-slate-600 dark:text-slate-400">Verificar la identificación del paciente y la solicitud del estudio; revisar la muestra de tejido y los datos clínicos; preparar el material y conservar correctamente la muestra; mantener la bioseguridad para evitar contaminación.</p></div>
+            <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3"><p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante</p><p class="text-slate-600 dark:text-slate-400">Manipular la muestra con técnica adecuada; confirmar el correcto etiquetado del tejido; colaborar con el personal de laboratorio; aplicar las normas de seguridad y control de calidad.</p></div>
+            <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después</p><p class="text-slate-600 dark:text-slate-400">Verificar que la muestra se haya procesado y enviado correctamente; registrar el procedimiento; informar al equipo médico cuando el resultado esté disponible; orientar al paciente según el diagnóstico obtenido.</p></div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 px-5 py-3 text-xs text-slate-500 dark:text-slate-400 flex flex-wrap gap-x-4 gap-y-1">
+            <span class="font-semibold">Fuentes:</span>
+            <a href="https://www.cancer.gov/espanol/publicaciones/diccionarios/diccionario-cancer/def/prueba-inmunohistoquimica" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">cancer.gov</a>
+            <a href="https://www.apollohospitals.com/es/diagnostics-investigations/immunohistochemistry" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">apollohospitals.com</a>
+            <a href="https://www.cancer.gov/about-cancer/diagnosis-staging/diagnosis" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">cancer.gov (en)</a>
+          </div>
+        </article>
+      </section>
+
+      <div class="mt-12 flex items-center justify-between border-t border-slate-200 dark:border-slate-800 pt-6">
+        <a href="endocrino-imagen.html" class="text-sm text-slate-500 hover:text-indigo-600 dark:hover:text-indigo-400">← Estudios imagenológicos</a>
+        <a href="enlaces.html"
+           class="inline-flex items-center gap-2 rounded-full bg-indigo-600 px-5 py-2.5 text-white text-sm font-semibold hover:bg-indigo-700">
+          Enlaces y referencias →
+        </a>
+      </div>
+    </div>
+  </main>
+</div>
+<script>
+  function toggleTheme(){
+    const html = document.documentElement;
+    html.classList.toggle('dark');
+    localStorage.theme = html.classList.contains('dark') ? 'dark' : 'light';
+  }
+</script>
+
+  <!-- ===== Lightbox: clic en una imagen para ampliarla ===== -->
+  <div id="lightbox" class="fixed inset-0 z-[60] hidden items-center justify-center bg-black/80 backdrop-blur-sm p-4 cursor-zoom-out" onclick="closeLightbox()">
+    <button onclick="closeLightbox()" aria-label="Cerrar"
+            class="absolute top-4 right-4 h-11 w-11 rounded-full bg-white/10 hover:bg-white/20 ring-1 ring-white/30 text-white grid place-items-center">
+      <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <figure class="flex flex-col items-center gap-3" onclick="event.stopPropagation()">
+      <img id="lightbox-img" src="" alt="" class="max-h-[85vh] max-w-[92vw] rounded-xl shadow-2xl object-contain">
+      <figcaption id="lightbox-cap" class="text-sm text-white/80"></figcaption>
+    </figure>
+  </div>
+  <script>
+    (function(){
+      const box = document.getElementById('lightbox');
+      const big = document.getElementById('lightbox-img');
+      const cap = document.getElementById('lightbox-cap');
+      document.querySelectorAll('main img').forEach(function(el){
+        el.classList.add('cursor-zoom-in');
+        el.addEventListener('click', function(ev){
+          ev.preventDefault(); ev.stopPropagation();
+          big.src = el.currentSrc || el.src;
+          big.alt = el.alt || '';
+          cap.textContent = el.alt || '';
+          box.classList.remove('hidden'); box.classList.add('flex');
+          document.body.style.overflow = 'hidden';
+        });
+      });
+      window.closeLightbox = function(){
+        box.classList.add('hidden'); box.classList.remove('flex');
+        document.body.style.overflow = '';
+      };
+      document.addEventListener('keydown', function(e){ if(e.key === 'Escape') window.closeLightbox(); });
+    })();
+  </script>
+</body>
+</html>
