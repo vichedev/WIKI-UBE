@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pruebas funcionales respiratorias · Sistema respiratorio</title>
+  <script>
+    if (localStorage.theme === 'dark' ||
+        (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = { darkMode: 'class' }</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style> body { font-family: 'Inter', system-ui, sans-serif; } </style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-200 transition-colors duration-300">
+<div class="min-h-screen flex">
+
+  <!-- ============ BARRA LATERAL ============ -->
+  <aside id="sidebar"
+         class="fixed lg:sticky top-0 z-40 h-screen w-72 shrink-0 -translate-x-full lg:translate-x-0
+                transition-transform bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800 flex flex-col">
+    <div class="px-5 py-5 border-b border-slate-100 dark:border-slate-800">
+      <a href="index.html" class="flex items-center gap-3">
+        <span class="h-10 w-10 rounded-xl bg-indigo-600 text-white flex items-center justify-center">
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12h4l2 5 4-12 2 7h6"/></svg>
+        </span>
+        <span>
+          <span class="block font-extrabold text-slate-800 dark:text-white leading-tight">Wiki Diagnóstico</span>
+          <span class="block text-xs text-slate-400">UEPD-04 · Medios de Diagnóstico</span>
+        </span>
+      </a>
+    </div>
+    <nav class="flex-1 overflow-y-auto px-3 py-4 space-y-1 text-sm">
+      <a href="index.html"        class="block rounded-lg px-3 py-2 font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Carátula</a>
+      <a href="introduccion.html" class="block rounded-lg px-3 py-2 font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Introducción</a>
+      <div class="my-2 border-t border-slate-100 dark:border-slate-800"></div>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-sky-50 dark:hover:bg-sky-500/10 group-open:bg-sky-50 dark:group-open:bg-sky-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-sky-500"></span>
+            <span class="truncate text-sm font-semibold text-sky-700 dark:text-sky-300">Fluidos corporales</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-sky-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-sky-100 dark:border-sky-500/30 pl-2">
+          <a href="componentes.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-sky-50 dark:hover:bg-sky-500/10 hover:text-sky-700 dark:hover:text-sky-300 transition">Componentes de la sangre</a>
+          <a href="hemograma.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-sky-50 dark:hover:bg-sky-500/10 hover:text-sky-700 dark:hover:text-sky-300 transition">Hemograma con diferencial</a>
+          <a href="fluidos.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-sky-50 dark:hover:bg-sky-500/10 hover:text-sky-700 dark:hover:text-sky-300 transition">Análisis de fluidos biológicos</a>
+          <a href="frotis.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-sky-50 dark:hover:bg-sky-500/10 hover:text-sky-700 dark:hover:text-sky-300 transition">Frotis sanguíneo</a>
+        </div>
+      </details>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-emerald-50 dark:hover:bg-emerald-500/10 group-open:bg-emerald-50 dark:group-open:bg-emerald-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-emerald-500"></span>
+            <span class="truncate text-sm font-semibold text-emerald-700 dark:text-emerald-300">Medulograma</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-emerald-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-emerald-100 dark:border-emerald-500/30 pl-2">
+          <a href="medulograma.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-emerald-50 dark:hover:bg-emerald-500/10 hover:text-emerald-700 dark:hover:text-emerald-300 transition">Medulograma</a>
+        </div>
+      </details>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-rose-50 dark:hover:bg-rose-500/10 group-open:bg-rose-50 dark:group-open:bg-rose-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-rose-500"></span>
+            <span class="truncate text-sm font-semibold text-rose-700 dark:text-rose-300">Embarazo</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-rose-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-rose-100 dark:border-rose-500/30 pl-2">
+          <a href="embarazo.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-rose-50 dark:hover:bg-rose-500/10 hover:text-rose-700 dark:hover:text-rose-300 transition">Diagnóstico en el embarazo</a>
+        </div>
+      </details>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-fuchsia-50 dark:hover:bg-fuchsia-500/10 group-open:bg-fuchsia-50 dark:group-open:bg-fuchsia-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-fuchsia-500"></span>
+            <span class="truncate text-sm font-semibold text-fuchsia-700 dark:text-fuchsia-300">Trastornos autoinmunitarios</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-fuchsia-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-fuchsia-100 dark:border-fuchsia-500/30 pl-2">
+          <a href="autoinmunes.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-fuchsia-50 dark:hover:bg-fuchsia-500/10 hover:text-fuchsia-700 dark:hover:text-fuchsia-300 transition">Trastornos autoinmunitarios</a>
+        </div>
+      </details>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-purple-50 dark:hover:bg-purple-500/10 group-open:bg-purple-50 dark:group-open:bg-purple-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-purple-500"></span>
+            <span class="truncate text-sm font-semibold text-purple-700 dark:text-purple-300">Neoplasias</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-purple-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-purple-100 dark:border-purple-500/30 pl-2">
+          <a href="oncologia.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-purple-50 dark:hover:bg-purple-500/10 hover:text-purple-700 dark:hover:text-purple-300 transition">Oncología y neoplasias</a>
+        </div>
+      </details>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-orange-50 dark:hover:bg-orange-500/10 group-open:bg-orange-50 dark:group-open:bg-orange-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-orange-500"></span>
+            <span class="truncate text-sm font-semibold text-orange-700 dark:text-orange-300">Sistema osteomioarticular</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-orange-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-orange-100 dark:border-orange-500/30 pl-2">
+          <a href="soma.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-orange-50 dark:hover:bg-orange-500/10 hover:text-orange-700 dark:hover:text-orange-300 transition">Sistema osteomioarticular</a>
+        </div>
+      </details>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-cyan-50 dark:hover:bg-cyan-500/10 group-open:bg-cyan-50 dark:group-open:bg-cyan-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-cyan-500"></span>
+            <span class="truncate text-sm font-semibold text-cyan-700 dark:text-cyan-300">Estudios neurológicos</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-cyan-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-cyan-100 dark:border-cyan-500/30 pl-2">
+          <a href="neurologia.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-cyan-50 dark:hover:bg-cyan-500/10 hover:text-cyan-700 dark:hover:text-cyan-300 transition">Neurología avanzada</a>
+        </div>
+      </details>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-teal-50 dark:hover:bg-teal-500/10 group-open:bg-teal-50 dark:group-open:bg-teal-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-teal-500"></span>
+            <span class="truncate text-sm font-semibold text-teal-700 dark:text-teal-300">Sistema genitourinario</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-teal-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-teal-100 dark:border-teal-500/30 pl-2">
+          <a href="genitourinario.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-teal-50 dark:hover:bg-teal-500/10 hover:text-teal-700 dark:hover:text-teal-300 transition">Sistema genitourinario</a>
+          <a href="pruebas-urinarias.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-teal-50 dark:hover:bg-teal-500/10 hover:text-teal-700 dark:hover:text-teal-300 transition">Pruebas diagnósticas urinarias</a>
+        </div>
+      </details>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-amber-50 dark:hover:bg-amber-500/10 group-open:bg-amber-50 dark:group-open:bg-amber-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-amber-500"></span>
+            <span class="truncate text-sm font-semibold text-amber-700 dark:text-amber-300">Sistema endocrino-metabólico</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-amber-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-amber-100 dark:border-amber-500/30 pl-2">
+          <a href="endocrino.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-amber-50 dark:hover:bg-amber-500/10 hover:text-amber-700 dark:hover:text-amber-300 transition">Estudios de laboratorio</a>
+          <a href="endocrino-imagen.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-amber-50 dark:hover:bg-amber-500/10 hover:text-amber-700 dark:hover:text-amber-300 transition">Estudios imagenológicos</a>
+          <a href="endocrino-patologia.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-amber-50 dark:hover:bg-amber-500/10 hover:text-amber-700 dark:hover:text-amber-300 transition">Estudios anatomopatológicos</a>
+        </div>
+      </details>
+      <details class="group" open>
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-blue-50 dark:hover:bg-blue-500/10 group-open:bg-blue-50 dark:group-open:bg-blue-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-blue-500"></span>
+            <span class="truncate text-sm font-semibold text-blue-700 dark:text-blue-300">Sistema respiratorio</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-blue-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-blue-100 dark:border-blue-500/30 pl-2">
+          <a href="respiratorio.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-blue-50 dark:hover:bg-blue-500/10 hover:text-blue-700 dark:hover:text-blue-300 transition">Estudios de laboratorio</a>
+          <a href="respiratorio-imagen.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-blue-50 dark:hover:bg-blue-500/10 hover:text-blue-700 dark:hover:text-blue-300 transition">Estudios de imagen</a>
+          <a href="respiratorio-funcionales.html" class="block rounded-lg px-3 py-1.5 font-semibold bg-blue-100 dark:bg-blue-500/20 text-blue-800 dark:text-blue-200">Pruebas funcionales respiratorias</a>
+          <a href="respiratorio-procedimientos.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-blue-50 dark:hover:bg-blue-500/10 hover:text-blue-700 dark:hover:text-blue-300 transition">Procedimientos especializados</a>
+        </div>
+      </details>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-red-50 dark:hover:bg-red-500/10 group-open:bg-red-50 dark:group-open:bg-red-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-red-500"></span>
+            <span class="truncate text-sm font-semibold text-red-700 dark:text-red-300">Sistema cardiovascular</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-red-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-red-100 dark:border-red-500/30 pl-2">
+          <a href="cardiovascular.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-red-50 dark:hover:bg-red-500/10 hover:text-red-700 dark:hover:text-red-300 transition">Estudios de laboratorio</a>
+          <a href="cardiovascular-imagen.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-red-50 dark:hover:bg-red-500/10 hover:text-red-700 dark:hover:text-red-300 transition">Estudios de imagen</a>
+          <a href="cardiovascular-funcionales.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-red-50 dark:hover:bg-red-500/10 hover:text-red-700 dark:hover:text-red-300 transition">Estudios electrofisiológicos y funcionales</a>
+          <a href="cardiovascular-procedimientos.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-red-50 dark:hover:bg-red-500/10 hover:text-red-700 dark:hover:text-red-300 transition">Procedimientos invasivos y estudios vasculares</a>
+        </div>
+      </details>
+      <div class="my-2 border-t border-slate-100 dark:border-slate-800"></div>
+      <a href="enlaces.html" class="block rounded-lg px-3 py-2 font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Enlaces y referencias</a>
+    </nav>
+    <div class="px-4 py-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
+      <span class="text-xs text-slate-400">© Proyecto académico</span>
+      <button onclick="toggleTheme()" aria-label="Cambiar tema"
+              class="h-9 w-9 rounded-full grid place-items-center ring-1 ring-slate-200 dark:ring-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 transition text-slate-600 dark:text-slate-300">
+        <svg class="dark:hidden h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="hidden dark:block h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path stroke-linecap="round" d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </button>
+    </div>
+  </aside>
+
+  <button onclick="document.getElementById('sidebar').classList.toggle('-translate-x-full')"
+          class="lg:hidden fixed bottom-5 right-5 z-50 h-12 w-12 rounded-full bg-indigo-600 text-white shadow-lg grid place-items-center">
+    <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+  </button>
+
+  <!-- ============ CONTENIDO ============ -->
+  <main class="flex-1 min-w-0">
+    <div class="max-w-4xl mx-auto px-6 py-10 lg:py-14">
+
+      <nav class="text-xs text-slate-400 mb-3">Inicio / Sistema respiratorio / <span class="text-slate-600 dark:text-slate-300">Pruebas funcionales respiratorias</span></nav>
+
+      <div class="flex items-center gap-4">
+        <div class="h-12 w-1.5 rounded-full bg-blue-500"></div>
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">Pruebas funcionales respiratorias</h1>
+      </div>
+      <p class="mt-2 text-blue-700 dark:text-blue-300 font-semibold">Sistema respiratorio · Evaluación de la función pulmonar</p>
+
+      <!-- Introducción -->
+      <p class="mt-6 text-slate-700 dark:text-slate-300 leading-relaxed">
+        Las <strong>pruebas funcionales respiratorias</strong> evalúan de forma <strong>no invasiva</strong> cómo funcionan los pulmones:
+        miden los <strong>volúmenes</strong> de aire movilizados, los <strong>flujos</strong> con los que entra y sale, y la eficiencia del
+        <strong>intercambio gaseoso</strong> a través de la membrana alveolo-capilar. Son herramientas de gran valor clínico para diagnosticar y
+        dar seguimiento a enfermedades respiratorias crónicas —como el asma y la EPOC—, cuantificar el grado de limitación ventilatoria
+        (obstructiva, restrictiva o mixta), valorar la tolerancia al ejercicio y orientar las decisiones terapéuticas.
+      </p>
+
+      <!-- Caja-mapa: navegación del módulo -->
+      <div class="mt-6 rounded-2xl bg-blue-50 dark:bg-blue-500/10 ring-1 ring-blue-100 dark:ring-blue-500/20 p-5">
+        <p class="text-xs font-bold uppercase tracking-wide text-blue-700 dark:text-blue-300">Módulo Sistema respiratorio · 4 páginas</p>
+        <div class="mt-3 grid sm:grid-cols-2 gap-2 text-sm">
+          <a href="respiratorio.html" class="flex items-center gap-2 rounded-xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 px-4 py-3 hover:ring-blue-300 dark:hover:ring-blue-500/40 transition">
+            <span class="grid h-7 w-7 place-items-center rounded-lg bg-blue-100 dark:bg-blue-500/20 text-blue-700 dark:text-blue-300 text-xs font-bold">1</span>
+            <span class="font-medium text-slate-700 dark:text-slate-200">Estudios de laboratorio</span>
+          </a>
+          <a href="respiratorio-imagen.html" class="flex items-center gap-2 rounded-xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 px-4 py-3 hover:ring-blue-300 dark:hover:ring-blue-500/40 transition">
+            <span class="grid h-7 w-7 place-items-center rounded-lg bg-blue-100 dark:bg-blue-500/20 text-blue-700 dark:text-blue-300 text-xs font-bold">2</span>
+            <span class="font-medium text-slate-700 dark:text-slate-200">Estudios de imagen</span>
+          </a>
+          <span aria-current="page" class="flex items-center gap-2 rounded-xl bg-blue-600 text-white ring-1 ring-blue-600 px-4 py-3 shadow-sm">
+            <span class="grid h-7 w-7 place-items-center rounded-lg bg-white/20 text-white text-xs font-bold">3</span>
+            <span class="font-semibold">Pruebas funcionales respiratorias <span class="text-blue-100">· actual</span></span>
+          </span>
+          <a href="respiratorio-procedimientos.html" class="flex items-center gap-2 rounded-xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 px-4 py-3 hover:ring-blue-300 dark:hover:ring-blue-500/40 transition">
+            <span class="grid h-7 w-7 place-items-center rounded-lg bg-blue-100 dark:bg-blue-500/20 text-blue-700 dark:text-blue-300 text-xs font-bold">4</span>
+            <span class="font-medium text-slate-700 dark:text-slate-200">Procedimientos especializados</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- ==================== 1. ESPIROMETRÍA ==================== -->
+      <section class="mt-12">
+        <div class="flex items-center gap-3">
+          <span class="grid h-9 w-9 place-items-center rounded-xl bg-blue-500 text-white font-extrabold">1</span>
+          <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Espirometría</h2>
+        </div>
+
+        <article class="mt-5 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="grid md:grid-cols-[34%_1fr]">
+            <div class="relative aspect-[4/3] md:aspect-auto md:min-h-[12rem] bg-slate-100 dark:bg-slate-800">
+              <img src="IMG/respiratorio/espirometria.webp" alt="Espirometría" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-xs text-slate-400 p-3"><svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>espirometria.webp</span></div>
+            </div>
+            <div class="p-5">
+              <h3 class="font-bold text-lg text-slate-900 dark:text-white">Espirometría</h3>
+              <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+                Es la principal prueba funcional en neumología: de forma sencilla, no invasiva e indolora permite conocer cómo funcionan los pulmones.
+                Evalúa la capacidad pulmonar midiendo tanto la <strong>cantidad de aire</strong> que se puede movilizar como la <strong>velocidad</strong> con que se hace.
+                Es una herramienta de gran valor para el diagnóstico y seguimiento de enfermedades respiratorias crónicas, y también en el estudio de patologías extrapulmonares.
+              </p>
+              <p class="mt-3 text-xs font-bold uppercase tracking-wide text-blue-700 dark:text-blue-300">¿Qué mide? · Parámetros principales</p>
+              <div class="mt-1 grid sm:grid-cols-2 gap-x-6 gap-y-1 text-sm text-slate-600 dark:text-slate-400">
+                <div class="flex gap-2"><span class="text-blue-500">•</span><span><strong>FEV1 / VEF1:</strong> volumen espiratorio forzado en el primer segundo.</span></div>
+                <div class="flex gap-2"><span class="text-blue-500">•</span><span><strong>FVC / CVF:</strong> capacidad vital forzada (volumen total exhalado).</span></div>
+                <div class="flex gap-2"><span class="text-blue-500">•</span><span><strong>Índice VEF1/CVF:</strong> relación entre ambos.</span></div>
+                <div class="flex gap-2"><span class="text-blue-500">•</span><span>Detecta alteraciones obstructivas, restrictivas o mixtas.</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 p-5 space-y-4">
+            <div>
+              <p class="text-xs font-bold uppercase tracking-wide text-blue-700 dark:text-blue-300">Valores normales</p>
+              <div class="mt-2 flex flex-wrap gap-2 text-xs">
+                <span class="rounded-full bg-emerald-100 dark:bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 px-2.5 py-1 font-medium">VEF1: ≥80% del predicho</span>
+                <span class="rounded-full bg-emerald-100 dark:bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 px-2.5 py-1 font-medium">CVF: ≥80% del predicho</span>
+                <span class="rounded-full bg-emerald-100 dark:bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 px-2.5 py-1 font-medium">VEF1/CVF: ≥0.70 – 0.75</span>
+              </div>
+            </div>
+            <div>
+              <p class="text-xs font-bold uppercase tracking-wide text-blue-700 dark:text-blue-300">Interpretación</p>
+              <div class="mt-2 flex flex-wrap gap-2 text-xs">
+                <span class="rounded-full bg-amber-100 dark:bg-amber-500/15 text-amber-700 dark:text-amber-300 px-2.5 py-1 font-medium">Obstructivo (asma, EPOC): VEF1 ↓, VEF1/CVF ↓ (&lt;0.70)</span>
+                <span class="rounded-full bg-rose-100 dark:bg-rose-500/15 text-rose-700 dark:text-rose-300 px-2.5 py-1 font-medium">Restrictivo (fibrosis): CVF ↓, VEF1 proporcionalmente ↓, relación normal o alta</span>
+              </div>
+              <p class="mt-2 text-xs text-slate-500 dark:text-slate-400">También puede realizarse con broncodilatador para evaluar reversibilidad (asma).</p>
+            </div>
+            <div>
+              <p class="text-xs font-bold uppercase tracking-wide text-blue-700 dark:text-blue-300 mb-2">Cuidados de enfermería</p>
+              <div class="grid sm:grid-cols-3 gap-3 text-xs">
+                <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes</p><p class="text-slate-600 dark:text-slate-400">Verificar identidad y antecedentes; explicar objetivo y técnica del esfuerzo máximo; suspender broncodilatadores si el médico lo indicó; comprobar que no haya fumado, hecho ejercicio intenso ni comido en abundancia; usar ropa cómoda.</p></div>
+                <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3"><p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante</p><p class="text-slate-600 dark:text-slate-400">Colocar al paciente sentado y pinza nasal; asegurar buen sellado de labios en la boquilla; guiar inspiración profunda y espiración rápida, fuerte y sostenida; lograr al menos 3 maniobras aceptables; vigilar mareo, fatiga o disnea.</p></div>
+                <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después</p><p class="text-slate-600 dark:text-slate-400">Valorar estado general y permitir descanso si hay mareo; administrar broncodilatador si está indicado (prueba post) y observar reacciones; confirmar maniobras adecuadas, registrar mejores valores y orientar la reanudación de actividades.</p></div>
+              </div>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 px-5 py-3 text-xs text-slate-500 dark:text-slate-400 flex flex-wrap gap-x-4 gap-y-1">
+            <span class="font-semibold">Fuentes:</span>
+            <a href="https://www.clinicbarcelona.org/asistencia/pruebas-y-procedimientos/espirometria" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">clinicbarcelona.org</a>
+            <a href="https://medlineplus.gov/spanish/ency/article/003853.htm" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">medlineplus.gov</a>
+            <a href="https://www.cdc.gov/niosh/topics/spirometry/default.html" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">cdc.gov</a>
+            <a href="https://www.ncbi.nlm.nih.gov/books/NBK482339/" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">ncbi.nlm.nih.gov</a>
+          </div>
+        </article>
+      </section>
+
+      <!-- ==================== 2. ESPIROMETRÍA CON BRONCODILATADOR ==================== -->
+      <section class="mt-12">
+        <div class="flex items-center gap-3">
+          <span class="grid h-9 w-9 place-items-center rounded-xl bg-blue-500 text-white font-extrabold">2</span>
+          <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Espirometría con broncodilatador</h2>
+        </div>
+
+        <article class="mt-5 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="grid md:grid-cols-[34%_1fr]">
+            <div class="relative aspect-[4/3] md:aspect-auto md:min-h-[12rem] bg-slate-100 dark:bg-slate-800">
+              <img src="IMG/respiratorio/espirometria-broncodilatador.webp" alt="Espirometría con broncodilatador" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-xs text-slate-400 p-3"><svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>espirometria-broncodilatador.webp</span></div>
+            </div>
+            <div class="p-5">
+              <h3 class="font-bold text-lg text-slate-900 dark:text-white">Espirometría con broncodilatador</h3>
+              <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+                Procedimiento que evalúa la función pulmonar midiendo la cantidad de aire inhalado y exhalado, y la velocidad de exhalación.
+                Existen dos tipos: la <strong>pre-broncodilatador</strong> y la <strong>post-broncodilatador</strong>. La prueba es la misma en ambos casos,
+                salvo que en la segunda se administra al paciente un <strong>fármaco inhalado que dilata los bronquios</strong> para evaluar la reversibilidad de la obstrucción.
+              </p>
+              <p class="mt-3 text-xs font-bold uppercase tracking-wide text-blue-700 dark:text-blue-300">¿Qué detecta?</p>
+              <div class="mt-1 grid sm:grid-cols-2 gap-x-6 gap-y-1 text-sm text-slate-600 dark:text-slate-400">
+                <div class="flex gap-2"><span class="text-blue-500">•</span>EPOC</div>
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Asma</div>
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Enfisema pulmonar</div>
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Fibrosis pulmonar</div>
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Fibrosis quística</div>
+              </div>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 p-5 space-y-4">
+            <div>
+              <p class="text-xs font-bold uppercase tracking-wide text-blue-700 dark:text-blue-300">Interpretación de la respuesta</p>
+              <div class="mt-2 flex flex-wrap gap-2 text-xs">
+                <span class="rounded-full bg-emerald-100 dark:bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 px-2.5 py-1 font-medium">Respuesta positiva: ↑ significativo de VEF1 o CVF tras el fármaco</span>
+                <span class="rounded-full bg-amber-100 dark:bg-amber-500/15 text-amber-700 dark:text-amber-300 px-2.5 py-1 font-medium">Indica obstrucción reversible (característica del asma)</span>
+              </div>
+              <p class="mt-2 text-xs text-slate-500 dark:text-slate-400">La reversibilidad también puede observarse en algunos pacientes con EPOC.</p>
+            </div>
+            <div>
+              <p class="text-xs font-bold uppercase tracking-wide text-blue-700 dark:text-blue-300 mb-2">Cuidados de enfermería</p>
+              <div class="grid sm:grid-cols-3 gap-3 text-xs">
+                <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes</p><p class="text-slate-600 dark:text-slate-400">Verificar identidad y orden médica; explicar el examen para reducir la ansiedad; confirmar el cumplimiento de indicaciones previas (suspensión de broncodilatadores); registrar antecedentes respiratorios, alergias y medicamentos.</p></div>
+                <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3"><p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante</p><p class="text-slate-600 dark:text-slate-400">Orientar sobre la técnica de inspiración y espiración; vigilar mareo, tos intensa o disnea; administrar el broncodilatador según indicación y controlar el tiempo de espera antes de repetir la prueba.</p></div>
+                <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después</p><p class="text-slate-600 dark:text-slate-400">Observar unos minutos posibles efectos adversos (temblores, palpitaciones, taquicardia); registrar resultados; informar al médico ante alteraciones; indicar que puede retomar sus medicamentos habituales si así se estableció.</p></div>
+              </div>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 px-5 py-3 text-xs text-slate-500 dark:text-slate-400 flex flex-wrap gap-x-4 gap-y-1">
+            <span class="font-semibold">Fuentes:</span>
+            <a href="https://centromedicoabc.com/procedimientos/espirometria-pre-broncodilatador/" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">centromedicoabc.com</a>
+            <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5392482/" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">ncbi.nlm.nih.gov</a>
+          </div>
+        </article>
+      </section>
+
+      <!-- ==================== 3. PEAK FLOW / FEM ==================== -->
+      <section class="mt-12">
+        <div class="flex items-center gap-3">
+          <span class="grid h-9 w-9 place-items-center rounded-xl bg-blue-500 text-white font-extrabold">3</span>
+          <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Flujo espiratorio máximo (Peak Flow / FEM)</h2>
+        </div>
+
+        <article class="mt-5 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="grid md:grid-cols-[34%_1fr]">
+            <div class="relative aspect-[4/3] md:aspect-auto md:min-h-[12rem] bg-slate-100 dark:bg-slate-800">
+              <img src="IMG/respiratorio/peak-flow.webp" alt="Medidor de flujo espiratorio máximo (Peak Flow)" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-xs text-slate-400 p-3"><svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>peak-flow.webp</span></div>
+            </div>
+            <div class="p-5">
+              <h3 class="font-bold text-lg text-slate-900 dark:text-white">Flujo espiratorio máximo (FEM / PEF)</h3>
+              <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+                Prueba sencilla realizada con un <strong>medidor portátil</strong> que evalúa qué tan rápido puede expulsar el aire una persona tras una inspiración profunda.
+                Es especialmente útil en el <strong>control y seguimiento del asma</strong>, sobre todo cuando no se dispone de espirometría, ya que detecta de forma objetiva la
+                obstrucción de las vías respiratorias y su respuesta al tratamiento, ayudando a prevenir crisis.
+              </p>
+              <p class="mt-3 text-xs text-slate-500 dark:text-slate-400">
+                El paciente debe realizar un <strong>esfuerzo máximo y repetido</strong> (generalmente 3 intentos), registrando el <strong>valor más alto</strong>. El resultado depende del esfuerzo,
+                la fuerza muscular y la colaboración. Se interpreta según el <strong>mejor valor personal del paciente</strong>.
+              </p>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 p-5 space-y-4">
+            <div>
+              <p class="text-xs font-bold uppercase tracking-wide text-blue-700 dark:text-blue-300">Zonas de interpretación (respecto al mejor valor personal)</p>
+              <div class="mt-2 flex flex-wrap gap-2 text-xs">
+                <span class="rounded-full bg-emerald-100 dark:bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 px-2.5 py-1 font-medium">Zona verde (80–100%): control adecuado del asma</span>
+                <span class="rounded-full bg-amber-100 dark:bg-amber-500/15 text-amber-700 dark:text-amber-300 px-2.5 py-1 font-medium">Zona amarilla (50–80%): alerta, posible empeoramiento; ajustar o usar broncodilatador</span>
+                <span class="rounded-full bg-rose-100 dark:bg-rose-500/15 text-rose-700 dark:text-rose-300 px-2.5 py-1 font-medium">Zona roja (&lt;50%): emergencia médica, posible obstrucción grave</span>
+              </div>
+              <p class="mt-2 text-xs text-slate-500 dark:text-slate-400">El monitoreo regular permite evaluar la efectividad del tratamiento, detectar exacerbaciones tempranas y guiar decisiones clínicas, siempre junto con la evaluación de síntomas.</p>
+            </div>
+            <div>
+              <p class="text-xs font-bold uppercase tracking-wide text-blue-700 dark:text-blue-300 mb-2">Cuidados de enfermería</p>
+              <div class="grid sm:grid-cols-3 gap-3 text-xs">
+                <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes</p><p class="text-slate-600 dark:text-slate-400">Explicar de forma clara y sencilla cómo usar el medidor y para qué sirve. Verificar el estado basal (signos vitales, dificultad respiratoria y uso reciente de broncodilatadores).</p></div>
+                <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3"><p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante</p><p class="text-slate-600 dark:text-slate-400">Supervisar la maniobra correcta (inspiración profunda y espiración forzada sin fugas). Asegurar al menos tres intentos y motivar el máximo esfuerzo en cada uno.</p></div>
+                <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después</p><p class="text-slate-600 dark:text-slate-400">Registrar el mejor valor y compararlo con el valor personal o las zonas (verde, amarilla, roja). Educar al paciente sobre la interpretación y los signos de alarma que requieren atención médica.</p></div>
+              </div>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 px-5 py-3 text-xs text-slate-500 dark:text-slate-400 flex flex-wrap gap-x-4 gap-y-1">
+            <span class="font-semibold">Fuentes:</span>
+            <a href="https://www.ncbi.nlm.nih.gov/books/NBK459325/" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">ncbi.nlm.nih.gov</a>
+          </div>
+        </article>
+      </section>
+
+      <!-- ==================== 4. VOLÚMENES PULMONARES ==================== -->
+      <section class="mt-12">
+        <div class="flex items-center gap-3">
+          <span class="grid h-9 w-9 place-items-center rounded-xl bg-blue-500 text-white font-extrabold">4</span>
+          <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Volúmenes pulmonares</h2>
+        </div>
+
+        <article class="mt-5 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <figure class="rounded-none bg-white dark:bg-slate-900 overflow-hidden">
+            <div class="relative aspect-[16/7] bg-slate-100 dark:bg-slate-800"><img src="IMG/respiratorio/volumenes-pulmonares.webp" alt="Volúmenes y capacidades pulmonares" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-xs text-slate-400 p-3"><svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>IMG/respiratorio/volumenes-pulmonares.webp</span></div></div>
+          </figure>
+          <div class="p-5 space-y-4">
+            <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+              Los volúmenes pulmonares son las cantidades de aire presentes en los pulmones durante las distintas fases de la respiración.
+              Se dividen en <strong>volúmenes</strong> y <strong>capacidades</strong> (suma de volúmenes) y son fundamentales para evaluar la función respiratoria
+              mediante la espirometría y otras técnicas especializadas.
+            </p>
+
+            <div>
+              <p class="text-xs font-bold uppercase tracking-wide text-blue-700 dark:text-blue-300 mb-2">Volúmenes pulmonares principales</p>
+              <div class="overflow-x-auto rounded-xl ring-1 ring-slate-200 dark:ring-slate-800">
+                <table class="w-full text-sm text-left">
+                  <thead class="bg-blue-50 dark:bg-blue-500/10 text-blue-800 dark:text-blue-200">
+                    <tr>
+                      <th class="px-4 py-2 font-semibold">Volumen</th>
+                      <th class="px-4 py-2 font-semibold">Valor</th>
+                      <th class="px-4 py-2 font-semibold">Descripción</th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y divide-slate-100 dark:divide-slate-800">
+                    <tr><td class="px-4 py-2 font-medium">Volumen corriente (VT)</td><td class="px-4 py-2 whitespace-nowrap text-blue-700 dark:text-blue-300 font-semibold">300–500 ml</td><td class="px-4 py-2 text-slate-600 dark:text-slate-400">Aire inspirado o espirado en una respiración normal. Puede aumentar durante el ejercicio.</td></tr>
+                    <tr><td class="px-4 py-2 font-medium">Volumen de reserva inspiratoria (VRI)</td><td class="px-4 py-2 whitespace-nowrap text-blue-700 dark:text-blue-300 font-semibold">1900–3300 ml</td><td class="px-4 py-2 text-slate-600 dark:text-slate-400">Aire adicional que se puede inspirar tras una respiración normal.</td></tr>
+                    <tr><td class="px-4 py-2 font-medium">Volumen de reserva espiratoria (VRE)</td><td class="px-4 py-2 whitespace-nowrap text-blue-700 dark:text-blue-300 font-semibold">700–1200 ml</td><td class="px-4 py-2 text-slate-600 dark:text-slate-400">Aire que se expulsa con esfuerzo tras una espiración normal. Disminuye en obesidad o cirugías abdominales.</td></tr>
+                    <tr><td class="px-4 py-2 font-medium">Volumen residual (VR)</td><td class="px-4 py-2 whitespace-nowrap text-blue-700 dark:text-blue-300 font-semibold">~1200 ml</td><td class="px-4 py-2 text-slate-600 dark:text-slate-400">Aire que queda tras una espiración máxima. No se mide con espirometría directa.</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div>
+              <p class="text-xs font-bold uppercase tracking-wide text-blue-700 dark:text-blue-300 mb-2">Capacidades pulmonares</p>
+              <div class="overflow-x-auto rounded-xl ring-1 ring-slate-200 dark:ring-slate-800">
+                <table class="w-full text-sm text-left">
+                  <thead class="bg-blue-50 dark:bg-blue-500/10 text-blue-800 dark:text-blue-200">
+                    <tr>
+                      <th class="px-4 py-2 font-semibold">Capacidad</th>
+                      <th class="px-4 py-2 font-semibold">Fórmula / Valor</th>
+                      <th class="px-4 py-2 font-semibold">Descripción</th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y divide-slate-100 dark:divide-slate-800">
+                    <tr><td class="px-4 py-2 font-medium">Capacidad inspiratoria (CI)</td><td class="px-4 py-2 whitespace-nowrap text-blue-700 dark:text-blue-300 font-semibold">VT + VRI</td><td class="px-4 py-2 text-slate-600 dark:text-slate-400">Aire máximo que se puede inspirar desde el reposo.</td></tr>
+                    <tr><td class="px-4 py-2 font-medium">Capacidad vital (CV)</td><td class="px-4 py-2 whitespace-nowrap text-blue-700 dark:text-blue-300 font-semibold">VT + VRI + VRE</td><td class="px-4 py-2 text-slate-600 dark:text-slate-400">Aire total exhalable tras una inspiración máxima. Importante para la tos y la ventilación efectiva.</td></tr>
+                    <tr><td class="px-4 py-2 font-medium">Capacidad residual funcional (CRF)</td><td class="px-4 py-2 whitespace-nowrap text-blue-700 dark:text-blue-300 font-semibold">VR + VRE</td><td class="px-4 py-2 text-slate-600 dark:text-slate-400">Aire que queda en los pulmones al final de una espiración normal.</td></tr>
+                    <tr><td class="px-4 py-2 font-medium">Capacidad pulmonar total (CPT)</td><td class="px-4 py-2 whitespace-nowrap text-blue-700 dark:text-blue-300 font-semibold">~4–6 L</td><td class="px-4 py-2 text-slate-600 dark:text-slate-400">Suma de todos los volúmenes pulmonares en el adulto.</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="rounded-xl bg-blue-50 dark:bg-blue-500/10 ring-1 ring-blue-100 dark:ring-blue-500/20 p-4">
+              <p class="text-xs font-bold uppercase tracking-wide text-blue-700 dark:text-blue-300 mb-1">Importancia clínica</p>
+              <div class="grid gap-1 text-sm text-slate-600 dark:text-slate-400">
+                <div class="flex gap-2"><span class="text-blue-500">•</span>En enfermedades <strong>obstructivas</strong> (EPOC), el volumen residual puede aumentar por atrapamiento de aire.</div>
+                <div class="flex gap-2"><span class="text-blue-500">•</span>En enfermedades <strong>restrictivas</strong> (deformidades torácicas), la capacidad pulmonar total disminuye.</div>
+                <div class="flex gap-2"><span class="text-blue-500">•</span>La capacidad vital refleja la fuerza muscular respiratoria y la capacidad de ventilación.</div>
+              </div>
+            </div>
+
+            <div>
+              <p class="text-xs font-bold uppercase tracking-wide text-blue-700 dark:text-blue-300 mb-2">Cuidados de enfermería</p>
+              <div class="grid sm:grid-cols-3 gap-3 text-xs">
+                <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes</p><p class="text-slate-600 dark:text-slate-400">Explicar el procedimiento y su objetivo para mejorar la cooperación. Verificar signos vitales y condiciones respiratorias basales.</p></div>
+                <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3"><p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante</p><p class="text-slate-600 dark:text-slate-400">Supervisar la correcta realización de las maniobras respiratorias máximas. Vigilar signos de mareo, fatiga o disnea.</p></div>
+                <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después</p><p class="text-slate-600 dark:text-slate-400">Registrar los valores obtenidos y compararlos con valores normales. Educar al paciente sobre la importancia del estudio y su seguimiento.</p></div>
+              </div>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 px-5 py-3 text-xs text-slate-500 dark:text-slate-400 flex flex-wrap gap-x-4 gap-y-1">
+            <span class="font-semibold">Fuentes:</span>
+            <a href="https://www.neumomadrid.org/wp-content/uploads/monogxviii_3._volumenes_pulmonares.pdf" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">neumomadrid.org</a>
+            <a href="https://www.physio-pedia.com/Lung_Volumes" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">physio-pedia.com</a>
+          </div>
+        </article>
+      </section>
+
+      <!-- ==================== 5. DLCO ==================== -->
+      <section class="mt-12">
+        <div class="flex items-center gap-3">
+          <span class="grid h-9 w-9 place-items-center rounded-xl bg-blue-500 text-white font-extrabold">5</span>
+          <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Capacidad de difusión de CO (DLCO)</h2>
+        </div>
+
+        <article class="mt-5 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="grid md:grid-cols-[34%_1fr]">
+            <div class="relative aspect-[4/3] md:aspect-auto md:min-h-[12rem] bg-slate-100 dark:bg-slate-800">
+              <img src="IMG/respiratorio/dlco.webp" alt="Prueba de capacidad de difusión de monóxido de carbono (DLCO)" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-xs text-slate-400 p-3"><svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>dlco.webp</span></div>
+            </div>
+            <div class="p-5">
+              <h3 class="font-bold text-lg text-slate-900 dark:text-white">Capacidad de difusión de monóxido de carbono (DLCO)</h3>
+              <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+                Prueba de función pulmonar que mide la transferencia de gases desde los alvéolos hacia la sangre a través de la <strong>membrana alveolo-capilar</strong>.
+                Usa un pequeño porcentaje de monóxido de carbono (CO) por su alta afinidad por la hemoglobina, lo que permite evaluar indirectamente la eficiencia del intercambio gaseoso pulmonar.
+              </p>
+              <p class="mt-3 text-xs font-bold uppercase tracking-wide text-blue-700 dark:text-blue-300">¿Para qué sirve?</p>
+              <p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Detecta alteraciones en el parénquima pulmonar, el lecho capilar y la membrana alveolar. Útil en <strong>enfisema, fibrosis pulmonar idiopática, hipertensión pulmonar, embolia pulmonar y anemia</strong>.</p>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 p-5 space-y-4">
+            <div>
+              <p class="text-xs font-bold uppercase tracking-wide text-blue-700 dark:text-blue-300">Valores normales e interpretación (% del predicho, ajustado por edad, sexo, talla y hemoglobina)</p>
+              <div class="mt-2 flex flex-wrap gap-2 text-xs">
+                <span class="rounded-full bg-emerald-100 dark:bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 px-2.5 py-1 font-medium">Normal (80–120%): difusión conservada</span>
+                <span class="rounded-full bg-rose-100 dark:bg-rose-500/15 text-rose-700 dark:text-rose-300 px-2.5 py-1 font-medium">Disminuida (&lt;80%): enfisema, fibrosis, embolia, anemia</span>
+                <span class="rounded-full bg-amber-100 dark:bg-amber-500/15 text-amber-700 dark:text-amber-300 px-2.5 py-1 font-medium">Aumentada (&gt;120%): hemorragia alveolar, asma, policitemia</span>
+              </div>
+              <p class="mt-2 text-xs text-slate-500 dark:text-slate-400">Puede ajustarse por hemoglobina (DLCO corregida), ya que la anemia puede falsear resultados disminuidos.</p>
+            </div>
+            <div>
+              <p class="text-xs font-bold uppercase tracking-wide text-blue-700 dark:text-blue-300 mb-2">Cuidados de enfermería</p>
+              <div class="grid sm:grid-cols-3 gap-3 text-xs">
+                <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes</p><p class="text-slate-600 dark:text-slate-400">Explicar que la prueba mide el paso de gases, no es dolorosa pero requiere colaboración activa. Indicar suspensión de tabaco al menos 24 h antes y evitar ejercicio intenso previo.</p></div>
+                <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3"><p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante</p><p class="text-slate-600 dark:text-slate-400">Supervisar la inspiración profunda seguida de apnea breve (~10 segundos) según protocolo. Asegurar buen sellado bucal para evitar fugas que alteren el resultado.</p></div>
+                <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después</p><p class="text-slate-600 dark:text-slate-400">Vigilar posibles mareos leves por la maniobra respiratoria. Registrar valores y notificar reducciones significativas que indiquen patología intersticial o vascular.</p></div>
+              </div>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 px-5 py-3 text-xs text-slate-500 dark:text-slate-400 flex flex-wrap gap-x-4 gap-y-1">
+            <span class="font-semibold">Fuentes:</span>
+            <a href="https://www.clevelandclinic.org/health/diagnostics/22086-dlco-test" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">clevelandclinic.org</a>
+            <a href="https://www.ncbi.nlm.nih.gov/books/NBK459252/" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">ncbi.nlm.nih.gov</a>
+          </div>
+        </article>
+      </section>
+
+      <!-- ==================== 6. OXIMETRÍA DE PULSO ==================== -->
+      <section class="mt-12">
+        <div class="flex items-center gap-3">
+          <span class="grid h-9 w-9 place-items-center rounded-xl bg-blue-500 text-white font-extrabold">6</span>
+          <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Oximetría de pulso</h2>
+        </div>
+
+        <article class="mt-5 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="grid md:grid-cols-[34%_1fr]">
+            <div class="relative aspect-[4/3] md:aspect-auto md:min-h-[12rem] bg-slate-100 dark:bg-slate-800">
+              <img src="IMG/respiratorio/oximetria-pulso.webp" alt="Oxímetro de pulso colocado en el dedo" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-xs text-slate-400 p-3"><svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>oximetria-pulso.webp</span></div>
+            </div>
+            <div class="p-5">
+              <h3 class="font-bold text-lg text-slate-900 dark:text-white">Oximetría de pulso</h3>
+              <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+                Método <strong>no invasivo</strong> que mide la saturación de oxígeno en la hemoglobina arterial (SpO₂) y la frecuencia cardíaca mediante luz infrarroja y roja,
+                analizando la absorción de luz a través de tejidos periféricos como el dedo o el lóbulo de la oreja.
+              </p>
+              <p class="mt-3 text-xs font-bold uppercase tracking-wide text-blue-700 dark:text-blue-300">Utilidad</p>
+              <p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Esencial en urgencias, hospitalización, anestesia, terapia respiratoria y monitoreo domiciliario. Detecta la hipoxia mucho antes de que aparezca cianosis o síntomas graves.</p>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 p-5 space-y-4">
+            <div>
+              <p class="text-xs font-bold uppercase tracking-wide text-blue-700 dark:text-blue-300">Valores normales (SpO₂)</p>
+              <div class="mt-2 flex flex-wrap gap-2 text-xs">
+                <span class="rounded-full bg-emerald-100 dark:bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 px-2.5 py-1 font-medium">95–100%: normal</span>
+                <span class="rounded-full bg-amber-100 dark:bg-amber-500/15 text-amber-700 dark:text-amber-300 px-2.5 py-1 font-medium">91–94%: hipoxemia leve</span>
+                <span class="rounded-full bg-orange-100 dark:bg-orange-500/15 text-orange-700 dark:text-orange-300 px-2.5 py-1 font-medium">86–90%: hipoxemia moderada</span>
+                <span class="rounded-full bg-rose-100 dark:bg-rose-500/15 text-rose-700 dark:text-rose-300 px-2.5 py-1 font-medium">&lt;85%: hipoxemia severa (emergencia)</span>
+              </div>
+              <p class="mt-2 text-xs text-slate-500 dark:text-slate-400">Una saturación &lt;90–92% se considera baja; por debajo de 88% generalmente requiere evaluación médica urgente.</p>
+            </div>
+            <div>
+              <p class="text-xs font-bold uppercase tracking-wide text-blue-700 dark:text-blue-300">Factores que alteran la lectura</p>
+              <div class="mt-1 grid sm:grid-cols-2 gap-x-6 gap-y-1 text-sm text-slate-600 dark:text-slate-400">
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Mala perfusión periférica (shock, hipotermia)</div>
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Esmalte de uñas o uñas artificiales</div>
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Movimiento del paciente</div>
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Intoxicación por CO (puede dar falsos normales)</div>
+              </div>
+            </div>
+            <div>
+              <p class="text-xs font-bold uppercase tracking-wide text-blue-700 dark:text-blue-300 mb-2">Cuidados de enfermería</p>
+              <div class="grid sm:grid-cols-3 gap-3 text-xs">
+                <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes</p><p class="text-slate-600 dark:text-slate-400">Verificar perfusión periférica adecuada y retirar esmalte de uñas; frotar las manos si están frías. Explicar que debe permanecer quieto durante la medición.</p></div>
+                <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3"><p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante</p><p class="text-slate-600 dark:text-slate-400">Colocar el sensor correctamente sin presión excesiva (dedo índice, mano apoyada). Evitar movimientos e interferencias externas y dejar el aparato puesto ~1 minuto.</p></div>
+                <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después</p><p class="text-slate-600 dark:text-slate-400">Registrar valores (oxígeno y pulso) y correlacionar con el estado clínico (disnea, coloración, fatiga). Notificar SpO₂ persistente &lt;90% o descenso brusco. Desinfectar y almacenar el equipo.</p></div>
+              </div>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 px-5 py-3 text-xs text-slate-500 dark:text-slate-400 flex flex-wrap gap-x-4 gap-y-1">
+            <span class="font-semibold">Fuentes:</span>
+            <a href="https://www.mayoclinic.org/tests-procedures/pulse-oximetry/about/pac-20385205" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">mayoclinic.org</a>
+            <a href="https://www.ncbi.nlm.nih.gov/books/NBK470348/" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">ncbi.nlm.nih.gov</a>
+            <a href="https://www.scielo.org.mx/scielo.php?script=sci_arttext&pid=S0484-79032024000100030" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">scielo.org.mx</a>
+          </div>
+        </article>
+      </section>
+
+      <!-- ==================== 7. CAPNOGRAFÍA ==================== -->
+      <section class="mt-12">
+        <div class="flex items-center gap-3">
+          <span class="grid h-9 w-9 place-items-center rounded-xl bg-blue-500 text-white font-extrabold">7</span>
+          <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Capnografía</h2>
+        </div>
+
+        <article class="mt-5 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="grid md:grid-cols-[34%_1fr]">
+            <div class="relative aspect-[4/3] md:aspect-auto md:min-h-[12rem] bg-slate-100 dark:bg-slate-800">
+              <img src="IMG/respiratorio/capnografia.webp" alt="Curva capnográfica de CO2 espirado" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-xs text-slate-400 p-3"><svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>capnografia.webp</span></div>
+            </div>
+            <div class="p-5">
+              <h3 class="font-bold text-lg text-slate-900 dark:text-white">Capnografía</h3>
+              <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+                Medición continua del dióxido de carbono (CO₂) en el aire espirado, expresado como <strong>EtCO₂ (end-tidal CO₂)</strong>. Permite evaluar ventilación,
+                perfusión y metabolismo en tiempo real. Se representa mediante una curva capnográfica con fases inspiratorias y espiratorias.
+              </p>
+              <p class="mt-3 text-xs font-bold uppercase tracking-wide text-blue-700 dark:text-blue-300">¿Dónde es esencial?</p>
+              <p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Anestesia, ventilación mecánica, reanimación cardiopulmonar (RCP) y unidades de cuidados críticos. Es uno de los mejores indicadores de ventilación efectiva durante la RCP: un aumento del EtCO₂ puede indicar retorno de la circulación espontánea.</p>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 p-5 space-y-4">
+            <div>
+              <p class="text-xs font-bold uppercase tracking-wide text-blue-700 dark:text-blue-300">Valores normales e interpretación</p>
+              <div class="mt-2 flex flex-wrap gap-2 text-xs">
+                <span class="rounded-full bg-emerald-100 dark:bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 px-2.5 py-1 font-medium">EtCO₂ normal: 35–45 mmHg</span>
+                <span class="rounded-full bg-amber-100 dark:bg-amber-500/15 text-amber-700 dark:text-amber-300 px-2.5 py-1 font-medium">&lt;35 mmHg: hiperventilación, embolia pulmonar, bajo gasto cardíaco</span>
+                <span class="rounded-full bg-orange-100 dark:bg-orange-500/15 text-orange-700 dark:text-orange-300 px-2.5 py-1 font-medium">&gt;45 mmHg: hipoventilación, EPOC, depresión respiratoria</span>
+                <span class="rounded-full bg-rose-100 dark:bg-rose-500/15 text-rose-700 dark:text-rose-300 px-2.5 py-1 font-medium">Ausencia de CO₂: desconexión del tubo, apnea o paro cardíaco</span>
+              </div>
+            </div>
+            <div>
+              <p class="text-xs font-bold uppercase tracking-wide text-blue-700 dark:text-blue-300 mb-2">Cuidados de enfermería</p>
+              <div class="grid sm:grid-cols-3 gap-3 text-xs">
+                <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes</p><p class="text-slate-600 dark:text-slate-400">Verificar la calibración y el correcto montaje del equipo. Explicar su uso si el paciente está consciente.</p></div>
+                <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3"><p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante</p><p class="text-slate-600 dark:text-slate-400">Vigilar los valores y la forma de la curva capnográfica. Detectar cambios bruscos que indiquen emergencia respiratoria o circulatoria.</p></div>
+                <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después</p><p class="text-slate-600 dark:text-slate-400">Limpiar los sensores y verificar el funcionamiento del equipo. Registrar valores y eventos relevantes.</p></div>
+              </div>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 px-5 py-3 text-xs text-slate-500 dark:text-slate-400 flex flex-wrap gap-x-4 gap-y-1">
+            <span class="font-semibold">Fuentes:</span>
+            <a href="https://www.ncbi.nlm.nih.gov/books/NBK539741/" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">ncbi.nlm.nih.gov</a>
+            <a href="https://www.asaabstracts.com/strands/asaabstracts/abstract.htm?year=2020&index=3&absnum=5296" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">asaabstracts.com</a>
+          </div>
+        </article>
+      </section>
+
+      <!-- ==================== 8. 6MWT ==================== -->
+      <section class="mt-12">
+        <div class="flex items-center gap-3">
+          <span class="grid h-9 w-9 place-items-center rounded-xl bg-blue-500 text-white font-extrabold">8</span>
+          <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Prueba de caminata de 6 minutos (6MWT)</h2>
+        </div>
+
+        <article class="mt-5 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="grid md:grid-cols-[34%_1fr]">
+            <div class="relative aspect-[4/3] md:aspect-auto md:min-h-[12rem] bg-slate-100 dark:bg-slate-800">
+              <img src="IMG/respiratorio/caminata-6min.webp" alt="Prueba de caminata de 6 minutos" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-xs text-slate-400 p-3"><svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>caminata-6min.webp</span></div>
+            </div>
+            <div class="p-5">
+              <h3 class="font-bold text-lg text-slate-900 dark:text-white">Prueba de caminata de 6 minutos (6MWT)</h3>
+              <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+                Evalúa la <strong>capacidad funcional global</strong> del sistema cardiopulmonar y muscular midiendo la distancia que un paciente puede caminar
+                en 6 minutos sobre una superficie plana. Se emplea en pacientes con EPOC, insuficiencia cardíaca, hipertensión pulmonar y enfermedades intersticiales
+                para valorar la tolerancia al ejercicio y la respuesta al tratamiento.
+              </p>
+              <p class="mt-3 text-xs font-bold uppercase tracking-wide text-blue-700 dark:text-blue-300">Variables evaluadas</p>
+              <div class="mt-1 grid sm:grid-cols-2 gap-x-6 gap-y-1 text-sm text-slate-600 dark:text-slate-400">
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Distancia recorrida</div>
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Saturación de oxígeno</div>
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Frecuencia cardíaca</div>
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Disnea (escala de Borg)</div>
+              </div>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 p-5 space-y-4">
+            <div>
+              <p class="text-xs font-bold uppercase tracking-wide text-blue-700 dark:text-blue-300">Valores normales aproximados</p>
+              <div class="mt-2 flex flex-wrap gap-2 text-xs">
+                <span class="rounded-full bg-emerald-100 dark:bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 px-2.5 py-1 font-medium">Adultos sanos: 400–700 metros</span>
+                <span class="rounded-full bg-amber-100 dark:bg-amber-500/15 text-amber-700 dark:text-amber-300 px-2.5 py-1 font-medium">Ancianos: disminuye progresivamente con la edad</span>
+                <span class="rounded-full bg-rose-100 dark:bg-rose-500/15 text-rose-700 dark:text-rose-300 px-2.5 py-1 font-medium">Desaturación significativa: caída de SpO₂ ≥4% o &lt;88%</span>
+              </div>
+            </div>
+            <div>
+              <p class="text-xs font-bold uppercase tracking-wide text-blue-700 dark:text-blue-300 mb-2">Cuidados de enfermería</p>
+              <div class="grid sm:grid-cols-3 gap-3 text-xs">
+                <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes</p><p class="text-slate-600 dark:text-slate-400">Evaluar signos vitales basales y estado clínico. Explicar que debe caminar sin correr y detenerse si presenta síntomas.</p></div>
+                <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3"><p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante</p><p class="text-slate-600 dark:text-slate-400">Supervisar signos de disnea, fatiga, mareo o dolor torácico. Registrar saturación y tiempo si es necesario.</p></div>
+                <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después</p><p class="text-slate-600 dark:text-slate-400">Controlar la recuperación de la frecuencia cardíaca y la saturación. Registrar la distancia total y el nivel de tolerancia al esfuerzo.</p></div>
+              </div>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 px-5 py-3 text-xs text-slate-500 dark:text-slate-400 flex flex-wrap gap-x-4 gap-y-1">
+            <span class="font-semibold">Fuentes:</span>
+            <a href="https://www.atsjournals.org/doi/full/10.1164/rccm.201710-1983ST" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">atsjournals.org</a>
+            <a href="https://www.clevelandclinic.org/health/diagnostics/17444-six-minute-walk-test" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">clevelandclinic.org</a>
+          </div>
+        </article>
+      </section>
+
+      <!-- ==================== 9. CPET ==================== -->
+      <section class="mt-12">
+        <div class="flex items-center gap-3">
+          <span class="grid h-9 w-9 place-items-center rounded-xl bg-blue-500 text-white font-extrabold">9</span>
+          <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Prueba de ejercicio cardiopulmonar (CPET)</h2>
+        </div>
+
+        <article class="mt-5 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="grid md:grid-cols-[34%_1fr]">
+            <div class="relative aspect-[4/3] md:aspect-auto md:min-h-[12rem] bg-slate-100 dark:bg-slate-800">
+              <img src="IMG/respiratorio/cpet.webp" alt="Prueba de ejercicio cardiopulmonar (CPET)" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-xs text-slate-400 p-3"><svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>cpet.webp</span></div>
+            </div>
+            <div class="p-5">
+              <h3 class="font-bold text-lg text-slate-900 dark:text-white">Prueba de ejercicio cardiopulmonar (CPET)</h3>
+              <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+                La CPET (<em>Cardiopulmonary Exercise Testing</em>) es la prueba más completa para evaluar la respuesta integrada de los sistemas
+                cardiovascular, respiratorio y muscular durante ejercicio progresivo. Mide el consumo máximo de oxígeno (VO₂ máx), la producción de CO₂,
+                la ventilación y la eficiencia del intercambio gaseoso. Es clave para diferenciar causas cardíacas, pulmonares o de descondicionamiento físico en la disnea.
+              </p>
+              <p class="mt-3 text-xs font-bold uppercase tracking-wide text-blue-700 dark:text-blue-300">Indicaciones</p>
+              <div class="mt-1 grid sm:grid-cols-2 gap-x-6 gap-y-1 text-sm text-slate-600 dark:text-slate-400">
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Disnea de origen desconocido</div>
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Evaluación preoperatoria</div>
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Rehabilitación cardíaca y pulmonar</div>
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Evaluación de atletas</div>
+              </div>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 p-5 space-y-4">
+            <div>
+              <p class="text-xs font-bold uppercase tracking-wide text-blue-700 dark:text-blue-300">Valores e interpretación</p>
+              <div class="mt-2 flex flex-wrap gap-2 text-xs">
+                <span class="rounded-full bg-emerald-100 dark:bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 px-2.5 py-1 font-medium">VO₂ máx hombres: 30–50 ml/kg/min</span>
+                <span class="rounded-full bg-emerald-100 dark:bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 px-2.5 py-1 font-medium">VO₂ máx mujeres: 25–40 ml/kg/min</span>
+                <span class="rounded-full bg-rose-100 dark:bg-rose-500/15 text-rose-700 dark:text-rose-300 px-2.5 py-1 font-medium">Disminuido: insuficiencia cardíaca, EPOC, obesidad, sedentarismo</span>
+                <span class="rounded-full bg-amber-100 dark:bg-amber-500/15 text-amber-700 dark:text-amber-300 px-2.5 py-1 font-medium">Umbral anaeróbico reducido: enfermedad cardiopulmonar significativa</span>
+              </div>
+            </div>
+            <div>
+              <p class="text-xs font-bold uppercase tracking-wide text-blue-700 dark:text-blue-300 mb-2">Cuidados de enfermería</p>
+              <div class="grid sm:grid-cols-3 gap-3 text-xs">
+                <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes</p><p class="text-slate-600 dark:text-slate-400">Verificar contraindicaciones (IAM reciente, angina inestable, arritmias graves). Explicar el esfuerzo progresivo y obtener el consentimiento.</p></div>
+                <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3"><p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante</p><p class="text-slate-600 dark:text-slate-400">Monitorizar ECG continuo, presión arterial y SpO₂. Observar signos de intolerancia: dolor torácico, mareo, disnea severa.</p></div>
+                <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después</p><p class="text-slate-600 dark:text-slate-400">Mantener la vigilancia hasta la recuperación completa. Registrar VO₂ máx, umbrales y eventos adversos.</p></div>
+              </div>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 px-5 py-3 text-xs text-slate-500 dark:text-slate-400 flex flex-wrap gap-x-4 gap-y-1">
+            <span class="font-semibold">Fuentes:</span>
+            <a href="https://www.acc.org/latest-in-cardiology/articles/2017/06/27/08/03/cardiopulmonary-exercise-testing" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">acc.org</a>
+            <a href="https://www.ncbi.nlm.nih.gov/books/NBK537329/" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">ncbi.nlm.nih.gov</a>
+          </div>
+        </article>
+      </section>
+
+      <div class="mt-12 flex items-center justify-between border-t border-slate-200 dark:border-slate-800 pt-6">
+        <a href="respiratorio-imagen.html" class="text-sm text-slate-500 hover:text-indigo-600 dark:hover:text-indigo-400">← Estudios de imagen</a>
+        <a href="respiratorio-procedimientos.html"
+           class="inline-flex items-center gap-2 rounded-full bg-indigo-600 px-5 py-2.5 text-white text-sm font-semibold hover:bg-indigo-700">
+          Procedimientos especializados →
+        </a>
+      </div>
+    </div>
+  </main>
+</div>
+<script>
+  function toggleTheme(){
+    const html = document.documentElement;
+    html.classList.toggle('dark');
+    localStorage.theme = html.classList.contains('dark') ? 'dark' : 'light';
+  }
+</script>
+
+  <!-- ===== Lightbox: clic en una imagen para ampliarla ===== -->
+  <div id="lightbox" class="fixed inset-0 z-[60] hidden items-center justify-center bg-black/80 backdrop-blur-sm p-4 cursor-zoom-out" onclick="closeLightbox()">
+    <button onclick="closeLightbox()" aria-label="Cerrar"
+            class="absolute top-4 right-4 h-11 w-11 rounded-full bg-white/10 hover:bg-white/20 ring-1 ring-white/30 text-white grid place-items-center">
+      <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <figure class="flex flex-col items-center gap-3" onclick="event.stopPropagation()">
+      <img id="lightbox-img" src="" alt="" class="max-h-[85vh] max-w-[92vw] rounded-xl shadow-2xl object-contain">
+      <figcaption id="lightbox-cap" class="text-sm text-white/80"></figcaption>
+    </figure>
+  </div>
+  <script>
+    (function(){
+      const box = document.getElementById('lightbox');
+      const big = document.getElementById('lightbox-img');
+      const cap = document.getElementById('lightbox-cap');
+      document.querySelectorAll('main img').forEach(function(el){
+        el.classList.add('cursor-zoom-in');
+        el.addEventListener('click', function(ev){
+          ev.preventDefault(); ev.stopPropagation();
+          big.src = el.currentSrc || el.src;
+          big.alt = el.alt || '';
+          cap.textContent = el.alt || '';
+          box.classList.remove('hidden'); box.classList.add('flex');
+          document.body.style.overflow = 'hidden';
+        });
+      });
+      window.closeLightbox = function(){
+        box.classList.add('hidden'); box.classList.remove('flex');
+        document.body.style.overflow = '';
+      };
+      document.addEventListener('keydown', function(e){ if(e.key === 'Escape') window.closeLightbox(); });
+    })();
+  </script>
+</body>
+</html>

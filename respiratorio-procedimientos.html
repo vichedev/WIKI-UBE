@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Procedimientos especializados · Sistema respiratorio</title>
+  <script>
+    if (localStorage.theme === 'dark' ||
+        (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = { darkMode: 'class' }</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style> body { font-family: 'Inter', system-ui, sans-serif; } </style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-200 transition-colors duration-300">
+<div class="min-h-screen flex">
+
+  <!-- ============ BARRA LATERAL ============ -->
+  <aside id="sidebar"
+         class="fixed lg:sticky top-0 z-40 h-screen w-72 shrink-0 -translate-x-full lg:translate-x-0
+                transition-transform bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800 flex flex-col">
+    <div class="px-5 py-5 border-b border-slate-100 dark:border-slate-800">
+      <a href="index.html" class="flex items-center gap-3">
+        <span class="h-10 w-10 rounded-xl bg-indigo-600 text-white flex items-center justify-center">
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12h4l2 5 4-12 2 7h6"/></svg>
+        </span>
+        <span>
+          <span class="block font-extrabold text-slate-800 dark:text-white leading-tight">Wiki Diagnóstico</span>
+          <span class="block text-xs text-slate-400">UEPD-04 · Medios de Diagnóstico</span>
+        </span>
+      </a>
+    </div>
+    <nav class="flex-1 overflow-y-auto px-3 py-4 space-y-1 text-sm">
+      <a href="index.html"        class="block rounded-lg px-3 py-2 font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Carátula</a>
+      <a href="introduccion.html" class="block rounded-lg px-3 py-2 font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Introducción</a>
+      <div class="my-2 border-t border-slate-100 dark:border-slate-800"></div>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-sky-50 dark:hover:bg-sky-500/10 group-open:bg-sky-50 dark:group-open:bg-sky-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-sky-500"></span>
+            <span class="truncate text-sm font-semibold text-sky-700 dark:text-sky-300">Fluidos corporales</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-sky-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-sky-100 dark:border-sky-500/30 pl-2">
+          <a href="componentes.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-sky-50 dark:hover:bg-sky-500/10 hover:text-sky-700 dark:hover:text-sky-300 transition">Componentes de la sangre</a>
+          <a href="hemograma.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-sky-50 dark:hover:bg-sky-500/10 hover:text-sky-700 dark:hover:text-sky-300 transition">Hemograma con diferencial</a>
+          <a href="fluidos.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-sky-50 dark:hover:bg-sky-500/10 hover:text-sky-700 dark:hover:text-sky-300 transition">Análisis de fluidos biológicos</a>
+          <a href="frotis.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-sky-50 dark:hover:bg-sky-500/10 hover:text-sky-700 dark:hover:text-sky-300 transition">Frotis sanguíneo</a>
+        </div>
+      </details>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-emerald-50 dark:hover:bg-emerald-500/10 group-open:bg-emerald-50 dark:group-open:bg-emerald-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-emerald-500"></span>
+            <span class="truncate text-sm font-semibold text-emerald-700 dark:text-emerald-300">Medulograma</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-emerald-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-emerald-100 dark:border-emerald-500/30 pl-2">
+          <a href="medulograma.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-emerald-50 dark:hover:bg-emerald-500/10 hover:text-emerald-700 dark:hover:text-emerald-300 transition">Medulograma</a>
+        </div>
+      </details>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-rose-50 dark:hover:bg-rose-500/10 group-open:bg-rose-50 dark:group-open:bg-rose-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-rose-500"></span>
+            <span class="truncate text-sm font-semibold text-rose-700 dark:text-rose-300">Embarazo</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-rose-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-rose-100 dark:border-rose-500/30 pl-2">
+          <a href="embarazo.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-rose-50 dark:hover:bg-rose-500/10 hover:text-rose-700 dark:hover:text-rose-300 transition">Diagnóstico en el embarazo</a>
+        </div>
+      </details>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-fuchsia-50 dark:hover:bg-fuchsia-500/10 group-open:bg-fuchsia-50 dark:group-open:bg-fuchsia-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-fuchsia-500"></span>
+            <span class="truncate text-sm font-semibold text-fuchsia-700 dark:text-fuchsia-300">Trastornos autoinmunitarios</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-fuchsia-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-fuchsia-100 dark:border-fuchsia-500/30 pl-2">
+          <a href="autoinmunes.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-fuchsia-50 dark:hover:bg-fuchsia-500/10 hover:text-fuchsia-700 dark:hover:text-fuchsia-300 transition">Trastornos autoinmunitarios</a>
+        </div>
+      </details>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-purple-50 dark:hover:bg-purple-500/10 group-open:bg-purple-50 dark:group-open:bg-purple-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-purple-500"></span>
+            <span class="truncate text-sm font-semibold text-purple-700 dark:text-purple-300">Neoplasias</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-purple-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-purple-100 dark:border-purple-500/30 pl-2">
+          <a href="oncologia.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-purple-50 dark:hover:bg-purple-500/10 hover:text-purple-700 dark:hover:text-purple-300 transition">Oncología y neoplasias</a>
+        </div>
+      </details>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-orange-50 dark:hover:bg-orange-500/10 group-open:bg-orange-50 dark:group-open:bg-orange-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-orange-500"></span>
+            <span class="truncate text-sm font-semibold text-orange-700 dark:text-orange-300">Sistema osteomioarticular</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-orange-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-orange-100 dark:border-orange-500/30 pl-2">
+          <a href="soma.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-orange-50 dark:hover:bg-orange-500/10 hover:text-orange-700 dark:hover:text-orange-300 transition">Sistema osteomioarticular</a>
+        </div>
+      </details>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-cyan-50 dark:hover:bg-cyan-500/10 group-open:bg-cyan-50 dark:group-open:bg-cyan-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-cyan-500"></span>
+            <span class="truncate text-sm font-semibold text-cyan-700 dark:text-cyan-300">Estudios neurológicos</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-cyan-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-cyan-100 dark:border-cyan-500/30 pl-2">
+          <a href="neurologia.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-cyan-50 dark:hover:bg-cyan-500/10 hover:text-cyan-700 dark:hover:text-cyan-300 transition">Neurología avanzada</a>
+        </div>
+      </details>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-teal-50 dark:hover:bg-teal-500/10 group-open:bg-teal-50 dark:group-open:bg-teal-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-teal-500"></span>
+            <span class="truncate text-sm font-semibold text-teal-700 dark:text-teal-300">Sistema genitourinario</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-teal-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-teal-100 dark:border-teal-500/30 pl-2">
+          <a href="genitourinario.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-teal-50 dark:hover:bg-teal-500/10 hover:text-teal-700 dark:hover:text-teal-300 transition">Sistema genitourinario</a>
+          <a href="pruebas-urinarias.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-teal-50 dark:hover:bg-teal-500/10 hover:text-teal-700 dark:hover:text-teal-300 transition">Pruebas diagnósticas urinarias</a>
+        </div>
+      </details>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-amber-50 dark:hover:bg-amber-500/10 group-open:bg-amber-50 dark:group-open:bg-amber-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-amber-500"></span>
+            <span class="truncate text-sm font-semibold text-amber-700 dark:text-amber-300">Sistema endocrino-metabólico</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-amber-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-amber-100 dark:border-amber-500/30 pl-2">
+          <a href="endocrino.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-amber-50 dark:hover:bg-amber-500/10 hover:text-amber-700 dark:hover:text-amber-300 transition">Estudios de laboratorio</a>
+          <a href="endocrino-imagen.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-amber-50 dark:hover:bg-amber-500/10 hover:text-amber-700 dark:hover:text-amber-300 transition">Estudios imagenológicos</a>
+          <a href="endocrino-patologia.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-amber-50 dark:hover:bg-amber-500/10 hover:text-amber-700 dark:hover:text-amber-300 transition">Estudios anatomopatológicos</a>
+        </div>
+      </details>
+      <details class="group" open>
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-blue-50 dark:hover:bg-blue-500/10 group-open:bg-blue-50 dark:group-open:bg-blue-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-blue-500"></span>
+            <span class="truncate text-sm font-semibold text-blue-700 dark:text-blue-300">Sistema respiratorio</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-blue-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-blue-100 dark:border-blue-500/30 pl-2">
+          <a href="respiratorio.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-blue-50 dark:hover:bg-blue-500/10 hover:text-blue-700 dark:hover:text-blue-300 transition">Estudios de laboratorio</a>
+          <a href="respiratorio-imagen.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-blue-50 dark:hover:bg-blue-500/10 hover:text-blue-700 dark:hover:text-blue-300 transition">Estudios de imagen</a>
+          <a href="respiratorio-funcionales.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-blue-50 dark:hover:bg-blue-500/10 hover:text-blue-700 dark:hover:text-blue-300 transition">Pruebas funcionales respiratorias</a>
+          <a href="respiratorio-procedimientos.html" class="block rounded-lg px-3 py-1.5 font-semibold bg-blue-100 dark:bg-blue-500/20 text-blue-800 dark:text-blue-200">Procedimientos especializados</a>
+        </div>
+      </details>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-red-50 dark:hover:bg-red-500/10 group-open:bg-red-50 dark:group-open:bg-red-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-red-500"></span>
+            <span class="truncate text-sm font-semibold text-red-700 dark:text-red-300">Sistema cardiovascular</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-red-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-red-100 dark:border-red-500/30 pl-2">
+          <a href="cardiovascular.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-red-50 dark:hover:bg-red-500/10 hover:text-red-700 dark:hover:text-red-300 transition">Estudios de laboratorio</a>
+          <a href="cardiovascular-imagen.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-red-50 dark:hover:bg-red-500/10 hover:text-red-700 dark:hover:text-red-300 transition">Estudios de imagen</a>
+          <a href="cardiovascular-funcionales.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-red-50 dark:hover:bg-red-500/10 hover:text-red-700 dark:hover:text-red-300 transition">Estudios electrofisiológicos y funcionales</a>
+          <a href="cardiovascular-procedimientos.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-red-50 dark:hover:bg-red-500/10 hover:text-red-700 dark:hover:text-red-300 transition">Procedimientos invasivos y estudios vasculares</a>
+        </div>
+      </details>
+      <div class="my-2 border-t border-slate-100 dark:border-slate-800"></div>
+      <a href="enlaces.html" class="block rounded-lg px-3 py-2 font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Enlaces y referencias</a>
+    </nav>
+    <div class="px-4 py-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
+      <span class="text-xs text-slate-400">© Proyecto académico</span>
+      <button onclick="toggleTheme()" aria-label="Cambiar tema"
+              class="h-9 w-9 rounded-full grid place-items-center ring-1 ring-slate-200 dark:ring-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 transition text-slate-600 dark:text-slate-300">
+        <svg class="dark:hidden h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="hidden dark:block h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path stroke-linecap="round" d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </button>
+    </div>
+  </aside>
+
+  <button onclick="document.getElementById('sidebar').classList.toggle('-translate-x-full')"
+          class="lg:hidden fixed bottom-5 right-5 z-50 h-12 w-12 rounded-full bg-indigo-600 text-white shadow-lg grid place-items-center">
+    <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+  </button>
+
+  <!-- ============ CONTENIDO ============ -->
+  <main class="flex-1 min-w-0">
+    <div class="max-w-4xl mx-auto px-6 py-10 lg:py-14">
+
+      <nav class="text-xs text-slate-400 mb-3">Inicio / Sistema respiratorio / <span class="text-slate-600 dark:text-slate-300">Procedimientos especializados</span></nav>
+
+      <div class="flex items-center gap-4">
+        <div class="h-12 w-1.5 rounded-full bg-blue-500"></div>
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">Procedimientos especializados</h1>
+      </div>
+      <p class="mt-2 text-blue-700 dark:text-blue-300 font-semibold">Sistema respiratorio · Procedimientos diagnósticos especializados</p>
+
+      <!-- ===== Introducción ===== -->
+      <section class="mt-8">
+        <div class="mt-5 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 p-5">
+          <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+            Son técnicas médicas, generalmente invasivas o mínimamente invasivas, que permiten observar directamente las vías respiratorias, obtener muestras de tejido o líquido y confirmar el diagnóstico de enfermedades pulmonares cuando los exámenes de laboratorio y las pruebas de imagen no son suficientes. Son fundamentales para identificar afecciones como el asma, la enfermedad pulmonar obstructiva crónica (EPOC) y la fibrosis pulmonar.
+          </p>
+          <div class="mt-4 border-t border-slate-100 dark:border-slate-800 pt-3 text-xs text-slate-500 dark:text-slate-400 flex flex-wrap gap-x-4 gap-y-1">
+            <span class="font-semibold">Fuente:</span>
+            <a href="https://www.inspirahealthnetwork.org/services/treatments/pulmonology-and-respiratory-services/respiratory-diagnostic-tests" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">inspirahealthnetwork.org</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== Caja-mapa de páginas del módulo ===== -->
+      <nav aria-label="Páginas del módulo" class="mt-6 rounded-2xl bg-blue-50 dark:bg-blue-500/10 ring-1 ring-blue-100 dark:ring-blue-500/20 p-4">
+        <p class="text-xs font-bold uppercase tracking-wide text-blue-700 dark:text-blue-300">Sistema respiratorio · Medios de diagnóstico</p>
+        <div class="mt-3 grid sm:grid-cols-2 gap-2 text-sm">
+          <a href="respiratorio.html" class="flex items-center gap-2 rounded-xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 px-3 py-2 hover:ring-blue-400 dark:hover:ring-blue-500 transition"><span class="grid h-6 w-6 place-items-center rounded-lg bg-blue-500 text-white text-xs font-bold">1</span>Estudios de laboratorio</a>
+          <a href="respiratorio-imagen.html" class="flex items-center gap-2 rounded-xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 px-3 py-2 hover:ring-blue-400 dark:hover:ring-blue-500 transition"><span class="grid h-6 w-6 place-items-center rounded-lg bg-blue-500 text-white text-xs font-bold">2</span>Estudios de imagen</a>
+          <a href="respiratorio-funcionales.html" class="flex items-center gap-2 rounded-xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 px-3 py-2 hover:ring-blue-400 dark:hover:ring-blue-500 transition"><span class="grid h-6 w-6 place-items-center rounded-lg bg-blue-500 text-white text-xs font-bold">3</span>Pruebas funcionales respiratorias</a>
+          <span aria-current="page" class="flex items-center gap-2 rounded-xl bg-blue-600 text-white ring-1 ring-blue-600 px-3 py-2 font-semibold"><span class="grid h-6 w-6 place-items-center rounded-lg bg-white/20 text-white text-xs font-bold">4</span>Procedimientos especializados</span>
+        </div>
+      </nav>
+
+      <!-- ============ 1. Broncoscopia ============ -->
+      <section class="mt-12">
+        <div class="flex items-center gap-3">
+          <span class="grid h-9 w-9 place-items-center rounded-xl bg-blue-500 text-white font-extrabold">1</span>
+          <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Broncoscopia</h2>
+        </div>
+
+        <article class="mt-5 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="grid md:grid-cols-[34%_1fr]">
+            <div class="relative aspect-[4/3] md:aspect-auto md:min-h-[12rem] bg-slate-100 dark:bg-slate-800"><img src="IMG/respiratorio/broncoscopia.webp" alt="Broncoscopia" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-xs text-slate-400 p-3"><svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>broncoscopia.webp</span></div></div>
+            <div class="p-5">
+              <h3 class="font-bold text-lg text-slate-900 dark:text-white">Broncoscopia</h3>
+              <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+                Procedimiento endoscópico que consiste en introducir un broncoscopio (tubo flexible con una cámara y luz) a través de la nariz o la boca hasta la tráquea y los bronquios para visualizar el interior de las vías respiratorias. Se usa para la detección y el tratamiento del cáncer. También se llama broncofibroscopia, fibrobroncoscopia y fibroscopia bronquial.
+              </p>
+              <p class="mt-3 text-xs font-bold uppercase tracking-wide text-blue-700 dark:text-blue-300">Indicaciones a tener en cuenta</p>
+              <div class="mt-1 grid sm:grid-cols-2 gap-x-6 gap-y-1 text-sm text-slate-600 dark:text-slate-400">
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Sospecha de cáncer de pulmón</div>
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Tos persistente</div>
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Hemoptisis (tos con sangre)</div>
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Infecciones pulmonares recurrentes</div>
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Obstrucción de las vías respiratorias</div>
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Aspiración de cuerpos extraños</div>
+              </div>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 p-5 space-y-4">
+            <div>
+              <p class="text-xs font-bold uppercase tracking-wide text-blue-700 dark:text-blue-300">¿Qué permite evaluar?</p>
+              <div class="mt-1 grid sm:grid-cols-2 gap-x-6 gap-y-1 text-sm text-slate-600 dark:text-slate-400">
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Observar directamente las vías respiratorias</div>
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Obtener biopsias</div>
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Aspirar secreciones</div>
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Extraer cuerpos extraños</div>
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Realizar lavado broncoalveolar</div>
+              </div>
+            </div>
+            <div>
+              <p class="text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400 mb-2">Cuidados de enfermería</p>
+              <div class="grid sm:grid-cols-3 gap-3 text-xs">
+                <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes</p><p class="text-slate-600 dark:text-slate-400">Ayuno de 6 a 8 horas. Explicar el procedimiento. Retirar prótesis dentales. Firmar consentimiento informado.</p></div>
+                <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3"><p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante</p><p class="text-slate-600 dark:text-slate-400">Monitorizar signos vitales. Vigilar la saturación de oxígeno. Administrar oxígeno si es necesario.</p></div>
+                <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después</p><p class="text-slate-600 dark:text-slate-400">No comer ni beber hasta recuperar el reflejo de la deglución. Vigilar dificultad respiratoria o sangrado. Controlar signos vitales.</p></div>
+              </div>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 px-5 py-3 text-xs text-slate-500 dark:text-slate-400 flex flex-wrap gap-x-4 gap-y-1">
+            <span class="font-semibold">Fuentes:</span>
+            <a href="https://www.cancer.gov/espanol/publicaciones/diccionarios/diccionario-cancer/def/broncoscopia" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">cancer.gov</a>
+          </div>
+        </article>
+      </section>
+
+      <!-- ============ 2. Lavado broncoalveolar ============ -->
+      <section class="mt-12">
+        <div class="flex items-center gap-3">
+          <span class="grid h-9 w-9 place-items-center rounded-xl bg-blue-500 text-white font-extrabold">2</span>
+          <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Lavado broncoalveolar</h2>
+        </div>
+
+        <article class="mt-5 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="grid md:grid-cols-[34%_1fr]">
+            <div class="relative aspect-[4/3] md:aspect-auto md:min-h-[12rem] bg-slate-100 dark:bg-slate-800"><img src="IMG/respiratorio/lavado-broncoalveolar.webp" alt="Lavado broncoalveolar" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-xs text-slate-400 p-3"><svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>lavado-broncoalveolar.webp</span></div></div>
+            <div class="p-5">
+              <h3 class="font-bold text-lg text-slate-900 dark:text-white">Lavado broncoalveolar</h3>
+              <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+                Procedimiento realizado durante la broncoscopia en el que se introduce una pequeña cantidad de solución salina estéril en una parte del pulmón y posteriormente se aspira para obtener líquido con células y microorganismos. Ofrece información sobre los componentes celulares, bioquímicos y microbiológicos del tracto respiratorio inferior mediante la aspiración y posterior cultivo de una muestra de los alveolos pulmonares.
+              </p>
+              <p class="mt-3 text-xs font-bold uppercase tracking-wide text-blue-700 dark:text-blue-300">Indicaciones a tener en cuenta</p>
+              <div class="mt-1 grid sm:grid-cols-2 gap-x-6 gap-y-1 text-sm text-slate-600 dark:text-slate-400">
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Sospecha de neumonía</div>
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Tuberculosis</div>
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Infecciones por hongos</div>
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Enfermedades pulmonares intersticiales</div>
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Pacientes inmunodeprimidos</div>
+              </div>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 p-5 space-y-4">
+            <div>
+              <p class="text-xs font-bold uppercase tracking-wide text-blue-700 dark:text-blue-300">¿Qué analiza?</p>
+              <div class="mt-1 grid sm:grid-cols-2 gap-x-6 gap-y-1 text-sm text-slate-600 dark:text-slate-400">
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Bacterias</div>
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Virus</div>
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Hongos</div>
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Células inflamatorias</div>
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Células tumorales</div>
+              </div>
+            </div>
+            <div>
+              <p class="text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400 mb-2">Cuidados de enfermería</p>
+              <div class="grid sm:grid-cols-3 gap-3 text-xs">
+                <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes</p><p class="text-slate-600 dark:text-slate-400">Mantener ayuno previo.</p></div>
+                <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3"><p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante</p><p class="text-slate-600 dark:text-slate-400">Vigilar signos vitales.</p></div>
+                <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después</p><p class="text-slate-600 dark:text-slate-400">Observar presencia de fiebre, sangrado o dificultad respiratoria después del procedimiento.</p></div>
+              </div>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 px-5 py-3 text-xs text-slate-500 dark:text-slate-400 flex flex-wrap gap-x-4 gap-y-1">
+            <span class="font-semibold">Fuentes:</span>
+            <a href="https://www.quironsalud.com/es/pruebas-diagnosticas/lavado-broncoalveolar" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">quironsalud.com</a>
+          </div>
+        </article>
+      </section>
+
+      <!-- ============ 3. Biopsia bronquial ============ -->
+      <section class="mt-12">
+        <div class="flex items-center gap-3">
+          <span class="grid h-9 w-9 place-items-center rounded-xl bg-blue-500 text-white font-extrabold">3</span>
+          <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Biopsia bronquial</h2>
+        </div>
+
+        <article class="mt-5 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="grid md:grid-cols-[34%_1fr]">
+            <div class="relative aspect-[4/3] md:aspect-auto md:min-h-[12rem] bg-slate-100 dark:bg-slate-800"><img src="IMG/respiratorio/biopsia-bronquial.webp" alt="Biopsia bronquial" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-xs text-slate-400 p-3"><svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>biopsia-bronquial.webp</span></div></div>
+            <div class="p-5">
+              <h3 class="font-bold text-lg text-slate-900 dark:text-white">Biopsia bronquial</h3>
+              <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+                Consiste en obtener una pequeña muestra de tejido de los bronquios durante una broncoscopia para su estudio microscópico. Se realiza mediante un broncoscopio, un tubo delgado y flexible con cámara que se introduce por la boca o nariz hasta los pulmones, y sirve para diagnosticar tumores, infecciones, inflamaciones graves o asma.
+              </p>
+              <p class="mt-3 text-xs font-bold uppercase tracking-wide text-blue-700 dark:text-blue-300">Indicaciones a tener en cuenta</p>
+              <div class="mt-1 grid sm:grid-cols-2 gap-x-6 gap-y-1 text-sm text-slate-600 dark:text-slate-400">
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Sospecha de cáncer bronquial</div>
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Tumores</div>
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Enfermedades inflamatorias</div>
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Tuberculosis</div>
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Sarcoidosis</div>
+              </div>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 p-5 space-y-4">
+            <div class="rounded-xl bg-blue-50 dark:bg-blue-500/10 ring-1 ring-blue-100 dark:ring-blue-500/20 p-4">
+              <p class="text-xs font-bold uppercase tracking-wide text-blue-700 dark:text-blue-300">Utilidad</p>
+              <p class="mt-1 text-sm text-slate-700 dark:text-slate-300">Permite confirmar el diagnóstico mediante el estudio histopatológico.</p>
+            </div>
+            <div>
+              <p class="text-xs font-bold uppercase tracking-wide text-rose-700 dark:text-rose-300">Riesgos</p>
+              <div class="mt-2 flex flex-wrap gap-2 text-xs">
+                <span class="rounded-full bg-rose-100 dark:bg-rose-500/15 text-rose-700 dark:text-rose-300 px-2.5 py-1 font-medium">Sangrado</span>
+                <span class="rounded-full bg-rose-100 dark:bg-rose-500/15 text-rose-700 dark:text-rose-300 px-2.5 py-1 font-medium">Tos</span>
+                <span class="rounded-full bg-rose-100 dark:bg-rose-500/15 text-rose-700 dark:text-rose-300 px-2.5 py-1 font-medium">Infección</span>
+                <span class="rounded-full bg-rose-100 dark:bg-rose-500/15 text-rose-700 dark:text-rose-300 px-2.5 py-1 font-medium">Neumotórax (poco frecuente)</span>
+              </div>
+            </div>
+            <div>
+              <p class="text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400 mb-2">Cuidados de enfermería</p>
+              <div class="grid sm:grid-cols-3 gap-3 text-xs">
+                <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes</p><p class="text-slate-600 dark:text-slate-400">Vigilar hemorragias.</p></div>
+                <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3"><p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante</p><p class="text-slate-600 dark:text-slate-400">Controlar signos vitales.</p></div>
+                <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después</p><p class="text-slate-600 dark:text-slate-400">Mantener reposo según indicación médica.</p></div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- ============ 4. Biopsia pulmonar transbronquial ============ -->
+      <section class="mt-12">
+        <div class="flex items-center gap-3">
+          <span class="grid h-9 w-9 place-items-center rounded-xl bg-blue-500 text-white font-extrabold">4</span>
+          <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Biopsia pulmonar transbronquial</h2>
+        </div>
+
+        <article class="mt-5 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="grid md:grid-cols-[34%_1fr]">
+            <div class="relative aspect-[4/3] md:aspect-auto md:min-h-[12rem] bg-slate-100 dark:bg-slate-800"><img src="IMG/respiratorio/biopsia-transbronquial.webp" alt="Biopsia pulmonar transbronquial" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-xs text-slate-400 p-3"><svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>biopsia-transbronquial.webp</span></div></div>
+            <div class="p-5">
+              <h3 class="font-bold text-lg text-slate-900 dark:text-white">Biopsia pulmonar transbronquial</h3>
+              <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+                Es una técnica diagnóstica en las enfermedades intersticiales pulmonares. Es un procedimiento mediante el cual se obtiene una muestra de tejido pulmonar profundo utilizando un broncoscopio.
+              </p>
+              <p class="mt-3 text-xs font-bold uppercase tracking-wide text-blue-700 dark:text-blue-300">¿Por qué se realiza?</p>
+              <div class="mt-1 grid gap-y-1 text-sm text-slate-600 dark:text-slate-400">
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Evaluar y diagnosticar enfermedades pulmonares intersticiales o difusas</div>
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Investigar masas o nódulos pulmonares sospechosos</div>
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Identificar infecciones crónicas o inflamaciones en el tejido pulmonar</div>
+              </div>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 p-5 space-y-4">
+            <div>
+              <p class="text-xs font-bold uppercase tracking-wide text-rose-700 dark:text-rose-300">Riesgos</p>
+              <div class="mt-2 flex flex-wrap gap-2 text-xs">
+                <span class="rounded-full bg-rose-100 dark:bg-rose-500/15 text-rose-700 dark:text-rose-300 px-2.5 py-1 font-medium">Hemorragia</span>
+                <span class="rounded-full bg-rose-100 dark:bg-rose-500/15 text-rose-700 dark:text-rose-300 px-2.5 py-1 font-medium">Neumotórax</span>
+                <span class="rounded-full bg-rose-100 dark:bg-rose-500/15 text-rose-700 dark:text-rose-300 px-2.5 py-1 font-medium">Dolor torácico</span>
+              </div>
+            </div>
+            <div>
+              <p class="text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400 mb-2">Cuidados de enfermería</p>
+              <div class="grid sm:grid-cols-3 gap-3 text-xs">
+                <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes</p><p class="text-slate-600 dark:text-slate-400">Monitorizar signos vitales.</p></div>
+                <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3"><p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante</p><p class="text-slate-600 dark:text-slate-400">Vigilar dificultad respiratoria. Controlar la presencia de sangrado.</p></div>
+                <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después</p><p class="text-slate-600 dark:text-slate-400">Solicitar radiografía de tórax si el médico lo indica.</p></div>
+              </div>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 px-5 py-3 text-xs text-slate-500 dark:text-slate-400 flex flex-wrap gap-x-4 gap-y-1">
+            <span class="font-semibold">Fuentes:</span>
+            <a href="http://www.seapcongresos.com/2005/Cursos/Curso_Corto_Patologia_Pulmonar/Ana_Puras.PDF" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">seapcongresos.com</a>
+          </div>
+        </article>
+      </section>
+
+      <!-- ============ 5. Punción pleural (toracocentesis) ============ -->
+      <section class="mt-12">
+        <div class="flex items-center gap-3">
+          <span class="grid h-9 w-9 place-items-center rounded-xl bg-blue-500 text-white font-extrabold">5</span>
+          <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Punción pleural (toracocentesis)</h2>
+        </div>
+
+        <article class="mt-5 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="grid md:grid-cols-[34%_1fr]">
+            <div class="relative aspect-[4/3] md:aspect-auto md:min-h-[12rem] bg-slate-100 dark:bg-slate-800"><img src="IMG/respiratorio/toracocentesis.webp" alt="Punción pleural (toracocentesis)" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-xs text-slate-400 p-3"><svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>toracocentesis.webp</span></div></div>
+            <div class="p-5">
+              <h3 class="font-bold text-lg text-slate-900 dark:text-white">Punción pleural (toracocentesis)</h3>
+              <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+                Procedimiento que consiste en introducir una aguja entre las costillas para extraer líquido o aire del espacio pleural. Esta intervención suele estar indicada para afecciones como el derrame pleural, el neumotórax y el hemotórax, donde la acumulación de líquido o aire provoca dificultad respiratoria y deterioro de la función pulmonar.
+              </p>
+              <p class="mt-3 text-xs font-bold uppercase tracking-wide text-blue-700 dark:text-blue-300">¿Qué analiza?</p>
+              <div class="mt-1 grid sm:grid-cols-2 gap-x-6 gap-y-1 text-sm text-slate-600 dark:text-slate-400">
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Aspecto del líquido</div>
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Proteínas</div>
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Glucosa</div>
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Células</div>
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Bacterias</div>
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Células cancerosas</div>
+              </div>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 p-5 space-y-4">
+            <div>
+              <p class="text-xs font-bold uppercase tracking-wide text-rose-700 dark:text-rose-300">Riesgos</p>
+              <div class="mt-2 flex flex-wrap gap-2 text-xs">
+                <span class="rounded-full bg-rose-100 dark:bg-rose-500/15 text-rose-700 dark:text-rose-300 px-2.5 py-1 font-medium">Neumotórax</span>
+                <span class="rounded-full bg-rose-100 dark:bg-rose-500/15 text-rose-700 dark:text-rose-300 px-2.5 py-1 font-medium">Sangrado</span>
+                <span class="rounded-full bg-rose-100 dark:bg-rose-500/15 text-rose-700 dark:text-rose-300 px-2.5 py-1 font-medium">Dolor</span>
+                <span class="rounded-full bg-rose-100 dark:bg-rose-500/15 text-rose-700 dark:text-rose-300 px-2.5 py-1 font-medium">Infección</span>
+              </div>
+            </div>
+            <div>
+              <p class="text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400 mb-2">Cuidados de enfermería</p>
+              <div class="grid sm:grid-cols-3 gap-3 text-xs">
+                <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes</p><p class="text-slate-600 dark:text-slate-400">Explicar el procedimiento. Colocar al paciente sentado e inclinado hacia adelante.</p></div>
+                <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3"><p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante</p><p class="text-slate-600 dark:text-slate-400">Vigilar signos vitales. Mantener la inmovilidad del paciente.</p></div>
+                <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después</p><p class="text-slate-600 dark:text-slate-400">Controlar la respiración. Vigilar dolor y sangrado. Observar signos de neumotórax.</p></div>
+              </div>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 px-5 py-3 text-xs text-slate-500 dark:text-slate-400 flex flex-wrap gap-x-4 gap-y-1">
+            <span class="font-semibold">Fuentes:</span>
+            <a href="https://www.ncbi.nlm.nih.gov/books/NBK441866/" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">ncbi.nlm.nih.gov</a>
+          </div>
+        </article>
+      </section>
+
+      <!-- ============ 6. Biopsia pleural ============ -->
+      <section class="mt-12">
+        <div class="flex items-center gap-3">
+          <span class="grid h-9 w-9 place-items-center rounded-xl bg-blue-500 text-white font-extrabold">6</span>
+          <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Biopsia pleural</h2>
+        </div>
+
+        <article class="mt-5 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="grid md:grid-cols-[34%_1fr]">
+            <div class="relative aspect-[4/3] md:aspect-auto md:min-h-[12rem] bg-slate-100 dark:bg-slate-800"><img src="IMG/respiratorio/biopsia-pleural.webp" alt="Biopsia pleural" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-xs text-slate-400 p-3"><svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>biopsia-pleural.webp</span></div></div>
+            <div class="p-5">
+              <h3 class="font-bold text-lg text-slate-900 dark:text-white">Biopsia pleural</h3>
+              <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+                Consiste en obtener una muestra de la pleura para analizarla en el laboratorio. La pleura es el tejido delgado que recubre la cavidad torácica y rodea a los pulmones. La biopsia se realiza para revisar la pleura en busca de enfermedades, infecciones y lesiones tumorales de la pleura.
+              </p>
+              <p class="mt-3 text-xs font-bold uppercase tracking-wide text-blue-700 dark:text-blue-300">Indicaciones a tener en cuenta</p>
+              <div class="mt-1 grid sm:grid-cols-2 gap-x-6 gap-y-1 text-sm text-slate-600 dark:text-slate-400">
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Derrames pleurales de causa desconocida</div>
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Tuberculosis pleural</div>
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Mesotelioma</div>
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Cáncer metastásico</div>
+              </div>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 p-5 space-y-4">
+            <div>
+              <p class="text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400 mb-2">Cuidados de enfermería</p>
+              <div class="grid sm:grid-cols-3 gap-3 text-xs">
+                <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes</p><p class="text-slate-600 dark:text-slate-400">Vigilar signos vitales.</p></div>
+                <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3"><p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante</p><p class="text-slate-600 dark:text-slate-400">Controlar el dolor. Observar dificultad respiratoria.</p></div>
+                <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después</p><p class="text-slate-600 dark:text-slate-400">Vigilar posibles complicaciones.</p></div>
+              </div>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 px-5 py-3 text-xs text-slate-500 dark:text-slate-400 flex flex-wrap gap-x-4 gap-y-1">
+            <span class="font-semibold">Fuentes:</span>
+            <a href="https://medlineplus.gov/spanish/ency/article/003862.htm" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">medlineplus.gov</a>
+          </div>
+        </article>
+      </section>
+
+      <!-- ============ 7. Mediastinoscopia ============ -->
+      <section class="mt-12">
+        <div class="flex items-center gap-3">
+          <span class="grid h-9 w-9 place-items-center rounded-xl bg-blue-500 text-white font-extrabold">7</span>
+          <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Mediastinoscopia</h2>
+        </div>
+
+        <article class="mt-5 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="grid md:grid-cols-[34%_1fr]">
+            <div class="relative aspect-[4/3] md:aspect-auto md:min-h-[12rem] bg-slate-100 dark:bg-slate-800"><img src="IMG/respiratorio/mediastinoscopia.webp" alt="Mediastinoscopia" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-xs text-slate-400 p-3"><svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>mediastinoscopia.webp</span></div></div>
+            <div class="p-5">
+              <h3 class="font-bold text-lg text-slate-900 dark:text-white">Mediastinoscopia</h3>
+              <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+                Procedimiento quirúrgico que permite observar el mediastino mediante un instrumento llamado mediastinoscopio, introducido a través de una pequeña incisión en el cuello. Se realiza una incisión por encima del esternón y se introduce un mediastinoscopio en el tórax. Por lo general, este procedimiento se usa para obtener una muestra de los ganglios linfáticos del lado derecho del tórax.
+              </p>
+              <p class="mt-3 text-xs font-bold uppercase tracking-wide text-blue-700 dark:text-blue-300">¿Qué evalúa?</p>
+              <div class="mt-1 grid sm:grid-cols-2 gap-x-6 gap-y-1 text-sm text-slate-600 dark:text-slate-400">
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Ganglios linfáticos</div>
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Tráquea</div>
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Grandes vasos</div>
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Tumores mediastínicos</div>
+              </div>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 p-5 space-y-4">
+            <div>
+              <p class="text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400 mb-2">Cuidados de enfermería</p>
+              <div class="grid sm:grid-cols-3 gap-3 text-xs">
+                <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes</p><p class="text-slate-600 dark:text-slate-400">Ayuno preoperatorio.</p></div>
+                <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3"><p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante</p><p class="text-slate-600 dark:text-slate-400">Control de signos vitales. Vigilar sangrado e infección.</p></div>
+                <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después</p><p class="text-slate-600 dark:text-slate-400">Evaluar la respiración después del procedimiento.</p></div>
+              </div>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 px-5 py-3 text-xs text-slate-500 dark:text-slate-400 flex flex-wrap gap-x-4 gap-y-1">
+            <span class="font-semibold">Fuentes:</span>
+            <a href="https://www.cancer.gov/espanol/publicaciones/diccionarios/diccionario-cancer/def/mediastinoscopia" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">cancer.gov</a>
+          </div>
+        </article>
+      </section>
+
+      <!-- ============ 8. Toracoscopia (VATS) ============ -->
+      <section class="mt-12">
+        <div class="flex items-center gap-3">
+          <span class="grid h-9 w-9 place-items-center rounded-xl bg-blue-500 text-white font-extrabold">8</span>
+          <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Toracoscopia (VATS)</h2>
+        </div>
+
+        <article class="mt-5 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="grid md:grid-cols-[34%_1fr]">
+            <div class="relative aspect-[4/3] md:aspect-auto md:min-h-[12rem] bg-slate-100 dark:bg-slate-800"><img src="IMG/respiratorio/toracoscopia-vats.webp" alt="Toracoscopia asistida por video (VATS)" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-xs text-slate-400 p-3"><svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>toracoscopia-vats.webp</span></div></div>
+            <div class="p-5">
+              <h3 class="font-bold text-lg text-slate-900 dark:text-white">Toracoscopia (VATS)</h3>
+              <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+                La toracoscopia asistida por video (VATS, por sus siglas en inglés) es una técnica quirúrgica mínimamente invasiva que utiliza una cámara de video y pequeños instrumentos introducidos a través de pequeñas incisiones en el tórax para observar la cavidad pleural y los pulmones. En comparación con la cirugía a tórax abierto, la VATS ofrece una recuperación más rápida, menos dolorosa y con menos complicaciones.
+              </p>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 p-5 space-y-4">
+            <div>
+              <p class="text-xs font-bold uppercase tracking-wide text-blue-700 dark:text-blue-300">¿Qué evalúa?</p>
+              <p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Permite evaluar de forma directa las estructuras de la cavidad torácica, entre ellas:</p>
+              <div class="mt-2 space-y-2 text-sm text-slate-600 dark:text-slate-400">
+                <div class="flex gap-2"><span class="text-blue-500">•</span><span><span class="font-semibold text-slate-800 dark:text-slate-200">Pleura:</span> detecta inflamación, infecciones, derrames pleurales, engrosamientos y tumores.</span></div>
+                <div class="flex gap-2"><span class="text-blue-500">•</span><span><span class="font-semibold text-slate-800 dark:text-slate-200">Pulmones:</span> identifica nódulos, tumores, fibrosis, infecciones y otras enfermedades pulmonares.</span></div>
+                <div class="flex gap-2"><span class="text-blue-500">•</span><span><span class="font-semibold text-slate-800 dark:text-slate-200">Cavidad pleural:</span> permite observar la presencia de líquido, aire (neumotórax), sangre o adherencias.</span></div>
+                <div class="flex gap-2"><span class="text-blue-500">•</span><span><span class="font-semibold text-slate-800 dark:text-slate-200">Diafragma:</span> evalúa lesiones, tumores o alteraciones estructurales.</span></div>
+                <div class="flex gap-2"><span class="text-blue-500">•</span><span><span class="font-semibold text-slate-800 dark:text-slate-200">Ganglios linfáticos intratorácicos:</span> permite detectar inflamación o metástasis en pacientes con sospecha de cáncer.</span></div>
+              </div>
+            </div>
+            <div>
+              <p class="text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400 mb-2">Cuidados de enfermería</p>
+              <div class="grid sm:grid-cols-3 gap-3 text-xs">
+                <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes</p><p class="text-slate-600 dark:text-slate-400">Ayuno. Preparación prequirúrgica. Consentimiento informado.</p></div>
+                <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3"><p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante</p><p class="text-slate-600 dark:text-slate-400">Controlar signos vitales. Vigilar el drenaje torácico si está colocado.</p></div>
+                <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después</p><p class="text-slate-600 dark:text-slate-400">Favorecer ejercicios respiratorios. Controlar el dolor. Vigilar signos de infección o hemorragia.</p></div>
+              </div>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 px-5 py-3 text-xs text-slate-500 dark:text-slate-400 flex flex-wrap gap-x-4 gap-y-1">
+            <span class="font-semibold">Fuentes:</span>
+            <a href="https://my.clevelandclinic.org/health/treatments/17617-video-assisted-thoracic-surgery-vats" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">clevelandclinic.org</a>
+          </div>
+        </article>
+      </section>
+
+      <!-- ============ OTRA HOJA ============ -->
+      <section class="mt-14">
+        <div class="flex items-center gap-3">
+          
+        </div>
+        <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">Complemento del documento: versiones ampliadas de varias pruebas y la batería diagnóstica de la tuberculosis.</p>
+
+        <!-- Gasometría arterial -->
+        <article class="mt-5 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="p-5">
+            <h3 class="font-bold text-lg text-slate-900 dark:text-white">Gasometría arterial</h3>
+            <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">Análisis que mide los gases disueltos en la sangre arterial, principalmente el oxígeno (PaO₂) y el dióxido de carbono (PaCO₂), además del pH sanguíneo, el bicarbonato (HCO₃⁻) y el exceso de bases. Se obtiene de una muestra extraída directamente de una arteria, generalmente la radial, lo que la diferencia de un análisis de sangre venosa habitual.</p>
+            <p class="mt-3 text-sm text-slate-600 dark:text-slate-400"><strong class="text-slate-800 dark:text-slate-200">¿En qué ayuda?</strong> Evalúa de forma directa cómo funcionan los pulmones en el intercambio de gases y cómo está el equilibrio ácido-base. Es fundamental en pacientes con dificultad respiratoria, en el seguimiento de EPOC o fibrosis quística, en pacientes críticos o en ventilación mecánica, y en trastornos metabólicos que alteran el pH (cetoacidosis diabética, insuficiencia renal). También permite ajustar con precisión la oxigenoterapia o la ventilación asistida.</p>
+            <p class="mt-2 text-sm text-slate-600 dark:text-slate-400"><strong class="text-slate-800 dark:text-slate-200">¿Qué enfermedades detecta o ayuda a evaluar?</strong> Insuficiencia respiratoria; acidosis o alcalosis respiratoria y metabólica; trastornos mixtos del equilibrio ácido-base. Es clave en EPOC, asma grave, neumonía severa, edema pulmonar, sepsis, insuficiencia renal, cetoacidosis diabética e intoxicaciones que afecten el estado ácido-base.</p>
+            <p class="mt-3 text-xs font-bold uppercase tracking-wide text-blue-700 dark:text-blue-300">Proceso de la prueba</p>
+            <figure class="mt-2 rounded-xl ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden"><div class="relative aspect-[16/6] bg-slate-100 dark:bg-slate-800"><img src="IMG/respiratorio/gasometria-arterial.webp" alt="Gasometría arterial" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-xs text-slate-400 p-3"><svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>IMG/respiratorio/gasometria-arterial.webp</span></div></div></figure>
+            <p class="mt-2 text-sm text-slate-600 dark:text-slate-400">Consiste en la punción de una arteria, habitualmente la radial en la muñeca (también femoral o braquial). En algunos centros se realiza la prueba de Allen para verificar la circulación colateral de la mano. Se usa una aguja fina conectada a una jeringa heparinizada para evitar la coagulación y se extrae una pequeña cantidad de sangre arterial. Es más doloroso que una punción venosa por la mayor inervación y presión arteriales. Tras la extracción se aplica presión firme varios minutos para evitar sangrado o hematoma. La muestra debe procesarse rápidamente, idealmente en los primeros 15 minutos.</p>
+          </div>
+        </article>
+
+        <!-- Hemograma completo -->
+        <article class="mt-4 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="p-5">
+            <h3 class="font-bold text-lg text-slate-900 dark:text-white">Hemograma completo</h3>
+            <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">También llamado biometría hemática, es un análisis de sangre que evalúa las tres líneas celulares principales: glóbulos rojos (serie roja), glóbulos blancos (serie blanca) y plaquetas. Aporta información sobre el número, tamaño y características de estas células.</p>
+            <p class="mt-3 text-sm text-slate-600 dark:text-slate-400"><strong class="text-slate-800 dark:text-slate-200">¿En qué ayuda?</strong> Detecta y monitoriza una amplia variedad de condiciones, ya que suele ser uno de los primeros estudios solicitados. Permite evaluar anemia y su causa, detectar infección o inflamación por los glóbulos blancos, identificar alteraciones de la coagulación por el número de plaquetas y seguir a pacientes con quimioterapia u otros fármacos que afectan la médula ósea. También es útil en chequeos de rutina y evaluaciones preoperatorias.</p>
+            <p class="mt-2 text-sm text-slate-600 dark:text-slate-400"><strong class="text-slate-800 dark:text-slate-200">¿Qué enfermedades detecta?</strong> Orienta hacia anemias de distintos tipos (ferropénica, por déficit de B12 o ácido fólico, hemolítica), infecciones bacterianas o virales, procesos inflamatorios, alergias, trastornos de la coagulación, trombocitopenia o trombocitosis, y enfermedades hematológicas más complejas como leucemias, linfomas o síndromes mielodisplásicos (estas requieren estudios adicionales).</p>
+            <p class="mt-2 text-sm text-slate-600 dark:text-slate-400"><strong class="text-slate-800 dark:text-slate-200">Proceso de la prueba.</strong> Requiere una muestra de sangre venosa del brazo, recolectada en un tubo con anticoagulante. No suele requerir ayuno, salvo que se combine con otras pruebas (perfil lipídico, glucosa). Se procesa en un analizador automatizado y, si hay hallazgos anormales, se complementa con un frotis de sangre periférica al microscopio.</p>
+            <p class="mt-3 text-xs font-bold uppercase tracking-wide text-blue-700 dark:text-blue-300">Interpretación de resultados</p>
+            <figure class="mt-2 rounded-xl ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden"><div class="relative aspect-[16/6] bg-slate-100 dark:bg-slate-800"><img src="IMG/respiratorio/hemograma-interpretacion.webp" alt="Interpretación del hemograma" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-xs text-slate-400 p-3"><svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>IMG/respiratorio/hemograma-interpretacion.webp</span></div></div></figure>
+            <p class="mt-2 text-sm text-slate-600 dark:text-slate-400">Incluye la hemoglobina y el hematocrito (capacidad de transporte de oxígeno); el conteo de glóbulos rojos y sus índices (volumen corpuscular medio, hemoglobina corpuscular media), que ayudan a clasificar el tipo de anemia; el conteo de glóbulos blancos totales y su diferencial (neutrófilos, linfocitos, monocitos, eosinófilos, basófilos), que orienta hacia el tipo de proceso infeccioso o inflamatorio; y el conteo de plaquetas, relevante para el riesgo de sangrado o trombosis. Los valores normales varían según edad, sexo y condición fisiológica (por ejemplo, el embarazo).</p>
+          </div>
+        </article>
+
+        <!-- PCR -->
+        <article class="mt-4 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="p-5">
+            <h3 class="font-bold text-lg text-slate-900 dark:text-white">Proteína C reactiva (PCR)</h3>
+            <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">Proteína producida por el hígado en respuesta a procesos inflamatorios o infecciosos. Se conoce como «reactante de fase aguda» porque sus niveles aumentan rápidamente (en horas) ante cualquier estímulo inflamatorio y disminuyen con rapidez al resolverse el proceso.</p>
+            <p class="mt-3 text-sm text-slate-600 dark:text-slate-400"><strong class="text-slate-800 dark:text-slate-200">¿En qué ayuda?</strong> Detecta inflamación o infección en el cuerpo, aunque no indica por sí sola la causa ni la localización. Útil para seguir infecciones bacterianas, evaluar la respuesta a antibióticos, monitorizar enfermedades inflamatorias crónicas (artritis reumatoide, enfermedad inflamatoria intestinal) y, con la versión ultrasensible, valorar el riesgo cardiovascular.</p>
+            <p class="mt-2 text-sm text-slate-600 dark:text-slate-400"><strong class="text-slate-800 dark:text-slate-200">¿Qué enfermedades detecta?</strong> Se eleva en infecciones bacterianas (más que en las virales), procesos inflamatorios agudos (pancreatitis, apendicitis), enfermedades autoinmunes e inflamatorias crónicas (artritis reumatoide, lupus, Crohn) y, en su forma ultrasensible, se relaciona con el riesgo cardiovascular. También sube tras cirugías, traumatismos o quemaduras.</p>
+            <p class="mt-2 text-sm text-slate-600 dark:text-slate-400"><strong class="text-slate-800 dark:text-slate-200">Proceso de la prueba.</strong> Muestra de sangre venosa por punción simple, sin ayuno en la mayoría de casos. Se procesa por nefelometría, turbidimetría o inmunoensayo. Existen dos versiones: la PCR convencional (inflamación/infección aguda) y la PCR ultrasensible (concentraciones más bajas, para riesgo cardiovascular).</p>
+            <p class="mt-3 text-xs font-bold uppercase tracking-wide text-blue-700 dark:text-blue-300">Interpretación de resultados</p>
+            <figure class="mt-2 rounded-xl ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden"><div class="relative aspect-[16/6] bg-slate-100 dark:bg-slate-800"><img src="IMG/respiratorio/pcr-interpretacion.webp" alt="Interpretación de la PCR" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-xs text-slate-400 p-3"><svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>IMG/respiratorio/pcr-interpretacion.webp</span></div></div></figure>
+            <div class="mt-2 flex flex-wrap gap-2 text-xs">
+              <span class="rounded-full bg-emerald-100 dark:bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 px-2.5 py-1 font-medium">PCR normal: &lt;10 mg/L</span>
+              <span class="rounded-full bg-amber-100 dark:bg-amber-500/15 text-amber-700 dark:text-amber-300 px-2.5 py-1 font-medium">10–100 mg/L: viral/inflamación leve/crónica</span>
+              <span class="rounded-full bg-rose-100 dark:bg-rose-500/15 text-rose-700 dark:text-rose-300 px-2.5 py-1 font-medium">&gt;100 mg/L: bacteriana grave</span>
+            </div>
+            <p class="mt-2 text-xs text-slate-500 dark:text-slate-400"><strong class="text-slate-700 dark:text-slate-300">PCR ultrasensible (riesgo cardiovascular):</strong> &lt;1 mg/L bajo · 1–3 mg/L intermedio · &gt;3 mg/L alto.</p>
+          </div>
+        </article>
+
+        <!-- Procalcitonina -->
+        <article class="mt-4 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="p-5">
+            <h3 class="font-bold text-lg text-slate-900 dark:text-white">Procalcitonina (PCT)</h3>
+            <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">Examen de sangre que mide la concentración de procalcitonina, una proteína del organismo. En personas sanas sus niveles son muy bajos; sin embargo, aumentan de forma significativa ante una infección bacteriana grave o una sepsis. Ayuda a diferenciar infecciones bacterianas de las virales y a valorar la gravedad de la infección.</p>
+            <p class="mt-3 text-xs font-bold uppercase tracking-wide text-blue-700 dark:text-blue-300">Funciones</p>
+            <div class="mt-1 grid sm:grid-cols-2 gap-x-6 gap-y-1 text-sm text-slate-600 dark:text-slate-400">
+              <div class="flex gap-2"><span class="text-blue-500">•</span>Identificar infecciones bacterianas graves.</div>
+              <div class="flex gap-2"><span class="text-blue-500">•</span>Ayudar en el diagnóstico temprano de la sepsis.</div>
+              <div class="flex gap-2"><span class="text-blue-500">•</span>Diferenciar infecciones bacterianas de virales.</div>
+              <div class="flex gap-2"><span class="text-blue-500">•</span>Evaluar la gravedad de una infección.</div>
+              <div class="flex gap-2"><span class="text-blue-500">•</span>Orientar el inicio o la suspensión de antibióticos.</div>
+              <div class="flex gap-2"><span class="text-blue-500">•</span>Monitorizar la respuesta al tratamiento antibiótico.</div>
+              <div class="flex gap-2"><span class="text-blue-500">•</span>Apoyar el seguimiento de pacientes hospitalizados con sospecha de infección sistémica.</div>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 p-5 grid sm:grid-cols-3 gap-3 text-xs">
+            <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes</p><p class="text-slate-600 dark:text-slate-400">Verificar identidad y solicitud médica, explicar el examen y resolver dudas, revisar antecedentes y tratamientos actuales. No requiere ayuno ni preparación especial; inspeccionar el sitio de punción y preparar el material con técnica aséptica.</p></div>
+            <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3"><p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante</p><p class="text-slate-600 dark:text-slate-400">Aplicar normas de bioseguridad y técnica de venopunción adecuada, brindar apoyo al paciente, observar molestias (mareo o dolor) y asegurar que la muestra se recolecte, identifique y envíe correctamente.</p></div>
+            <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después</p><p class="text-slate-600 dark:text-slate-400">Ejercer presión y colocar apósito, recomendar mantener la zona limpia y avisar ante dolor intenso, inflamación o sangrado persistente, registrar el procedimiento e informar que el médico interpretará los resultados junto con otros hallazgos.</p></div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 px-5 py-3 text-xs text-slate-500 dark:text-slate-400 flex flex-wrap gap-x-4 gap-y-1">
+            <span class="font-semibold">Fuentes:</span>
+            <a href="https://medlineplus.gov/spanish/pruebas-de-laboratorio/prueba-de-procalcitonina/" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">medlineplus.gov</a>
+            <a href="https://medlineplus.gov/spanish/pruebas-de-laboratorio/" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">medlineplus.gov (pruebas)</a>
+          </div>
+        </article>
+
+        <!-- Cultivo de esputo -->
+        <article class="mt-4 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="grid md:grid-cols-[34%_1fr]">
+            <div class="relative aspect-[4/3] md:aspect-auto bg-slate-100 dark:bg-slate-800 min-h-[12rem]"><img src="IMG/respiratorio/lab-cultivo-esputo.webp" alt="Cultivo de esputo" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-[0.65rem] text-slate-400 p-2"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>lab-cultivo-esputo.webp</span></div></div>
+            <div class="p-5">
+              <h3 class="font-bold text-lg text-slate-900 dark:text-white">Cultivo de esputo</h3>
+              <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">Prueba de laboratorio en la que se analiza una muestra de mucosidad (esputo) expulsada desde los pulmones y bronquios mediante la tos. Su objetivo es identificar microorganismos como bacterias, hongos o micobacterias (por ejemplo, la tuberculosis) que causen infecciones respiratorias, y ayuda a determinar el tratamiento antibiótico más adecuado.</p>
+              <p class="mt-3 text-xs font-bold uppercase tracking-wide text-blue-700 dark:text-blue-300">Funciones</p>
+              <div class="mt-1 grid gap-y-1 text-sm text-slate-600 dark:text-slate-400">
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Identificar bacterias, hongos o microorganismos en las vías respiratorias.</div>
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Diagnosticar neumonía, bronquitis o tuberculosis.</div>
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Determinar qué antibiótico es más efectivo (antibiograma).</div>
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Evaluar infecciones respiratorias persistentes o graves.</div>
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Controlar la evolución del tratamiento y apoyar el diagnóstico diferencial.</div>
+              </div>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 p-5 grid sm:grid-cols-3 gap-3 text-xs">
+            <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes</p><p class="text-slate-600 dark:text-slate-400">Verificar la orden médica y explicar cómo obtener el esputo (secreción profunda, no saliva). Tomar la muestra en la mañana, antes de comer o cepillarse; higiene bucal con agua; respirar hondo y toser para facilitar la expulsión.</p></div>
+            <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3"><p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante</p><p class="text-slate-600 dark:text-slate-400">Supervisar la tos profunda para expulsar secreciones directamente en el frasco estéril, evitando contaminación con saliva; mantener técnica aséptica, cierre correcto y verificar cantidad y calidad; brindar apoyo si hay dificultad para expectorar.</p></div>
+            <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después</p><p class="text-slate-600 dark:text-slate-400">Rotular y enviar la muestra lo antes posible; registrar el procedimiento, desechar los materiales y orientar sobre continuar el tratamiento. Los resultados permitirán ajustar o confirmar el antibiótico.</p></div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 px-5 py-3 text-xs text-slate-500 dark:text-slate-400 flex flex-wrap gap-x-4 gap-y-1">
+            <span class="font-semibold">Fuentes:</span>
+            <a href="https://medlineplus.gov/spanish/pruebas-de-laboratorio/cultivo-de-esputo/" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">medlineplus.gov</a>
+            <a href="https://medlineplus.gov/ency/article/003731.htm" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">medlineplus.gov (ency)</a>
+          </div>
+        </article>
+
+        <!-- Baciloscopia -->
+        <article class="mt-4 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="grid md:grid-cols-[34%_1fr]">
+            <div class="relative aspect-[4/3] md:aspect-auto bg-slate-100 dark:bg-slate-800 min-h-[12rem]"><img src="IMG/respiratorio/lab_baciloscopia.webp" alt="Baciloscopia" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-[0.65rem] text-slate-400 p-2"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>lab_baciloscopia.webp</span></div></div>
+            <div class="p-5">
+              <h3 class="font-bold text-lg text-slate-900 dark:text-white">Baciloscopia</h3>
+              <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">Examen de laboratorio que analiza una muestra de esputo (flema) para buscar bacilos ácido-alcohol resistentes (BAAR), principalmente <em>Mycobacterium tuberculosis</em>. Es una prueba rápida y económica que apoya el diagnóstico de infecciones respiratorias, especialmente la tuberculosis pulmonar.</p>
+              <p class="mt-3 text-xs font-bold uppercase tracking-wide text-blue-700 dark:text-blue-300">Funciones</p>
+              <div class="mt-1 grid gap-y-1 text-sm text-slate-600 dark:text-slate-400">
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Detectar <em>Mycobacterium tuberculosis</em> en el esputo.</div>
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Ayudar al diagnóstico de tuberculosis pulmonar.</div>
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Evaluar la carga bacteriana (cantidad de bacilos).</div>
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Monitorear la respuesta al tratamiento antituberculoso.</div>
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Apoyar el diagnóstico temprano y el control epidemiológico de la TB.</div>
+              </div>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 p-5 grid sm:grid-cols-3 gap-3 text-xs">
+            <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes</p><p class="text-slate-600 dark:text-slate-400">Verificar la orden y explicar el objetivo (esputo profundo, no saliva). Recolectar en la mañana, preferiblemente en ayunas; higiene bucal con agua sin enjuagues antisépticos; enseñar a toser profundamente en un frasco estéril.</p></div>
+            <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3"><p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante</p><p class="text-slate-600 dark:text-slate-400">Supervisar la tos profunda evitando contaminación con saliva, mantener técnica aséptica estricta, cierre correcto y muestra suficiente y de buena calidad; brindar apoyo emocional si hay dificultad para expectorar.</p></div>
+            <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después</p><p class="text-slate-600 dark:text-slate-400">Rotular y enviar de inmediato al laboratorio para análisis microscópico; registrar, desechar el material y reforzar la adherencia al tratamiento; orientar sobre bioseguridad para evitar contagios.</p></div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 px-5 py-3 text-xs text-slate-500 dark:text-slate-400 flex flex-wrap gap-x-4 gap-y-1">
+            <span class="font-semibold">Fuentes:</span>
+            <a href="https://psicologiaymente.com/salud/baciloscopia" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">psicologiaymente.com</a>
+            <a href="https://medlineplus.gov/spanish/tuberculosis.html" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">medlineplus.gov</a>
+          </div>
+        </article>
+
+        <!-- Radiografía de tórax -->
+        <article class="mt-4 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="grid md:grid-cols-[34%_1fr]">
+            <div class="relative aspect-[4/3] md:aspect-auto bg-slate-100 dark:bg-slate-800 min-h-[12rem]"><img src="IMG/respiratorio/lab-radiografia-torax.webp" alt="Radiografía de tórax" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-[0.65rem] text-slate-400 p-2"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>lab-radiografia-torax.webp</span></div></div>
+            <div class="p-5">
+              <h3 class="font-bold text-lg text-slate-900 dark:text-white">Radiografía de tórax</h3>
+              <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">Estudio de imagen que utiliza radiación ionizante para obtener una imagen bidimensional de las estructuras del tórax (pulmones, corazón, vasos, tráquea, pleura y pared torácica). Es una de las pruebas más utilizadas por su rapidez, bajo costo y disponibilidad. Detecta neumonía, tuberculosis, derrame pleural, neumotórax, insuficiencia cardíaca, EPOC, masas pulmonares y fracturas costales. Proyecciones principales: posteroanterior (PA) y lateral.</p>
+              <p class="mt-3 text-xs font-bold uppercase tracking-wide text-blue-700 dark:text-blue-300">Interpretación</p>
+              <div class="mt-1 grid gap-y-1 text-sm text-slate-600 dark:text-slate-400">
+                <div class="flex gap-2"><span class="text-emerald-500">•</span>Pulmones claros y simétricos → normal.</div>
+                <div class="flex gap-2"><span class="text-amber-500">•</span>Opacidades → infección, edema o tumor.</div>
+                <div class="flex gap-2"><span class="text-amber-500">•</span>Líquido en base pulmonar → derrame pleural.</div>
+                <div class="flex gap-2"><span class="text-rose-500">•</span>Aire fuera del pulmón → neumotórax.</div>
+              </div>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 p-5 grid sm:grid-cols-3 gap-3 text-xs">
+            <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes</p><p class="text-slate-600 dark:text-slate-400">Verificar embarazo (contraindicación relativa por radiación) y retirar objetos metálicos del tórax (collares, sostenes con aro, piercings).</p></div>
+            <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3"><p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante</p><p class="text-slate-600 dark:text-slate-400">Indicar que permanezca inmóvil y solicitar inspiración profunda con apnea durante la toma.</p></div>
+            <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después</p><p class="text-slate-600 dark:text-slate-400">Ayudar al paciente si presenta mareo o debilidad; registrar el procedimiento y esperar el informe radiológico.</p></div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 px-5 py-3 text-xs text-slate-500 dark:text-slate-400 flex flex-wrap gap-x-4 gap-y-1">
+            <span class="font-semibold">Enlaces:</span>
+            <a href="https://www.radiologyinfo.org/en/info/chest-xray" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">radiologyinfo.org</a>
+            <a href="https://www.ncbi.nlm.nih.gov/books/NBK539860/" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">ncbi.nlm.nih.gov</a>
+          </div>
+        </article>
+
+        <!-- TAC de tórax -->
+        <article class="mt-4 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="grid md:grid-cols-[34%_1fr]">
+            <div class="relative aspect-[4/3] md:aspect-auto bg-slate-100 dark:bg-slate-800 min-h-[12rem]"><img src="IMG/respiratorio/lab-tc-torax.webp" alt="Tomografía computarizada de tórax" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-[0.65rem] text-slate-400 p-2"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>lab-tc-torax.webp</span></div></div>
+            <div class="p-5">
+              <h3 class="font-bold text-lg text-slate-900 dark:text-white">Tomografía computarizada de tórax (TAC)</h3>
+              <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">Técnica de imagen avanzada que usa rayos X y procesamiento computarizado para obtener imágenes en cortes transversales del tórax con alta resolución, con evaluación más detallada que la radiografía. Es fundamental para diagnosticar embolia pulmonar, cáncer de pulmón, fibrosis pulmonar, infecciones complicadas, COVID-19 grave, derrames pleurales complejos y traumatismos torácicos.</p>
+              <div class="mt-3 grid sm:grid-cols-2 gap-3 text-sm">
+                <div class="rounded-xl bg-slate-50 dark:bg-slate-800/50 ring-1 ring-slate-200 dark:ring-slate-700 p-3"><p class="font-bold text-slate-700 dark:text-slate-200">Con contraste</p><p class="text-slate-600 dark:text-slate-400">Evalúa los vasos sanguíneos (p. ej. embolia pulmonar).</p></div>
+                <div class="rounded-xl bg-slate-50 dark:bg-slate-800/50 ring-1 ring-slate-200 dark:ring-slate-700 p-3"><p class="font-bold text-slate-700 dark:text-slate-200">Sin contraste</p><p class="text-slate-600 dark:text-slate-400">Evalúa el parénquima pulmonar y lesiones estructurales.</p></div>
+              </div>
+              <p class="mt-3 text-xs font-bold uppercase tracking-wide text-blue-700 dark:text-blue-300">Hallazgos (no tiene valores numéricos)</p>
+              <div class="mt-1 grid gap-y-1 text-sm text-slate-600 dark:text-slate-400">
+                <div class="flex gap-2"><span class="text-emerald-500">•</span>Pulmones sin lesiones → normal.</div>
+                <div class="flex gap-2"><span class="text-amber-500">•</span>Defectos de llenado → embolia pulmonar.</div>
+                <div class="flex gap-2"><span class="text-amber-500">•</span>Nódulos o masas → sospecha de neoplasia.</div>
+                <div class="flex gap-2"><span class="text-amber-500">•</span>Vidrio esmerilado → infección o inflamación.</div>
+              </div>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 p-5 grid sm:grid-cols-3 gap-3 text-xs">
+            <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes</p><p class="text-slate-600 dark:text-slate-400">Verificar alergia al contraste y función renal (si se usará contraste), explicar el procedimiento y retirar objetos metálicos.</p></div>
+            <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3"><p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante</p><p class="text-slate-600 dark:text-slate-400">Indicar inmovilidad completa durante el escaneo; si hay contraste, vigilar posibles reacciones alérgicas.</p></div>
+            <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después</p><p class="text-slate-600 dark:text-slate-400">Aumentar la ingesta de líquidos si se usó contraste, vigilar signos de reacción tardía (urticaria, disnea, mareo) y documentar el procedimiento.</p></div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 px-5 py-3 text-xs text-slate-500 dark:text-slate-400 flex flex-wrap gap-x-4 gap-y-1">
+            <span class="font-semibold">Enlaces:</span>
+            <a href="https://www.radiologyinfo.org/en/info/chestct" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">radiologyinfo.org</a>
+            <a href="https://www.ncbi.nlm.nih.gov/books/NBK482369/" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">ncbi.nlm.nih.gov</a>
+          </div>
+        </article>
+
+        <!-- Espirometría -->
+        <article class="mt-4 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="grid md:grid-cols-[34%_1fr]">
+            <div class="relative aspect-[4/3] md:aspect-auto bg-slate-100 dark:bg-slate-800 min-h-[12rem]"><img src="IMG/respiratorio/lab-espirometria.webp" alt="Espirometría" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-[0.65rem] text-slate-400 p-2"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>lab-espirometria.webp</span></div></div>
+            <div class="p-5">
+              <h3 class="font-bold text-lg text-slate-900 dark:text-white">Espirometría</h3>
+              <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">Prueba de función pulmonar que mide el volumen y el flujo de aire que una persona puede inhalar y exhalar. Es fundamental para diagnosticar y controlar asma, EPOC, fibrosis pulmonar y otras enfermedades obstructivas o restrictivas. <strong class="text-slate-900 dark:text-white">Parámetros:</strong> CVF (capacidad vital forzada), VEF1 (volumen espiratorio forzado en 1 s) e índice VEF1/CVF. También puede hacerse con broncodilatador para evaluar reversibilidad (asma).</p>
+              <div class="mt-3 flex flex-wrap gap-2 text-xs">
+                <span class="rounded-full bg-emerald-100 dark:bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 px-2.5 py-1 font-medium">VEF1 ≥80% predicho</span>
+                <span class="rounded-full bg-emerald-100 dark:bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 px-2.5 py-1 font-medium">CVF ≥80% predicho</span>
+                <span class="rounded-full bg-emerald-100 dark:bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 px-2.5 py-1 font-medium">VEF1/CVF ≥0,70–0,75</span>
+              </div>
+              <div class="mt-2 grid sm:grid-cols-2 gap-3 text-sm">
+                <div class="rounded-xl bg-rose-50 dark:bg-rose-500/10 ring-1 ring-rose-100 dark:ring-rose-500/20 p-3"><p class="font-bold text-rose-700 dark:text-rose-300">Obstructivo (asma, EPOC)</p><p class="text-slate-600 dark:text-slate-400">VEF1 ↓, VEF1/CVF ↓ (&lt;0,70).</p></div>
+                <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300">Restrictivo (fibrosis)</p><p class="text-slate-600 dark:text-slate-400">CVF ↓, VEF1 ↓ proporcional, relación normal o alta.</p></div>
+              </div>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 p-5 grid sm:grid-cols-3 gap-3 text-xs">
+            <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes</p><p class="text-slate-600 dark:text-slate-400">Explicar la técnica y la importancia del esfuerzo máximo; suspender broncodilatadores según indicación médica.</p></div>
+            <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3"><p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante</p><p class="text-slate-600 dark:text-slate-400">Supervisar inspiración profunda y espiración forzada prolongada; asegurar al menos 3 maniobras aceptables.</p></div>
+            <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después</p><p class="text-slate-600 dark:text-slate-400">Administrar broncodilatador si está indicado (prueba post); vigilar mareo o fatiga y registrar los mejores valores obtenidos.</p></div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 px-5 py-3 text-xs text-slate-500 dark:text-slate-400 flex flex-wrap gap-x-4 gap-y-1">
+            <span class="font-semibold">Enlaces:</span>
+            <a href="https://www.cdc.gov/niosh/topics/spirometry/default.html" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">cdc.gov</a>
+            <a href="https://www.ncbi.nlm.nih.gov/books/NBK482339/" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">ncbi.nlm.nih.gov</a>
+          </div>
+        </article>
+
+        <!-- Oximetría de pulso -->
+        <article class="mt-4 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="grid md:grid-cols-[34%_1fr]">
+            <div class="relative aspect-[4/3] md:aspect-auto bg-slate-100 dark:bg-slate-800 min-h-[12rem]"><img src="IMG/respiratorio/lab-oximetria-pulso.webp" alt="Oximetría de pulso" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-[0.65rem] text-slate-400 p-2"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>lab-oximetria-pulso.webp</span></div></div>
+            <div class="p-5">
+              <h3 class="font-bold text-lg text-slate-900 dark:text-white">Oximetría de pulso</h3>
+              <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">Prueba rápida y no invasiva que mide la saturación de oxígeno en la sangre mediante un sensor colocado en el dedo. Se usa en la mayoría de las ocasiones para evaluar el estado respiratorio del paciente.</p>
+              <p class="mt-3 text-xs font-bold uppercase tracking-wide text-blue-700 dark:text-blue-300">Valores normales</p>
+              <div class="mt-1 flex flex-wrap gap-2 text-xs">
+                <span class="rounded-full bg-emerald-100 dark:bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 px-2.5 py-1 font-medium">Ideal (SpO₂): 95–100%</span>
+                <span class="rounded-full bg-amber-100 dark:bg-amber-500/15 text-amber-700 dark:text-amber-300 px-2.5 py-1 font-medium">Baja: &lt;90–92% (hipoxemia)</span>
+                <span class="rounded-full bg-rose-100 dark:bg-rose-500/15 text-rose-700 dark:text-rose-300 px-2.5 py-1 font-medium">&lt;88%: evaluación médica urgente</span>
+              </div>
+              <p class="mt-2 text-sm text-slate-600 dark:text-slate-400"><strong class="text-slate-800 dark:text-slate-200">Utilidad:</strong> detecta la falta de oxígeno en las células (hipoxia) mucho antes de que el paciente se ponga azul (cianosis) o manifieste síntomas graves.</p>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 p-5 grid sm:grid-cols-3 gap-3 text-xs">
+            <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes</p><p class="text-slate-600 dark:text-slate-400">Quitar el esmalte de uñas y frotar las manos si están frías.</p></div>
+            <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3"><p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante</p><p class="text-slate-600 dark:text-slate-400">Colocar el dedo índice hacia arriba, apoyar la mano sin moverse y dejar el aparato puesto 1 minuto.</p></div>
+            <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después</p><p class="text-slate-600 dark:text-slate-400">Anotar el oxígeno y las pulsaciones, desinfectar el aparato con alcohol y almacenar el equipo en un lugar seco.</p></div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 px-5 py-3 text-xs text-slate-500 dark:text-slate-400 flex flex-wrap gap-x-4 gap-y-1">
+            <span class="font-semibold">Fuente:</span>
+            <a href="https://www.scielo.org.mx/scielo.php?script=sci_arttext&pid=S0484-79032024000100030" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">scielo.org.mx</a>
+          </div>
+        </article>
+
+        <!-- ===== Pruebas para el diagnóstico de la tuberculosis ===== -->
+        <div class="mt-8 rounded-2xl bg-blue-50 dark:bg-blue-500/10 ring-1 ring-blue-200 dark:ring-blue-500/30 p-5">
+          <h3 class="text-xl font-bold text-blue-800 dark:text-blue-200">Pruebas para el diagnóstico de la tuberculosis</h3>
+          <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">Conjunto de estudios utilizados para confirmar la presencia de <em>Mycobacterium tuberculosis</em>. Se dividen en pruebas para identificar la <strong>infección</strong> (bacteria inactiva o latente) y pruebas para confirmar la <strong>enfermedad activa</strong>.</p>
+          <p class="mt-3 text-xs font-bold uppercase tracking-wide text-blue-700 dark:text-blue-300">Objetivo</p>
+          <div class="mt-1 grid sm:grid-cols-2 gap-x-6 gap-y-1 text-sm text-slate-600 dark:text-slate-400">
+            <div class="flex gap-2"><span class="text-blue-500">•</span>Confirmar el diagnóstico de tuberculosis.</div>
+            <div class="flex gap-2"><span class="text-blue-500">•</span>Detectar la bacteria causante de la enfermedad.</div>
+            <div class="flex gap-2"><span class="text-blue-500">•</span>Identificar la resistencia a los medicamentos.</div>
+            <div class="flex gap-2"><span class="text-blue-500">•</span>Evaluar el compromiso pulmonar.</div>
+            <div class="flex gap-2"><span class="text-blue-500">•</span>Guiar el tratamiento más adecuado.</div>
+          </div>
+          <p class="mt-3 text-xs text-slate-500 dark:text-slate-400"><span class="font-semibold">Fuente:</span> <a href="https://www.cdc.gov/tb/es/testing/pruebas.html" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">cdc.gov</a></p>
+        </div>
+
+        <h4 class="mt-6 text-lg font-bold text-blue-700 dark:text-blue-300">Principales pruebas diagnósticas</h4>
+
+        <!-- TB Baciloscopia -->
+        <article class="mt-4 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="grid md:grid-cols-[34%_1fr]">
+            <div class="relative aspect-[4/3] md:aspect-auto bg-slate-100 dark:bg-slate-800 min-h-[12rem]"><img src="IMG/respiratorio/tb-baciloscopia.webp" alt="Baciloscopia" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-[0.65rem] text-slate-400 p-2"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>tb-baciloscopia.webp</span></div></div>
+            <div class="p-5">
+              <h5 class="font-bold text-lg text-slate-900 dark:text-white">Baciloscopia</h5>
+              <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">Examen microscópico que analiza muestras de esputo para detectar bacilos ácido-alcohol resistentes (<em>Mycobacterium tuberculosis</em>). Es la herramienta primaria en el diagnóstico de la tuberculosis pulmonar activa y la técnica más utilizada internacionalmente en la búsqueda de casos infecciosos.</p>
+              <p class="mt-3 text-xs font-bold uppercase tracking-wide text-blue-700 dark:text-blue-300">¿Qué evalúa?</p>
+              <p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Presencia de la bacteria de la tuberculosis y la cantidad de bacilos en la muestra.</p>
+              <div class="mt-2 flex flex-wrap gap-2 text-xs">
+                <span class="rounded-full bg-emerald-100 dark:bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 px-2.5 py-1 font-medium">Negativo</span>
+                <span class="rounded-full bg-amber-100 dark:bg-amber-500/15 text-amber-700 dark:text-amber-300 px-2.5 py-1 font-medium">1+</span>
+                <span class="rounded-full bg-orange-100 dark:bg-orange-500/15 text-orange-700 dark:text-orange-300 px-2.5 py-1 font-medium">2+</span>
+                <span class="rounded-full bg-rose-100 dark:bg-rose-500/15 text-rose-700 dark:text-rose-300 px-2.5 py-1 font-medium">3+ (más bacilos)</span>
+              </div>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 p-5 grid sm:grid-cols-3 gap-3 text-xs">
+            <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes</p><p class="text-slate-600 dark:text-slate-400">Explicar el procedimiento, enseñar cómo obtener una muestra adecuada, entregar un recipiente estéril y colocar mascarilla al paciente si presenta tos.</p></div>
+            <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3"><p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante</p><p class="text-slate-600 dark:text-slate-400">Supervisar que la muestra sea de esputo profundo, evitar la contaminación y aplicar medidas de bioseguridad.</p></div>
+            <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después</p><p class="text-slate-600 dark:text-slate-400">Rotular correctamente la muestra, enviarla de inmediato al laboratorio y registrar el procedimiento en la historia clínica.</p></div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 px-5 py-3 text-xs text-slate-500 dark:text-slate-400 flex flex-wrap gap-x-4 gap-y-1">
+            <span class="font-semibold">Fuente:</span>
+            <a href="https://www.scielo.cl/scielo.php?pid=S0716-10182016000300005&script=sci_arttext" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">scielo.cl</a>
+          </div>
+        </article>
+
+        <!-- TB Cultivo de esputo -->
+        <article class="mt-4 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="grid md:grid-cols-[34%_1fr]">
+            <div class="relative aspect-[4/3] md:aspect-auto bg-slate-100 dark:bg-slate-800 min-h-[12rem]"><img src="IMG/respiratorio/tb-cultivo-esputo.webp" alt="Cultivo de esputo" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-[0.65rem] text-slate-400 p-2"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>tb-cultivo-esputo.webp</span></div></div>
+            <div class="p-5">
+              <h5 class="font-bold text-lg text-slate-900 dark:text-white">Cultivo de esputo</h5>
+              <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">Consiste en cultivar una muestra de esputo en un medio especial para permitir el crecimiento de <em>Mycobacterium tuberculosis</em>. El color del esputo ayuda a orientar el tipo de infección o a comprobar si una enfermedad crónica ha empeorado, apoyando la elección del mejor tratamiento.</p>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 p-5">
+            <p class="text-xs font-bold uppercase tracking-wide text-blue-700 dark:text-blue-300">Los colores del esputo pueden incluir</p>
+            <div class="mt-2 overflow-x-auto rounded-xl ring-1 ring-slate-200 dark:ring-slate-800">
+              <table class="w-full text-sm text-left">
+                <thead class="bg-blue-50 dark:bg-blue-500/10 text-blue-800 dark:text-blue-200"><tr><th class="px-4 py-2 font-semibold">Color</th><th class="px-4 py-2 font-semibold">Significado</th></tr></thead>
+                <tbody class="divide-y divide-slate-200 dark:divide-slate-800 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300">
+                  <tr><td class="px-4 py-2 font-semibold">Transparente</td><td class="px-4 py-2">Sin infección; mucho esputo claro puede ser signo de enfermedad pulmonar.</td></tr>
+                  <tr><td class="px-4 py-2 font-semibold">Blanco o gris</td><td class="px-4 py-2">Puede ser normal; en cantidad abundante, posible enfermedad pulmonar.</td></tr>
+                  <tr><td class="px-4 py-2 font-semibold">Amarillo oscuro o verde</td><td class="px-4 py-2">Infección bacteriana (neumonía); el verde-amarillento es común en fibrosis quística.</td></tr>
+                  <tr><td class="px-4 py-2 font-semibold">Negro</td><td class="px-4 py-2">Frecuente en fumadores; signo de pulmón negro (neumoconiosis).</td></tr>
+                  <tr><td class="px-4 py-2 font-semibold">Marrón / manchas marrones</td><td class="px-4 py-2">Sangre vieja (fibrosis quística, neumonía o bronquitis bacteriana).</td></tr>
+                  <tr><td class="px-4 py-2 font-semibold">Rosado</td><td class="px-4 py-2">Edema pulmonar (común en insuficiencia cardíaca).</td></tr>
+                  <tr><td class="px-4 py-2 font-semibold">Rojo</td><td class="px-4 py-2">Signo temprano de cáncer de pulmón o de embolia pulmonar.</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 p-5 grid sm:grid-cols-3 gap-3 text-xs">
+            <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes</p><p class="text-slate-600 dark:text-slate-400">Informar al paciente, entregar el recipiente estéril y explicar cómo obtener una muestra adecuada.</p></div>
+            <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3"><p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante</p><p class="text-slate-600 dark:text-slate-400">Verificar que la muestra sea suficiente, mantener bioseguridad y cerrar correctamente el recipiente.</p></div>
+            <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después</p><p class="text-slate-600 dark:text-slate-400">Transportar rápido la muestra, registrar la toma y educar al paciente sobre el tiempo de espera del resultado.</p></div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 px-5 py-3 text-xs text-slate-500 dark:text-slate-400 flex flex-wrap gap-x-4 gap-y-1">
+            <span class="font-semibold">Fuente:</span>
+            <a href="https://medlineplus.gov/spanish/pruebas-de-laboratorio/cultivo-de-esputo/" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">medlineplus.gov</a>
+          </div>
+        </article>
+
+        <!-- TB GeneXpert -->
+        <article class="mt-4 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="grid md:grid-cols-[34%_1fr]">
+            <div class="relative aspect-[4/3] md:aspect-auto bg-slate-100 dark:bg-slate-800 min-h-[12rem]"><img src="IMG/respiratorio/tb-genexpert.webp" alt="Prueba molecular GeneXpert" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-[0.65rem] text-slate-400 p-2"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>tb-genexpert.webp</span></div></div>
+            <div class="p-5">
+              <h5 class="font-bold text-lg text-slate-900 dark:text-white">Prueba molecular (GeneXpert)</h5>
+              <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">Prueba molecular rápida que detecta el ADN de <em>Mycobacterium tuberculosis</em>. Tiene una sensibilidad muy alta y puede utilizarse para detectar enfermedades pulmonares como la COVID-19 y la tuberculosis.</p>
+              <p class="mt-3 text-xs font-bold uppercase tracking-wide text-blue-700 dark:text-blue-300">¿Qué evalúa?</p>
+              <p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Presencia de la bacteria y resistencia a la rifampicina.</p>
+              <div class="mt-2 flex flex-wrap gap-2 text-xs">
+                <span class="rounded-full bg-emerald-100 dark:bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 px-2.5 py-1 font-medium">Resultado en ~2 horas</span>
+                <span class="rounded-full bg-sky-100 dark:bg-sky-500/15 text-sky-700 dark:text-sky-300 px-2.5 py-1 font-medium">Alta sensibilidad y especificidad</span>
+              </div>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 p-5 grid sm:grid-cols-3 gap-3 text-xs">
+            <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes</p><p class="text-slate-600 dark:text-slate-400">Explicar el procedimiento, verificar la identificación del paciente y entregar un recipiente estéril.</p></div>
+            <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3"><p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante</p><p class="text-slate-600 dark:text-slate-400">Supervisar la correcta obtención del esputo, mantener aislamiento respiratorio y rotular correctamente la muestra.</p></div>
+            <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después</p><p class="text-slate-600 dark:text-slate-400">Enviar de inmediato la muestra, registrar el procedimiento e informar al paciente cuándo estarán los resultados.</p></div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 px-5 py-3 text-xs text-slate-500 dark:text-slate-400 flex flex-wrap gap-x-4 gap-y-1">
+            <span class="font-semibold">Fuente:</span>
+            <a href="https://www.metropolisindia.com/blog/preventive-healthcare/how-genexpert-test-can-detect-tuberculosis-in-minutes" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">metropolisindia.com</a>
+          </div>
+        </article>
+
+        <!-- TB Mantoux -->
+        <article class="mt-4 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="grid md:grid-cols-[34%_1fr]">
+            <div class="relative aspect-[4/3] md:aspect-auto bg-slate-100 dark:bg-slate-800 min-h-[12rem]"><img src="IMG/respiratorio/tb-mantoux.webp" alt="Prueba de tuberculina (Mantoux)" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-[0.65rem] text-slate-400 p-2"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>tb-mantoux.webp</span></div></div>
+            <div class="p-5">
+              <h5 class="font-bold text-lg text-slate-900 dark:text-white">Prueba de tuberculina (Mantoux)</h5>
+              <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">Consiste en aplicar una pequeña cantidad de PPD bajo la piel del antebrazo para evaluar la respuesta inmunológica del organismo frente a la bacteria. El paciente debe regresar entre <strong class="text-slate-900 dark:text-white">48 y 72 horas después</strong> para que un profesional mida el endurecimiento (induración) de la zona.</p>
+              <p class="mt-3 text-xs font-bold uppercase tracking-wide text-blue-700 dark:text-blue-300">¿Qué evalúa?</p>
+              <p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Contacto previo con <em>Mycobacterium tuberculosis</em>.</p>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 p-5 grid sm:grid-cols-3 gap-3 text-xs">
+            <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes</p><p class="text-slate-600 dark:text-slate-400">Verificar antecedentes de alergias, explicar el procedimiento y preparar el material estéril.</p></div>
+            <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3"><p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante</p><p class="text-slate-600 dark:text-slate-400">Aplicar correctamente el PPD por vía intradérmica y observar que se forme una pequeña pápula.</p></div>
+            <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después</p><p class="text-slate-600 dark:text-slate-400">Explicar los cuidados del sitio de aplicación, programar la lectura entre 48 y 72 horas y registrar la fecha y hora de la aplicación.</p></div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 px-5 py-3 text-xs text-slate-500 dark:text-slate-400 flex flex-wrap gap-x-4 gap-y-1">
+            <span class="font-semibold">Fuente:</span>
+            <a href="https://www.cigna.com/es-us/knowledge-center/hw/pruebas-mdicas/prueba-de-la-tuberculina-en-la-piel-hw203560" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">cigna.com</a>
+          </div>
+        </article>
+
+        <!-- TB Radiografía -->
+        <article class="mt-4 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="grid md:grid-cols-[34%_1fr]">
+            <div class="relative aspect-[4/3] md:aspect-auto bg-slate-100 dark:bg-slate-800 min-h-[12rem]"><img src="IMG/respiratorio/tb-radiografia.webp" alt="Radiografía de tórax en tuberculosis" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-[0.65rem] text-slate-400 p-2"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>tb-radiografia.webp</span></div></div>
+            <div class="p-5">
+              <h5 class="font-bold text-lg text-slate-900 dark:text-white">Radiografía de tórax</h5>
+              <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">Estudio de imagen con rayos X que observa los pulmones y demás estructuras del tórax. Sigue siendo esencial ante sospecha de tuberculosis y suele usarse junto con el test cutáneo de tuberculina. Una radiografía normal tiene un alto valor predictivo negativo para TB activa; no obstante, existe un ~1 % de falsos negativos en inmunocompetentes y un 7–15 % en personas con VIH.</p>
+              <p class="mt-3 text-xs font-bold uppercase tracking-wide text-blue-700 dark:text-blue-300">¿Qué evalúa?</p>
+              <p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Lesiones pulmonares compatibles con tuberculosis: cavitaciones, infiltrados, fibrosis y derrame pleural.</p>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 p-5 grid sm:grid-cols-3 gap-3 text-xs">
+            <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes</p><p class="text-slate-600 dark:text-slate-400">Explicar el procedimiento, retirar joyas y objetos metálicos, y verificar la identidad del paciente.</p></div>
+            <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3"><p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante</p><p class="text-slate-600 dark:text-slate-400">Colocar correctamente al paciente, indicar que permanezca inmóvil y supervisar la realización del estudio.</p></div>
+            <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después</p><p class="text-slate-600 dark:text-slate-400">Informar que puede reanudar sus actividades, registrar la realización del examen y coordinar la entrega del resultado.</p></div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 px-5 py-3 text-xs text-slate-500 dark:text-slate-400 flex flex-wrap gap-x-4 gap-y-1">
+            <span class="font-semibold">Fuente:</span>
+            <a href="https://www.elsevier.es/es-revista-medicina-integral-63-articulo-manifestaciones-radiologicas-tuberculosis-pulmonar-13029945" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">elsevier.es</a>
+          </div>
+        </article>
+
+        <!-- TB Biopsia -->
+        <article class="mt-4 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="grid md:grid-cols-[34%_1fr]">
+            <div class="relative aspect-[4/3] md:aspect-auto bg-slate-100 dark:bg-slate-800 min-h-[12rem]"><img src="IMG/respiratorio/tb-biopsia.webp" alt="Biopsia en tuberculosis" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-[0.65rem] text-slate-400 p-2"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>tb-biopsia.webp</span></div></div>
+            <div class="p-5">
+              <h5 class="font-bold text-lg text-slate-900 dark:text-white">Biopsia</h5>
+              <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">Obtención de una muestra de tejido pulmonar, pleural o ganglionar para su estudio histopatológico. En algunos casos se biopsia el tejido afectado para confirmar la presencia de la bacteria.</p>
+              <p class="mt-3 text-xs font-bold uppercase tracking-wide text-blue-700 dark:text-blue-300">¿Qué evalúa?</p>
+              <p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Granulomas, necrosis caseosa y presencia de la bacteria.</p>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 p-5 grid sm:grid-cols-3 gap-3 text-xs">
+            <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes</p><p class="text-slate-600 dark:text-slate-400">Verificar la historia clínica, controlar signos vitales, preparar el material estéril y brindar apoyo emocional al paciente.</p></div>
+            <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3"><p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante</p><p class="text-slate-600 dark:text-slate-400">Vigilar signos vitales, ayudar al médico, mantener la técnica estéril y observar signos de sangrado o dificultad respiratoria.</p></div>
+            <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después</p><p class="text-slate-600 dark:text-slate-400">Vigilar complicaciones (hemorragia, dolor, dificultad respiratoria), controlar signos vitales, mantener reposo, registrar y enviar la muestra al laboratorio para estudio histopatológico.</p></div>
+          </div>
+        </article>
+      </section>
+
+      <div class="mt-12 flex items-center justify-between border-t border-slate-200 dark:border-slate-800 pt-6">
+        <a href="respiratorio-funcionales.html" class="text-sm text-slate-500 hover:text-indigo-600 dark:hover:text-indigo-400">← Pruebas funcionales respiratorias</a>
+        <a href="cardiovascular.html"
+           class="inline-flex items-center gap-2 rounded-full bg-indigo-600 px-5 py-2.5 text-white text-sm font-semibold hover:bg-indigo-700">
+          Sistema cardiovascular →
+        </a>
+      </div>
+    </div>
+  </main>
+</div>
+<script>
+  function toggleTheme(){
+    const html = document.documentElement;
+    html.classList.toggle('dark');
+    localStorage.theme = html.classList.contains('dark') ? 'dark' : 'light';
+  }
+</script>
+
+  <!-- ===== Lightbox: clic en una imagen para ampliarla ===== -->
+  <div id="lightbox" class="fixed inset-0 z-[60] hidden items-center justify-center bg-black/80 backdrop-blur-sm p-4 cursor-zoom-out" onclick="closeLightbox()">
+    <button onclick="closeLightbox()" aria-label="Cerrar"
+            class="absolute top-4 right-4 h-11 w-11 rounded-full bg-white/10 hover:bg-white/20 ring-1 ring-white/30 text-white grid place-items-center">
+      <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <figure class="flex flex-col items-center gap-3" onclick="event.stopPropagation()">
+      <img id="lightbox-img" src="" alt="" class="max-h-[85vh] max-w-[92vw] rounded-xl shadow-2xl object-contain">
+      <figcaption id="lightbox-cap" class="text-sm text-white/80"></figcaption>
+    </figure>
+  </div>
+  <script>
+    (function(){
+      const box = document.getElementById('lightbox');
+      const big = document.getElementById('lightbox-img');
+      const cap = document.getElementById('lightbox-cap');
+      document.querySelectorAll('main img').forEach(function(el){
+        el.classList.add('cursor-zoom-in');
+        el.addEventListener('click', function(ev){
+          ev.preventDefault(); ev.stopPropagation();
+          big.src = el.currentSrc || el.src;
+          big.alt = el.alt || '';
+          cap.textContent = el.alt || '';
+          box.classList.remove('hidden'); box.classList.add('flex');
+          document.body.style.overflow = 'hidden';
+        });
+      });
+      window.closeLightbox = function(){
+        box.classList.add('hidden'); box.classList.remove('flex');
+        document.body.style.overflow = '';
+      };
+      document.addEventListener('keydown', function(e){ if(e.key === 'Escape') window.closeLightbox(); });
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estudios de laboratorio · Sistema cardiovascular</title>
+  <script>
+    if (localStorage.theme === 'dark' ||
+        (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = { darkMode: 'class' }</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style> body { font-family: 'Inter', system-ui, sans-serif; } </style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-200 transition-colors duration-300">
+<div class="min-h-screen flex">
+
+  <!-- ============ BARRA LATERAL ============ -->
+  <aside id="sidebar"
+         class="fixed lg:sticky top-0 z-40 h-screen w-72 shrink-0 -translate-x-full lg:translate-x-0
+                transition-transform bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800 flex flex-col">
+    <div class="px-5 py-5 border-b border-slate-100 dark:border-slate-800">
+      <a href="index.html" class="flex items-center gap-3">
+        <span class="h-10 w-10 rounded-xl bg-indigo-600 text-white flex items-center justify-center">
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12h4l2 5 4-12 2 7h6"/></svg>
+        </span>
+        <span>
+          <span class="block font-extrabold text-slate-800 dark:text-white leading-tight">Wiki Diagnóstico</span>
+          <span class="block text-xs text-slate-400">UEPD-04 · Medios de Diagnóstico</span>
+        </span>
+      </a>
+    </div>
+    <nav class="flex-1 overflow-y-auto px-3 py-4 space-y-1 text-sm">
+      <a href="index.html"        class="block rounded-lg px-3 py-2 font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Carátula</a>
+      <a href="introduccion.html" class="block rounded-lg px-3 py-2 font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Introducción</a>
+      <div class="my-2 border-t border-slate-100 dark:border-slate-800"></div>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-sky-50 dark:hover:bg-sky-500/10 group-open:bg-sky-50 dark:group-open:bg-sky-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-sky-500"></span>
+            <span class="truncate text-sm font-semibold text-sky-700 dark:text-sky-300">Fluidos corporales</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-sky-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-sky-100 dark:border-sky-500/30 pl-2">
+          <a href="componentes.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-sky-50 dark:hover:bg-sky-500/10 hover:text-sky-700 dark:hover:text-sky-300 transition">Componentes de la sangre</a>
+          <a href="hemograma.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-sky-50 dark:hover:bg-sky-500/10 hover:text-sky-700 dark:hover:text-sky-300 transition">Hemograma con diferencial</a>
+          <a href="fluidos.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-sky-50 dark:hover:bg-sky-500/10 hover:text-sky-700 dark:hover:text-sky-300 transition">Análisis de fluidos biológicos</a>
+          <a href="frotis.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-sky-50 dark:hover:bg-sky-500/10 hover:text-sky-700 dark:hover:text-sky-300 transition">Frotis sanguíneo</a>
+        </div>
+      </details>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-emerald-50 dark:hover:bg-emerald-500/10 group-open:bg-emerald-50 dark:group-open:bg-emerald-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-emerald-500"></span>
+            <span class="truncate text-sm font-semibold text-emerald-700 dark:text-emerald-300">Medulograma</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-emerald-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-emerald-100 dark:border-emerald-500/30 pl-2">
+          <a href="medulograma.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-emerald-50 dark:hover:bg-emerald-500/10 hover:text-emerald-700 dark:hover:text-emerald-300 transition">Medulograma</a>
+        </div>
+      </details>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-rose-50 dark:hover:bg-rose-500/10 group-open:bg-rose-50 dark:group-open:bg-rose-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-rose-500"></span>
+            <span class="truncate text-sm font-semibold text-rose-700 dark:text-rose-300">Embarazo</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-rose-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-rose-100 dark:border-rose-500/30 pl-2">
+          <a href="embarazo.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-rose-50 dark:hover:bg-rose-500/10 hover:text-rose-700 dark:hover:text-rose-300 transition">Diagnóstico en el embarazo</a>
+        </div>
+      </details>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-fuchsia-50 dark:hover:bg-fuchsia-500/10 group-open:bg-fuchsia-50 dark:group-open:bg-fuchsia-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-fuchsia-500"></span>
+            <span class="truncate text-sm font-semibold text-fuchsia-700 dark:text-fuchsia-300">Trastornos autoinmunitarios</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-fuchsia-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-fuchsia-100 dark:border-fuchsia-500/30 pl-2">
+          <a href="autoinmunes.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-fuchsia-50 dark:hover:bg-fuchsia-500/10 hover:text-fuchsia-700 dark:hover:text-fuchsia-300 transition">Trastornos autoinmunitarios</a>
+        </div>
+      </details>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-purple-50 dark:hover:bg-purple-500/10 group-open:bg-purple-50 dark:group-open:bg-purple-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-purple-500"></span>
+            <span class="truncate text-sm font-semibold text-purple-700 dark:text-purple-300">Neoplasias</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-purple-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-purple-100 dark:border-purple-500/30 pl-2">
+          <a href="oncologia.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-purple-50 dark:hover:bg-purple-500/10 hover:text-purple-700 dark:hover:text-purple-300 transition">Oncología y neoplasias</a>
+        </div>
+      </details>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-orange-50 dark:hover:bg-orange-500/10 group-open:bg-orange-50 dark:group-open:bg-orange-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-orange-500"></span>
+            <span class="truncate text-sm font-semibold text-orange-700 dark:text-orange-300">Sistema osteomioarticular</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-orange-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-orange-100 dark:border-orange-500/30 pl-2">
+          <a href="soma.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-orange-50 dark:hover:bg-orange-500/10 hover:text-orange-700 dark:hover:text-orange-300 transition">Sistema osteomioarticular</a>
+        </div>
+      </details>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-cyan-50 dark:hover:bg-cyan-500/10 group-open:bg-cyan-50 dark:group-open:bg-cyan-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-cyan-500"></span>
+            <span class="truncate text-sm font-semibold text-cyan-700 dark:text-cyan-300">Estudios neurológicos</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-cyan-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-cyan-100 dark:border-cyan-500/30 pl-2">
+          <a href="neurologia.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-cyan-50 dark:hover:bg-cyan-500/10 hover:text-cyan-700 dark:hover:text-cyan-300 transition">Neurología avanzada</a>
+        </div>
+      </details>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-teal-50 dark:hover:bg-teal-500/10 group-open:bg-teal-50 dark:group-open:bg-teal-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-teal-500"></span>
+            <span class="truncate text-sm font-semibold text-teal-700 dark:text-teal-300">Sistema genitourinario</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-teal-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-teal-100 dark:border-teal-500/30 pl-2">
+          <a href="genitourinario.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-teal-50 dark:hover:bg-teal-500/10 hover:text-teal-700 dark:hover:text-teal-300 transition">Sistema genitourinario</a>
+          <a href="pruebas-urinarias.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-teal-50 dark:hover:bg-teal-500/10 hover:text-teal-700 dark:hover:text-teal-300 transition">Pruebas diagnósticas urinarias</a>
+        </div>
+      </details>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-amber-50 dark:hover:bg-amber-500/10 group-open:bg-amber-50 dark:group-open:bg-amber-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-amber-500"></span>
+            <span class="truncate text-sm font-semibold text-amber-700 dark:text-amber-300">Sistema endocrino-metabólico</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-amber-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-amber-100 dark:border-amber-500/30 pl-2">
+          <a href="endocrino.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-amber-50 dark:hover:bg-amber-500/10 hover:text-amber-700 dark:hover:text-amber-300 transition">Estudios de laboratorio</a>
+          <a href="endocrino-imagen.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-amber-50 dark:hover:bg-amber-500/10 hover:text-amber-700 dark:hover:text-amber-300 transition">Estudios imagenológicos</a>
+          <a href="endocrino-patologia.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-amber-50 dark:hover:bg-amber-500/10 hover:text-amber-700 dark:hover:text-amber-300 transition">Estudios anatomopatológicos</a>
+        </div>
+      </details>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-blue-50 dark:hover:bg-blue-500/10 group-open:bg-blue-50 dark:group-open:bg-blue-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-blue-500"></span>
+            <span class="truncate text-sm font-semibold text-blue-700 dark:text-blue-300">Sistema respiratorio</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-blue-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-blue-100 dark:border-blue-500/30 pl-2">
+          <a href="respiratorio.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-blue-50 dark:hover:bg-blue-500/10 hover:text-blue-700 dark:hover:text-blue-300 transition">Estudios de laboratorio</a>
+          <a href="respiratorio-imagen.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-blue-50 dark:hover:bg-blue-500/10 hover:text-blue-700 dark:hover:text-blue-300 transition">Estudios de imagen</a>
+          <a href="respiratorio-funcionales.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-blue-50 dark:hover:bg-blue-500/10 hover:text-blue-700 dark:hover:text-blue-300 transition">Pruebas funcionales respiratorias</a>
+          <a href="respiratorio-procedimientos.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-blue-50 dark:hover:bg-blue-500/10 hover:text-blue-700 dark:hover:text-blue-300 transition">Procedimientos especializados</a>
+        </div>
+      </details>
+      <details class="group" open>
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-red-50 dark:hover:bg-red-500/10 group-open:bg-red-50 dark:group-open:bg-red-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-red-500"></span>
+            <span class="truncate text-sm font-semibold text-red-700 dark:text-red-300">Sistema cardiovascular</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-red-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-red-100 dark:border-red-500/30 pl-2">
+          <a href="cardiovascular.html" class="block rounded-lg px-3 py-1.5 font-semibold bg-red-100 dark:bg-red-500/20 text-red-800 dark:text-red-200">Estudios de laboratorio</a>
+          <a href="cardiovascular-imagen.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-red-50 dark:hover:bg-red-500/10 hover:text-red-700 dark:hover:text-red-300 transition">Estudios de imagen</a>
+          <a href="cardiovascular-funcionales.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-red-50 dark:hover:bg-red-500/10 hover:text-red-700 dark:hover:text-red-300 transition">Estudios electrofisiológicos y funcionales</a>
+          <a href="cardiovascular-procedimientos.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-red-50 dark:hover:bg-red-500/10 hover:text-red-700 dark:hover:text-red-300 transition">Procedimientos invasivos y estudios vasculares</a>
+        </div>
+      </details>
+      <div class="my-2 border-t border-slate-100 dark:border-slate-800"></div>
+      <a href="enlaces.html" class="block rounded-lg px-3 py-2 font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Enlaces y referencias</a>
+    </nav>
+    <div class="px-4 py-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
+      <span class="text-xs text-slate-400">© Proyecto académico</span>
+      <button onclick="toggleTheme()" aria-label="Cambiar tema"
+              class="h-9 w-9 rounded-full grid place-items-center ring-1 ring-slate-200 dark:ring-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 transition text-slate-600 dark:text-slate-300">
+        <svg class="dark:hidden h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="hidden dark:block h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path stroke-linecap="round" d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </button>
+    </div>
+  </aside>
+
+  <button onclick="document.getElementById('sidebar').classList.toggle('-translate-x-full')"
+          class="lg:hidden fixed bottom-5 right-5 z-50 h-12 w-12 rounded-full bg-indigo-600 text-white shadow-lg grid place-items-center">
+    <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+  </button>
+
+  <!-- ============ CONTENIDO ============ -->
+  <main class="flex-1 min-w-0">
+    <div class="max-w-4xl mx-auto px-6 py-10 lg:py-14">
+
+      <nav class="text-xs text-slate-400 mb-3">Inicio / Sistema cardiovascular / <span class="text-slate-600 dark:text-slate-300">Estudios de laboratorio</span></nav>
+
+      <div class="flex items-center gap-4">
+        <div class="h-12 w-1.5 rounded-full bg-red-500"></div>
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">Estudios de laboratorio</h1>
+      </div>
+      <p class="mt-2 text-red-700 dark:text-red-300 font-semibold">Biomarcadores, perfil lipídico, coagulación y estudios metabólicos</p>
+
+      <!-- ===== Tarjeta de introducción ===== -->
+      <div class="mt-6 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 p-5 sm:p-6">
+        <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+          Los exámenes diagnósticos para trastornos cardiovasculares son el conjunto de pruebas clínicas, de laboratorio, de imagen y procedimientos especializados que permiten evaluar la estructura y funcionamiento del corazón y los vasos sanguíneos. Su finalidad es detectar enfermedades cardiovasculares de manera temprana, confirmar diagnósticos, valorar la gravedad de la enfermedad y orientar el tratamiento médico.
+        </p>
+        <div class="mt-4 rounded-xl bg-red-50 dark:bg-red-500/10 ring-1 ring-red-100 dark:ring-red-500/20 p-4">
+          <p class="text-xs font-bold uppercase tracking-wide text-red-700 dark:text-red-300">Definición · Estudios de laboratorio</p>
+          <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+            Analizan muestras biológicas, principalmente sangre, para detectar daño cardíaco, insuficiencia cardíaca, alteraciones metabólicas y factores de riesgo.
+          </p>
+        </div>
+      </div>
+
+      <!-- ============================================================= -->
+      <!-- GRUPO 1 · Biomarcadores de daño miocárdico -->
+      <!-- ============================================================= -->
+      <section class="mt-12">
+        <div class="flex items-center gap-3">
+          <span class="grid h-9 w-9 place-items-center rounded-xl bg-red-500 text-white font-extrabold">1</span>
+          <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Biomarcadores de daño miocárdico</h2>
+        </div>
+
+        <div class="mt-5 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 p-5 sm:p-6">
+          <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+            Los biomarcadores de daño miocárdico son sustancias que se liberan al torrente sanguíneo cuando las células del músculo cardíaco (miocardio) sufren una lesión o muerte; su medición permite confirmar o descartar un infarto agudo de miocardio y evaluar la gravedad del daño al corazón.
+          </p>
+          <p class="mt-4 text-xs font-bold uppercase tracking-wide text-red-700 dark:text-red-300">Función</p>
+          <div class="mt-1 grid sm:grid-cols-2 gap-x-6 gap-y-1 text-sm text-slate-600 dark:text-slate-400">
+            <div class="flex gap-2"><span class="text-red-500">•</span>Detectar lesión o necrosis del músculo cardíaco.</div>
+            <div class="flex gap-2"><span class="text-red-500">•</span>Ayudar en el diagnóstico del infarto agudo de miocardio.</div>
+            <div class="flex gap-2"><span class="text-red-500">•</span>Evaluar la evolución del paciente y la eficacia del tratamiento.</div>
+            <div class="flex gap-2"><span class="text-red-500">•</span>Identificar complicaciones cardíacas y estimar el pronóstico.</div>
+            <div class="flex gap-2"><span class="text-red-500">•</span>Diferenciar el daño cardíaco de otras enfermedades con síntomas similares.</div>
+          </div>
+        </div>
+
+        <!-- Troponina T -->
+        <article class="mt-5 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="grid md:grid-cols-[34%_1fr]">
+            <div class="relative bg-slate-100 dark:bg-slate-800 aspect-[4/3] md:aspect-auto md:min-h-[12rem]"><img src="IMG/cardiovascular/troponina-t.webp" alt="Troponina T" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-xs text-slate-400 p-3"><svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>troponina-t.webp</span></div></div>
+            <div class="p-5">
+              <h3 class="font-bold text-lg text-slate-900 dark:text-white">Troponina T</h3>
+              <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">La troponina T es una proteína que forma parte de las fibras del músculo cardíaco y participa en el proceso de contracción del corazón; cuando las células del miocardio sufren una lesión, como ocurre durante un infarto agudo de miocardio, esta proteína se libera al torrente sanguíneo. Debido a su alta sensibilidad y especificidad, es uno de los biomarcadores más utilizados para detectar daño cardíaco.</p>
+              <p class="mt-3 text-xs font-bold uppercase tracking-wide text-red-700 dark:text-red-300">¿Qué evalúa?</p>
+              <div class="mt-1 grid sm:grid-cols-2 gap-x-6 gap-y-1 text-sm text-slate-600 dark:text-slate-400">
+                <div class="flex gap-2"><span class="text-red-500">•</span>La presencia de lesión o necrosis del músculo cardíaco.</div>
+                <div class="flex gap-2"><span class="text-red-500">•</span>La gravedad del daño miocárdico.</div>
+                <div class="flex gap-2"><span class="text-red-500">•</span>La evolución del paciente con sospecha de síndrome coronario agudo.</div>
+                <div class="flex gap-2"><span class="text-red-500">•</span>La respuesta al tratamiento y el pronóstico clínico.</div>
+              </div>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 p-5 space-y-4">
+            <p class="text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">Intervenciones de Enfermería</p>
+            <div class="grid sm:grid-cols-3 gap-3 text-xs">
+              <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes</p><p class="text-slate-600 dark:text-slate-400">Antes de obtener la muestra de sangre, verifica la identidad del paciente, explica el procedimiento para disminuir la ansiedad, revisa la orden médica y registra la hora de inicio del dolor torácico o de los síntomas. Además, prepara el material necesario y confirma si el paciente consume suplementos de biotina, ya que pueden interferir con algunos métodos de medición.</p></div>
+              <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3"><p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante</p><p class="text-slate-600 dark:text-slate-400">Se realiza la extracción de sangre utilizando técnica aséptica, se identifica correctamente la muestra y se vigila el estado clínico del paciente, observando signos vitales, dolor torácico, dificultad respiratoria o alteraciones del ritmo cardíaco.</p></div>
+              <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después</p><p class="text-slate-600 dark:text-slate-400">Se comprime el sitio de punción para evitar hematomas, se envía la muestra inmediatamente al laboratorio y se continúa la monitorización del paciente, registrando cualquier cambio clínico y colaborando con el equipo médico según los resultados obtenidos.</p></div>
+            </div>
+          </div>
+        </article>
+
+        <!-- CK -->
+        <article class="mt-5 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="grid md:grid-cols-[34%_1fr]">
+            <div class="relative bg-slate-100 dark:bg-slate-800 aspect-[4/3] md:aspect-auto md:min-h-[12rem]"><img src="IMG/cardiovascular/ck.webp" alt="CK (Creatina Quinasa)" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-xs text-slate-400 p-3"><svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>ck.webp</span></div></div>
+            <div class="p-5">
+              <h3 class="font-bold text-lg text-slate-900 dark:text-white">CK (Creatina Quinasa o Creatina Fosfoquinasa)</h3>
+              <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">La creatina quinasa (CK o CPK) es una enzima presente principalmente en los músculos esqueléticos, el músculo cardíaco y el cerebro. Su función es participar en la producción de energía necesaria para la contracción muscular; cuando existe lesión en cualquiera de estos tejidos, la CK aumenta en la sangre.</p>
+              <p class="mt-3 text-xs font-bold uppercase tracking-wide text-red-700 dark:text-red-300">¿Qué evalúa?</p>
+              <div class="mt-1 grid sm:grid-cols-2 gap-x-6 gap-y-1 text-sm text-slate-600 dark:text-slate-400">
+                <div class="flex gap-2"><span class="text-red-500">•</span>La presencia de lesión muscular.</div>
+                <div class="flex gap-2"><span class="text-red-500">•</span>Enfermedades musculares como miopatías y rabdomiólisis.</div>
+                <div class="flex gap-2"><span class="text-red-500">•</span>Daño del músculo cardíaco cuando se complementa con otros biomarcadores.</div>
+                <div class="flex gap-2"><span class="text-red-500">•</span>La evolución de enfermedades que afectan el tejido muscular.</div>
+              </div>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 p-5 space-y-4">
+            <p class="text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">Intervenciones de Enfermería</p>
+            <div class="grid sm:grid-cols-3 gap-3 text-xs">
+              <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes</p><p class="text-slate-600 dark:text-slate-400">Se informa al paciente sobre el procedimiento, se verifica su identidad y la solicitud médica; también se recomienda informar si ha realizado ejercicio intenso recientemente o si consume medicamentos que puedan elevar la CK, ya que estos factores pueden modificar los resultados.</p></div>
+              <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3"><p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante</p><p class="text-slate-600 dark:text-slate-400">Se obtiene la muestra de sangre con técnica estéril, verificando el correcto rotulado del tubo y vigilando que el paciente permanezca estable durante la extracción.</p></div>
+              <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después</p><p class="text-slate-600 dark:text-slate-400">Se controla el sitio de punción, se envía la muestra al laboratorio y se registran los datos clínicos; se debe continuar observando signos de dolor muscular, debilidad o alteraciones relacionadas con la enfermedad que motivó el examen.</p></div>
+            </div>
+          </div>
+        </article>
+
+        <!-- CK-MB -->
+        <article class="mt-5 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="grid md:grid-cols-[34%_1fr]">
+            <div class="relative bg-slate-100 dark:bg-slate-800 aspect-[4/3] md:aspect-auto md:min-h-[12rem]"><img src="IMG/cardiovascular/ck-mb.webp" alt="CK-MB" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-xs text-slate-400 p-3"><svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>ck-mb.webp</span></div></div>
+            <div class="p-5">
+              <h3 class="font-bold text-lg text-slate-900 dark:text-white">CK-MB (Creatina Quinasa MB)</h3>
+              <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">La CK-MB es una isoenzima de la creatina quinasa que se encuentra principalmente en el músculo cardíaco; aunque actualmente la troponina es el biomarcador de elección para diagnosticar un infarto, la CK-MB continúa siendo útil para identificar preinfartos y valorar la evolución del daño cardíaco.</p>
+              <p class="mt-3 text-xs font-bold uppercase tracking-wide text-red-700 dark:text-red-300">¿Qué evalúa?</p>
+              <div class="mt-1 grid sm:grid-cols-2 gap-x-6 gap-y-1 text-sm text-slate-600 dark:text-slate-400">
+                <div class="flex gap-2"><span class="text-red-500">•</span>Lesión del músculo cardíaco.</div>
+                <div class="flex gap-2"><span class="text-red-500">•</span>Sospecha de reinfarto agudo de miocardio.</div>
+                <div class="flex gap-2"><span class="text-red-500">•</span>Evolución del daño cardíaco después de un infarto.</div>
+                <div class="flex gap-2"><span class="text-red-500">•</span>Respuesta al tratamiento en algunos pacientes.</div>
+              </div>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 p-5 space-y-4">
+            <p class="text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">Intervenciones de Enfermería</p>
+            <div class="grid sm:grid-cols-3 gap-3 text-xs">
+              <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes</p><p class="text-slate-600 dark:text-slate-400">Verificar la identidad del paciente, explica el procedimiento, registra la hora de inicio de los síntomas y prepara el material para la extracción sanguínea.</p></div>
+              <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3"><p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante</p><p class="text-slate-600 dark:text-slate-400">Se obtiene la muestra mediante técnica aséptica, se identifica correctamente el tubo y se vigilan signos vitales, dolor torácico y cualquier cambio en el estado del paciente.</p></div>
+              <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después</p><p class="text-slate-600 dark:text-slate-400">Se aplica presión en el sitio de punción para prevenir sangrado, la muestra se envía rápidamente al laboratorio y se continúa la vigilancia clínica, documentando los hallazgos y notificando oportunamente cualquier alteración.</p></div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Mioglobina -->
+        <article class="mt-5 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="grid md:grid-cols-[34%_1fr]">
+            <div class="relative bg-slate-100 dark:bg-slate-800 aspect-[4/3] md:aspect-auto md:min-h-[12rem]"><img src="IMG/cardiovascular/mioglobina.webp" alt="Mioglobina" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-xs text-slate-400 p-3"><svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>mioglobina.webp</span></div></div>
+            <div class="p-5">
+              <h3 class="font-bold text-lg text-slate-900 dark:text-white">Mioglobina</h3>
+              <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">La mioglobina es una proteína localizada en el músculo cardíaco y en los músculos esqueléticos, cuya función principal es almacenar y transportar oxígeno dentro de las fibras musculares; después de una lesión muscular o de un infarto, se libera rápidamente al torrente sanguíneo, por lo que puede aumentar en las primeras horas del daño, aunque no es específica del corazón.</p>
+              <p class="mt-3 text-xs font-bold uppercase tracking-wide text-red-700 dark:text-red-300">¿Qué evalúa?</p>
+              <div class="mt-1 grid sm:grid-cols-2 gap-x-6 gap-y-1 text-sm text-slate-600 dark:text-slate-400">
+                <div class="flex gap-2"><span class="text-red-500">•</span>Lesión muscular aguda.</div>
+                <div class="flex gap-2"><span class="text-red-500">•</span>Daño temprano del músculo cardíaco.</div>
+                <div class="flex gap-2"><span class="text-red-500">•</span>Rabdomiólisis y otras enfermedades musculares.</div>
+                <div class="flex gap-2"><span class="text-red-500">•</span>Riesgo de daño renal asociado a una liberación masiva de mioglobina.</div>
+              </div>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 p-5 space-y-4">
+            <p class="text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">Intervenciones de Enfermería</p>
+            <div class="grid sm:grid-cols-3 gap-3 text-xs">
+              <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes</p><p class="text-slate-600 dark:text-slate-400">Se informa al paciente sobre el procedimiento, se verifica la orden médica y la identidad, y se revisan antecedentes de traumatismos, ejercicio intenso o enfermedades musculares que puedan modificar el resultado.</p></div>
+              <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3"><p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante</p><p class="text-slate-600 dark:text-slate-400">Se realiza la extracción sanguínea con técnica aséptica, se rotula adecuadamente la muestra y se vigilan signos vitales y síntomas del paciente durante el procedimiento.</p></div>
+              <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después</p><p class="text-slate-600 dark:text-slate-400">Se controla el sitio de punción, se envía la muestra al laboratorio sin demora y se continúa la valoración clínica, observando signos de deterioro cardiovascular, muscular o renal y registrando toda la información en la historia clínica.</p></div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- ============================================================= -->
+      <!-- GRUPO 2 · Biomarcadores de insuficiencia cardíaca -->
+      <!-- ============================================================= -->
+      <section class="mt-12">
+        <div class="flex items-center gap-3">
+          <span class="grid h-9 w-9 place-items-center rounded-xl bg-red-500 text-white font-extrabold">2</span>
+          <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Biomarcadores de insuficiencia cardíaca</h2>
+        </div>
+
+        <figure class="mt-5 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="relative aspect-[16/7] bg-slate-100 dark:bg-slate-800"><img src="IMG/cardiovascular/biomarcadores-ic.webp" alt="Biomarcadores de insuficiencia cardíaca" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-xs text-slate-400 p-3"><svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>IMG/cardiovascular/biomarcadores-ic.webp</span></div></div>
+        </figure>
+
+        <div class="mt-5 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 p-5 sm:p-6">
+          <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+            Los biomarcadores de insuficiencia cardíaca son sustancias que se encuentran en la sangre y aumentan cuando el corazón trabaja con mayor esfuerzo o presenta alteraciones en su función de bombeo; estos marcadores ayudan a confirmar o descartar la insuficiencia cardíaca, valorar su gravedad, orientar el tratamiento y hacer seguimiento de la evolución del paciente.
+          </p>
+          <p class="mt-4 text-xs font-bold uppercase tracking-wide text-red-700 dark:text-red-300">Función</p>
+          <div class="mt-1 grid sm:grid-cols-2 gap-x-6 gap-y-1 text-sm text-slate-600 dark:text-slate-400">
+            <div class="flex gap-2"><span class="text-red-500">•</span>Ayudan a diagnosticar la insuficiencia cardíaca.</div>
+            <div class="flex gap-2"><span class="text-red-500">•</span>Evalúan el grado de sobrecarga y estrés del corazón.</div>
+            <div class="flex gap-2"><span class="text-red-500">•</span>Permiten determinar el pronóstico del paciente.</div>
+            <div class="flex gap-2"><span class="text-red-500">•</span>Facilitan el seguimiento de la respuesta al tratamiento.</div>
+            <div class="flex gap-2"><span class="text-red-500">•</span>Ayudan a diferenciar la insuficiencia cardíaca de otras causas de dificultad respiratoria.</div>
+          </div>
+        </div>
+
+        <!-- BNP -->
+        <article class="mt-5 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="grid md:grid-cols-[34%_1fr]">
+            <div class="relative bg-slate-100 dark:bg-slate-800 aspect-[4/3] md:aspect-auto md:min-h-[12rem]"><img src="IMG/cardiovascular/bnp.webp" alt="BNP" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-xs text-slate-400 p-3"><svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>bnp.webp</span></div></div>
+            <div class="p-5">
+              <h3 class="font-bold text-lg text-slate-900 dark:text-white">BNP</h3>
+              <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">El BNP es una hormona producida principalmente por los ventrículos del corazón cuando existe aumento de la presión o distensión de sus paredes. Su principal función fisiológica es favorecer la eliminación de sodio y agua, disminuir la presión arterial y reducir la sobrecarga cardíaca.</p>
+              <p class="mt-3 text-xs font-bold uppercase tracking-wide text-red-700 dark:text-red-300">¿Qué evalúa?</p>
+              <div class="mt-1 grid sm:grid-cols-2 gap-x-6 gap-y-1 text-sm text-slate-600 dark:text-slate-400">
+                <div class="flex gap-2"><span class="text-red-500">•</span>La presencia de insuficiencia cardíaca.</div>
+                <div class="flex gap-2"><span class="text-red-500">•</span>La severidad de la enfermedad.</div>
+                <div class="flex gap-2"><span class="text-red-500">•</span>La respuesta al tratamiento.</div>
+                <div class="flex gap-2"><span class="text-red-500">•</span>El pronóstico y riesgo de hospitalización.</div>
+              </div>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 p-5 space-y-4">
+            <p class="text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">Intervenciones de Enfermería</p>
+            <div class="grid sm:grid-cols-3 gap-3 text-xs">
+              <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes</p><p class="text-slate-600 dark:text-slate-400">Se verifica la identidad del paciente, se explica el procedimiento y se registran los síntomas y antecedentes clínicos; también se revisan los medicamentos que recibe el paciente y se controla la presión arterial, frecuencia cardíaca y saturación de oxígeno.</p></div>
+              <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3"><p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante</p><p class="text-slate-600 dark:text-slate-400">Se realiza la extracción sanguínea con técnica estéril, asegurando el correcto rotulado de la muestra; durante el procedimiento se vigila el estado del paciente y cualquier manifestación de inestabilidad clínica.</p></div>
+              <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después</p><p class="text-slate-600 dark:text-slate-400">Se controla el sitio de punción, se remite la muestra al laboratorio y se continúa la valoración del paciente, observando signos de congestión pulmonar, edema periférico y cambios en el estado cardiovascular.</p></div>
+            </div>
+          </div>
+        </article>
+
+        <!-- NT-proBNP -->
+        <article class="mt-5 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="grid md:grid-cols-[34%_1fr]">
+            <div class="relative bg-slate-100 dark:bg-slate-800 aspect-[4/3] md:aspect-auto md:min-h-[12rem]"><img src="IMG/cardiovascular/nt-probnp.webp" alt="NT-proBNP" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-xs text-slate-400 p-3"><svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>nt-probnp.webp</span></div></div>
+            <div class="p-5">
+              <h3 class="font-bold text-lg text-slate-900 dark:text-white">NT-proBNP (Péptido natriurético tipo B N-terminal)</h3>
+              <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">El NT-proBNP es un fragmento inactivo que se libera a la sangre cuando los ventrículos del corazón se distienden por el aumento de presión o volumen; es uno de los biomarcadores más utilizados para diagnosticar y controlar la insuficiencia cardíaca, ya que sus concentraciones aumentan conforme empeora la función del corazón.</p>
+              <p class="mt-3 text-xs font-bold uppercase tracking-wide text-red-700 dark:text-red-300">¿Qué evalúa?</p>
+              <div class="mt-1 grid sm:grid-cols-2 gap-x-6 gap-y-1 text-sm text-slate-600 dark:text-slate-400">
+                <div class="flex gap-2"><span class="text-red-500">•</span>La presencia de insuficiencia cardíaca.</div>
+                <div class="flex gap-2"><span class="text-red-500">•</span>La gravedad de la disfunción ventricular.</div>
+                <div class="flex gap-2"><span class="text-red-500">•</span>La respuesta al tratamiento.</div>
+                <div class="flex gap-2"><span class="text-red-500">•</span>El riesgo de complicaciones y mortalidad.</div>
+              </div>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 p-5 space-y-4">
+            <p class="text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">Intervenciones de Enfermería</p>
+            <div class="grid sm:grid-cols-3 gap-3 text-xs">
+              <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes</p><p class="text-slate-600 dark:text-slate-400">Antes de realizar la extracción de sangre, el profesional de Enfermería verifica la identidad del paciente, explica el procedimiento y revisa la orden médica; también registra los síntomas presentes, como disnea, edema o fatiga, además de controlar los signos vitales y conocer antecedentes de enfermedad renal, ya que esta condición puede modificar los niveles del biomarcador.</p></div>
+              <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3"><p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante</p><p class="text-slate-600 dark:text-slate-400">Se obtiene la muestra mediante técnica aséptica, se identifica correctamente el tubo y se vigila el estado general del paciente, observando posibles signos de dificultad respiratoria, dolor torácico o alteraciones hemodinámicas.</p></div>
+              <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después</p><p class="text-slate-600 dark:text-slate-400">Se comprime el sitio de punción para evitar sangrado, la muestra se envía oportunamente al laboratorio y se continúa monitorizando la evolución clínica del paciente, registrando signos vitales, balance hídrico y respuesta al tratamiento indicado.</p></div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- ============================================================= -->
+      <!-- GRUPO 3 · Perfil lipídico -->
+      <!-- ============================================================= -->
+      <section class="mt-12">
+        <div class="flex items-center gap-3">
+          <span class="grid h-9 w-9 place-items-center rounded-xl bg-red-500 text-white font-extrabold">3</span>
+          <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Perfil lipídico</h2>
+        </div>
+
+        <figure class="mt-5 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="relative aspect-[16/7] bg-slate-100 dark:bg-slate-800"><img src="IMG/cardiovascular/perfil-lipidico.webp" alt="Perfil lipídico" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-xs text-slate-400 p-3"><svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>IMG/cardiovascular/perfil-lipidico.webp</span></div></div>
+        </figure>
+
+        <div class="mt-5 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 p-5 sm:p-6">
+          <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+            El perfil lipídico es un conjunto de análisis de sangre que permite medir la cantidad de grasas (lípidos) presentes en el organismo; este examen evalúa principalmente el colesterol total, el colesterol HDL, el colesterol LDL y los triglicéridos. Sus resultados ayudan a identificar el riesgo de desarrollar enfermedades cardiovasculares, como aterosclerosis, infarto agudo de miocardio y accidente cerebrovascular.
+          </p>
+          <p class="mt-4 text-xs font-bold uppercase tracking-wide text-red-700 dark:text-red-300">Función</p>
+          <div class="mt-1 grid sm:grid-cols-2 gap-x-6 gap-y-1 text-sm text-slate-600 dark:text-slate-400">
+            <div class="flex gap-2"><span class="text-red-500">•</span>Evaluar el riesgo de enfermedad cardiovascular.</div>
+            <div class="flex gap-2"><span class="text-red-500">•</span>Detectar alteraciones en los niveles de colesterol y triglicéridos.</div>
+            <div class="flex gap-2"><span class="text-red-500">•</span>Diagnosticar dislipidemias (trastornos de los lípidos).</div>
+            <div class="flex gap-2"><span class="text-red-500">•</span>Valorar la eficacia del tratamiento con cambios en el estilo de vida o medicamentos.</div>
+            <div class="flex gap-2"><span class="text-red-500">•</span>Monitorear la evolución de pacientes con factores de riesgo cardiovascular.</div>
+          </div>
+        </div>
+
+        <!-- Colesterol total -->
+        <article class="mt-5 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="grid md:grid-cols-[34%_1fr]">
+            <div class="relative bg-slate-100 dark:bg-slate-800 aspect-[4/3] md:aspect-auto md:min-h-[12rem]"><img src="IMG/cardiovascular/colesterol-total.webp" alt="Colesterol total" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-xs text-slate-400 p-3"><svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>colesterol-total.webp</span></div></div>
+            <div class="p-5">
+              <h3 class="font-bold text-lg text-slate-900 dark:text-white">Colesterol total</h3>
+              <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">El colesterol total corresponde a la cantidad total de colesterol que circula en la sangre; incluye el colesterol transportado por las lipoproteínas HDL, LDL y VLDL. Es necesario para la producción de hormonas, vitamina D y membranas celulares; sin embargo, niveles elevados aumentan el riesgo de enfermedad cardiovascular.</p>
+              <p class="mt-3 text-xs font-bold uppercase tracking-wide text-red-700 dark:text-red-300">¿Qué evalúa?</p>
+              <div class="mt-1 grid sm:grid-cols-2 gap-x-6 gap-y-1 text-sm text-slate-600 dark:text-slate-400">
+                <div class="flex gap-2"><span class="text-red-500">•</span>La cantidad total de colesterol en la sangre.</div>
+                <div class="flex gap-2"><span class="text-red-500">•</span>El riesgo de enfermedad cardiovascular.</div>
+                <div class="flex gap-2"><span class="text-red-500">•</span>La necesidad de estudios complementarios o tratamiento.</div>
+              </div>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 p-5 space-y-4">
+            <p class="text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">Intervenciones de Enfermería</p>
+            <div class="grid sm:grid-cols-3 gap-3 text-xs">
+              <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes</p><p class="text-slate-600 dark:text-slate-400">Se verifica la identidad del paciente, se explica el procedimiento y se confirma el cumplimiento del ayuno cuando sea solicitado (generalmente entre 9 y 12 horas); se revisan medicamentos y antecedentes que puedan modificar los resultados.</p></div>
+              <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3"><p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante</p><p class="text-slate-600 dark:text-slate-400">Se realiza la extracción sanguínea utilizando técnica aséptica, se identifica correctamente la muestra y se vigila el estado general del paciente durante el procedimiento.</p></div>
+              <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después</p><p class="text-slate-600 dark:text-slate-400">Se comprime el sitio de punción para evitar hematomas, se envía la muestra al laboratorio y se orienta al paciente sobre la importancia de mantener hábitos saludables y acudir al control médico para la interpretación de los resultados.</p></div>
+            </div>
+          </div>
+        </article>
+
+        <!-- HDL -->
+        <article class="mt-5 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="grid md:grid-cols-[34%_1fr]">
+            <div class="relative bg-slate-100 dark:bg-slate-800 aspect-[4/3] md:aspect-auto md:min-h-[12rem]"><img src="IMG/cardiovascular/hdl.webp" alt="Colesterol HDL" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-xs text-slate-400 p-3"><svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>hdl.webp</span></div></div>
+            <div class="p-5">
+              <h3 class="font-bold text-lg text-slate-900 dark:text-white">HDL</h3>
+              <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">El colesterol HDL (lipoproteína de alta densidad) es conocido como el "colesterol bueno" porque transporta el exceso de colesterol desde los tejidos hacia el hígado para su eliminación, ayudando a proteger las arterias.</p>
+              <p class="mt-3 text-xs font-bold uppercase tracking-wide text-red-700 dark:text-red-300">¿Qué evalúa?</p>
+              <div class="mt-1 grid sm:grid-cols-2 gap-x-6 gap-y-1 text-sm text-slate-600 dark:text-slate-400">
+                <div class="flex gap-2"><span class="text-red-500">•</span>La capacidad del organismo para eliminar el exceso de colesterol.</div>
+                <div class="flex gap-2"><span class="text-red-500">•</span>El riesgo de enfermedad cardiovascular.</div>
+                <div class="flex gap-2"><span class="text-red-500">•</span>La eficacia de las medidas para mejorar la salud cardiovascular.</div>
+              </div>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 p-5 space-y-4">
+            <p class="text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">Intervenciones de Enfermería</p>
+            <div class="grid sm:grid-cols-3 gap-3 text-xs">
+              <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes</p><p class="text-slate-600 dark:text-slate-400">Se verifica el ayuno cuando corresponda, se explica el procedimiento y se revisan antecedentes personales y familiares de enfermedades cardiovasculares.</p></div>
+              <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3"><p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante</p><p class="text-slate-600 dark:text-slate-400">Se obtiene la muestra de sangre con técnica estéril, asegurando el correcto etiquetado del tubo y el bienestar del paciente.</p></div>
+              <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después</p><p class="text-slate-600 dark:text-slate-400">Se vigila el sitio de punción, se envía la muestra al laboratorio y se brinda educación sobre alimentación saludable, actividad física y control de factores de riesgo.</p></div>
+            </div>
+          </div>
+        </article>
+
+        <!-- LDL -->
+        <article class="mt-5 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="grid md:grid-cols-[34%_1fr]">
+            <div class="relative bg-slate-100 dark:bg-slate-800 aspect-[4/3] md:aspect-auto md:min-h-[12rem]"><img src="IMG/cardiovascular/ldl.webp" alt="Colesterol LDL" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-xs text-slate-400 p-3"><svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>ldl.webp</span></div></div>
+            <div class="p-5">
+              <h3 class="font-bold text-lg text-slate-900 dark:text-white">LDL</h3>
+              <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">El colesterol LDL (lipoproteína de baja densidad) transporta el colesterol desde el hígado hacia los tejidos. Cuando sus niveles son elevados, favorece la formación de placas de grasa en las arterias, aumentando el riesgo de enfermedad cardiovascular.</p>
+              <p class="mt-3 text-xs font-bold uppercase tracking-wide text-red-700 dark:text-red-300">¿Qué evalúa?</p>
+              <div class="mt-1 grid sm:grid-cols-2 gap-x-6 gap-y-1 text-sm text-slate-600 dark:text-slate-400">
+                <div class="flex gap-2"><span class="text-red-500">•</span>El riesgo de aterosclerosis.</div>
+                <div class="flex gap-2"><span class="text-red-500">•</span>La probabilidad de desarrollar enfermedad coronaria.</div>
+                <div class="flex gap-2"><span class="text-red-500">•</span>La respuesta al tratamiento hipolipemiante.</div>
+              </div>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 p-5 space-y-4">
+            <p class="text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">Intervenciones de Enfermería</p>
+            <div class="grid sm:grid-cols-3 gap-3 text-xs">
+              <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes</p><p class="text-slate-600 dark:text-slate-400">Se confirma el ayuno indicado, se explica el procedimiento y se revisan medicamentos, antecedentes personales y hábitos alimenticios del paciente.</p></div>
+              <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3"><p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante</p><p class="text-slate-600 dark:text-slate-400">Se realiza la extracción sanguínea con técnica aséptica, identificando correctamente la muestra y observando la tolerancia del paciente al procedimiento.</p></div>
+              <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después</p><p class="text-slate-600 dark:text-slate-400">Se controla el sitio de punción, se remite la muestra al laboratorio y se orienta al paciente sobre la importancia del seguimiento médico y de mantener estilos de vida saludables.</p></div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Triglicéridos -->
+        <article class="mt-5 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="grid md:grid-cols-[34%_1fr]">
+            <div class="relative bg-slate-100 dark:bg-slate-800 aspect-[4/3] md:aspect-auto md:min-h-[12rem]"><img src="IMG/cardiovascular/trigliceridos.webp" alt="Triglicéridos" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-xs text-slate-400 p-3"><svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>trigliceridos.webp</span></div></div>
+            <div class="p-5">
+              <h3 class="font-bold text-lg text-slate-900 dark:text-white">Triglicéridos</h3>
+              <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">Los triglicéridos son el principal tipo de grasa que circula en la sangre y constituyen una importante fuente de energía para el organismo; sus niveles pueden aumentar por una alimentación rica en grasas y azúcares, obesidad, diabetes o consumo excesivo de alcohol.</p>
+              <p class="mt-3 text-xs font-bold uppercase tracking-wide text-red-700 dark:text-red-300">¿Qué evalúan?</p>
+              <div class="mt-1 grid sm:grid-cols-2 gap-x-6 gap-y-1 text-sm text-slate-600 dark:text-slate-400">
+                <div class="flex gap-2"><span class="text-red-500">•</span>La concentración de grasas circulantes en la sangre.</div>
+                <div class="flex gap-2"><span class="text-red-500">•</span>El riesgo de enfermedad cardiovascular.</div>
+                <div class="flex gap-2"><span class="text-red-500">•</span>El riesgo de pancreatitis cuando los niveles son muy elevados.</div>
+                <div class="flex gap-2"><span class="text-red-500">•</span>La respuesta a cambios en la alimentación y al tratamiento.</div>
+              </div>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 p-5 space-y-4">
+            <p class="text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">Intervenciones de Enfermería</p>
+            <div class="grid sm:grid-cols-3 gap-3 text-xs">
+              <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes</p><p class="text-slate-600 dark:text-slate-400">Se verifica que el paciente haya cumplido el ayuno indicado, se explica el procedimiento y se consulta sobre consumo reciente de alcohol, actividad física intensa o medicamentos que puedan alterar los resultados.</p></div>
+              <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3"><p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante</p><p class="text-slate-600 dark:text-slate-400">Se obtiene la muestra de sangre mediante técnica aséptica, se identifica correctamente y se vigila el estado general del paciente.</p></div>
+              <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después</p><p class="text-slate-600 dark:text-slate-400">Se controla el sitio de punción, se envía la muestra al laboratorio y se brinda educación sobre alimentación equilibrada, control del peso, ejercicio físico y seguimiento médico.</p></div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- ============================================================= -->
+      <!-- GRUPO 4 · Estudios de coagulación -->
+      <!-- ============================================================= -->
+      <section class="mt-12">
+        <div class="flex items-center gap-3">
+          <span class="grid h-9 w-9 place-items-center rounded-xl bg-red-500 text-white font-extrabold">4</span>
+          <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Estudios de coagulación</h2>
+        </div>
+
+        <figure class="mt-5 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="relative aspect-[16/7] bg-slate-100 dark:bg-slate-800"><img src="IMG/cardiovascular/estudios-coagulacion.webp" alt="Estudios de coagulación" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-xs text-slate-400 p-3"><svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>IMG/cardiovascular/estudios-coagulacion.webp</span></div></div>
+        </figure>
+
+        <div class="mt-5 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 p-5 sm:p-6">
+          <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+            Los estudios de coagulación son un conjunto de análisis de laboratorio que evalúan la capacidad de la sangre para formar coágulos y detener un sangrado. Estas pruebas permiten detectar alteraciones en los factores de coagulación, diagnosticar trastornos hemorrágicos o trombóticos, controlar tratamientos anticoagulantes y valorar el riesgo de sangrado antes de procedimientos quirúrgicos.
+          </p>
+          <p class="mt-4 text-xs font-bold uppercase tracking-wide text-red-700 dark:text-red-300">Función</p>
+          <div class="mt-1 grid sm:grid-cols-2 gap-x-6 gap-y-1 text-sm text-slate-600 dark:text-slate-400">
+            <div class="flex gap-2"><span class="text-red-500">•</span>Evaluar el funcionamiento del sistema de coagulación.</div>
+            <div class="flex gap-2"><span class="text-red-500">•</span>Detectar trastornos hemorrágicos o de formación de trombos.</div>
+            <div class="flex gap-2"><span class="text-red-500">•</span>Controlar la eficacia y seguridad del tratamiento anticoagulante.</div>
+            <div class="flex gap-2"><span class="text-red-500">•</span>Valorar el riesgo de sangrado antes de cirugías o procedimientos invasivos.</div>
+            <div class="flex gap-2"><span class="text-red-500">•</span>Apoyar el diagnóstico de enfermedades hepáticas y otros trastornos que afectan la coagulación.</div>
+          </div>
+        </div>
+
+        <!-- Tiempo de Protrombina (TP) -->
+        <article class="mt-5 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="grid md:grid-cols-[34%_1fr]">
+            <div class="relative bg-slate-100 dark:bg-slate-800 aspect-[4/3] md:aspect-auto md:min-h-[12rem]"><img src="IMG/cardiovascular/tiempo-protrombina.webp" alt="Tiempo de Protrombina" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-xs text-slate-400 p-3"><svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>tiempo-protrombina.webp</span></div></div>
+            <div class="p-5">
+              <h3 class="font-bold text-lg text-slate-900 dark:text-white">Tiempo de Protrombina (TP)</h3>
+              <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">El Tiempo de Protrombina (TP) es una prueba de laboratorio que mide el tiempo que tarda la sangre en coagular mediante la vía extrínseca y la vía común de la coagulación; es una de las pruebas más utilizadas para controlar el tratamiento con warfarina y evaluar la función hepática y algunos trastornos de la coagulación.</p>
+              <p class="mt-3 text-xs font-bold uppercase tracking-wide text-red-700 dark:text-red-300">¿Qué evalúa?</p>
+              <div class="mt-1 grid sm:grid-cols-2 gap-x-6 gap-y-1 text-sm text-slate-600 dark:text-slate-400">
+                <div class="flex gap-2"><span class="text-red-500">•</span>El funcionamiento de la vía extrínseca y común de la coagulación.</div>
+                <div class="flex gap-2"><span class="text-red-500">•</span>La eficacia del tratamiento con warfarina.</div>
+                <div class="flex gap-2"><span class="text-red-500">•</span>Deficiencias de factores de coagulación.</div>
+                <div class="flex gap-2"><span class="text-red-500">•</span>Enfermedades hepáticas y déficit de vitamina K.</div>
+              </div>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 p-5 space-y-4">
+            <p class="text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">Intervenciones de Enfermería</p>
+            <div class="grid sm:grid-cols-3 gap-3 text-xs">
+              <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes</p><p class="text-slate-600 dark:text-slate-400">Antes de la toma de la muestra, la enfermera verifica la identidad del paciente, explica el procedimiento y revisa si recibe tratamiento anticoagulante, especialmente warfarina; registra antecedentes de sangrado, enfermedades hepáticas y medicamentos que puedan modificar el resultado.</p></div>
+              <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3"><p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante</p><p class="text-slate-600 dark:text-slate-400">Se obtiene la muestra de sangre mediante técnica aséptica en un tubo con citrato de sodio, procurando una extracción adecuada para evitar errores en el resultado. Además, se observa el estado general del paciente durante el procedimiento.</p></div>
+              <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después</p><p class="text-slate-600 dark:text-slate-400">Se comprime el sitio de punción para prevenir hematomas, se envía la muestra al laboratorio en el tiempo establecido y se continúa vigilando la aparición de sangrados o cualquier complicación relacionada con la coagulación.</p></div>
+            </div>
+          </div>
+        </article>
+
+        <!-- INR -->
+        <article class="mt-5 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="grid md:grid-cols-[34%_1fr]">
+            <div class="relative bg-slate-100 dark:bg-slate-800 aspect-[4/3] md:aspect-auto md:min-h-[12rem]"><img src="IMG/cardiovascular/inr.webp" alt="INR (Relación Internacional Normalizada)" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-xs text-slate-400 p-3"><svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>inr.webp</span></div></div>
+            <div class="p-5">
+              <h3 class="font-bold text-lg text-slate-900 dark:text-white">Relación Internacional Normalizada (INR)</h3>
+              <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">El INR (International Normalized Ratio) es un cálculo obtenido a partir del Tiempo de Protrombina que permite estandarizar los resultados entre diferentes laboratorios; se utiliza principalmente para controlar el tratamiento con anticoagulantes orales como la warfarina.</p>
+              <p class="mt-3 text-xs font-bold uppercase tracking-wide text-red-700 dark:text-red-300">¿Qué evalúa?</p>
+              <div class="mt-1 grid sm:grid-cols-2 gap-x-6 gap-y-1 text-sm text-slate-600 dark:text-slate-400">
+                <div class="flex gap-2"><span class="text-red-500">•</span>El grado de anticoagulación del paciente.</div>
+                <div class="flex gap-2"><span class="text-red-500">•</span>La eficacia y seguridad del tratamiento con warfarina.</div>
+                <div class="flex gap-2"><span class="text-red-500">•</span>El riesgo de hemorragias o formación de trombos.</div>
+              </div>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 p-5 space-y-4">
+            <p class="text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">Intervenciones de Enfermería</p>
+            <div class="grid sm:grid-cols-3 gap-3 text-xs">
+              <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes</p><p class="text-slate-600 dark:text-slate-400">Se verifica la identidad del paciente, se revisa el tratamiento anticoagulante, la dosis administrada y la fecha de la última toma; se explica el procedimiento y se registran antecedentes de sangrado.</p></div>
+              <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3"><p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante</p><p class="text-slate-600 dark:text-slate-400">Se realiza la extracción de sangre utilizando técnica estéril y se identifica correctamente la muestra; durante el procedimiento se observa la condición clínica del paciente.</p></div>
+              <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después</p><p class="text-slate-600 dark:text-slate-400">Se vigila el sitio de punción, se informa oportunamente cualquier resultado crítico al equipo médico y se educa al paciente sobre la importancia del seguimiento periódico del INR y del cumplimiento del tratamiento.</p></div>
+            </div>
+          </div>
+        </article>
+
+        <!-- TTPa -->
+        <article class="mt-5 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="grid md:grid-cols-[34%_1fr]">
+            <div class="relative bg-slate-100 dark:bg-slate-800 aspect-[4/3] md:aspect-auto md:min-h-[12rem]"><img src="IMG/cardiovascular/ttpa.webp" alt="TTPa (aPTT)" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-xs text-slate-400 p-3"><svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>ttpa.webp</span></div></div>
+            <div class="p-5">
+              <h3 class="font-bold text-lg text-slate-900 dark:text-white">Tiempo de Tromboplastina Parcial Activada (TTPa o aPTT)</h3>
+              <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">El Tiempo de Tromboplastina Parcial Activada (TTPa) es una prueba que mide el funcionamiento de la vía intrínseca y la vía común de la coagulación; es utilizada para diagnosticar trastornos de la coagulación y controlar el tratamiento con heparina no fraccionada.</p>
+              <p class="mt-3 text-xs font-bold uppercase tracking-wide text-red-700 dark:text-red-300">¿Qué evalúa?</p>
+              <div class="mt-1 grid sm:grid-cols-2 gap-x-6 gap-y-1 text-sm text-slate-600 dark:text-slate-400">
+                <div class="flex gap-2"><span class="text-red-500">•</span>El funcionamiento de la vía intrínseca de la coagulación.</div>
+                <div class="flex gap-2"><span class="text-red-500">•</span>Deficiencias de factores de coagulación.</div>
+                <div class="flex gap-2"><span class="text-red-500">•</span>La eficacia del tratamiento con heparina.</div>
+                <div class="flex gap-2"><span class="text-red-500">•</span>Trastornos hemorrágicos congénitos o adquiridos.</div>
+              </div>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 p-5 space-y-4">
+            <p class="text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">Intervenciones de Enfermería</p>
+            <div class="grid sm:grid-cols-3 gap-3 text-xs">
+              <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes</p><p class="text-slate-600 dark:text-slate-400">Se verifica la identidad del paciente, se explica el procedimiento y se revisa si recibe tratamiento con heparina u otros anticoagulantes. También se investigan antecedentes de sangrado o enfermedades hematológicas.</p></div>
+              <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3"><p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante</p><p class="text-slate-600 dark:text-slate-400">Se obtiene la muestra mediante técnica aséptica utilizando el tubo adecuado con citrato de sodio y se identifica correctamente para evitar errores en el procesamiento.</p></div>
+              <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después</p><p class="text-slate-600 dark:text-slate-400">Se controla el sitio de punción, se envía la muestra inmediatamente al laboratorio y se vigila al paciente para detectar signos de hemorragia o complicaciones.</p></div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Fibrinógeno -->
+        <article class="mt-5 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="grid md:grid-cols-[34%_1fr]">
+            <div class="relative bg-slate-100 dark:bg-slate-800 aspect-[4/3] md:aspect-auto md:min-h-[12rem]"><img src="IMG/cardiovascular/fibrinogeno.webp" alt="Fibrinógeno" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-xs text-slate-400 p-3"><svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>fibrinogeno.webp</span></div></div>
+            <div class="p-5">
+              <h3 class="font-bold text-lg text-slate-900 dark:text-white">Fibrinógeno</h3>
+              <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">El fibrinógeno es una proteína producida por el hígado que participa en la formación del coágulo sanguíneo; durante el proceso de coagulación se transforma en fibrina, formando una red que ayuda a detener el sangrado.</p>
+              <p class="mt-3 text-xs font-bold uppercase tracking-wide text-red-700 dark:text-red-300">¿Qué evalúa?</p>
+              <div class="mt-1 grid sm:grid-cols-2 gap-x-6 gap-y-1 text-sm text-slate-600 dark:text-slate-400">
+                <div class="flex gap-2"><span class="text-red-500">•</span>La concentración de fibrinógeno en la sangre.</div>
+                <div class="flex gap-2"><span class="text-red-500">•</span>Alteraciones de la coagulación.</div>
+                <div class="flex gap-2"><span class="text-red-500">•</span>Enfermedades hepáticas.</div>
+                <div class="flex gap-2"><span class="text-red-500">•</span>Procesos inflamatorios y coagulación intravascular diseminada.</div>
+              </div>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 p-5 space-y-4">
+            <p class="text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">Intervenciones de Enfermería</p>
+            <div class="grid sm:grid-cols-3 gap-3 text-xs">
+              <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes</p><p class="text-slate-600 dark:text-slate-400">Se informa al paciente sobre el procedimiento, se verifica la identidad y la orden médica, además de revisar antecedentes clínicos y medicamentos que puedan modificar los resultados.</p></div>
+              <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3"><p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante</p><p class="text-slate-600 dark:text-slate-400">Se realiza la extracción de sangre con técnica estéril, utilizando el tubo correspondiente y asegurando una adecuada identificación de la muestra.</p></div>
+              <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después</p><p class="text-slate-600 dark:text-slate-400">Se aplica presión sobre el sitio de punción para evitar hematomas, se envía la muestra al laboratorio y se continúa la valoración clínica del paciente según su estado de salud.</p></div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Dímero D -->
+        <article class="mt-5 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="grid md:grid-cols-[34%_1fr]">
+            <div class="relative bg-slate-100 dark:bg-slate-800 aspect-[4/3] md:aspect-auto md:min-h-[12rem]"><img src="IMG/cardiovascular/dimero-d.webp" alt="Dímero D" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-xs text-slate-400 p-3"><svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>dimero-d.webp</span></div></div>
+            <div class="p-5">
+              <h3 class="font-bold text-lg text-slate-900 dark:text-white">Dímero D</h3>
+              <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">El dímero D es un fragmento de proteína que se produce cuando un coágulo de fibrina se degrada en el organismo; es un biomarcador útil para descartar enfermedades tromboembólicas, aunque un resultado elevado no confirma por sí solo el diagnóstico.</p>
+              <p class="mt-3 text-xs font-bold uppercase tracking-wide text-red-700 dark:text-red-300">¿Qué evalúa?</p>
+              <div class="mt-1 grid sm:grid-cols-2 gap-x-6 gap-y-1 text-sm text-slate-600 dark:text-slate-400">
+                <div class="flex gap-2"><span class="text-red-500">•</span>La presencia de formación y degradación de coágulos.</div>
+                <div class="flex gap-2"><span class="text-red-500">•</span>El riesgo de trombosis venosa profunda.</div>
+                <div class="flex gap-2"><span class="text-red-500">•</span>La sospecha de embolia pulmonar.</div>
+                <div class="flex gap-2"><span class="text-red-500">•</span>La coagulación intravascular diseminada.</div>
+              </div>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 p-5 space-y-4">
+            <p class="text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">Intervenciones de Enfermería</p>
+            <div class="grid sm:grid-cols-3 gap-3 text-xs">
+              <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes</p><p class="text-slate-600 dark:text-slate-400">Se verifica la identidad del paciente, se explica el procedimiento y se investigan antecedentes de trombosis, cirugía reciente, embarazo o enfermedades que puedan elevar el dímero D.</p></div>
+              <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3"><p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante</p><p class="text-slate-600 dark:text-slate-400">Se obtiene la muestra de sangre mediante técnica aséptica, identificando correctamente el tubo y observando el estado clínico del paciente.</p></div>
+              <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después</p><p class="text-slate-600 dark:text-slate-400">Se controla el sitio de punción, se remite la muestra al laboratorio y se continúa monitorizando al paciente, especialmente si presenta signos de tromboembolismo o compromiso respiratorio.</p></div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- ============================================================= -->
+      <!-- GRUPO 5 · Estudios metabólicos -->
+      <!-- ============================================================= -->
+      <section class="mt-12">
+        <div class="flex items-center gap-3">
+          <span class="grid h-9 w-9 place-items-center rounded-xl bg-red-500 text-white font-extrabold">5</span>
+          <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Estudios metabólicos</h2>
+        </div>
+
+        <figure class="mt-5 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="relative aspect-[16/7] bg-slate-100 dark:bg-slate-800"><img src="IMG/cardiovascular/estudios-metabolicos.webp" alt="Estudios metabólicos" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-xs text-slate-400 p-3"><svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>IMG/cardiovascular/estudios-metabolicos.webp</span></div></div>
+        </figure>
+
+        <div class="mt-5 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 p-5 sm:p-6">
+          <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+            Los estudios metabólicos son un conjunto de análisis de laboratorio que permiten evaluar el funcionamiento del metabolismo del organismo; estos exámenes miden diferentes sustancias presentes en la sangre, como la glucosa, electrolitos, proteínas y productos de desecho, con el fin de valorar el estado nutricional, la función renal y hepática, el equilibrio hidroelectrolítico y detectar enfermedades metabólicas.
+          </p>
+          <p class="mt-4 text-xs font-bold uppercase tracking-wide text-red-700 dark:text-red-300">Función</p>
+          <div class="mt-1 grid sm:grid-cols-2 gap-x-6 gap-y-1 text-sm text-slate-600 dark:text-slate-400">
+            <div class="flex gap-2"><span class="text-red-500">•</span>Evaluar el funcionamiento general del metabolismo.</div>
+            <div class="flex gap-2"><span class="text-red-500">•</span>Detectar alteraciones en la glucosa, electrolitos y proteínas.</div>
+            <div class="flex gap-2"><span class="text-red-500">•</span>Valorar la función renal y hepática.</div>
+            <div class="flex gap-2"><span class="text-red-500">•</span>Identificar trastornos metabólicos y endocrinos.</div>
+            <div class="flex gap-2"><span class="text-red-500">•</span>Monitorear la evolución de pacientes con enfermedades crónicas y la respuesta al tratamiento.</div>
+          </div>
+        </div>
+
+        <!-- Glucosa -->
+        <article class="mt-5 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="grid md:grid-cols-[34%_1fr]">
+            <div class="relative bg-slate-100 dark:bg-slate-800 aspect-[4/3] md:aspect-auto md:min-h-[12rem]"><img src="IMG/cardiovascular/glucosa.webp" alt="Glucosa" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-xs text-slate-400 p-3"><svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>glucosa.webp</span></div></div>
+            <div class="p-5">
+              <h3 class="font-bold text-lg text-slate-900 dark:text-white">Glucosa</h3>
+              <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">La glucosa en sangre es un examen que mide la cantidad de glucosa circulante en el torrente sanguíneo; constituye la principal fuente de energía para las células y es fundamental para el diagnóstico y seguimiento de la diabetes mellitus, así como de otras alteraciones del metabolismo de los carbohidratos.</p>
+              <p class="mt-3 text-xs font-bold uppercase tracking-wide text-red-700 dark:text-red-300">¿Qué evalúa?</p>
+              <div class="mt-1 grid sm:grid-cols-2 gap-x-6 gap-y-1 text-sm text-slate-600 dark:text-slate-400">
+                <div class="flex gap-2"><span class="text-red-500">•</span>Los niveles de glucosa en sangre.</div>
+                <div class="flex gap-2"><span class="text-red-500">•</span>El diagnóstico de diabetes mellitus y prediabetes.</div>
+                <div class="flex gap-2"><span class="text-red-500">•</span>Episodios de hiperglucemia e hipoglucemia.</div>
+                <div class="flex gap-2"><span class="text-red-500">•</span>La eficacia del tratamiento para el control de la diabetes.</div>
+              </div>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 p-5 space-y-4">
+            <p class="text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">Intervenciones de Enfermería</p>
+            <div class="grid sm:grid-cols-3 gap-3 text-xs">
+              <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes</p><p class="text-slate-600 dark:text-slate-400">Se verifica la identidad del paciente, se explica el procedimiento y se confirma el cumplimiento del ayuno cuando el examen lo requiera; se registran medicamentos, antecedentes de diabetes y síntomas como mareos, sed excesiva o aumento de la frecuencia urinaria.</p></div>
+              <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3"><p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante</p><p class="text-slate-600 dark:text-slate-400">Se realiza la extracción de sangre con técnica aséptica o se obtiene una muestra capilar cuando esté indicada, se identifica correctamente la muestra y se observa el estado clínico del paciente.</p></div>
+              <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después</p><p class="text-slate-600 dark:text-slate-400">Se controla el sitio de punción, se envía la muestra al laboratorio y se orienta al paciente sobre la importancia del seguimiento médico, la alimentación saludable y el control periódico de la glucosa.</p></div>
+            </div>
+          </div>
+        </article>
+
+        <!-- HbA1c -->
+        <article class="mt-5 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="grid md:grid-cols-[34%_1fr]">
+            <div class="relative bg-slate-100 dark:bg-slate-800 aspect-[4/3] md:aspect-auto md:min-h-[12rem]"><img src="IMG/cardiovascular/hba1c.webp" alt="Hemoglobina glucosilada (HbA1c)" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-xs text-slate-400 p-3"><svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>hba1c.webp</span></div></div>
+            <div class="p-5">
+              <h3 class="font-bold text-lg text-slate-900 dark:text-white">Hemoglobina glucosilada (HbA1c)</h3>
+              <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">La hemoglobina glucosilada (HbA1c) es una prueba que mide el porcentaje de hemoglobina unida a la glucosa. Refleja el promedio de los niveles de glucosa en sangre durante los últimos dos o tres meses y es una herramienta fundamental para evaluar el control de la diabetes.</p>
+              <p class="mt-3 text-xs font-bold uppercase tracking-wide text-red-700 dark:text-red-300">¿Qué evalúa?</p>
+              <div class="mt-1 grid sm:grid-cols-2 gap-x-6 gap-y-1 text-sm text-slate-600 dark:text-slate-400">
+                <div class="flex gap-2"><span class="text-red-500">•</span>El control glucémico de los últimos 2 a 3 meses.</div>
+                <div class="flex gap-2"><span class="text-red-500">•</span>La eficacia del tratamiento para la diabetes.</div>
+                <div class="flex gap-2"><span class="text-red-500">•</span>El riesgo de desarrollar complicaciones relacionadas con la hiperglucemia.</div>
+                <div class="flex gap-2"><span class="text-red-500">•</span>El diagnóstico de diabetes en determinados pacientes.</div>
+              </div>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 p-5 space-y-4">
+            <p class="text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">Intervenciones de Enfermería</p>
+            <div class="grid sm:grid-cols-3 gap-3 text-xs">
+              <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes</p><p class="text-slate-600 dark:text-slate-400">Se verifica la identidad del paciente y se explica el procedimiento; no requiere ayuno, aunque se revisan antecedentes clínicos y tratamientos utilizados para el control de la diabetes.</p></div>
+              <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3"><p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante</p><p class="text-slate-600 dark:text-slate-400">Se obtiene la muestra de sangre mediante técnica aséptica, asegurando una correcta identificación del tubo y observando el estado general del paciente.</p></div>
+              <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después</p><p class="text-slate-600 dark:text-slate-400">Se controla el sitio de punción, se envía la muestra al laboratorio y se educa al paciente sobre la importancia de mantener un adecuado control glucémico mediante dieta, ejercicio y tratamiento farmacológico.</p></div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Electrolitos séricos -->
+        <article class="mt-5 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="grid md:grid-cols-[34%_1fr]">
+            <div class="relative bg-slate-100 dark:bg-slate-800 aspect-[4/3] md:aspect-auto md:min-h-[12rem]"><img src="IMG/cardiovascular/electrolitos.webp" alt="Electrolitos séricos (Na/K/Cl)" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-xs text-slate-400 p-3"><svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>electrolitos.webp</span></div></div>
+            <div class="p-5">
+              <h3 class="font-bold text-lg text-slate-900 dark:text-white">Electrolitos séricos (Sodio, Potasio y Cloro)</h3>
+              <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">Los electrolitos séricos son minerales presentes en la sangre que participan en funciones esenciales del organismo, como el equilibrio de líquidos, la transmisión de impulsos nerviosos, la contracción muscular y el mantenimiento del equilibrio ácido-base. Los más evaluados son el sodio (Na⁺), el potasio (K⁺) y el cloro (Cl⁻).</p>
+              <p class="mt-3 text-xs font-bold uppercase tracking-wide text-red-700 dark:text-red-300">¿Qué evalúan?</p>
+              <div class="mt-1 grid sm:grid-cols-2 gap-x-6 gap-y-1 text-sm text-slate-600 dark:text-slate-400">
+                <div class="flex gap-2"><span class="text-red-500">•</span>El equilibrio hidroelectrolítico.</div>
+                <div class="flex gap-2"><span class="text-red-500">•</span>La función renal.</div>
+                <div class="flex gap-2"><span class="text-red-500">•</span>Alteraciones del equilibrio ácido-base.</div>
+                <div class="flex gap-2"><span class="text-red-500">•</span>Trastornos cardíacos, neurológicos y musculares.</div>
+              </div>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 p-5 space-y-4">
+            <p class="text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">Intervenciones de Enfermería</p>
+            <div class="grid sm:grid-cols-3 gap-3 text-xs">
+              <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes</p><p class="text-slate-600 dark:text-slate-400">Se verifica la identidad del paciente, se explica el procedimiento y se revisan medicamentos como diuréticos, así como antecedentes de enfermedad renal, cardíaca o endocrina que puedan modificar los resultados.</p></div>
+              <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3"><p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante</p><p class="text-slate-600 dark:text-slate-400">Se obtiene la muestra de sangre mediante técnica estéril, evitando la hemólisis, ya que puede alterar especialmente el resultado del potasio.</p></div>
+              <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después</p><p class="text-slate-600 dark:text-slate-400">Se controla el sitio de punción, se remite la muestra al laboratorio y se vigilan signos clínicos como arritmias, debilidad muscular, alteraciones neurológicas o cambios en el estado de conciencia.</p></div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Creatinina -->
+        <article class="mt-5 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="grid md:grid-cols-[34%_1fr]">
+            <div class="relative bg-slate-100 dark:bg-slate-800 aspect-[4/3] md:aspect-auto md:min-h-[12rem]"><img src="IMG/cardiovascular/creatinina.webp" alt="Creatinina" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-xs text-slate-400 p-3"><svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>creatinina.webp</span></div></div>
+            <div class="p-5">
+              <h3 class="font-bold text-lg text-slate-900 dark:text-white">Creatinina</h3>
+              <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">Es un producto de desecho que se genera de forma natural durante el metabolismo de la creatina presente en los músculos. Es eliminada casi por completo por los riñones a través de la orina, por lo que su concentración en la sangre es un indicador confiable de la función renal. La medición de creatinina sérica se utiliza de manera rutinaria para detectar enfermedades renales, valorar la tasa de filtración glomerular (TFG) y monitorear la evolución de pacientes con alteraciones de la función renal.</p>
+              <p class="mt-3 text-xs font-bold uppercase tracking-wide text-red-700 dark:text-red-300">¿Qué evalúa?</p>
+              <div class="mt-1 grid sm:grid-cols-2 gap-x-6 gap-y-1 text-sm text-slate-600 dark:text-slate-400">
+                <div class="flex gap-2"><span class="text-red-500">•</span>El funcionamiento de los riñones.</div>
+                <div class="flex gap-2"><span class="text-red-500">•</span>La capacidad de filtración glomerular (TFG).</div>
+                <div class="flex gap-2"><span class="text-red-500">•</span>La presencia de insuficiencia renal aguda o crónica.</div>
+                <div class="flex gap-2"><span class="text-red-500">•</span>La evolución de enfermedades renales.</div>
+                <div class="flex gap-2"><span class="text-red-500">•</span>La respuesta al tratamiento en pacientes con alteraciones de la función renal.</div>
+              </div>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 p-5 space-y-4">
+            <p class="text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">Intervenciones de Enfermería</p>
+            <div class="grid sm:grid-cols-3 gap-3 text-xs">
+              <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes</p><p class="text-slate-600 dark:text-slate-400">Verificar la identidad del paciente, explicar el procedimiento y revisar antecedentes de enfermedad renal o medicamentos que puedan alterar los resultados; si está indicado, confirmar el cumplimiento de las recomendaciones.</p></div>
+              <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3"><p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante</p><p class="text-slate-600 dark:text-slate-400">Realizar la extracción de sangre con técnica aséptica, identificar correctamente la muestra y observar el estado general del paciente.</p></div>
+              <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después</p><p class="text-slate-600 dark:text-slate-400">Comprimir el sitio de punción para evitar hematomas, enviar la muestra al laboratorio y registrar el procedimiento, vigilando la evolución clínica del paciente.</p></div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <div class="mt-12 flex items-center justify-between border-t border-slate-200 dark:border-slate-800 pt-6">
+        <a href="respiratorio-procedimientos.html" class="text-sm text-slate-500 hover:text-indigo-600 dark:hover:text-indigo-400">← Sistema respiratorio</a>
+        <a href="cardiovascular-imagen.html"
+           class="inline-flex items-center gap-2 rounded-full bg-indigo-600 px-5 py-2.5 text-white text-sm font-semibold hover:bg-indigo-700">
+          Estudios de imagen →
+        </a>
+      </div>
+    </div>
+  </main>
+</div>
+<script>
+  function toggleTheme(){
+    const html = document.documentElement;
+    html.classList.toggle('dark');
+    localStorage.theme = html.classList.contains('dark') ? 'dark' : 'light';
+  }
+</script>
+
+  <!-- ===== Lightbox: clic en una imagen para ampliarla ===== -->
+  <div id="lightbox" class="fixed inset-0 z-[60] hidden items-center justify-center bg-black/80 backdrop-blur-sm p-4 cursor-zoom-out" onclick="closeLightbox()">
+    <button onclick="closeLightbox()" aria-label="Cerrar"
+            class="absolute top-4 right-4 h-11 w-11 rounded-full bg-white/10 hover:bg-white/20 ring-1 ring-white/30 text-white grid place-items-center">
+      <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <figure class="flex flex-col items-center gap-3" onclick="event.stopPropagation()">
+      <img id="lightbox-img" src="" alt="" class="max-h-[85vh] max-w-[92vw] rounded-xl shadow-2xl object-contain">
+      <figcaption id="lightbox-cap" class="text-sm text-white/80"></figcaption>
+    </figure>
+  </div>
+  <script>
+    (function(){
+      const box = document.getElementById('lightbox');
+      const big = document.getElementById('lightbox-img');
+      const cap = document.getElementById('lightbox-cap');
+      document.querySelectorAll('main img').forEach(function(el){
+        el.classList.add('cursor-zoom-in');
+        el.addEventListener('click', function(ev){
+          ev.preventDefault(); ev.stopPropagation();
+          big.src = el.currentSrc || el.src;
+          big.alt = el.alt || '';
+          cap.textContent = el.alt || '';
+          box.classList.remove('hidden'); box.classList.add('flex');
+          document.body.style.overflow = 'hidden';
+        });
+      });
+      window.closeLightbox = function(){
+        box.classList.add('hidden'); box.classList.remove('flex');
+        document.body.style.overflow = '';
+      };
+      document.addEventListener('keydown', function(e){ if(e.key === 'Escape') window.closeLightbox(); });
+    })();
+  </script>
+</body>
+</html>

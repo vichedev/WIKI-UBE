@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estudios de imagen · Sistema respiratorio</title>
+  <script>
+    if (localStorage.theme === 'dark' ||
+        (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = { darkMode: 'class' }</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style> body { font-family: 'Inter', system-ui, sans-serif; } </style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-200 transition-colors duration-300">
+<div class="min-h-screen flex">
+
+  <!-- ============ BARRA LATERAL ============ -->
+  <aside id="sidebar"
+         class="fixed lg:sticky top-0 z-40 h-screen w-72 shrink-0 -translate-x-full lg:translate-x-0
+                transition-transform bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800 flex flex-col">
+    <div class="px-5 py-5 border-b border-slate-100 dark:border-slate-800">
+      <a href="index.html" class="flex items-center gap-3">
+        <span class="h-10 w-10 rounded-xl bg-indigo-600 text-white flex items-center justify-center">
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12h4l2 5 4-12 2 7h6"/></svg>
+        </span>
+        <span>
+          <span class="block font-extrabold text-slate-800 dark:text-white leading-tight">Wiki Diagnóstico</span>
+          <span class="block text-xs text-slate-400">UEPD-04 · Medios de Diagnóstico</span>
+        </span>
+      </a>
+    </div>
+    <nav class="flex-1 overflow-y-auto px-3 py-4 space-y-1 text-sm">
+      <a href="index.html"        class="block rounded-lg px-3 py-2 font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Carátula</a>
+      <a href="introduccion.html" class="block rounded-lg px-3 py-2 font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Introducción</a>
+      <div class="my-2 border-t border-slate-100 dark:border-slate-800"></div>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-sky-50 dark:hover:bg-sky-500/10 group-open:bg-sky-50 dark:group-open:bg-sky-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-sky-500"></span>
+            <span class="truncate text-sm font-semibold text-sky-700 dark:text-sky-300">Fluidos corporales</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-sky-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-sky-100 dark:border-sky-500/30 pl-2">
+          <a href="componentes.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-sky-50 dark:hover:bg-sky-500/10 hover:text-sky-700 dark:hover:text-sky-300 transition">Componentes de la sangre</a>
+          <a href="hemograma.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-sky-50 dark:hover:bg-sky-500/10 hover:text-sky-700 dark:hover:text-sky-300 transition">Hemograma con diferencial</a>
+          <a href="fluidos.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-sky-50 dark:hover:bg-sky-500/10 hover:text-sky-700 dark:hover:text-sky-300 transition">Análisis de fluidos biológicos</a>
+          <a href="frotis.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-sky-50 dark:hover:bg-sky-500/10 hover:text-sky-700 dark:hover:text-sky-300 transition">Frotis sanguíneo</a>
+        </div>
+      </details>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-emerald-50 dark:hover:bg-emerald-500/10 group-open:bg-emerald-50 dark:group-open:bg-emerald-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-emerald-500"></span>
+            <span class="truncate text-sm font-semibold text-emerald-700 dark:text-emerald-300">Medulograma</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-emerald-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-emerald-100 dark:border-emerald-500/30 pl-2">
+          <a href="medulograma.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-emerald-50 dark:hover:bg-emerald-500/10 hover:text-emerald-700 dark:hover:text-emerald-300 transition">Medulograma</a>
+        </div>
+      </details>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-rose-50 dark:hover:bg-rose-500/10 group-open:bg-rose-50 dark:group-open:bg-rose-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-rose-500"></span>
+            <span class="truncate text-sm font-semibold text-rose-700 dark:text-rose-300">Embarazo</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-rose-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-rose-100 dark:border-rose-500/30 pl-2">
+          <a href="embarazo.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-rose-50 dark:hover:bg-rose-500/10 hover:text-rose-700 dark:hover:text-rose-300 transition">Diagnóstico en el embarazo</a>
+        </div>
+      </details>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-fuchsia-50 dark:hover:bg-fuchsia-500/10 group-open:bg-fuchsia-50 dark:group-open:bg-fuchsia-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-fuchsia-500"></span>
+            <span class="truncate text-sm font-semibold text-fuchsia-700 dark:text-fuchsia-300">Trastornos autoinmunitarios</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-fuchsia-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-fuchsia-100 dark:border-fuchsia-500/30 pl-2">
+          <a href="autoinmunes.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-fuchsia-50 dark:hover:bg-fuchsia-500/10 hover:text-fuchsia-700 dark:hover:text-fuchsia-300 transition">Trastornos autoinmunitarios</a>
+        </div>
+      </details>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-purple-50 dark:hover:bg-purple-500/10 group-open:bg-purple-50 dark:group-open:bg-purple-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-purple-500"></span>
+            <span class="truncate text-sm font-semibold text-purple-700 dark:text-purple-300">Neoplasias</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-purple-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-purple-100 dark:border-purple-500/30 pl-2">
+          <a href="oncologia.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-purple-50 dark:hover:bg-purple-500/10 hover:text-purple-700 dark:hover:text-purple-300 transition">Oncología y neoplasias</a>
+        </div>
+      </details>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-orange-50 dark:hover:bg-orange-500/10 group-open:bg-orange-50 dark:group-open:bg-orange-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-orange-500"></span>
+            <span class="truncate text-sm font-semibold text-orange-700 dark:text-orange-300">Sistema osteomioarticular</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-orange-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-orange-100 dark:border-orange-500/30 pl-2">
+          <a href="soma.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-orange-50 dark:hover:bg-orange-500/10 hover:text-orange-700 dark:hover:text-orange-300 transition">Sistema osteomioarticular</a>
+        </div>
+      </details>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-cyan-50 dark:hover:bg-cyan-500/10 group-open:bg-cyan-50 dark:group-open:bg-cyan-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-cyan-500"></span>
+            <span class="truncate text-sm font-semibold text-cyan-700 dark:text-cyan-300">Estudios neurológicos</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-cyan-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-cyan-100 dark:border-cyan-500/30 pl-2">
+          <a href="neurologia.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-cyan-50 dark:hover:bg-cyan-500/10 hover:text-cyan-700 dark:hover:text-cyan-300 transition">Neurología avanzada</a>
+        </div>
+      </details>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-teal-50 dark:hover:bg-teal-500/10 group-open:bg-teal-50 dark:group-open:bg-teal-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-teal-500"></span>
+            <span class="truncate text-sm font-semibold text-teal-700 dark:text-teal-300">Sistema genitourinario</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-teal-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-teal-100 dark:border-teal-500/30 pl-2">
+          <a href="genitourinario.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-teal-50 dark:hover:bg-teal-500/10 hover:text-teal-700 dark:hover:text-teal-300 transition">Sistema genitourinario</a>
+          <a href="pruebas-urinarias.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-teal-50 dark:hover:bg-teal-500/10 hover:text-teal-700 dark:hover:text-teal-300 transition">Pruebas diagnósticas urinarias</a>
+        </div>
+      </details>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-amber-50 dark:hover:bg-amber-500/10 group-open:bg-amber-50 dark:group-open:bg-amber-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-amber-500"></span>
+            <span class="truncate text-sm font-semibold text-amber-700 dark:text-amber-300">Sistema endocrino-metabólico</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-amber-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-amber-100 dark:border-amber-500/30 pl-2">
+          <a href="endocrino.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-amber-50 dark:hover:bg-amber-500/10 hover:text-amber-700 dark:hover:text-amber-300 transition">Estudios de laboratorio</a>
+          <a href="endocrino-imagen.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-amber-50 dark:hover:bg-amber-500/10 hover:text-amber-700 dark:hover:text-amber-300 transition">Estudios imagenológicos</a>
+          <a href="endocrino-patologia.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-amber-50 dark:hover:bg-amber-500/10 hover:text-amber-700 dark:hover:text-amber-300 transition">Estudios anatomopatológicos</a>
+        </div>
+      </details>
+      <details class="group" open>
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-blue-50 dark:hover:bg-blue-500/10 group-open:bg-blue-50 dark:group-open:bg-blue-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-blue-500"></span>
+            <span class="truncate text-sm font-semibold text-blue-700 dark:text-blue-300">Sistema respiratorio</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-blue-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-blue-100 dark:border-blue-500/30 pl-2">
+          <a href="respiratorio.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-blue-50 dark:hover:bg-blue-500/10 hover:text-blue-700 dark:hover:text-blue-300 transition">Estudios de laboratorio</a>
+          <a href="respiratorio-imagen.html" class="block rounded-lg px-3 py-1.5 font-semibold bg-blue-100 dark:bg-blue-500/20 text-blue-800 dark:text-blue-200">Estudios de imagen</a>
+          <a href="respiratorio-funcionales.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-blue-50 dark:hover:bg-blue-500/10 hover:text-blue-700 dark:hover:text-blue-300 transition">Pruebas funcionales respiratorias</a>
+          <a href="respiratorio-procedimientos.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-blue-50 dark:hover:bg-blue-500/10 hover:text-blue-700 dark:hover:text-blue-300 transition">Procedimientos especializados</a>
+        </div>
+      </details>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-red-50 dark:hover:bg-red-500/10 group-open:bg-red-50 dark:group-open:bg-red-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-red-500"></span>
+            <span class="truncate text-sm font-semibold text-red-700 dark:text-red-300">Sistema cardiovascular</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-red-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-red-100 dark:border-red-500/30 pl-2">
+          <a href="cardiovascular.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-red-50 dark:hover:bg-red-500/10 hover:text-red-700 dark:hover:text-red-300 transition">Estudios de laboratorio</a>
+          <a href="cardiovascular-imagen.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-red-50 dark:hover:bg-red-500/10 hover:text-red-700 dark:hover:text-red-300 transition">Estudios de imagen</a>
+          <a href="cardiovascular-funcionales.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-red-50 dark:hover:bg-red-500/10 hover:text-red-700 dark:hover:text-red-300 transition">Estudios electrofisiológicos y funcionales</a>
+          <a href="cardiovascular-procedimientos.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-red-50 dark:hover:bg-red-500/10 hover:text-red-700 dark:hover:text-red-300 transition">Procedimientos invasivos y estudios vasculares</a>
+        </div>
+      </details>
+      <div class="my-2 border-t border-slate-100 dark:border-slate-800"></div>
+      <a href="enlaces.html" class="block rounded-lg px-3 py-2 font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Enlaces y referencias</a>
+    </nav>
+    <div class="px-4 py-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
+      <span class="text-xs text-slate-400">© Proyecto académico</span>
+      <button onclick="toggleTheme()" aria-label="Cambiar tema"
+              class="h-9 w-9 rounded-full grid place-items-center ring-1 ring-slate-200 dark:ring-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 transition text-slate-600 dark:text-slate-300">
+        <svg class="dark:hidden h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="hidden dark:block h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path stroke-linecap="round" d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </button>
+    </div>
+  </aside>
+
+  <button onclick="document.getElementById('sidebar').classList.toggle('-translate-x-full')"
+          class="lg:hidden fixed bottom-5 right-5 z-50 h-12 w-12 rounded-full bg-indigo-600 text-white shadow-lg grid place-items-center">
+    <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+  </button>
+
+  <!-- ============ CONTENIDO ============ -->
+  <main class="flex-1 min-w-0">
+    <div class="max-w-4xl mx-auto px-6 py-10 lg:py-14">
+
+      <nav class="text-xs text-slate-400 mb-3">Inicio / Sistema respiratorio / <span class="text-slate-600 dark:text-slate-300">Estudios de imagen</span></nav>
+
+      <div class="flex items-center gap-4">
+        <div class="h-12 w-1.5 rounded-full bg-blue-500"></div>
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">Estudios de imagen</h1>
+      </div>
+      <p class="mt-2 text-blue-700 dark:text-blue-300 font-semibold">Sistema respiratorio · Diagnóstico por imágenes del tórax</p>
+
+      <!-- ===== Introducción ===== -->
+      <section class="mt-8">
+        <div class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="grid md:grid-cols-[34%_1fr]">
+            <figure class="relative aspect-[4/3] md:aspect-auto md:min-h-[12rem] bg-slate-100 dark:bg-slate-800">
+              <img src="IMG/respiratorio/estudios-imagen-intro.webp" alt="Estudios de imagen del tórax" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-xs text-slate-400 p-3"><svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>estudios-imagen-intro.webp</span></div>
+            </figure>
+            <div class="p-5">
+              <h2 class="font-bold text-lg text-slate-900 dark:text-white">¿Qué son los estudios de imagen?</h2>
+              <p class="mt-2 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">Los estudios de imagen son procedimientos diagnósticos que permiten obtener imágenes del interior del cuerpo humano sin necesidad de realizar una cirugía. Su principal objetivo es ayudar a los profesionales de la salud a identificar, confirmar o descartar enfermedades, evaluar lesiones, controlar la evolución de un tratamiento y orientar procedimientos médicos.</p>
+              <p class="mt-3 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">Utilizan diferentes tipos de tecnología, como rayos X, ultrasonido, campos magnéticos, ondas de radio o materiales radiactivos, dependiendo del órgano o sistema que se desee evaluar. La elección del estudio depende de la condición clínica del paciente y de la información que el profesional necesite obtener.</p>
+              <p class="mt-3 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">Son necesarios para el diagnóstico oportuno de enfermedades del sistema respiratorio, cardiovascular, musculoesquelético, digestivo, nervioso y urinario. Además, permiten detectar alteraciones en etapas tempranas, lo que contribuye a un tratamiento más eficaz y mejora el pronóstico del paciente.</p>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 px-5 py-3 text-xs text-slate-500 dark:text-slate-400 flex flex-wrap gap-x-4 gap-y-1">
+            <span class="font-semibold">Fuentes:</span>
+            <a href="https://medlineplus.gov/spanish/diagnosticimaging.html" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">medlineplus.gov</a>
+            <a href="https://www.msdmanuals.com/es/hogar/temas-especiales/pruebas-de-diagn%C3%B3stico-por-la-imagen-habituales/introducci%C3%B3n-a-las-pruebas-de-diagn%C3%B3stico-por-la-imagen" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">msdmanuals.com</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== Mapa de páginas del módulo ===== -->
+      <section class="mt-6">
+        <div class="rounded-2xl bg-blue-50 dark:bg-blue-500/10 ring-1 ring-blue-100 dark:ring-blue-500/20 p-5">
+          <p class="text-xs font-bold uppercase tracking-wide text-blue-700 dark:text-blue-300">Sistema respiratorio · 4 secciones</p>
+          <div class="mt-3 grid sm:grid-cols-2 gap-2 text-sm">
+            <a href="respiratorio.html" class="flex items-center gap-2 rounded-xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 px-3 py-2 hover:ring-blue-300 dark:hover:ring-blue-500/40 transition">
+              <span class="grid h-6 w-6 place-items-center rounded-lg bg-slate-200 dark:bg-slate-700 text-xs font-bold text-slate-600 dark:text-slate-300">1</span>
+              <span class="text-slate-700 dark:text-slate-300">Estudios de laboratorio</span>
+            </a>
+            <div class="flex items-center gap-2 rounded-xl bg-blue-500 text-white px-3 py-2 ring-1 ring-blue-500">
+              <span class="grid h-6 w-6 place-items-center rounded-lg bg-white/20 text-xs font-bold">2</span>
+              <span class="font-semibold">Estudios de imagen <span class="opacity-80">· actual</span></span>
+            </div>
+            <a href="respiratorio-funcionales.html" class="flex items-center gap-2 rounded-xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 px-3 py-2 hover:ring-blue-300 dark:hover:ring-blue-500/40 transition">
+              <span class="grid h-6 w-6 place-items-center rounded-lg bg-slate-200 dark:bg-slate-700 text-xs font-bold text-slate-600 dark:text-slate-300">3</span>
+              <span class="text-slate-700 dark:text-slate-300">Pruebas funcionales respiratorias</span>
+            </a>
+            <a href="respiratorio-procedimientos.html" class="flex items-center gap-2 rounded-xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 px-3 py-2 hover:ring-blue-300 dark:hover:ring-blue-500/40 transition">
+              <span class="grid h-6 w-6 place-items-center rounded-lg bg-slate-200 dark:bg-slate-700 text-xs font-bold text-slate-600 dark:text-slate-300">4</span>
+              <span class="text-slate-700 dark:text-slate-300">Procedimientos especializados</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== 1. Radiografía de tórax ===== -->
+      <section class="mt-12">
+        <div class="flex items-center gap-3">
+          <span class="grid h-9 w-9 place-items-center rounded-xl bg-blue-500 text-white font-extrabold">1</span>
+          <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Radiografía de tórax</h2>
+        </div>
+
+        <article class="mt-5 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="grid md:grid-cols-[34%_1fr]">
+            <figure class="relative aspect-[4/3] md:aspect-auto md:min-h-[12rem] bg-slate-100 dark:bg-slate-800">
+              <img src="IMG/respiratorio/radiografia-torax.webp" alt="Radiografía de tórax" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-xs text-slate-400 p-3"><svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>radiografia-torax.webp</span></div>
+            </figure>
+            <div class="p-5">
+              <h3 class="font-bold text-lg text-slate-900 dark:text-white">Radiografía de tórax</h3>
+              <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">Estudio de diagnóstico por imágenes que utiliza una pequeña cantidad de radiación ionizante (rayos X) para obtener imágenes bidimensionales del corazón, los pulmones, las vías respiratorias, los vasos sanguíneos, la tráquea, la pleura, la pared torácica y los huesos del tórax. Es uno de los exámenes de imagen más solicitados por ser rápido, no invasivo, de bajo costo y de gran utilidad para diagnosticar y controlar diversas enfermedades respiratorias y cardiovasculares, así como lesiones traumáticas del tórax. Existen dos proyecciones principales: posteroanterior (PA) y lateral.</p>
+              <p class="mt-3 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">Se emplea para detectar múltiples patologías como neumonía, tuberculosis, derrame pleural, neumotórax, insuficiencia cardíaca, EPOC, enfisema, cáncer de pulmón, masas pulmonares y fracturas costales.</p>
+
+              <p class="mt-3 text-xs font-bold uppercase tracking-wide text-blue-700 dark:text-blue-300">Función / ¿para qué sirve?</p>
+              <div class="mt-1 grid sm:grid-cols-2 gap-x-6 gap-y-1 text-sm text-slate-600 dark:text-slate-400">
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Evaluar el estado de los pulmones y el corazón.</div>
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Detectar neumonía, tuberculosis, enfisema y cáncer de pulmón.</div>
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Identificar fracturas de costillas y lesiones torácicas.</div>
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Detectar derrame pleural (líquido) o neumotórax (aire).</div>
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Verificar la colocación de catéteres y tubos endotraqueales.</div>
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Monitorear la evolución y la respuesta al tratamiento.</div>
+              </div>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 p-5 space-y-4">
+            <div>
+              <p class="text-xs font-bold uppercase tracking-wide text-blue-700 dark:text-blue-300">Interpretación / hallazgos</p>
+              <div class="mt-2 flex flex-wrap gap-2 text-xs">
+                <span class="rounded-full bg-emerald-100 dark:bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 px-2.5 py-1 font-medium">Pulmones claros y simétricos → normal</span>
+                <span class="rounded-full bg-amber-100 dark:bg-amber-500/15 text-amber-700 dark:text-amber-300 px-2.5 py-1 font-medium">Opacidades → infección, edema o tumor</span>
+                <span class="rounded-full bg-amber-100 dark:bg-amber-500/15 text-amber-700 dark:text-amber-300 px-2.5 py-1 font-medium">Líquido en base pulmonar → derrame pleural</span>
+                <span class="rounded-full bg-rose-100 dark:bg-rose-500/15 text-rose-700 dark:text-rose-300 px-2.5 py-1 font-medium">Aire fuera del pulmón → neumotórax</span>
+              </div>
+            </div>
+            <div>
+              <p class="text-xs font-bold uppercase tracking-wide text-blue-700 dark:text-blue-300 mb-2">Intervenciones de enfermería</p>
+              <div class="grid sm:grid-cols-3 gap-3 text-xs">
+                <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes</p><p class="text-slate-600 dark:text-slate-400">Verificar identidad, orden médica y posibilidad de embarazo (contraindicación relativa por radiación). Explicar el examen para reducir la ansiedad, solicitar el retiro de objetos metálicos (joyas, sostenes con aro, piercings, prótesis removibles), proporcionar bata y colocar al paciente en la posición indicada.</p></div>
+                <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3"><p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante</p><p class="text-slate-600 dark:text-slate-400">Colocar correctamente al paciente y asegurar que permanezca inmóvil. Indicarle que siga las instrucciones del tecnólogo: realizar una inspiración profunda y mantener la apnea unos segundos durante la toma. Brindar apoyo emocional y vigilar la seguridad del procedimiento.</p></div>
+                <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después</p><p class="text-slate-600 dark:text-slate-400">El paciente puede reanudar de inmediato sus actividades; no requiere cuidados especiales. Ayudarlo con sus pertenencias y si presenta mareo o debilidad, registrar el procedimiento en la historia clínica e informar que el médico interpretará los resultados y el informe radiológico.</p></div>
+              </div>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 px-5 py-3 text-xs text-slate-500 dark:text-slate-400 flex flex-wrap gap-x-4 gap-y-1">
+            <span class="font-semibold">Fuentes:</span>
+            <a href="https://gabeents.com/radiografia-de-torax-guia-completa-para-interpretacion/" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">gabeents.com</a>
+            <a href="https://www.radiologyinfo.org/en/info/chestrad" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">radiologyinfo.org</a>
+            <a href="https://www.radiologyinfo.org/en/info/chest-xray" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">radiologyinfo.org</a>
+            <a href="https://www.ncbi.nlm.nih.gov/books/NBK539860/" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">ncbi.nlm.nih.gov</a>
+          </div>
+        </article>
+      </section>
+
+      <!-- ===== 2. Tomografía computarizada (TC) de tórax ===== -->
+      <section class="mt-12">
+        <div class="flex items-center gap-3">
+          <span class="grid h-9 w-9 place-items-center rounded-xl bg-blue-500 text-white font-extrabold">2</span>
+          <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Tomografía computarizada (TC) de tórax</h2>
+        </div>
+
+        <article class="mt-5 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="grid md:grid-cols-[34%_1fr]">
+            <figure class="relative aspect-[4/3] md:aspect-auto md:min-h-[12rem] bg-slate-100 dark:bg-slate-800">
+              <img src="IMG/respiratorio/tc-torax.webp" alt="Tomografía computarizada de tórax" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-xs text-slate-400 p-3"><svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>tc-torax.webp</span></div>
+            </figure>
+            <div class="p-5">
+              <h3 class="font-bold text-lg text-slate-900 dark:text-white">Tomografía computarizada (TC) de tórax</h3>
+              <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">Estudio de diagnóstico por imágenes que utiliza rayos X y procesamiento computarizado para obtener imágenes detalladas y transversales del tórax con alta resolución. A diferencia de la radiografía convencional, la TC produce imágenes en múltiples cortes que permiten observar con mayor precisión los pulmones, el corazón, los vasos sanguíneos, la tráquea, el esófago, los ganglios linfáticos y las estructuras óseas. En algunos casos se administra un medio de contraste intravenoso para mejorar la visualización de determinadas estructuras y detectar alteraciones con mayor exactitud.</p>
+              <p class="mt-3 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">Es fundamental para diagnosticar embolia pulmonar, cáncer de pulmón, fibrosis pulmonar, infecciones complicadas, COVID-19 grave, derrames pleurales complejos y traumatismos torácicos.</p>
+
+              <p class="mt-3 text-xs font-bold uppercase tracking-wide text-blue-700 dark:text-blue-300">Función / ¿para qué sirve?</p>
+              <div class="mt-1 grid sm:grid-cols-2 gap-x-6 gap-y-1 text-sm text-slate-600 dark:text-slate-400">
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Detectar neumonía, enfisema, fibrosis pulmonar y tuberculosis.</div>
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Identificar tumores, nódulos pulmonares y metástasis.</div>
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Evaluar lesiones torácicas por traumatismos.</div>
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Diagnosticar enfermedades de la pleura y del mediastino.</div>
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Detectar derrames pleurales, neumotórax y abscesos.</div>
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Valorar los vasos sanguíneos del tórax con medio de contraste.</div>
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Guiar procedimientos como biopsias y drenajes.</div>
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Evaluar la respuesta al tratamiento y el seguimiento.</div>
+              </div>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 p-5 space-y-4">
+            <div>
+              <p class="text-xs font-bold uppercase tracking-wide text-blue-700 dark:text-blue-300">Modalidades y interpretación</p>
+              <p class="mt-1 text-xs text-slate-600 dark:text-slate-400">Puede realizarse con o sin contraste intravenoso — <span class="font-semibold">con contraste:</span> evalúa vasos sanguíneos (ej. embolia pulmonar); <span class="font-semibold">sin contraste:</span> evalúa parénquima pulmonar y lesiones estructurales. No tiene valores numéricos normales; se interpreta según hallazgos.</p>
+              <div class="mt-2 flex flex-wrap gap-2 text-xs">
+                <span class="rounded-full bg-emerald-100 dark:bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 px-2.5 py-1 font-medium">Pulmones sin lesiones → normal</span>
+                <span class="rounded-full bg-rose-100 dark:bg-rose-500/15 text-rose-700 dark:text-rose-300 px-2.5 py-1 font-medium">Defectos de llenado → embolia pulmonar</span>
+                <span class="rounded-full bg-amber-100 dark:bg-amber-500/15 text-amber-700 dark:text-amber-300 px-2.5 py-1 font-medium">Nódulos o masas → sospecha de neoplasia</span>
+                <span class="rounded-full bg-amber-100 dark:bg-amber-500/15 text-amber-700 dark:text-amber-300 px-2.5 py-1 font-medium">Vidrio esmerilado → infección o inflamación</span>
+              </div>
+            </div>
+            <div>
+              <p class="text-xs font-bold uppercase tracking-wide text-blue-700 dark:text-blue-300 mb-2">Intervenciones de enfermería</p>
+              <div class="grid sm:grid-cols-3 gap-3 text-xs">
+                <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes</p><p class="text-slate-600 dark:text-slate-400">Verificar identidad y orden médica; explicar el estudio para reducir la ansiedad. Si se usa contraste: confirmar alergia al contraste yodado, valorar la función renal (creatinina sérica), mantener ayuno de 4–6 h y canalizar una vía venosa permeable. Confirmar embarazo, retirar objetos metálicos y verificar el consentimiento informado.</p></div>
+                <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3"><p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante</p><p class="text-slate-600 dark:text-slate-400">Colocar al paciente sobre la mesa del tomógrafo, indicarle inmovilidad completa y que contenga la respiración cuando se solicite. Si se administra contraste, vigilar signos de reacción alérgica (disnea, prurito, urticaria, cambios de presión arterial) y brindar tranquilidad.</p></div>
+                <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después</p><p class="text-slate-600 dark:text-slate-400">Si se usó contraste, observar reacciones tardías, fomentar la hidratación para eliminarlo por vía renal y vigilar el sitio de venopunción. Registrar el procedimiento, informar que puede reanudar actividades y orientar para consultar si aparece disnea, erupciones o inflamación.</p></div>
+              </div>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 px-5 py-3 text-xs text-slate-500 dark:text-slate-400 flex flex-wrap gap-x-4 gap-y-1">
+            <span class="font-semibold">Fuentes:</span>
+            <a href="https://www.radiologyinfo.org/es/info/chestct" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">radiologyinfo.org</a>
+            <a href="https://www.mayoclinic.org/tests-procedures/ct-scan/about/pac-20393675" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">mayoclinic.org</a>
+            <a href="https://medlineplus.gov/spanish/ency/article/003330.htm" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">medlineplus.gov</a>
+            <a href="https://www.ncbi.nlm.nih.gov/books/NBK482369/" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">ncbi.nlm.nih.gov</a>
+          </div>
+        </article>
+      </section>
+
+      <!-- ===== 3. Angio-TC pulmonar ===== -->
+      <section class="mt-12">
+        <div class="flex items-center gap-3">
+          <span class="grid h-9 w-9 place-items-center rounded-xl bg-blue-500 text-white font-extrabold">3</span>
+          <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Angio-TC pulmonar</h2>
+        </div>
+
+        <article class="mt-5 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="grid md:grid-cols-[34%_1fr]">
+            <figure class="relative aspect-[4/3] md:aspect-auto md:min-h-[12rem] bg-slate-100 dark:bg-slate-800">
+              <img src="IMG/respiratorio/angio-tc-pulmonar.webp" alt="Angio-TC pulmonar" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-xs text-slate-400 p-3"><svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>angio-tc-pulmonar.webp</span></div>
+            </figure>
+            <div class="p-5">
+              <h3 class="font-bold text-lg text-slate-900 dark:text-white">Angio-TC pulmonar</h3>
+              <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">Conocida también como angiografía por tomografía computarizada de las arterias pulmonares, es un estudio que combina la tomografía computarizada (TC) con la administración de un medio de contraste yodado por vía intravenosa para obtener imágenes detalladas de las arterias pulmonares. Permite visualizar el flujo sanguíneo en los pulmones y detectar alteraciones en los vasos pulmonares, siendo el método de elección para el diagnóstico del tromboembolismo pulmonar (TEP).</p>
+
+              <p class="mt-3 text-xs font-bold uppercase tracking-wide text-blue-700 dark:text-blue-300">Función / ¿para qué sirve?</p>
+              <div class="mt-1 grid sm:grid-cols-2 gap-x-6 gap-y-1 text-sm text-slate-600 dark:text-slate-400">
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Detectar émbolos o coágulos en las arterias pulmonares.</div>
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Diagnosticar el tromboembolismo pulmonar (TEP) de forma rápida y precisa.</div>
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Evaluar el flujo sanguíneo hacia los pulmones.</div>
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Identificar aneurismas, malformaciones vasculares y otras alteraciones.</div>
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Valorar enfermedades del mediastino y del parénquima pulmonar.</div>
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Ayudar en la planificación del tratamiento médico o quirúrgico.</div>
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Evaluar la evolución y respuesta al tratamiento de enfermedades vasculares.</div>
+              </div>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 p-5 space-y-4">
+            <div>
+              <p class="text-xs font-bold uppercase tracking-wide text-blue-700 dark:text-blue-300 mb-2">Intervenciones de enfermería</p>
+              <div class="grid sm:grid-cols-3 gap-3 text-xs">
+                <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes</p><p class="text-slate-600 dark:text-slate-400">Verificar identidad y orden médica, explicar el procedimiento y confirmar antecedentes de alergia al contraste yodado. Valorar la función renal (creatinina sérica y tasa de filtración glomerular), mantener ayuno de 4–6 h, canalizar una vía venosa periférica de buen calibre para la inyección rápida del contraste, confirmar embarazo, retirar objetos metálicos y verificar el consentimiento informado.</p></div>
+                <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3"><p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante</p><p class="text-slate-600 dark:text-slate-400">Colocar al paciente en decúbito supino sobre la mesa del tomógrafo y asegurar inmovilidad total. Al administrar el contraste IV, vigilar constantemente reacciones adversas (urticaria, disnea, náuseas, hipotensión) e indicar cuándo realizar una inspiración profunda y contener la respiración para mejorar la calidad de las imágenes.</p></div>
+                <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después</p><p class="text-slate-600 dark:text-slate-400">Mantener al paciente en observación para detectar reacciones tardías al contraste, fomentar la hidratación (salvo contraindicación) para favorecer la eliminación renal y vigilar el sitio de venopunción. Registrar el procedimiento y orientar para consultar de inmediato ante disnea, erupciones, inflamación u otro signo de reacción alérgica.</p></div>
+              </div>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 px-5 py-3 text-xs text-slate-500 dark:text-slate-400 flex flex-wrap gap-x-4 gap-y-1">
+            <span class="font-semibold">Fuentes:</span>
+            <a href="https://www.radiologyinfo.org/en/info/angiocoroct" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">radiologyinfo.org</a>
+            <a href="https://www.radiologyinfo.org/es/info/angioct" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">radiologyinfo.org</a>
+            <a href="https://medlineplus.gov/ctscans.html" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">medlineplus.gov</a>
+          </div>
+        </article>
+      </section>
+
+      <!-- ===== 4. Resonancia magnética torácica ===== -->
+      <section class="mt-12">
+        <div class="flex items-center gap-3">
+          <span class="grid h-9 w-9 place-items-center rounded-xl bg-blue-500 text-white font-extrabold">4</span>
+          <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Resonancia magnética torácica</h2>
+        </div>
+
+        <article class="mt-5 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="grid md:grid-cols-[34%_1fr]">
+            <figure class="relative aspect-[4/3] md:aspect-auto md:min-h-[12rem] bg-slate-100 dark:bg-slate-800">
+              <img src="IMG/respiratorio/rm-toracica.webp" alt="Resonancia magnética torácica" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-xs text-slate-400 p-3"><svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>rm-toracica.webp</span></div>
+            </figure>
+            <div class="p-5">
+              <h3 class="font-bold text-lg text-slate-900 dark:text-white">Resonancia magnética torácica (RM)</h3>
+              <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">Estudio de diagnóstico por imágenes que utiliza un campo magnético potente, ondas de radio y un sistema computarizado para obtener imágenes detalladas de las estructuras del tórax, como el corazón, los pulmones, los grandes vasos sanguíneos, la pared torácica, el mediastino y los tejidos blandos. A diferencia de la tomografía computarizada y la radiografía, la RM no utiliza radiación ionizante, lo que la convierte en una alternativa segura para determinadas indicaciones clínicas.</p>
+
+              <p class="mt-3 text-xs font-bold uppercase tracking-wide text-blue-700 dark:text-blue-300">Función / ¿para qué sirve?</p>
+              <div class="mt-1 grid sm:grid-cols-2 gap-x-6 gap-y-1 text-sm text-slate-600 dark:text-slate-400">
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Evaluar enfermedades del corazón y de los grandes vasos.</div>
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Detectar tumores del tórax y valorar su extensión.</div>
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Identificar alteraciones del mediastino, pared torácica y tejidos blandos.</div>
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Diagnosticar enfermedades congénitas del tórax.</div>
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Evaluar lesiones traumáticas de músculos, vasos y estructuras torácicas.</div>
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Complementar la radiografía o la TC cuando no bastan.</div>
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Ayudar en la planificación del tratamiento y el seguimiento.</div>
+              </div>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 p-5 space-y-4">
+            <div>
+              <p class="text-xs font-bold uppercase tracking-wide text-blue-700 dark:text-blue-300 mb-2">Intervenciones de enfermería</p>
+              <div class="grid sm:grid-cols-3 gap-3 text-xs">
+                <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes</p><p class="text-slate-600 dark:text-slate-400">Verificar identidad y orden médica, explicar el procedimiento y resolver dudas. Comprobar que el paciente no tenga implantes o dispositivos metálicos incompatibles, solicitar el retiro de objetos metálicos y, si se usará contraste, valorar la función renal y canalizar una vía venosa. Confirmar embarazo o claustrofobia.</p></div>
+                <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3"><p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante</p><p class="text-slate-600 dark:text-slate-400">Ayudar a colocar correctamente al paciente y asegurar que permanezca inmóvil durante el estudio. Proporcionar protectores auditivos, mantener comunicación con el paciente y vigilar posibles reacciones al medio de contraste si se administra.</p></div>
+                <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después</p><p class="text-slate-600 dark:text-slate-400">El paciente puede retomar sus actividades habituales. Si se usó contraste, recomendar buena hidratación y vigilar posibles reacciones adversas. Registrar el procedimiento e informar que el médico interpretará los resultados.</p></div>
+              </div>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 px-5 py-3 text-xs text-slate-500 dark:text-slate-400 flex flex-wrap gap-x-4 gap-y-1">
+            <span class="font-semibold">Fuentes:</span>
+            <a href="https://medlineplus.gov/spanish/ency/article/003794.htm" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">medlineplus.gov</a>
+            <a href="https://www.nibib.nih.gov/science-education/science-topics/magnetic-resonance-imaging-mri" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">nibib.nih.gov</a>
+            <a href="https://www.mayoclinic.org/tests-procedures/mri/about/pac-20384768" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">mayoclinic.org</a>
+          </div>
+        </article>
+      </section>
+
+      <!-- ===== 5. Ecografía pulmonar ===== -->
+      <section class="mt-12">
+        <div class="flex items-center gap-3">
+          <span class="grid h-9 w-9 place-items-center rounded-xl bg-blue-500 text-white font-extrabold">5</span>
+          <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Ecografía pulmonar</h2>
+        </div>
+
+        <article class="mt-5 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="grid md:grid-cols-[34%_1fr]">
+            <figure class="relative aspect-[4/3] md:aspect-auto md:min-h-[12rem] bg-slate-100 dark:bg-slate-800">
+              <img src="IMG/respiratorio/ecografia-pulmonar.webp" alt="Ecografía pulmonar" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-xs text-slate-400 p-3"><svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>ecografia-pulmonar.webp</span></div>
+            </figure>
+            <div class="p-5">
+              <h3 class="font-bold text-lg text-slate-900 dark:text-white">Ecografía pulmonar</h3>
+              <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">Estudio de diagnóstico por imágenes que utiliza ondas sonoras de alta frecuencia (ultrasonido) para evaluar la pleura, los pulmones y otras estructuras del tórax. Aunque el aire de los pulmones limita la visualización directa del tejido pulmonar, esta técnica permite identificar alteraciones mediante la interpretación de imágenes y artefactos ecográficos. Es un procedimiento seguro, no invasivo, indoloro y libre de radiación ionizante, por lo que puede realizarse repetidamente y es de gran utilidad en urgencias, cuidados intensivos y hospitalización.</p>
+
+              <p class="mt-3 text-xs font-bold uppercase tracking-wide text-blue-700 dark:text-blue-300">Función / ¿para qué sirve?</p>
+              <div class="mt-1 grid sm:grid-cols-2 gap-x-6 gap-y-1 text-sm text-slate-600 dark:text-slate-400">
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Detectar derrame pleural (líquido alrededor de los pulmones).</div>
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Identificar neumotórax (aire en el espacio pleural).</div>
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Apoyar el diagnóstico de neumonía y otras enfermedades pulmonares.</div>
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Evaluar edema pulmonar e insuficiencia cardíaca (líneas B).</div>
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Guiar la toracocentesis y la colocación de drenajes pleurales.</div>
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Monitorear la evolución y la respuesta al tratamiento.</div>
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Valorar rápidamente a pacientes con disnea en emergencias.</div>
+              </div>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 p-5 space-y-4">
+            <div>
+              <p class="text-xs font-bold uppercase tracking-wide text-blue-700 dark:text-blue-300 mb-2">Intervenciones de enfermería</p>
+              <div class="grid sm:grid-cols-3 gap-3 text-xs">
+                <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes</p><p class="text-slate-600 dark:text-slate-400">Confirmar la identidad del paciente y la solicitud médica, explicar de forma sencilla en qué consiste el examen para brindar confianza y ayudar a colocarlo en la posición adecuada. Este estudio no requiere preparación especial ni ayuno en la mayoría de los casos.</p></div>
+                <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3"><p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante</p><p class="text-slate-600 dark:text-slate-400">Colaborar para que el paciente permanezca cómodo y en la posición indicada mientras el profesional aplica gel sobre el tórax y desplaza el transductor para obtener las imágenes. Ofrecer apoyo si el paciente presenta dificultad para movilizarse o respirar.</p></div>
+                <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después</p><p class="text-slate-600 dark:text-slate-400">Retirar el gel de la piel; el paciente puede continuar con sus actividades habituales, ya que la ecografía no ocasiona molestias ni efectos secundarios. Registrar la realización del procedimiento y verificar que el paciente se encuentre en buenas condiciones.</p></div>
+              </div>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 px-5 py-3 text-xs text-slate-500 dark:text-slate-400 flex flex-wrap gap-x-4 gap-y-1">
+            <span class="font-semibold">Fuentes:</span>
+            <a href="https://medlineplus.gov/lab-tests/sonogram/" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">medlineplus.gov</a>
+            <a href="https://avum.org/wp-content/uploads/2023/06/5_R_2023_31.pdf" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">avum.org</a>
+          </div>
+        </article>
+      </section>
+
+      <!-- ===== 6. Gammagrafía V/Q y PET-CT ===== -->
+      <section class="mt-12">
+        <div class="flex items-center gap-3">
+          <span class="grid h-9 w-9 place-items-center rounded-xl bg-blue-500 text-white font-extrabold">6</span>
+          <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Gammagrafía de ventilación/perfusión (V/Q) y PET-CT</h2>
+        </div>
+
+        <article class="mt-5 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="grid md:grid-cols-[34%_1fr]">
+            <figure class="relative aspect-[4/3] md:aspect-auto md:min-h-[12rem] bg-slate-100 dark:bg-slate-800">
+              <img src="IMG/respiratorio/gammagrafia-vq-petct.webp" alt="Gammagrafía V/Q y PET-CT" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-xs text-slate-400 p-3"><svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>gammagrafia-vq-petct.webp</span></div>
+            </figure>
+            <div class="p-5">
+              <h3 class="font-bold text-lg text-slate-900 dark:text-white">Estudio de medicina nuclear (Gammagrafía V/Q · PET-CT)</h3>
+              <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">Estudios de medicina nuclear que emplean materiales radiactivos (radiofármacos) para valorar la función de los tejidos. La gammagrafía de ventilación/perfusión (V/Q) evalúa la entrada de aire y el flujo sanguíneo en los pulmones y es útil en el estudio del tromboembolismo pulmonar. La PET-CT combina la tomografía por emisión de positrones (PET) con la tomografía computarizada (CT), lo que permite obtener imágenes tanto de la estructura anatómica como de la actividad metabólica de los tejidos, facilitando la detección temprana de enfermedades como el cáncer, los trastornos neurológicos y las enfermedades cardiovasculares.</p>
+
+              <p class="mt-3 text-xs font-bold uppercase tracking-wide text-blue-700 dark:text-blue-300">Función / ¿para qué sirve?</p>
+              <div class="mt-1 grid sm:grid-cols-2 gap-x-6 gap-y-1 text-sm text-slate-600 dark:text-slate-400">
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Detectar tumores y localizar su extensión.</div>
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Identificar metástasis en diferentes órganos.</div>
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Evaluar la respuesta a tratamientos oncológicos.</div>
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Detectar recurrencia del cáncer.</div>
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Diagnosticar algunas enfermedades neurológicas y cardíacas.</div>
+                <div class="flex gap-2"><span class="text-blue-500">•</span>Diferenciar tejido sano de tejido con actividad metabólica anormal.</div>
+              </div>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 p-5 space-y-4">
+            <div>
+              <p class="text-xs font-bold uppercase tracking-wide text-blue-700 dark:text-blue-300 mb-2">Intervenciones de enfermería</p>
+              <div class="grid sm:grid-cols-3 gap-3 text-xs">
+                <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes</p><p class="text-slate-600 dark:text-slate-400">Confirmar la identidad del paciente y revisar la indicación médica. Comprobar el cumplimiento del ayuno indicado (generalmente 4–6 h) y verificar los niveles de glucosa, especialmente en personas con diabetes. Investigar posibilidad de embarazo o lactancia, explicar el procedimiento para reducir la ansiedad y solicitar el retiro de objetos metálicos que puedan interferir con las imágenes.</p></div>
+                <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3"><p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante</p><p class="text-slate-600 dark:text-slate-400">Se administra el radiofármaco por vía intravenosa y se mantiene al paciente en reposo el tiempo necesario para que la sustancia se distribuya en el organismo. Después, ayudar a colocarlo correctamente en la camilla del tomógrafo e indicarle permanecer completamente inmóvil mientras se obtienen las imágenes, supervisando su estado y atendiendo cualquier molestia.</p></div>
+                <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después</p><p class="text-slate-600 dark:text-slate-400">Recomendar incrementar el consumo de agua para favorecer la eliminación del radiofármaco. El paciente puede reiniciar sus actividades salvo indicación contraria. Informar sobre las precauciones temporales por exposición a la radiación y vigilar molestias en el sitio de inyección o reacciones inesperadas, aunque son poco frecuentes.</p></div>
+              </div>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 px-5 py-3 text-xs text-slate-500 dark:text-slate-400 flex flex-wrap gap-x-4 gap-y-1">
+            <span class="font-semibold">Fuentes:</span>
+            <a href="https://www.radiologyinfo.org/es/info/pet" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">radiologyinfo.org</a>
+            <a href="https://medlineplus.gov/spanish/pruebas-de-laboratorio/gammagrafia-vq/" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">medlineplus.gov</a>
+            <a href="https://medlineplus.gov/spanish/ency/article/003828.htm" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">medlineplus.gov</a>
+          </div>
+        </article>
+      </section>
+
+      <div class="mt-12 flex items-center justify-between border-t border-slate-200 dark:border-slate-800 pt-6">
+        <a href="respiratorio.html" class="text-sm text-slate-500 hover:text-indigo-600 dark:hover:text-indigo-400">← Estudios de laboratorio</a>
+        <a href="respiratorio-funcionales.html"
+           class="inline-flex items-center gap-2 rounded-full bg-indigo-600 px-5 py-2.5 text-white text-sm font-semibold hover:bg-indigo-700">
+          Pruebas funcionales respiratorias →
+        </a>
+      </div>
+    </div>
+  </main>
+</div>
+<script>
+  function toggleTheme(){
+    const html = document.documentElement;
+    html.classList.toggle('dark');
+    localStorage.theme = html.classList.contains('dark') ? 'dark' : 'light';
+  }
+</script>
+
+  <!-- ===== Lightbox: clic en una imagen para ampliarla ===== -->
+  <div id="lightbox" class="fixed inset-0 z-[60] hidden items-center justify-center bg-black/80 backdrop-blur-sm p-4 cursor-zoom-out" onclick="closeLightbox()">
+    <button onclick="closeLightbox()" aria-label="Cerrar"
+            class="absolute top-4 right-4 h-11 w-11 rounded-full bg-white/10 hover:bg-white/20 ring-1 ring-white/30 text-white grid place-items-center">
+      <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <figure class="flex flex-col items-center gap-3" onclick="event.stopPropagation()">
+      <img id="lightbox-img" src="" alt="" class="max-h-[85vh] max-w-[92vw] rounded-xl shadow-2xl object-contain">
+      <figcaption id="lightbox-cap" class="text-sm text-white/80"></figcaption>
+    </figure>
+  </div>
+  <script>
+    (function(){
+      const box = document.getElementById('lightbox');
+      const big = document.getElementById('lightbox-img');
+      const cap = document.getElementById('lightbox-cap');
+      document.querySelectorAll('main img').forEach(function(el){
+        el.classList.add('cursor-zoom-in');
+        el.addEventListener('click', function(ev){
+          ev.preventDefault(); ev.stopPropagation();
+          big.src = el.currentSrc || el.src;
+          big.alt = el.alt || '';
+          cap.textContent = el.alt || '';
+          box.classList.remove('hidden'); box.classList.add('flex');
+          document.body.style.overflow = 'hidden';
+        });
+      });
+      window.closeLightbox = function(){
+        box.classList.add('hidden'); box.classList.remove('flex');
+        document.body.style.overflow = '';
+      };
+      document.addEventListener('keydown', function(e){ if(e.key === 'Escape') window.closeLightbox(); });
+    })();
+  </script>
+</body>
+</html>
