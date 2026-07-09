@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cuidados de enfermería y complicaciones · Enfermedades digestivas y hepáticas</title>
+  <script>
+    if (localStorage.theme === 'dark' ||
+        (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = { darkMode: 'class' }</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style> body { font-family: 'Inter', system-ui, sans-serif; } </style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-200 transition-colors duration-300">
+<div class="min-h-screen flex">
+
+  <!-- ============ BARRA LATERAL ============ -->
+  <aside id="sidebar"
+         class="fixed lg:sticky top-0 z-40 h-screen w-72 shrink-0 -translate-x-full lg:translate-x-0
+                transition-transform bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800 flex flex-col">
+    <div class="px-5 py-5 border-b border-slate-100 dark:border-slate-800">
+      <a href="index.html" class="flex items-center gap-3">
+        <span class="h-10 w-10 rounded-xl bg-indigo-600 text-white flex items-center justify-center">
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12h4l2 5 4-12 2 7h6"/></svg>
+        </span>
+        <span>
+          <span class="block font-extrabold text-slate-800 dark:text-white leading-tight">Wiki Diagnóstico</span>
+          <span class="block text-xs text-slate-400">UEPD-04 · Medios de Diagnóstico</span>
+        </span>
+      </a>
+    </div>
+    <nav class="flex-1 overflow-y-auto px-3 py-4 space-y-1 text-sm">
+      <a href="index.html"        class="block rounded-lg px-3 py-2 font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Carátula</a>
+      <a href="introduccion.html" class="block rounded-lg px-3 py-2 font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Introducción</a>
+      <div class="my-2 border-t border-slate-100 dark:border-slate-800"></div>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-sky-50 dark:hover:bg-sky-500/10 group-open:bg-sky-50 dark:group-open:bg-sky-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-sky-500"></span>
+            <span class="truncate text-sm font-semibold text-sky-700 dark:text-sky-300">Fluidos corporales</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-sky-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-sky-100 dark:border-sky-500/30 pl-2">
+          <a href="componentes.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-sky-50 dark:hover:bg-sky-500/10 hover:text-sky-700 dark:hover:text-sky-300 transition">Componentes de la sangre</a>
+          <a href="hemograma.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-sky-50 dark:hover:bg-sky-500/10 hover:text-sky-700 dark:hover:text-sky-300 transition">Hemograma con diferencial</a>
+          <a href="fluidos.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-sky-50 dark:hover:bg-sky-500/10 hover:text-sky-700 dark:hover:text-sky-300 transition">Análisis de fluidos biológicos</a>
+          <a href="frotis.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-sky-50 dark:hover:bg-sky-500/10 hover:text-sky-700 dark:hover:text-sky-300 transition">Frotis sanguíneo</a>
+        </div>
+      </details>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-emerald-50 dark:hover:bg-emerald-500/10 group-open:bg-emerald-50 dark:group-open:bg-emerald-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-emerald-500"></span>
+            <span class="truncate text-sm font-semibold text-emerald-700 dark:text-emerald-300">Medulograma</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-emerald-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-emerald-100 dark:border-emerald-500/30 pl-2">
+          <a href="medulograma.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-emerald-50 dark:hover:bg-emerald-500/10 hover:text-emerald-700 dark:hover:text-emerald-300 transition">Medulograma</a>
+        </div>
+      </details>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-rose-50 dark:hover:bg-rose-500/10 group-open:bg-rose-50 dark:group-open:bg-rose-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-rose-500"></span>
+            <span class="truncate text-sm font-semibold text-rose-700 dark:text-rose-300">Embarazo</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-rose-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-rose-100 dark:border-rose-500/30 pl-2">
+          <a href="embarazo.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-rose-50 dark:hover:bg-rose-500/10 hover:text-rose-700 dark:hover:text-rose-300 transition">Diagnóstico en el embarazo</a>
+        </div>
+      </details>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-fuchsia-50 dark:hover:bg-fuchsia-500/10 group-open:bg-fuchsia-50 dark:group-open:bg-fuchsia-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-fuchsia-500"></span>
+            <span class="truncate text-sm font-semibold text-fuchsia-700 dark:text-fuchsia-300">Trastornos autoinmunitarios</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-fuchsia-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-fuchsia-100 dark:border-fuchsia-500/30 pl-2">
+          <a href="autoinmunes.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-fuchsia-50 dark:hover:bg-fuchsia-500/10 hover:text-fuchsia-700 dark:hover:text-fuchsia-300 transition">Trastornos autoinmunitarios</a>
+        </div>
+      </details>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-purple-50 dark:hover:bg-purple-500/10 group-open:bg-purple-50 dark:group-open:bg-purple-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-purple-500"></span>
+            <span class="truncate text-sm font-semibold text-purple-700 dark:text-purple-300">Neoplasias</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-purple-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-purple-100 dark:border-purple-500/30 pl-2">
+          <a href="oncologia.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-purple-50 dark:hover:bg-purple-500/10 hover:text-purple-700 dark:hover:text-purple-300 transition">Oncología y neoplasias</a>
+        </div>
+      </details>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-orange-50 dark:hover:bg-orange-500/10 group-open:bg-orange-50 dark:group-open:bg-orange-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-orange-500"></span>
+            <span class="truncate text-sm font-semibold text-orange-700 dark:text-orange-300">Sistema osteomioarticular</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-orange-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-orange-100 dark:border-orange-500/30 pl-2">
+          <a href="soma.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-orange-50 dark:hover:bg-orange-500/10 hover:text-orange-700 dark:hover:text-orange-300 transition">Sistema osteomioarticular</a>
+        </div>
+      </details>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-cyan-50 dark:hover:bg-cyan-500/10 group-open:bg-cyan-50 dark:group-open:bg-cyan-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-cyan-500"></span>
+            <span class="truncate text-sm font-semibold text-cyan-700 dark:text-cyan-300">Estudios neurológicos</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-cyan-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-cyan-100 dark:border-cyan-500/30 pl-2">
+          <a href="neurologia.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-cyan-50 dark:hover:bg-cyan-500/10 hover:text-cyan-700 dark:hover:text-cyan-300 transition">Neurología avanzada</a>
+        </div>
+      </details>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-teal-50 dark:hover:bg-teal-500/10 group-open:bg-teal-50 dark:group-open:bg-teal-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-teal-500"></span>
+            <span class="truncate text-sm font-semibold text-teal-700 dark:text-teal-300">Sistema genitourinario</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-teal-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-teal-100 dark:border-teal-500/30 pl-2">
+          <a href="genitourinario.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-teal-50 dark:hover:bg-teal-500/10 hover:text-teal-700 dark:hover:text-teal-300 transition">Sistema genitourinario</a>
+          <a href="pruebas-urinarias.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-teal-50 dark:hover:bg-teal-500/10 hover:text-teal-700 dark:hover:text-teal-300 transition">Pruebas diagnósticas urinarias</a>
+        </div>
+      </details>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-amber-50 dark:hover:bg-amber-500/10 group-open:bg-amber-50 dark:group-open:bg-amber-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-amber-500"></span>
+            <span class="truncate text-sm font-semibold text-amber-700 dark:text-amber-300">Sistema endocrino-metabólico</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-amber-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-amber-100 dark:border-amber-500/30 pl-2">
+          <a href="endocrino.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-amber-50 dark:hover:bg-amber-500/10 hover:text-amber-700 dark:hover:text-amber-300 transition">Estudios de laboratorio</a>
+          <a href="endocrino-imagen.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-amber-50 dark:hover:bg-amber-500/10 hover:text-amber-700 dark:hover:text-amber-300 transition">Estudios imagenológicos</a>
+          <a href="endocrino-patologia.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-amber-50 dark:hover:bg-amber-500/10 hover:text-amber-700 dark:hover:text-amber-300 transition">Estudios anatomopatológicos</a>
+        </div>
+      </details>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-blue-50 dark:hover:bg-blue-500/10 group-open:bg-blue-50 dark:group-open:bg-blue-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-blue-500"></span>
+            <span class="truncate text-sm font-semibold text-blue-700 dark:text-blue-300">Sistema respiratorio</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-blue-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-blue-100 dark:border-blue-500/30 pl-2">
+          <a href="respiratorio.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-blue-50 dark:hover:bg-blue-500/10 hover:text-blue-700 dark:hover:text-blue-300 transition">Estudios de laboratorio</a>
+          <a href="respiratorio-imagen.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-blue-50 dark:hover:bg-blue-500/10 hover:text-blue-700 dark:hover:text-blue-300 transition">Estudios de imagen</a>
+          <a href="respiratorio-funcionales.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-blue-50 dark:hover:bg-blue-500/10 hover:text-blue-700 dark:hover:text-blue-300 transition">Pruebas funcionales respiratorias</a>
+          <a href="respiratorio-procedimientos.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-blue-50 dark:hover:bg-blue-500/10 hover:text-blue-700 dark:hover:text-blue-300 transition">Procedimientos especializados</a>
+        </div>
+      </details>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-red-50 dark:hover:bg-red-500/10 group-open:bg-red-50 dark:group-open:bg-red-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-red-500"></span>
+            <span class="truncate text-sm font-semibold text-red-700 dark:text-red-300">Sistema cardiovascular</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-red-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-red-100 dark:border-red-500/30 pl-2">
+          <a href="cardiovascular.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-red-50 dark:hover:bg-red-500/10 hover:text-red-700 dark:hover:text-red-300 transition">Estudios de laboratorio</a>
+          <a href="cardiovascular-imagen.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-red-50 dark:hover:bg-red-500/10 hover:text-red-700 dark:hover:text-red-300 transition">Estudios de imagen</a>
+          <a href="cardiovascular-funcionales.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-red-50 dark:hover:bg-red-500/10 hover:text-red-700 dark:hover:text-red-300 transition">Estudios electrofisiológicos y funcionales</a>
+          <a href="cardiovascular-procedimientos.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-red-50 dark:hover:bg-red-500/10 hover:text-red-700 dark:hover:text-red-300 transition">Procedimientos invasivos y estudios vasculares</a>
+        </div>
+      </details>
+      <details class="group" open>
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-lime-50 dark:hover:bg-lime-500/10 group-open:bg-lime-50 dark:group-open:bg-lime-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-lime-500"></span>
+            <span class="truncate text-sm font-semibold text-lime-700 dark:text-lime-300">Enfermedades digestivas y hepáticas</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-lime-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-lime-100 dark:border-lime-500/30 pl-2">
+          <a href="digestivo.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-lime-50 dark:hover:bg-lime-500/10 hover:text-lime-700 dark:hover:text-lime-300 transition">Estudios de laboratorio</a>
+          <a href="digestivo-imagen.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-lime-50 dark:hover:bg-lime-500/10 hover:text-lime-700 dark:hover:text-lime-300 transition">Estudios por imagen</a>
+          <a href="digestivo-endoscopicos.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-lime-50 dark:hover:bg-lime-500/10 hover:text-lime-700 dark:hover:text-lime-300 transition">Estudios endoscópicos</a>
+          <a href="digestivo-funcionales.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-lime-50 dark:hover:bg-lime-500/10 hover:text-lime-700 dark:hover:text-lime-300 transition">Estudios funcionales</a>
+          <a href="digestivo-patologia.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-lime-50 dark:hover:bg-lime-500/10 hover:text-lime-700 dark:hover:text-lime-300 transition">Estudios anatomopatológicos</a>
+          <a href="digestivo-hepaticos.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-lime-50 dark:hover:bg-lime-500/10 hover:text-lime-700 dark:hover:text-lime-300 transition">Estudios específicos hepáticos</a>
+          <a href="digestivo-cuidados.html" class="block rounded-lg px-3 py-1.5 font-semibold bg-lime-100 dark:bg-lime-500/20 text-lime-800 dark:text-lime-200">Cuidados de enfermería y complicaciones</a>
+        </div>
+      </details>
+      <div class="my-2 border-t border-slate-100 dark:border-slate-800"></div>
+      <a href="enlaces.html" class="block rounded-lg px-3 py-2 font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Enlaces y referencias</a>
+    </nav>
+    <div class="px-4 py-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
+      <span class="text-xs text-slate-400">© Proyecto académico</span>
+      <button onclick="toggleTheme()" aria-label="Cambiar tema"
+              class="h-9 w-9 rounded-full grid place-items-center ring-1 ring-slate-200 dark:ring-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 transition text-slate-600 dark:text-slate-300">
+        <svg class="dark:hidden h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="hidden dark:block h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path stroke-linecap="round" d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </button>
+    </div>
+  </aside>
+
+  <button onclick="document.getElementById('sidebar').classList.toggle('-translate-x-full')"
+          class="lg:hidden fixed bottom-5 right-5 z-50 h-12 w-12 rounded-full bg-indigo-600 text-white shadow-lg grid place-items-center">
+    <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+  </button>
+
+  <!-- ============ CONTENIDO ============ -->
+  <main class="flex-1 min-w-0">
+    <div class="max-w-4xl mx-auto px-6 py-10 lg:py-14">
+
+      <nav class="text-xs text-slate-400 mb-3">Inicio / Enfermedades digestivas y hepáticas / <span class="text-slate-600 dark:text-slate-300">Cuidados de enfermería y complicaciones</span></nav>
+
+      <div class="flex items-center gap-4">
+        <div class="h-12 w-1.5 rounded-full bg-lime-500"></div>
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">Cuidados de enfermería y complicaciones</h1>
+      </div>
+      <p class="mt-2 text-lime-700 dark:text-lime-300 font-semibold">Acciones de enfermería, complicaciones y cuidados posteriores</p>
+
+      <!-- ============ SECCIÓN 1 ============ -->
+      <section class="mt-12">
+        <div class="flex items-center gap-3">
+          <span class="grid h-9 w-9 place-items-center rounded-xl bg-lime-500 text-white font-extrabold">1</span>
+          <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Acciones e indicaciones de enfermería en los medios diagnósticos</h2>
+        </div>
+
+        <figure class="mt-6 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="relative aspect-[16/7] bg-slate-100 dark:bg-slate-800"><img src="IMG/digestivo/acciones-enfermeria.webp" alt="Acciones e indicaciones de enfermería en los medios diagnósticos" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-xs text-slate-400 p-3"><svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>IMG/digestivo/acciones-enfermeria.webp</span></div></div>
+        </figure>
+
+        <div class="mt-6 grid sm:grid-cols-3 gap-3 text-xs">
+          <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3">
+            <p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes del procedimiento</p>
+            <ul class="space-y-1 list-disc list-inside text-slate-600 dark:text-slate-400">
+              <li>Verificar la identidad del paciente.</li>
+              <li>Explicar el procedimiento y resolver dudas.</li>
+              <li>Obtener el consentimiento informado cuando corresponda.</li>
+              <li>Revisar antecedentes clínicos, alergias y medicamentos.</li>
+              <li>Verificar si requiere ayuno o preparación intestinal.</li>
+              <li>Comprobar resultados de laboratorio cuando sean necesarios.</li>
+              <li>Retirar objetos metálicos si el estudio lo requiere.</li>
+              <li>Registrar signos vitales basales.</li>
+              <li>Brindar apoyo emocional para disminuir la ansiedad.</li>
+            </ul>
+          </div>
+          <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3">
+            <p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante el procedimiento</p>
+            <ul class="space-y-1 list-disc list-inside text-slate-600 dark:text-slate-400">
+              <li>Aplicar medidas de bioseguridad y técnica aséptica.</li>
+              <li>Colocar al paciente en la posición adecuada.</li>
+              <li>Vigilar signos vitales y estado general.</li>
+              <li>Observar la aparición de dolor, sangrado o reacciones adversas.</li>
+              <li>Mantener una comunicación constante con el paciente.</li>
+              <li>Asistir al médico y proporcionar el material necesario.</li>
+              <li>Garantizar la comodidad y privacidad del paciente.</li>
+            </ul>
+          </div>
+          <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3">
+            <p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después del procedimiento</p>
+            <ul class="space-y-1 list-disc list-inside text-slate-600 dark:text-slate-400">
+              <li>Vigilar signos vitales y posibles complicaciones.</li>
+              <li>Controlar el sitio de punción o inserción si corresponde.</li>
+              <li>Valorar la presencia de dolor, hemorragia o infección.</li>
+              <li>Favorecer la hidratación cuando esté indicada.</li>
+              <li>Reiniciar la alimentación según indicación médica.</li>
+              <li>Educar al paciente sobre los cuidados posteriores y los signos de alarma.</li>
+              <li>Registrar en la historia clínica el procedimiento realizado y la evolución del paciente.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ SECCIÓN 2 ============ -->
+      <section class="mt-12">
+        <div class="flex items-center gap-3">
+          <span class="grid h-9 w-9 place-items-center rounded-xl bg-lime-500 text-white font-extrabold">2</span>
+          <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Complicaciones y cuidados posteriores de los principales estudios diagnósticos</h2>
+        </div>
+
+        <article class="mt-5 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 p-5">
+          <h3 class="font-bold text-lg text-slate-900 dark:text-white">1. Endoscopia digestiva alta</h3>
+          <div class="mt-3 grid sm:grid-cols-2 gap-3 text-xs">
+            <div class="rounded-xl bg-rose-50 dark:bg-rose-500/10 ring-1 ring-rose-100 dark:ring-rose-500/20 p-3"><p class="font-bold text-rose-700 dark:text-rose-300 mb-1">Complicaciones</p><ul class="space-y-1 list-disc list-inside text-slate-600 dark:text-slate-400"><li>Dolor o irritación de garganta.</li><li>Distensión abdominal por el aire utilizado.</li><li>Sangrado (especialmente si se realizó una biopsia).</li><li>Perforación del tubo digestivo (muy poco frecuente).</li><li>Reacciones a la sedación.</li></ul></div>
+            <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Cuidados posteriores</p><ul class="space-y-1 list-disc list-inside text-slate-600 dark:text-slate-400"><li>No comer ni beber hasta recuperar el reflejo de la deglución.</li><li>Descansar el resto del día si recibió sedación.</li><li>Evitar conducir o manejar maquinaria durante 24 horas.</li><li>Consultar al médico si presenta fiebre, dolor intenso, dificultad para respirar o sangrado.</li></ul></div>
+          </div>
+        </article>
+
+        <article class="mt-5 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 p-5">
+          <h3 class="font-bold text-lg text-slate-900 dark:text-white">2. Colonoscopia</h3>
+          <div class="mt-3 grid sm:grid-cols-2 gap-3 text-xs">
+            <div class="rounded-xl bg-rose-50 dark:bg-rose-500/10 ring-1 ring-rose-100 dark:ring-rose-500/20 p-3"><p class="font-bold text-rose-700 dark:text-rose-300 mb-1">Complicaciones</p><ul class="space-y-1 list-disc list-inside text-slate-600 dark:text-slate-400"><li>Gases y cólicos leves.</li><li>Sangrado después de una biopsia o extracción de pólipos.</li><li>Perforación intestinal (rara).</li><li>Reacciones a la sedación.</li></ul></div>
+            <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Cuidados posteriores</p><ul class="space-y-1 list-disc list-inside text-slate-600 dark:text-slate-400"><li>Beber abundante agua para recuperar líquidos.</li><li>Iniciar con alimentos ligeros.</li><li>Descansar el día del procedimiento.</li><li>Acudir al médico si presenta fiebre, dolor abdominal intenso o sangrado abundante.</li></ul></div>
+          </div>
+        </article>
+
+        <article class="mt-5 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 p-5">
+          <h3 class="font-bold text-lg text-slate-900 dark:text-white">3. Manometría esofágica</h3>
+          <div class="mt-3 grid sm:grid-cols-2 gap-3 text-xs">
+            <div class="rounded-xl bg-rose-50 dark:bg-rose-500/10 ring-1 ring-rose-100 dark:ring-rose-500/20 p-3"><p class="font-bold text-rose-700 dark:text-rose-300 mb-1">Complicaciones</p><ul class="space-y-1 list-disc list-inside text-slate-600 dark:text-slate-400"><li>Molestias en la nariz y garganta.</li><li>Náuseas o ganas de vomitar durante el examen.</li><li>Sangrado nasal leve (ocasional).</li></ul></div>
+            <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Cuidados posteriores</p><ul class="space-y-1 list-disc list-inside text-slate-600 dark:text-slate-400"><li>Reanudar la alimentación si no hay molestias importantes.</li><li>Hacer gárgaras con agua tibia si hay irritación.</li><li>Informar al médico si el dolor o el sangrado persisten.</li></ul></div>
+          </div>
+        </article>
+
+        <article class="mt-5 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 p-5">
+          <h3 class="font-bold text-lg text-slate-900 dark:text-white">4. Manometría anorrectal</h3>
+          <div class="mt-3 grid sm:grid-cols-2 gap-3 text-xs">
+            <div class="rounded-xl bg-rose-50 dark:bg-rose-500/10 ring-1 ring-rose-100 dark:ring-rose-500/20 p-3"><p class="font-bold text-rose-700 dark:text-rose-300 mb-1">Complicaciones</p><ul class="space-y-1 list-disc list-inside text-slate-600 dark:text-slate-400"><li>Leve molestia o presión en el recto.</li><li>Irritación pasajera.</li><li>Sangrado mínimo en casos poco frecuentes.</li></ul></div>
+            <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Cuidados posteriores</p><ul class="space-y-1 list-disc list-inside text-slate-600 dark:text-slate-400"><li>Retomar las actividades normales.</li><li>Mantener una adecuada higiene de la zona.</li><li>Consultar si aparece dolor intenso o sangrado abundante.</li></ul></div>
+          </div>
+        </article>
+
+        <article class="mt-5 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 p-5">
+          <h3 class="font-bold text-lg text-slate-900 dark:text-white">5. Prueba de aliento para Helicobacter pylori</h3>
+          <div class="mt-3 grid sm:grid-cols-2 gap-3 text-xs">
+            <div class="rounded-xl bg-rose-50 dark:bg-rose-500/10 ring-1 ring-rose-100 dark:ring-rose-500/20 p-3"><p class="font-bold text-rose-700 dark:text-rose-300 mb-1">Complicaciones</p><ul class="space-y-1 list-disc list-inside text-slate-600 dark:text-slate-400"><li>Generalmente no presenta complicaciones.</li><li>En ocasiones puede causar leves náuseas o malestar estomacal.</li></ul></div>
+            <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Cuidados posteriores</p><ul class="space-y-1 list-disc list-inside text-slate-600 dark:text-slate-400"><li>Reanudar la alimentación según las indicaciones médicas.</li><li>Continuar con las actividades habituales.</li></ul></div>
+          </div>
+        </article>
+
+        <article class="mt-5 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 p-5">
+          <h3 class="font-bold text-lg text-slate-900 dark:text-white">6. Prueba de ADN en materia fecal</h3>
+          <div class="mt-3 grid sm:grid-cols-2 gap-3 text-xs">
+            <div class="rounded-xl bg-rose-50 dark:bg-rose-500/10 ring-1 ring-rose-100 dark:ring-rose-500/20 p-3"><p class="font-bold text-rose-700 dark:text-rose-300 mb-1">Complicaciones</p><ul class="space-y-1 list-disc list-inside text-slate-600 dark:text-slate-400"><li>No presenta riesgos porque solo requiere una muestra de heces.</li></ul></div>
+            <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Cuidados posteriores</p><ul class="space-y-1 list-disc list-inside text-slate-600 dark:text-slate-400"><li>No necesita cuidados especiales.</li><li>Entregar la muestra siguiendo las instrucciones del laboratorio.</li></ul></div>
+          </div>
+        </article>
+
+        <article class="mt-5 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 p-5">
+          <h3 class="font-bold text-lg text-slate-900 dark:text-white">7. Biopsia hepática</h3>
+          <div class="mt-3 grid sm:grid-cols-2 gap-3 text-xs">
+            <div class="rounded-xl bg-rose-50 dark:bg-rose-500/10 ring-1 ring-rose-100 dark:ring-rose-500/20 p-3"><p class="font-bold text-rose-700 dark:text-rose-300 mb-1">Complicaciones</p><ul class="space-y-1 list-disc list-inside text-slate-600 dark:text-slate-400"><li>Dolor en el sitio de la punción o en el hombro derecho.</li><li>Sangrado.</li><li>Infección (poco frecuente).</li><li>Lesión de órganos cercanos (muy rara).</li></ul></div>
+            <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Cuidados posteriores</p><ul class="space-y-1 list-disc list-inside text-slate-600 dark:text-slate-400"><li>Permanecer en observación varias horas.</li><li>Guardar reposo durante 24 horas.</li><li>Evitar esfuerzos físicos y levantar peso por varios días.</li><li>Consultar inmediatamente si presenta fiebre, dificultad para respirar, dolor intenso o sangrado.</li></ul></div>
+          </div>
+        </article>
+      </section>
+
+      <div class="mt-12 flex items-center justify-between border-t border-slate-200 dark:border-slate-800 pt-6">
+        <a href="digestivo-hepaticos.html" class="text-sm text-slate-500 hover:text-indigo-600 dark:hover:text-indigo-400">← Estudios específicos hepáticos</a>
+        <a href="enlaces.html"
+           class="inline-flex items-center gap-2 rounded-full bg-indigo-600 px-5 py-2.5 text-white text-sm font-semibold hover:bg-indigo-700">
+          Enlaces y referencias →
+        </a>
+      </div>
+    </div>
+  </main>
+</div>
+<script>
+  function toggleTheme(){
+    const html = document.documentElement;
+    html.classList.toggle('dark');
+    localStorage.theme = html.classList.contains('dark') ? 'dark' : 'light';
+  }
+</script>
+
+  <!-- ===== Lightbox: clic en una imagen para ampliarla ===== -->
+  <div id="lightbox" class="fixed inset-0 z-[60] hidden items-center justify-center bg-black/80 backdrop-blur-sm p-4 cursor-zoom-out" onclick="closeLightbox()">
+    <button onclick="closeLightbox()" aria-label="Cerrar"
+            class="absolute top-4 right-4 h-11 w-11 rounded-full bg-white/10 hover:bg-white/20 ring-1 ring-white/30 text-white grid place-items-center">
+      <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <figure class="flex flex-col items-center gap-3" onclick="event.stopPropagation()">
+      <img id="lightbox-img" src="" alt="" class="max-h-[85vh] max-w-[92vw] rounded-xl shadow-2xl object-contain">
+      <figcaption id="lightbox-cap" class="text-sm text-white/80"></figcaption>
+    </figure>
+  </div>
+  <script>
+    (function(){
+      const box = document.getElementById('lightbox');
+      const big = document.getElementById('lightbox-img');
+      const cap = document.getElementById('lightbox-cap');
+      document.querySelectorAll('main img').forEach(function(el){
+        el.classList.add('cursor-zoom-in');
+        el.addEventListener('click', function(ev){
+          ev.preventDefault(); ev.stopPropagation();
+          big.src = el.currentSrc || el.src;
+          big.alt = el.alt || '';
+          cap.textContent = el.alt || '';
+          box.classList.remove('hidden'); box.classList.add('flex');
+          document.body.style.overflow = 'hidden';
+        });
+      });
+      window.closeLightbox = function(){
+        box.classList.add('hidden'); box.classList.remove('flex');
+        document.body.style.overflow = '';
+      };
+      document.addEventListener('keydown', function(e){ if(e.key === 'Escape') window.closeLightbox(); });
+    })();
+  </script>
+</body>
+</html>

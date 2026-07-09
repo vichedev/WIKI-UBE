@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estudios de laboratorio · Enfermedades digestivas y hepáticas</title>
+  <script>
+    if (localStorage.theme === 'dark' ||
+        (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = { darkMode: 'class' }</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style> body { font-family: 'Inter', system-ui, sans-serif; } </style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-200 transition-colors duration-300">
+<div class="min-h-screen flex">
+
+  <!-- ============ BARRA LATERAL ============ -->
+  <aside id="sidebar"
+         class="fixed lg:sticky top-0 z-40 h-screen w-72 shrink-0 -translate-x-full lg:translate-x-0
+                transition-transform bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800 flex flex-col">
+    <div class="px-5 py-5 border-b border-slate-100 dark:border-slate-800">
+      <a href="index.html" class="flex items-center gap-3">
+        <span class="h-10 w-10 rounded-xl bg-indigo-600 text-white flex items-center justify-center">
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12h4l2 5 4-12 2 7h6"/></svg>
+        </span>
+        <span>
+          <span class="block font-extrabold text-slate-800 dark:text-white leading-tight">Wiki Diagnóstico</span>
+          <span class="block text-xs text-slate-400">UEPD-04 · Medios de Diagnóstico</span>
+        </span>
+      </a>
+    </div>
+    <nav class="flex-1 overflow-y-auto px-3 py-4 space-y-1 text-sm">
+      <a href="index.html"        class="block rounded-lg px-3 py-2 font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Carátula</a>
+      <a href="introduccion.html" class="block rounded-lg px-3 py-2 font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Introducción</a>
+      <div class="my-2 border-t border-slate-100 dark:border-slate-800"></div>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-sky-50 dark:hover:bg-sky-500/10 group-open:bg-sky-50 dark:group-open:bg-sky-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-sky-500"></span>
+            <span class="truncate text-sm font-semibold text-sky-700 dark:text-sky-300">Fluidos corporales</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-sky-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-sky-100 dark:border-sky-500/30 pl-2">
+          <a href="componentes.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-sky-50 dark:hover:bg-sky-500/10 hover:text-sky-700 dark:hover:text-sky-300 transition">Componentes de la sangre</a>
+          <a href="hemograma.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-sky-50 dark:hover:bg-sky-500/10 hover:text-sky-700 dark:hover:text-sky-300 transition">Hemograma con diferencial</a>
+          <a href="fluidos.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-sky-50 dark:hover:bg-sky-500/10 hover:text-sky-700 dark:hover:text-sky-300 transition">Análisis de fluidos biológicos</a>
+          <a href="frotis.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-sky-50 dark:hover:bg-sky-500/10 hover:text-sky-700 dark:hover:text-sky-300 transition">Frotis sanguíneo</a>
+        </div>
+      </details>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-emerald-50 dark:hover:bg-emerald-500/10 group-open:bg-emerald-50 dark:group-open:bg-emerald-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-emerald-500"></span>
+            <span class="truncate text-sm font-semibold text-emerald-700 dark:text-emerald-300">Medulograma</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-emerald-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-emerald-100 dark:border-emerald-500/30 pl-2">
+          <a href="medulograma.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-emerald-50 dark:hover:bg-emerald-500/10 hover:text-emerald-700 dark:hover:text-emerald-300 transition">Medulograma</a>
+        </div>
+      </details>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-rose-50 dark:hover:bg-rose-500/10 group-open:bg-rose-50 dark:group-open:bg-rose-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-rose-500"></span>
+            <span class="truncate text-sm font-semibold text-rose-700 dark:text-rose-300">Embarazo</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-rose-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-rose-100 dark:border-rose-500/30 pl-2">
+          <a href="embarazo.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-rose-50 dark:hover:bg-rose-500/10 hover:text-rose-700 dark:hover:text-rose-300 transition">Diagnóstico en el embarazo</a>
+        </div>
+      </details>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-fuchsia-50 dark:hover:bg-fuchsia-500/10 group-open:bg-fuchsia-50 dark:group-open:bg-fuchsia-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-fuchsia-500"></span>
+            <span class="truncate text-sm font-semibold text-fuchsia-700 dark:text-fuchsia-300">Trastornos autoinmunitarios</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-fuchsia-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-fuchsia-100 dark:border-fuchsia-500/30 pl-2">
+          <a href="autoinmunes.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-fuchsia-50 dark:hover:bg-fuchsia-500/10 hover:text-fuchsia-700 dark:hover:text-fuchsia-300 transition">Trastornos autoinmunitarios</a>
+        </div>
+      </details>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-purple-50 dark:hover:bg-purple-500/10 group-open:bg-purple-50 dark:group-open:bg-purple-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-purple-500"></span>
+            <span class="truncate text-sm font-semibold text-purple-700 dark:text-purple-300">Neoplasias</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-purple-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-purple-100 dark:border-purple-500/30 pl-2">
+          <a href="oncologia.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-purple-50 dark:hover:bg-purple-500/10 hover:text-purple-700 dark:hover:text-purple-300 transition">Oncología y neoplasias</a>
+        </div>
+      </details>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-orange-50 dark:hover:bg-orange-500/10 group-open:bg-orange-50 dark:group-open:bg-orange-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-orange-500"></span>
+            <span class="truncate text-sm font-semibold text-orange-700 dark:text-orange-300">Sistema osteomioarticular</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-orange-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-orange-100 dark:border-orange-500/30 pl-2">
+          <a href="soma.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-orange-50 dark:hover:bg-orange-500/10 hover:text-orange-700 dark:hover:text-orange-300 transition">Sistema osteomioarticular</a>
+        </div>
+      </details>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-cyan-50 dark:hover:bg-cyan-500/10 group-open:bg-cyan-50 dark:group-open:bg-cyan-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-cyan-500"></span>
+            <span class="truncate text-sm font-semibold text-cyan-700 dark:text-cyan-300">Estudios neurológicos</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-cyan-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-cyan-100 dark:border-cyan-500/30 pl-2">
+          <a href="neurologia.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-cyan-50 dark:hover:bg-cyan-500/10 hover:text-cyan-700 dark:hover:text-cyan-300 transition">Neurología avanzada</a>
+        </div>
+      </details>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-teal-50 dark:hover:bg-teal-500/10 group-open:bg-teal-50 dark:group-open:bg-teal-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-teal-500"></span>
+            <span class="truncate text-sm font-semibold text-teal-700 dark:text-teal-300">Sistema genitourinario</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-teal-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-teal-100 dark:border-teal-500/30 pl-2">
+          <a href="genitourinario.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-teal-50 dark:hover:bg-teal-500/10 hover:text-teal-700 dark:hover:text-teal-300 transition">Sistema genitourinario</a>
+          <a href="pruebas-urinarias.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-teal-50 dark:hover:bg-teal-500/10 hover:text-teal-700 dark:hover:text-teal-300 transition">Pruebas diagnósticas urinarias</a>
+        </div>
+      </details>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-amber-50 dark:hover:bg-amber-500/10 group-open:bg-amber-50 dark:group-open:bg-amber-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-amber-500"></span>
+            <span class="truncate text-sm font-semibold text-amber-700 dark:text-amber-300">Sistema endocrino-metabólico</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-amber-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-amber-100 dark:border-amber-500/30 pl-2">
+          <a href="endocrino.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-amber-50 dark:hover:bg-amber-500/10 hover:text-amber-700 dark:hover:text-amber-300 transition">Estudios de laboratorio</a>
+          <a href="endocrino-imagen.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-amber-50 dark:hover:bg-amber-500/10 hover:text-amber-700 dark:hover:text-amber-300 transition">Estudios imagenológicos</a>
+          <a href="endocrino-patologia.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-amber-50 dark:hover:bg-amber-500/10 hover:text-amber-700 dark:hover:text-amber-300 transition">Estudios anatomopatológicos</a>
+        </div>
+      </details>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-blue-50 dark:hover:bg-blue-500/10 group-open:bg-blue-50 dark:group-open:bg-blue-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-blue-500"></span>
+            <span class="truncate text-sm font-semibold text-blue-700 dark:text-blue-300">Sistema respiratorio</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-blue-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-blue-100 dark:border-blue-500/30 pl-2">
+          <a href="respiratorio.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-blue-50 dark:hover:bg-blue-500/10 hover:text-blue-700 dark:hover:text-blue-300 transition">Estudios de laboratorio</a>
+          <a href="respiratorio-imagen.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-blue-50 dark:hover:bg-blue-500/10 hover:text-blue-700 dark:hover:text-blue-300 transition">Estudios de imagen</a>
+          <a href="respiratorio-funcionales.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-blue-50 dark:hover:bg-blue-500/10 hover:text-blue-700 dark:hover:text-blue-300 transition">Pruebas funcionales respiratorias</a>
+          <a href="respiratorio-procedimientos.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-blue-50 dark:hover:bg-blue-500/10 hover:text-blue-700 dark:hover:text-blue-300 transition">Procedimientos especializados</a>
+        </div>
+      </details>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-red-50 dark:hover:bg-red-500/10 group-open:bg-red-50 dark:group-open:bg-red-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-red-500"></span>
+            <span class="truncate text-sm font-semibold text-red-700 dark:text-red-300">Sistema cardiovascular</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-red-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-red-100 dark:border-red-500/30 pl-2">
+          <a href="cardiovascular.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-red-50 dark:hover:bg-red-500/10 hover:text-red-700 dark:hover:text-red-300 transition">Estudios de laboratorio</a>
+          <a href="cardiovascular-imagen.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-red-50 dark:hover:bg-red-500/10 hover:text-red-700 dark:hover:text-red-300 transition">Estudios de imagen</a>
+          <a href="cardiovascular-funcionales.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-red-50 dark:hover:bg-red-500/10 hover:text-red-700 dark:hover:text-red-300 transition">Estudios electrofisiológicos y funcionales</a>
+          <a href="cardiovascular-procedimientos.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-red-50 dark:hover:bg-red-500/10 hover:text-red-700 dark:hover:text-red-300 transition">Procedimientos invasivos y estudios vasculares</a>
+        </div>
+      </details>
+      <details class="group" open>
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-lime-50 dark:hover:bg-lime-500/10 group-open:bg-lime-50 dark:group-open:bg-lime-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-lime-500"></span>
+            <span class="truncate text-sm font-semibold text-lime-700 dark:text-lime-300">Enfermedades digestivas y hepáticas</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-lime-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-lime-100 dark:border-lime-500/30 pl-2">
+          <a href="digestivo.html" class="block rounded-lg px-3 py-1.5 font-semibold bg-lime-100 dark:bg-lime-500/20 text-lime-800 dark:text-lime-200">Estudios de laboratorio</a>
+          <a href="digestivo-imagen.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-lime-50 dark:hover:bg-lime-500/10 hover:text-lime-700 dark:hover:text-lime-300 transition">Estudios por imagen</a>
+          <a href="digestivo-endoscopicos.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-lime-50 dark:hover:bg-lime-500/10 hover:text-lime-700 dark:hover:text-lime-300 transition">Estudios endoscópicos</a>
+          <a href="digestivo-funcionales.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-lime-50 dark:hover:bg-lime-500/10 hover:text-lime-700 dark:hover:text-lime-300 transition">Estudios funcionales</a>
+          <a href="digestivo-patologia.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-lime-50 dark:hover:bg-lime-500/10 hover:text-lime-700 dark:hover:text-lime-300 transition">Estudios anatomopatológicos</a>
+          <a href="digestivo-hepaticos.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-lime-50 dark:hover:bg-lime-500/10 hover:text-lime-700 dark:hover:text-lime-300 transition">Estudios específicos hepáticos</a>
+          <a href="digestivo-cuidados.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-lime-50 dark:hover:bg-lime-500/10 hover:text-lime-700 dark:hover:text-lime-300 transition">Cuidados de enfermería y complicaciones</a>
+        </div>
+      </details>
+      <div class="my-2 border-t border-slate-100 dark:border-slate-800"></div>
+      <a href="enlaces.html" class="block rounded-lg px-3 py-2 font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Enlaces y referencias</a>
+    </nav>
+    <div class="px-4 py-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
+      <span class="text-xs text-slate-400">© Proyecto académico</span>
+      <button onclick="toggleTheme()" aria-label="Cambiar tema"
+              class="h-9 w-9 rounded-full grid place-items-center ring-1 ring-slate-200 dark:ring-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 transition text-slate-600 dark:text-slate-300">
+        <svg class="dark:hidden h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="hidden dark:block h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path stroke-linecap="round" d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </button>
+    </div>
+  </aside>
+
+  <button onclick="document.getElementById('sidebar').classList.toggle('-translate-x-full')"
+          class="lg:hidden fixed bottom-5 right-5 z-50 h-12 w-12 rounded-full bg-indigo-600 text-white shadow-lg grid place-items-center">
+    <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+  </button>
+
+  <!-- ============ CONTENIDO ============ -->
+  <main class="flex-1 min-w-0">
+    <div class="max-w-4xl mx-auto px-6 py-10 lg:py-14">
+
+      <nav class="text-xs text-slate-400 mb-3">Inicio / Enfermedades digestivas y hepáticas / <span class="text-slate-600 dark:text-slate-300">Estudios de laboratorio</span></nav>
+
+      <div class="flex items-center gap-4">
+        <div class="h-12 w-1.5 rounded-full bg-lime-500"></div>
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">Estudios de laboratorio</h1>
+      </div>
+      <p class="mt-2 text-lime-700 dark:text-lime-300 font-semibold">Análisis de sangre, heces y marcadores bioquímicos</p>
+
+      <!-- ===== INTRODUCCIÓN (patrón H) ===== -->
+      <div class="mt-6 rounded-2xl bg-lime-50/60 dark:bg-lime-500/5 ring-1 ring-lime-100 dark:ring-lime-500/20 p-6 space-y-4">
+        <h2 class="text-xl font-bold text-slate-900 dark:text-white">Introducción</h2>
+
+        <figure class="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="relative aspect-[16/7] bg-slate-100 dark:bg-slate-800"><img src="IMG/digestivo/introduccion-digestivo.webp" alt="Medios diagnósticos de las enfermedades digestivas y hepáticas" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-xs text-slate-400 p-3"><svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>IMG/digestivo/introduccion-digestivo.webp</span></div></div>
+        </figure>
+
+        <p class="text-xs font-bold uppercase tracking-wide text-lime-700 dark:text-lime-300">Definición</p>
+        <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">Los medios diagnósticos de las enfermedades digestivas y hepáticas son el conjunto de procedimientos, pruebas de laboratorio, estudios de imagen y técnicas endoscópicas que permiten identificar, confirmar y evaluar las enfermedades que afectan el aparato digestivo y los órganos anexos, como el hígado, el páncreas y la vesícula biliar. Estos métodos ayudan a detectar alteraciones funcionales y estructurales, establecer un diagnóstico preciso, determinar la gravedad de la enfermedad y orientar el tratamiento más adecuado para cada paciente.</p>
+        <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">Actualmente, el diagnóstico de las enfermedades digestivas combina la información obtenida durante la historia clínica y el examen físico con pruebas complementarias que ofrecen imágenes detalladas, análisis bioquímicos y evaluación directa de los órganos afectados. Gracias a estos avances es posible detectar enfermedades en etapas tempranas, mejorar el pronóstico y reducir las complicaciones.</p>
+
+        <p class="text-xs font-bold uppercase tracking-wide text-lime-700 dark:text-lime-300">Objetivos de los medios diagnósticos</p>
+        <div class="grid sm:grid-cols-2 gap-x-6 gap-y-1 text-sm text-slate-600 dark:text-slate-400">
+          <div class="flex gap-2"><span class="text-lime-500">•</span>Detectar enfermedades del aparato digestivo y del hígado de manera temprana.</div>
+          <div class="flex gap-2"><span class="text-lime-500">•</span>Confirmar o descartar un diagnóstico clínico.</div>
+          <div class="flex gap-2"><span class="text-lime-500">•</span>Identificar la causa de los síntomas digestivos.</div>
+        </div>
+      </div>
+
+      <!-- ============================================================= -->
+      <!-- PARTE 1 · Estudios Diagnósticos de Laboratorio -->
+      <!-- ============================================================= -->
+
+      <!-- ===== 1.1 Perfil hepático (Hepatograma) ===== -->
+      <section class="mt-12">
+        <div class="flex items-center gap-3">
+          <span class="grid h-9 w-9 place-items-center rounded-xl bg-lime-500 text-white font-extrabold text-xs">1.1</span>
+          <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Perfil hepático (Hepatograma)</h2>
+        </div>
+
+        <article class="mt-5 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="grid md:grid-cols-[34%_1fr]">
+            <div class="relative bg-slate-100 dark:bg-slate-800 aspect-[4/3] md:aspect-auto md:min-h-[12rem]"><img src="IMG/digestivo/perfil-hepatico.webp" alt="Perfil hepático (Hepatograma)" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-xs text-slate-400 p-3"><svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>perfil-hepatico.webp</span></div></div>
+            <div class="p-5">
+              <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">El perfil hepático, también conocido como hepatograma, es un conjunto de análisis de laboratorio realizados en una muestra de sangre que permite evaluar el funcionamiento del hígado y detectar alteraciones en las células hepáticas o en las vías biliares. Es uno de los estudios más utilizados para el diagnóstico y seguimiento de enfermedades como hepatitis viral, hígado graso, cirrosis, colestasis, obstrucción biliar, daño hepático por medicamentos y trastornos metabólicos.</p>
+              <p class="mt-3 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">Este estudio no corresponde a una sola prueba, sino a un grupo de exámenes que analizan diferentes sustancias producidas por el hígado, entre ellas las enzimas hepáticas, la bilirrubina, la albúmina y el tiempo de protrombina. La interpretación conjunta de estos resultados permite al médico determinar si existe inflamación, lesión o alteración en la función hepática.</p>
+              <p class="mt-3 text-xs font-bold uppercase tracking-wide text-lime-700 dark:text-lime-300">Función</p>
+              <p class="mt-1 text-sm text-slate-600 dark:text-slate-400 leading-relaxed">El hepatograma tiene como finalidad valorar la salud del hígado, detectar de forma temprana enfermedades hepáticas, evaluar la gravedad del daño producido y controlar la evolución del paciente durante el tratamiento. También es útil para identificar alteraciones en la producción y eliminación de la bilis, valorar la capacidad del hígado para sintetizar proteínas y monitorizar pacientes que reciben medicamentos potencialmente hepatotóxicos.</p>
+              <p class="mt-3 text-xs font-bold uppercase tracking-wide text-lime-700 dark:text-lime-300">¿Qué evalúa?</p>
+              <p class="mt-1 text-sm text-slate-600 dark:text-slate-400 leading-relaxed">El perfil hepático evalúa principalmente el estado de las células del hígado, la presencia de inflamación o necrosis hepática, el funcionamiento de las vías biliares y la capacidad del órgano para producir proteínas y eliminar sustancias de desecho. Para ello incluye pruebas como ALT, AST, GGT, fosfatasa alcalina, bilirrubina total y fraccionada, albúmina y tiempo de protrombina.</p>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 p-5 space-y-4">
+            <p class="text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">Intervenciones de enfermería</p>
+            <div class="grid sm:grid-cols-3 gap-3 text-xs">
+              <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes</p><p class="text-slate-600 dark:text-slate-400">La enfermera verifica la identidad del paciente, revisa la orden médica y confirma si el examen requiere un ayuno de entre 8 y 12 horas. Además, explica el procedimiento para disminuir la ansiedad, pregunta sobre medicamentos, suplementos o consumo de alcohol que puedan modificar los resultados y prepara el material necesario para la extracción sanguínea.</p></div>
+              <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3"><p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante</p><p class="text-slate-600 dark:text-slate-400">Se obtiene la muestra de sangre mediante técnica aséptica, asegurando una correcta identificación del tubo de laboratorio. Durante la venopunción se vigila el estado general del paciente y se brinda apoyo si presenta ansiedad, mareo o molestias.</p></div>
+              <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después</p><p class="text-slate-600 dark:text-slate-400">Una vez obtenida la muestra, se comprime el sitio de punción para evitar hematomas y se envía la sangre al laboratorio en el menor tiempo posible. La enfermera registra el procedimiento realizado y comunica cualquier incidencia al equipo de salud.</p></div>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 px-5 py-3 text-xs text-slate-500 dark:text-slate-400 flex flex-wrap gap-x-4 gap-y-1">
+            <span class="font-semibold">Referencias:</span>
+            <a href="https://medlineplus.gov/lab-tests/liver-function-tests/" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">medlineplus.gov</a>
+            <a href="https://www.niddk.nih.gov/health-information/liver-disease" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">niddk.nih.gov</a>
+          </div>
+        </article>
+      </section>
+
+      <!-- ===== 1.2 Enzimas hepáticas ===== -->
+      <section class="mt-12">
+        <div class="flex items-center gap-3">
+          <span class="grid h-9 w-9 place-items-center rounded-xl bg-lime-500 text-white font-extrabold text-xs">1.2</span>
+          <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Enzimas hepáticas (ALT, AST, GGT y Fosfatasa alcalina)</h2>
+        </div>
+
+        <article class="mt-5 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="grid md:grid-cols-[34%_1fr]">
+            <div class="relative bg-slate-100 dark:bg-slate-800 aspect-[4/3] md:aspect-auto md:min-h-[12rem]"><img src="IMG/digestivo/enzimas-hepaticas.webp" alt="Enzimas hepáticas (ALT, AST, GGT y Fosfatasa alcalina)" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-xs text-slate-400 p-3"><svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>enzimas-hepaticas.webp</span></div></div>
+            <div class="p-5">
+              <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">Las enzimas hepáticas son proteínas que se encuentran principalmente dentro de las células del hígado y participan en diferentes procesos metabólicos. Cuando existe inflamación, lesión o destrucción del tejido hepático, estas enzimas se liberan al torrente sanguíneo, aumentando su concentración. Por esta razón, su medición constituye una herramienta fundamental para diagnosticar y controlar diversas enfermedades hepáticas y biliares.</p>
+              <p class="mt-3 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">Las enzimas más importantes son la ALT (alanina aminotransferasa), la AST (aspartato aminotransferasa), la GGT (gamma-glutamil transferasa) y la fosfatasa alcalina, ya que cada una aporta información específica sobre el tipo y la localización del daño hepático.</p>
+              <p class="mt-3 text-xs font-bold uppercase tracking-wide text-lime-700 dark:text-lime-300">Función</p>
+              <p class="mt-1 text-sm text-slate-600 dark:text-slate-400 leading-relaxed">La determinación de las enzimas hepáticas permite detectar lesiones del hígado incluso antes de que aparezcan síntomas clínicos. Además, ayuda a diferenciar enfermedades hepatocelulares de trastornos obstructivos de las vías biliares, evaluar la gravedad del daño hepático y monitorizar la respuesta al tratamiento.</p>
+              <p class="mt-3 text-xs font-bold uppercase tracking-wide text-lime-700 dark:text-lime-300">¿Qué evalúa?</p>
+              <div class="mt-1 grid gap-y-1 text-sm text-slate-600 dark:text-slate-400">
+                <div class="flex gap-2"><span class="text-lime-500">•</span><span><strong class="text-slate-700 dark:text-slate-300">ALT:</strong> es la enzima más específica del hígado y aumenta principalmente cuando existe lesión de los hepatocitos.</span></div>
+                <div class="flex gap-2"><span class="text-lime-500">•</span><span><strong class="text-slate-700 dark:text-slate-300">AST:</strong> también se eleva en enfermedades hepáticas, aunque puede aumentar en lesiones musculares o cardíacas.</span></div>
+                <div class="flex gap-2"><span class="text-lime-500">•</span><span><strong class="text-slate-700 dark:text-slate-300">GGT:</strong> se incrementa especialmente en enfermedades de las vías biliares y en el consumo excesivo de alcohol.</span></div>
+                <div class="flex gap-2"><span class="text-lime-500">•</span><span><strong class="text-slate-700 dark:text-slate-300">Fosfatasa alcalina:</strong> suele elevarse cuando existe obstrucción biliar o enfermedades que afectan la circulación de la bilis.</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 p-5 space-y-4">
+            <p class="text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">Intervenciones de enfermería</p>
+            <div class="grid sm:grid-cols-3 gap-3 text-xs">
+              <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes</p><p class="text-slate-600 dark:text-slate-400">La enfermera verifica la identidad del paciente, confirma si el examen requiere ayuno, revisa los medicamentos que puedan alterar los resultados y explica el procedimiento de extracción de sangre.</p></div>
+              <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3"><p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante</p><p class="text-slate-600 dark:text-slate-400">Se realiza la venopunción con técnica aséptica, identificando correctamente la muestra y observando cualquier reacción adversa durante el procedimiento.</p></div>
+              <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después</p><p class="text-slate-600 dark:text-slate-400">Se comprime el sitio de punción, se envía la muestra al laboratorio y se registra el procedimiento realizado. Cuando los resultados muestran valores muy elevados, la enfermera informa oportunamente al equipo médico.</p></div>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 px-5 py-3 text-xs text-slate-500 dark:text-slate-400 flex flex-wrap gap-x-4 gap-y-1">
+            <span class="font-semibold">Referencias:</span>
+            <a href="https://medlineplus.gov/lab-tests/liver-function-tests/" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">medlineplus.gov</a>
+            <a href="https://medlineplus.gov/lab-tests/alanine-aminotransferase-alt-test/" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">medlineplus.gov</a>
+          </div>
+        </article>
+      </section>
+
+      <!-- ===== 1.3 Bilirrubina ===== -->
+      <section class="mt-12">
+        <div class="flex items-center gap-3">
+          <span class="grid h-9 w-9 place-items-center rounded-xl bg-lime-500 text-white font-extrabold text-xs">1.3</span>
+          <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Bilirrubina</h2>
+        </div>
+
+        <article class="mt-5 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="grid md:grid-cols-[34%_1fr]">
+            <div class="relative bg-slate-100 dark:bg-slate-800 aspect-[4/3] md:aspect-auto md:min-h-[12rem]"><img src="IMG/digestivo/bilirrubina.webp" alt="Bilirrubina" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-xs text-slate-400 p-3"><svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>bilirrubina.webp</span></div></div>
+            <div class="p-5">
+              <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">La bilirrubina es un pigmento de color amarillo que se forma como resultado de la destrucción normal de los glóbulos rojos. Posteriormente es transportada al hígado, donde es procesada y eliminada a través de la bilis hacia el intestino. La medición de la bilirrubina en sangre constituye una de las pruebas más importantes para evaluar la función hepática y detectar enfermedades del hígado, de la vesícula biliar y de las vías biliares.</p>
+              <p class="mt-3 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">La prueba incluye la medición de la bilirrubina total, la bilirrubina directa (conjugada) y la bilirrubina indirecta (no conjugada), lo que permite identificar el origen de la alteración y orientar el diagnóstico.</p>
+              <p class="mt-3 text-xs font-bold uppercase tracking-wide text-lime-700 dark:text-lime-300">Función</p>
+              <figure class="mt-2 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+                <div class="relative aspect-[16/7] bg-slate-100 dark:bg-slate-800"><img src="IMG/digestivo/bilirrubina-funcion.webp" alt="Función de la bilirrubina" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-xs text-slate-400 p-3"><svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>IMG/digestivo/bilirrubina-funcion.webp</span></div></div>
+              </figure>
+              <p class="mt-2 text-sm text-slate-600 dark:text-slate-400 leading-relaxed">La determinación de la bilirrubina ayuda a evaluar la capacidad del hígado para captar, transformar y eliminar este pigmento. También permite diagnosticar enfermedades como hepatitis, cirrosis, obstrucción de las vías biliares, cálculos biliares, anemia hemolítica y otras patologías que producen ictericia.</p>
+              <p class="mt-3 text-xs font-bold uppercase tracking-wide text-lime-700 dark:text-lime-300">¿Qué evalúa?</p>
+              <p class="mt-1 text-sm text-slate-600 dark:text-slate-400 leading-relaxed">Esta prueba evalúa la concentración de bilirrubina total, directa e indirecta en sangre, permitiendo identificar si existe daño hepatocelular, alteración del flujo biliar o aumento de la destrucción de glóbulos rojos. Sus resultados son fundamentales para determinar la causa de la ictericia y valorar la evolución de las enfermedades hepáticas.</p>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 p-5 space-y-4">
+            <p class="text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">Intervenciones de enfermería</p>
+            <div class="grid sm:grid-cols-3 gap-3 text-xs">
+              <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes</p><p class="text-slate-600 dark:text-slate-400">La enfermera verifica la identidad del paciente, confirma la orden médica y explica el procedimiento. Cuando está indicado, confirma el ayuno y revisa si el paciente recibe medicamentos que puedan modificar los resultados.</p></div>
+              <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3"><p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante</p><p class="text-slate-600 dark:text-slate-400">Se obtiene la muestra de sangre mediante técnica aséptica y se identifica correctamente el tubo. En algunos laboratorios se protege la muestra de la luz para evitar la degradación de la bilirrubina.</p></div>
+              <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después</p><p class="text-slate-600 dark:text-slate-400">Se comprime el sitio de punción para prevenir hematomas, se envía la muestra al laboratorio de forma inmediata y se registran los cuidados realizados. Si los resultados muestran valores elevados, la enfermera informa al equipo médico para una valoración oportuna.</p></div>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 px-5 py-3 text-xs text-slate-500 dark:text-slate-400 flex flex-wrap gap-x-4 gap-y-1">
+            <span class="font-semibold">Referencias:</span>
+            <a href="https://medlineplus.gov/lab-tests/bilirubin-blood-test/" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">medlineplus.gov</a>
+            <a href="https://www.niddk.nih.gov/health-information/liver-disease" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">niddk.nih.gov</a>
+          </div>
+        </article>
+      </section>
+
+      <!-- ===== 1.4 Albúmina y proteínas totales ===== -->
+      <section class="mt-12">
+        <div class="flex items-center gap-3">
+          <span class="grid h-9 w-9 place-items-center rounded-xl bg-lime-500 text-white font-extrabold text-xs">1.4</span>
+          <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Albúmina y proteínas totales</h2>
+        </div>
+
+        <article class="mt-5 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="grid md:grid-cols-[34%_1fr]">
+            <div class="relative bg-slate-100 dark:bg-slate-800 aspect-[4/3] md:aspect-auto md:min-h-[12rem]"><img src="IMG/digestivo/albumina-proteinas.webp" alt="Albúmina y proteínas totales" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-xs text-slate-400 p-3"><svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>albumina-proteinas.webp</span></div></div>
+            <div class="p-5">
+              <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">La albúmina es la proteína más abundante del plasma sanguíneo y es producida por el hígado. Cumple funciones esenciales como mantener la presión oncótica, transportar hormonas, vitaminas, medicamentos y otras sustancias a través de la sangre. Las proteínas totales corresponden a la suma de la albúmina y las globulinas, las cuales participan en la respuesta inmunitaria, la coagulación y el transporte de diferentes moléculas. La determinación de albúmina y proteínas totales es una prueba de laboratorio utilizada para evaluar el estado nutricional, la función hepática y renal, así como diversas enfermedades inflamatorias y crónicas.</p>
+              <p class="mt-3 text-xs font-bold uppercase tracking-wide text-lime-700 dark:text-lime-300">Función</p>
+              <p class="mt-1 text-sm text-slate-600 dark:text-slate-400 leading-relaxed">La prueba de albúmina y proteínas totales permite valorar la capacidad del hígado para sintetizar proteínas, identificar pérdidas anormales por enfermedad renal o intestinal y detectar alteraciones relacionadas con desnutrición, enfermedades hepáticas, infecciones crónicas, trastornos inmunológicos y algunos tipos de cáncer.</p>
+              <p class="mt-3 text-xs font-bold uppercase tracking-wide text-lime-700 dark:text-lime-300">¿Qué evalúa?</p>
+              <figure class="mt-2 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+                <div class="relative aspect-[16/7] bg-slate-100 dark:bg-slate-800"><img src="IMG/digestivo/albumina-que-evalua.webp" alt="Qué evalúa la prueba de albúmina y proteínas totales" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-xs text-slate-400 p-3"><svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>IMG/digestivo/albumina-que-evalua.webp</span></div></div>
+              </figure>
+              <p class="mt-2 text-sm text-slate-600 dark:text-slate-400 leading-relaxed">Evalúa la concentración de albúmina, proteínas totales y, en algunos casos, la relación albúmina/globulina (A/G). Valores disminuidos pueden indicar cirrosis, hepatitis, síndrome nefrótico, desnutrición, enfermedades inflamatorias o pérdidas gastrointestinales. Valores elevados suelen observarse en casos de deshidratación o enfermedades asociadas con un aumento de las inmunoglobulinas, como el mieloma múltiple.</p>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 p-5 space-y-4">
+            <div>
+              <p class="text-xs font-bold uppercase tracking-wide text-lime-700 dark:text-lime-300">Valores de referencia</p>
+              <div class="mt-2 flex flex-wrap gap-2 text-xs">
+                <span class="rounded-full bg-emerald-100 dark:bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 px-2.5 py-1 font-medium">Albúmina: 3,5 – 5,0 g/dL</span>
+                <span class="rounded-full bg-emerald-100 dark:bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 px-2.5 py-1 font-medium">Proteínas totales: 6,0 – 8,3 g/dL</span>
+              </div>
+            </div>
+            <div>
+              <p class="text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400 mb-3">Intervenciones de enfermería</p>
+              <div class="grid sm:grid-cols-3 gap-3 text-xs">
+                <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes</p><p class="text-slate-600 dark:text-slate-400">La enfermera verifica la identidad del paciente, confirma la solicitud médica y explica el procedimiento. Generalmente no se requiere ayuno, aunque algunos laboratorios pueden solicitarlo. También revisa medicamentos que puedan modificar los resultados y valora el estado de hidratación del paciente.</p></div>
+                <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3"><p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante</p><p class="text-slate-600 dark:text-slate-400">Se obtiene una muestra de sangre venosa utilizando técnica aséptica y se identifica correctamente el tubo para su procesamiento en el laboratorio.</p></div>
+                <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después</p><p class="text-slate-600 dark:text-slate-400">Se ejerce presión sobre el sitio de punción para evitar hematomas, se verifica el bienestar del paciente y se envía la muestra al laboratorio. La enfermera registra el procedimiento realizado y comunica oportunamente cualquier resultado alterado que requiera valoración médica.</p></div>
+              </div>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 px-5 py-3 text-xs text-slate-500 dark:text-slate-400 flex flex-wrap gap-x-4 gap-y-1">
+            <span class="font-semibold">Referencias:</span>
+            <a href="https://medlineplus.gov/lab-tests/total-protein-and-albumin-globulin-a-g-ratio/" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">medlineplus.gov</a>
+            <a href="https://medlineplus.gov/lab-tests/albumin-blood-test/" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">medlineplus.gov</a>
+          </div>
+        </article>
+      </section>
+
+      <!-- ===== 1.5 Amilasa y lipasa ===== -->
+      <section class="mt-12">
+        <div class="flex items-center gap-3">
+          <span class="grid h-9 w-9 place-items-center rounded-xl bg-lime-500 text-white font-extrabold text-xs">1.5</span>
+          <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Amilasa y lipasa</h2>
+        </div>
+
+        <article class="mt-5 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="grid md:grid-cols-[34%_1fr]">
+            <div class="relative bg-slate-100 dark:bg-slate-800 aspect-[4/3] md:aspect-auto md:min-h-[12rem]"><img src="IMG/digestivo/amilasa-lipasa.webp" alt="Amilasa y lipasa" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-xs text-slate-400 p-3"><svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>amilasa-lipasa.webp</span></div></div>
+            <div class="p-5">
+              <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">La amilasa y la lipasa son enzimas digestivas producidas principalmente por el páncreas. La amilasa participa en la digestión de los carbohidratos, mientras que la lipasa interviene en la digestión de las grasas. La medición de estas enzimas en sangre es una herramienta importante para el diagnóstico de enfermedades pancreáticas, especialmente la pancreatitis aguda, ya que sus concentraciones aumentan cuando existe lesión o inflamación del páncreas.</p>
+              <p class="mt-3 text-xs font-bold uppercase tracking-wide text-lime-700 dark:text-lime-300">Función</p>
+              <p class="mt-1 text-sm text-slate-600 dark:text-slate-400 leading-relaxed">La determinación de amilasa y lipasa ayuda a detectar inflamación pancreática, evaluar el funcionamiento del páncreas y controlar la evolución de enfermedades pancreáticas. La lipasa es considerada más específica que la amilasa para el diagnóstico de pancreatitis aguda.</p>
+              <p class="mt-3 text-xs font-bold uppercase tracking-wide text-lime-700 dark:text-lime-300">¿Qué evalúa?</p>
+              <p class="mt-1 text-sm text-slate-600 dark:text-slate-400 leading-relaxed">La prueba mide la concentración de amilasa y lipasa en sangre. Valores elevados suelen indicar pancreatitis aguda, obstrucción del conducto pancreático, colecistitis, traumatismos abdominales o enfermedades gastrointestinales. También pueden observarse alteraciones en insuficiencia renal, perforación intestinal y otras patologías abdominales.</p>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 p-5 space-y-4">
+            <div>
+              <p class="text-xs font-bold uppercase tracking-wide text-lime-700 dark:text-lime-300">Valores de referencia</p>
+              <div class="mt-2 flex flex-wrap gap-2 text-xs">
+                <span class="rounded-full bg-emerald-100 dark:bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 px-2.5 py-1 font-medium">Amilasa: 30 – 110 U/L</span>
+                <span class="rounded-full bg-emerald-100 dark:bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 px-2.5 py-1 font-medium">Lipasa: 10 – 140 U/L</span>
+              </div>
+              <p class="mt-2 text-xs italic text-slate-500 dark:text-slate-400">Los valores pueden variar según el laboratorio.</p>
+            </div>
+            <div>
+              <p class="text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400 mb-3">Intervenciones de enfermería</p>
+              <div class="grid sm:grid-cols-3 gap-3 text-xs">
+                <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes</p><p class="text-slate-600 dark:text-slate-400">La enfermera verifica la identidad del paciente, confirma la orden médica y explica el procedimiento. Según la indicación médica, puede solicitarse ayuno de 8 a 12 horas. También revisa medicamentos que puedan alterar los resultados, como opioides, diuréticos o anticonceptivos.</p></div>
+                <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3"><p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante</p><p class="text-slate-600 dark:text-slate-400">Se obtiene una muestra de sangre venosa mediante técnica estéril, asegurando una adecuada identificación y conservación de la muestra.</p></div>
+                <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después</p><p class="text-slate-600 dark:text-slate-400">Se comprime el sitio de venopunción para evitar hematomas, se vigila cualquier molestia del paciente y se envía la muestra al laboratorio. Si se detectan valores muy elevados compatibles con pancreatitis aguda, la enfermera comunica inmediatamente los resultados al equipo médico para iniciar el tratamiento correspondiente.</p></div>
+              </div>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 px-5 py-3 text-xs text-slate-500 dark:text-slate-400 flex flex-wrap gap-x-4 gap-y-1">
+            <span class="font-semibold">Referencias:</span>
+            <a href="https://medlineplus.gov/lab-tests/lipase-tests/" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">medlineplus.gov</a>
+            <a href="https://medlineplus.gov/lab-tests/amylase-test/" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">medlineplus.gov</a>
+          </div>
+        </article>
+      </section>
+
+      <!-- ===== 1.6 Hemograma completo ===== -->
+      <section class="mt-12">
+        <div class="flex items-center gap-3">
+          <span class="grid h-9 w-9 place-items-center rounded-xl bg-lime-500 text-white font-extrabold text-xs">1.6</span>
+          <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Hemograma completo</h2>
+        </div>
+
+        <article class="mt-5 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="grid md:grid-cols-[34%_1fr]">
+            <div class="relative bg-slate-100 dark:bg-slate-800 aspect-[4/3] md:aspect-auto md:min-h-[12rem]"><img src="IMG/digestivo/hemograma-completo.webp" alt="Hemograma completo" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-xs text-slate-400 p-3"><svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>hemograma-completo.webp</span></div></div>
+            <div class="p-5">
+              <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">El hemograma completo es uno de los análisis de laboratorio más utilizados en la práctica clínica. Consiste en la evaluación cuantitativa y cualitativa de los diferentes componentes celulares de la sangre: glóbulos rojos, glóbulos blancos y plaquetas. Esta prueba proporciona información fundamental para diagnosticar anemias, infecciones, procesos inflamatorios, trastornos hematológicos y enfermedades de la médula ósea, además de servir como herramienta para el seguimiento de múltiples patologías.</p>
+              <p class="mt-3 text-xs font-bold uppercase tracking-wide text-lime-700 dark:text-lime-300">Función</p>
+              <p class="mt-1 text-sm text-slate-600 dark:text-slate-400 leading-relaxed">El hemograma completo permite evaluar el estado general de salud del paciente, detectar alteraciones hematológicas, identificar infecciones bacterianas o virales, valorar trastornos de la coagulación y monitorizar la respuesta a tratamientos médicos, cirugías o enfermedades crónicas.</p>
+              <p class="mt-3 text-xs font-bold uppercase tracking-wide text-lime-700 dark:text-lime-300">¿Qué evalúa?</p>
+              <p class="mt-1 text-sm text-slate-600 dark:text-slate-400 leading-relaxed">Las alteraciones en los valores de los componentes sanguíneos permiten identificar anemias, infecciones, leucemias, trastornos hemorrágicos, enfermedades inflamatorias y otras patologías hematológicas.</p>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 p-5 space-y-4">
+            <p class="text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">Intervenciones de enfermería</p>
+            <div class="grid sm:grid-cols-3 gap-3 text-xs">
+              <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes</p><p class="text-slate-600 dark:text-slate-400">La enfermera verifica la identidad del paciente, confirma la solicitud médica y explica el procedimiento. Generalmente no se requiere ayuno, salvo que el hemograma forme parte de un perfil de laboratorio que lo indique. También revisa antecedentes clínicos y tratamientos farmacológicos.</p></div>
+              <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3"><p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante</p><p class="text-slate-600 dark:text-slate-400">Se realiza la extracción de sangre venosa mediante técnica aséptica, utilizando el tubo con anticoagulante correspondiente (EDTA). La muestra se identifica correctamente y se envía al laboratorio para su análisis.</p></div>
+              <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después</p><p class="text-slate-600 dark:text-slate-400">Se aplica presión sobre el sitio de punción para prevenir hematomas, se verifica el estado del paciente y se registran los cuidados brindados. Si se detectan alteraciones importantes, como anemia severa, leucocitosis marcada, leucopenia o trombocitopenia, la enfermera informa oportunamente al equipo de salud para una valoración inmediata.</p></div>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 px-5 py-3 text-xs text-slate-500 dark:text-slate-400 flex flex-wrap gap-x-4 gap-y-1">
+            <span class="font-semibold">Referencias:</span>
+            <a href="https://medlineplus.gov/lab-tests/complete-blood-count-cbc/" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">medlineplus.gov</a>
+            <a href="https://www.nhlbi.nih.gov/health/blood-tests" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">nhlbi.nih.gov</a>
+          </div>
+        </article>
+      </section>
+
+      <!-- ===== 1.7 Proteína C Reactiva (PCR) ===== -->
+      <section class="mt-12">
+        <div class="flex items-center gap-3">
+          <span class="grid h-9 w-9 place-items-center rounded-xl bg-lime-500 text-white font-extrabold text-xs">1.7</span>
+          <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Proteína C Reactiva (PCR)</h2>
+        </div>
+
+        <article class="mt-5 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="grid md:grid-cols-[34%_1fr]">
+            <div class="relative bg-slate-100 dark:bg-slate-800 aspect-[4/3] md:aspect-auto md:min-h-[12rem]"><img src="IMG/digestivo/pcr.webp" alt="Proteína C Reactiva (PCR)" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-xs text-slate-400 p-3"><svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>pcr.webp</span></div></div>
+            <div class="p-5">
+              <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">La proteína C reactiva (PCR) es una proteína producida por el hígado como respuesta a procesos inflamatorios en el organismo. Sus niveles aumentan rápidamente cuando existe infección, inflamación, traumatismo o daño tisular. La medición de la PCR en sangre es una prueba ampliamente utilizada para detectar y controlar enfermedades inflamatorias, infecciones bacterianas y otras condiciones que generan respuesta inflamatoria sistémica.</p>
+              <p class="mt-3 text-xs font-bold uppercase tracking-wide text-lime-700 dark:text-lime-300">Función</p>
+              <p class="mt-1 text-sm text-slate-600 dark:text-slate-400 leading-relaxed">La determinación de la PCR ayuda a identificar la presencia de inflamación en el organismo, evaluar la gravedad de infecciones y controlar la evolución de enfermedades inflamatorias o autoinmunes. También es útil para valorar la respuesta al tratamiento médico.</p>
+              <p class="mt-3 text-xs font-bold uppercase tracking-wide text-lime-700 dark:text-lime-300">¿Qué evalúa?</p>
+              <p class="mt-1 text-sm text-slate-600 dark:text-slate-400 leading-relaxed">Esta prueba evalúa la concentración de proteína C reactiva en sangre. Valores elevados pueden indicar infecciones bacterianas, enfermedades inflamatorias, artritis reumatoide, lupus, pancreatitis, enfermedades cardiovasculares o procesos de daño tisular. Valores normales generalmente sugieren ausencia de inflamación significativa.</p>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 p-5 space-y-4">
+            <div>
+              <p class="text-xs font-bold uppercase tracking-wide text-lime-700 dark:text-lime-300">Valor de referencia</p>
+              <div class="mt-2 flex flex-wrap gap-2 text-xs">
+                <span class="rounded-full bg-emerald-100 dark:bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 px-2.5 py-1 font-medium">Menor de 1 mg/dL (o menor de 10 mg/L, según el laboratorio)</span>
+              </div>
+            </div>
+            <div>
+              <p class="text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400 mb-3">Intervenciones de enfermería</p>
+              <div class="grid sm:grid-cols-3 gap-3 text-xs">
+                <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes</p><p class="text-slate-600 dark:text-slate-400">La enfermera verifica la identidad del paciente, confirma la orden médica y explica el procedimiento. Generalmente no se requiere ayuno, aunque se revisan medicamentos y antecedentes clínicos.</p></div>
+                <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3"><p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante</p><p class="text-slate-600 dark:text-slate-400">Se obtiene una muestra de sangre venosa mediante técnica aséptica y se identifica correctamente el tubo para su envío al laboratorio.</p></div>
+                <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después</p><p class="text-slate-600 dark:text-slate-400">Se comprime el sitio de punción para prevenir hematomas, se registra el procedimiento realizado y se vigila el bienestar del paciente. Si los valores son muy elevados, la enfermera informa al equipo médico para una valoración oportuna.</p></div>
+              </div>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 px-5 py-3 text-xs text-slate-500 dark:text-slate-400 flex flex-wrap gap-x-4 gap-y-1">
+            <span class="font-semibold">Referencias:</span>
+            <a href="https://medlineplus.gov/lab-tests/c-reactive-protein-crp-test/" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">medlineplus.gov</a>
+            <a href="https://www.mayoclinic.org/tests-procedures/c-reactive-protein/about/pac-20385228" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">mayoclinic.org</a>
+          </div>
+        </article>
+      </section>
+
+      <!-- ===== 1.8 Sangre oculta en heces ===== -->
+      <section class="mt-12">
+        <div class="flex items-center gap-3">
+          <span class="grid h-9 w-9 place-items-center rounded-xl bg-lime-500 text-white font-extrabold text-xs">1.8</span>
+          <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Sangre oculta en heces</h2>
+        </div>
+
+        <article class="mt-5 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="grid md:grid-cols-[34%_1fr]">
+            <div class="relative bg-slate-100 dark:bg-slate-800 aspect-[4/3] md:aspect-auto md:min-h-[12rem]"><img src="IMG/digestivo/sangre-oculta-heces.webp" alt="Sangre oculta en heces" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-xs text-slate-400 p-3"><svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>sangre-oculta-heces.webp</span></div></div>
+            <div class="p-5">
+              <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">La prueba de sangre oculta en heces se utiliza para detectar pequeñas cantidades de sangre que no son visibles a simple vista en las deposiciones. Es una herramienta importante para identificar sangrado en el tracto gastrointestinal y se emplea principalmente en el tamizaje de cáncer colorrectal, pólipos intestinales, úlceras y otras enfermedades digestivas.</p>
+              <p class="mt-3 text-xs font-bold uppercase tracking-wide text-lime-700 dark:text-lime-300">Función</p>
+              <p class="mt-1 text-sm text-slate-600 dark:text-slate-400 leading-relaxed">La prueba permite detectar sangrado gastrointestinal oculto y orientar el diagnóstico de enfermedades del intestino, colon, recto o estómago. También se utiliza como método de detección temprana de cáncer colorrectal.</p>
+              <p class="mt-3 text-xs font-bold uppercase tracking-wide text-lime-700 dark:text-lime-300">¿Qué evalúa?</p>
+              <p class="mt-1 text-sm text-slate-600 dark:text-slate-400 leading-relaxed">Evalúa la presencia de sangre microscópica en las heces. Un resultado positivo puede indicar pólipos, cáncer colorrectal, hemorroides, úlceras gástricas, enfermedad inflamatoria intestinal o sangrado digestivo de otra causa.</p>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 p-5 space-y-4">
+            <p class="text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">Intervenciones de enfermería</p>
+            <div class="grid sm:grid-cols-3 gap-3 text-xs">
+              <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes</p><p class="text-slate-600 dark:text-slate-400">La enfermera explica al paciente cómo recolectar la muestra correctamente. En algunos métodos se recomienda evitar carnes rojas, ciertos vegetales, vitamina C y algunos medicamentos antes de la prueba.</p></div>
+              <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3"><p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante</p><p class="text-slate-600 dark:text-slate-400">El paciente recoge una pequeña muestra de heces en un recipiente limpio y seco, evitando contaminarla con orina o agua.</p></div>
+              <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después</p><p class="text-slate-600 dark:text-slate-400">La muestra se envía al laboratorio según las indicaciones establecidas. La enfermera registra el procedimiento y orienta al paciente sobre la importancia de retirar los resultados y acudir a valoración médica si la prueba es positiva.</p></div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- ===== 1.9 Coprocultivo ===== -->
+      <section class="mt-12">
+        <div class="flex items-center gap-3">
+          <span class="grid h-9 w-9 place-items-center rounded-xl bg-lime-500 text-white font-extrabold text-xs">1.9</span>
+          <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Coprocultivo</h2>
+        </div>
+
+        <article class="mt-5 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="grid md:grid-cols-[34%_1fr]">
+            <div class="relative bg-slate-100 dark:bg-slate-800 aspect-[4/3] md:aspect-auto md:min-h-[12rem]"><img src="IMG/digestivo/coprocultivo.webp" alt="Coprocultivo" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-xs text-slate-400 p-3"><svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>coprocultivo.webp</span></div></div>
+            <div class="p-5">
+              <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">El coprocultivo es un examen microbiológico que consiste en cultivar una muestra de heces para identificar bacterias patógenas responsables de infecciones intestinales. Permite detectar microorganismos como Salmonella, Shigella, Campylobacter y algunas cepas de Escherichia coli, entre otros.</p>
+              <p class="mt-3 text-xs font-bold uppercase tracking-wide text-lime-700 dark:text-lime-300">Función</p>
+              <p class="mt-1 text-sm text-slate-600 dark:text-slate-400 leading-relaxed">El coprocultivo ayuda a diagnosticar infecciones bacterianas del tracto gastrointestinal, identificar el microorganismo causante de la diarrea y orientar el tratamiento antibiótico adecuado.</p>
+              <p class="mt-3 text-xs font-bold uppercase tracking-wide text-lime-700 dark:text-lime-300">¿Qué evalúa?</p>
+              <p class="mt-1 text-sm text-slate-600 dark:text-slate-400 leading-relaxed">Evalúa la presencia y crecimiento de bacterias patógenas en las heces. Un resultado positivo identifica el microorganismo responsable de la infección y permite realizar pruebas de sensibilidad a los antibióticos.</p>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 p-5 space-y-4">
+            <p class="text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">Intervenciones de enfermería</p>
+            <div class="grid sm:grid-cols-3 gap-3 text-xs">
+              <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes</p><p class="text-slate-600 dark:text-slate-400">La enfermera explica cómo recolectar la muestra en un recipiente estéril y recomienda evitar contaminarla con orina o agua. También verifica si el paciente ha recibido antibióticos recientemente.</p></div>
+              <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3"><p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante</p><p class="text-slate-600 dark:text-slate-400">El paciente deposita una pequeña cantidad de heces frescas en el recipiente estéril y la muestra se identifica correctamente.</p></div>
+              <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después</p><p class="text-slate-600 dark:text-slate-400">La muestra debe enviarse al laboratorio lo antes posible para evitar alteraciones en el crecimiento bacteriano. La enfermera registra el procedimiento y comunica cualquier dato clínico relevante.</p></div>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 px-5 py-3 text-xs text-slate-500 dark:text-slate-400 flex flex-wrap gap-x-4 gap-y-1">
+            <span class="font-semibold">Referencias:</span>
+            <a href="https://medlineplus.gov/lab-tests/stool-culture/" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">medlineplus.gov</a>
+            <a href="https://www.testing.com/tests/stool-culture/" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">testing.com</a>
+          </div>
+        </article>
+      </section>
+
+      <!-- ===== 1.10 Examen de huevos y parásitos (O&P) ===== -->
+      <section class="mt-12">
+        <div class="flex items-center gap-3">
+          <span class="grid h-9 w-9 place-items-center rounded-xl bg-lime-500 text-white font-extrabold text-xs">1.10</span>
+          <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Examen de huevos y parásitos (O&amp;P)</h2>
+        </div>
+
+        <article class="mt-5 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          <div class="grid md:grid-cols-[34%_1fr]">
+            <div class="relative bg-slate-100 dark:bg-slate-800 aspect-[4/3] md:aspect-auto md:min-h-[12rem]"><img src="IMG/digestivo/huevos-parasitos.webp" alt="Examen de huevos y parásitos (O&amp;P)" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-xs text-slate-400 p-3"><svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>huevos-parasitos.webp</span></div></div>
+            <div class="p-5">
+              <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">El examen de huevos y parásitos, conocido como O&amp;P (Ova and Parasites), es una prueba de laboratorio utilizada para detectar parásitos intestinales y sus huevos en una muestra de heces. Es útil para diagnosticar infecciones parasitarias como amebiasis, giardiasis, ascariasis, oxiuriasis y otras parasitosis intestinales.</p>
+              <p class="mt-3 text-xs font-bold uppercase tracking-wide text-lime-700 dark:text-lime-300">Función</p>
+              <p class="mt-1 text-sm text-slate-600 dark:text-slate-400 leading-relaxed">La prueba permite identificar la presencia de parásitos intestinales y confirmar el diagnóstico de infecciones que producen diarrea, dolor abdominal, pérdida de peso, anemia o trastornos digestivos.</p>
+              <p class="mt-3 text-xs font-bold uppercase tracking-wide text-lime-700 dark:text-lime-300">¿Qué evalúa?</p>
+              <p class="mt-1 text-sm text-slate-600 dark:text-slate-400 leading-relaxed">Evalúa la presencia de huevos, larvas, quistes o parásitos adultos en las heces. Un resultado positivo indica infección parasitaria y ayuda a determinar el tratamiento antiparasitario adecuado.</p>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 p-5 space-y-4">
+            <p class="text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">Intervenciones de enfermería</p>
+            <div class="grid sm:grid-cols-3 gap-3 text-xs">
+              <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes</p><p class="text-slate-600 dark:text-slate-400">La enfermera explica al paciente cómo recolectar la muestra correctamente y, en algunos casos, puede solicitar varias muestras en días diferentes para aumentar la sensibilidad del examen.</p></div>
+              <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3"><p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante</p><p class="text-slate-600 dark:text-slate-400">El paciente deposita una porción de heces en un recipiente limpio y seco, evitando la contaminación con orina o agua.</p></div>
+              <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después</p><p class="text-slate-600 dark:text-slate-400">La muestra se envía al laboratorio para su análisis microscópico. La enfermera registra el procedimiento y orienta al paciente sobre la importancia de completar el tratamiento si se confirma la presencia de parásitos.</p></div>
+            </div>
+          </div>
+          <div class="border-t border-slate-100 dark:border-slate-800 px-5 py-3 text-xs text-slate-500 dark:text-slate-400 flex flex-wrap gap-x-4 gap-y-1">
+            <span class="font-semibold">Referencias:</span>
+            <a href="https://medlineplus.gov/lab-tests/ova-and-parasite-test/" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">medlineplus.gov</a>
+            <a href="https://www.cdc.gov/parasites/testing-diagnosis/index.html" target="_blank" rel="noopener" class="text-indigo-600 dark:text-indigo-400 hover:underline">cdc.gov</a>
+          </div>
+        </article>
+      </section>
+
+      <div class="mt-12 flex items-center justify-between border-t border-slate-200 dark:border-slate-800 pt-6">
+        <a href="cardiovascular-procedimientos.html" class="text-sm text-slate-500 hover:text-indigo-600 dark:hover:text-indigo-400">← Sistema cardiovascular</a>
+        <a href="digestivo-imagen.html"
+           class="inline-flex items-center gap-2 rounded-full bg-indigo-600 px-5 py-2.5 text-white text-sm font-semibold hover:bg-indigo-700">
+          Estudios por imagen →
+        </a>
+      </div>
+    </div>
+  </main>
+</div>
+<script>
+  function toggleTheme(){
+    const html = document.documentElement;
+    html.classList.toggle('dark');
+    localStorage.theme = html.classList.contains('dark') ? 'dark' : 'light';
+  }
+</script>
+
+  <!-- ===== Lightbox: clic en una imagen para ampliarla ===== -->
+  <div id="lightbox" class="fixed inset-0 z-[60] hidden items-center justify-center bg-black/80 backdrop-blur-sm p-4 cursor-zoom-out" onclick="closeLightbox()">
+    <button onclick="closeLightbox()" aria-label="Cerrar"
+            class="absolute top-4 right-4 h-11 w-11 rounded-full bg-white/10 hover:bg-white/20 ring-1 ring-white/30 text-white grid place-items-center">
+      <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <figure class="flex flex-col items-center gap-3" onclick="event.stopPropagation()">
+      <img id="lightbox-img" src="" alt="" class="max-h-[85vh] max-w-[92vw] rounded-xl shadow-2xl object-contain">
+      <figcaption id="lightbox-cap" class="text-sm text-white/80"></figcaption>
+    </figure>
+  </div>
+  <script>
+    (function(){
+      const box = document.getElementById('lightbox');
+      const big = document.getElementById('lightbox-img');
+      const cap = document.getElementById('lightbox-cap');
+      document.querySelectorAll('main img').forEach(function(el){
+        el.classList.add('cursor-zoom-in');
+        el.addEventListener('click', function(ev){
+          ev.preventDefault(); ev.stopPropagation();
+          big.src = el.currentSrc || el.src;
+          big.alt = el.alt || '';
+          cap.textContent = el.alt || '';
+          box.classList.remove('hidden'); box.classList.add('flex');
+          document.body.style.overflow = 'hidden';
+        });
+      });
+      window.closeLightbox = function(){
+        box.classList.add('hidden'); box.classList.remove('flex');
+        document.body.style.overflow = '';
+      };
+      document.addEventListener('keydown', function(e){ if(e.key === 'Escape') window.closeLightbox(); });
+    })();
+  </script>
+</body>
+</html>

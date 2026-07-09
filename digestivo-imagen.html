@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estudios por imagen · Enfermedades digestivas y hepáticas</title>
+  <script>
+    if (localStorage.theme === 'dark' ||
+        (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = { darkMode: 'class' }</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style> body { font-family: 'Inter', system-ui, sans-serif; } </style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-200 transition-colors duration-300">
+<div class="min-h-screen flex">
+
+  <!-- ============ BARRA LATERAL ============ -->
+  <aside id="sidebar"
+         class="fixed lg:sticky top-0 z-40 h-screen w-72 shrink-0 -translate-x-full lg:translate-x-0
+                transition-transform bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800 flex flex-col">
+    <div class="px-5 py-5 border-b border-slate-100 dark:border-slate-800">
+      <a href="index.html" class="flex items-center gap-3">
+        <span class="h-10 w-10 rounded-xl bg-indigo-600 text-white flex items-center justify-center">
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12h4l2 5 4-12 2 7h6"/></svg>
+        </span>
+        <span>
+          <span class="block font-extrabold text-slate-800 dark:text-white leading-tight">Wiki Diagnóstico</span>
+          <span class="block text-xs text-slate-400">UEPD-04 · Medios de Diagnóstico</span>
+        </span>
+      </a>
+    </div>
+    <nav class="flex-1 overflow-y-auto px-3 py-4 space-y-1 text-sm">
+      <a href="index.html"        class="block rounded-lg px-3 py-2 font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Carátula</a>
+      <a href="introduccion.html" class="block rounded-lg px-3 py-2 font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Introducción</a>
+      <div class="my-2 border-t border-slate-100 dark:border-slate-800"></div>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-sky-50 dark:hover:bg-sky-500/10 group-open:bg-sky-50 dark:group-open:bg-sky-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-sky-500"></span>
+            <span class="truncate text-sm font-semibold text-sky-700 dark:text-sky-300">Fluidos corporales</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-sky-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-sky-100 dark:border-sky-500/30 pl-2">
+          <a href="componentes.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-sky-50 dark:hover:bg-sky-500/10 hover:text-sky-700 dark:hover:text-sky-300 transition">Componentes de la sangre</a>
+          <a href="hemograma.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-sky-50 dark:hover:bg-sky-500/10 hover:text-sky-700 dark:hover:text-sky-300 transition">Hemograma con diferencial</a>
+          <a href="fluidos.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-sky-50 dark:hover:bg-sky-500/10 hover:text-sky-700 dark:hover:text-sky-300 transition">Análisis de fluidos biológicos</a>
+          <a href="frotis.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-sky-50 dark:hover:bg-sky-500/10 hover:text-sky-700 dark:hover:text-sky-300 transition">Frotis sanguíneo</a>
+        </div>
+      </details>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-emerald-50 dark:hover:bg-emerald-500/10 group-open:bg-emerald-50 dark:group-open:bg-emerald-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-emerald-500"></span>
+            <span class="truncate text-sm font-semibold text-emerald-700 dark:text-emerald-300">Medulograma</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-emerald-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-emerald-100 dark:border-emerald-500/30 pl-2">
+          <a href="medulograma.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-emerald-50 dark:hover:bg-emerald-500/10 hover:text-emerald-700 dark:hover:text-emerald-300 transition">Medulograma</a>
+        </div>
+      </details>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-rose-50 dark:hover:bg-rose-500/10 group-open:bg-rose-50 dark:group-open:bg-rose-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-rose-500"></span>
+            <span class="truncate text-sm font-semibold text-rose-700 dark:text-rose-300">Embarazo</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-rose-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-rose-100 dark:border-rose-500/30 pl-2">
+          <a href="embarazo.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-rose-50 dark:hover:bg-rose-500/10 hover:text-rose-700 dark:hover:text-rose-300 transition">Diagnóstico en el embarazo</a>
+        </div>
+      </details>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-fuchsia-50 dark:hover:bg-fuchsia-500/10 group-open:bg-fuchsia-50 dark:group-open:bg-fuchsia-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-fuchsia-500"></span>
+            <span class="truncate text-sm font-semibold text-fuchsia-700 dark:text-fuchsia-300">Trastornos autoinmunitarios</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-fuchsia-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-fuchsia-100 dark:border-fuchsia-500/30 pl-2">
+          <a href="autoinmunes.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-fuchsia-50 dark:hover:bg-fuchsia-500/10 hover:text-fuchsia-700 dark:hover:text-fuchsia-300 transition">Trastornos autoinmunitarios</a>
+        </div>
+      </details>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-purple-50 dark:hover:bg-purple-500/10 group-open:bg-purple-50 dark:group-open:bg-purple-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-purple-500"></span>
+            <span class="truncate text-sm font-semibold text-purple-700 dark:text-purple-300">Neoplasias</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-purple-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-purple-100 dark:border-purple-500/30 pl-2">
+          <a href="oncologia.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-purple-50 dark:hover:bg-purple-500/10 hover:text-purple-700 dark:hover:text-purple-300 transition">Oncología y neoplasias</a>
+        </div>
+      </details>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-orange-50 dark:hover:bg-orange-500/10 group-open:bg-orange-50 dark:group-open:bg-orange-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-orange-500"></span>
+            <span class="truncate text-sm font-semibold text-orange-700 dark:text-orange-300">Sistema osteomioarticular</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-orange-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-orange-100 dark:border-orange-500/30 pl-2">
+          <a href="soma.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-orange-50 dark:hover:bg-orange-500/10 hover:text-orange-700 dark:hover:text-orange-300 transition">Sistema osteomioarticular</a>
+        </div>
+      </details>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-cyan-50 dark:hover:bg-cyan-500/10 group-open:bg-cyan-50 dark:group-open:bg-cyan-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-cyan-500"></span>
+            <span class="truncate text-sm font-semibold text-cyan-700 dark:text-cyan-300">Estudios neurológicos</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-cyan-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-cyan-100 dark:border-cyan-500/30 pl-2">
+          <a href="neurologia.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-cyan-50 dark:hover:bg-cyan-500/10 hover:text-cyan-700 dark:hover:text-cyan-300 transition">Neurología avanzada</a>
+        </div>
+      </details>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-teal-50 dark:hover:bg-teal-500/10 group-open:bg-teal-50 dark:group-open:bg-teal-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-teal-500"></span>
+            <span class="truncate text-sm font-semibold text-teal-700 dark:text-teal-300">Sistema genitourinario</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-teal-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-teal-100 dark:border-teal-500/30 pl-2">
+          <a href="genitourinario.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-teal-50 dark:hover:bg-teal-500/10 hover:text-teal-700 dark:hover:text-teal-300 transition">Sistema genitourinario</a>
+          <a href="pruebas-urinarias.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-teal-50 dark:hover:bg-teal-500/10 hover:text-teal-700 dark:hover:text-teal-300 transition">Pruebas diagnósticas urinarias</a>
+        </div>
+      </details>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-amber-50 dark:hover:bg-amber-500/10 group-open:bg-amber-50 dark:group-open:bg-amber-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-amber-500"></span>
+            <span class="truncate text-sm font-semibold text-amber-700 dark:text-amber-300">Sistema endocrino-metabólico</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-amber-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-amber-100 dark:border-amber-500/30 pl-2">
+          <a href="endocrino.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-amber-50 dark:hover:bg-amber-500/10 hover:text-amber-700 dark:hover:text-amber-300 transition">Estudios de laboratorio</a>
+          <a href="endocrino-imagen.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-amber-50 dark:hover:bg-amber-500/10 hover:text-amber-700 dark:hover:text-amber-300 transition">Estudios imagenológicos</a>
+          <a href="endocrino-patologia.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-amber-50 dark:hover:bg-amber-500/10 hover:text-amber-700 dark:hover:text-amber-300 transition">Estudios anatomopatológicos</a>
+        </div>
+      </details>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-blue-50 dark:hover:bg-blue-500/10 group-open:bg-blue-50 dark:group-open:bg-blue-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-blue-500"></span>
+            <span class="truncate text-sm font-semibold text-blue-700 dark:text-blue-300">Sistema respiratorio</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-blue-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-blue-100 dark:border-blue-500/30 pl-2">
+          <a href="respiratorio.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-blue-50 dark:hover:bg-blue-500/10 hover:text-blue-700 dark:hover:text-blue-300 transition">Estudios de laboratorio</a>
+          <a href="respiratorio-imagen.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-blue-50 dark:hover:bg-blue-500/10 hover:text-blue-700 dark:hover:text-blue-300 transition">Estudios de imagen</a>
+          <a href="respiratorio-funcionales.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-blue-50 dark:hover:bg-blue-500/10 hover:text-blue-700 dark:hover:text-blue-300 transition">Pruebas funcionales respiratorias</a>
+          <a href="respiratorio-procedimientos.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-blue-50 dark:hover:bg-blue-500/10 hover:text-blue-700 dark:hover:text-blue-300 transition">Procedimientos especializados</a>
+        </div>
+      </details>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-red-50 dark:hover:bg-red-500/10 group-open:bg-red-50 dark:group-open:bg-red-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-red-500"></span>
+            <span class="truncate text-sm font-semibold text-red-700 dark:text-red-300">Sistema cardiovascular</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-red-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-red-100 dark:border-red-500/30 pl-2">
+          <a href="cardiovascular.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-red-50 dark:hover:bg-red-500/10 hover:text-red-700 dark:hover:text-red-300 transition">Estudios de laboratorio</a>
+          <a href="cardiovascular-imagen.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-red-50 dark:hover:bg-red-500/10 hover:text-red-700 dark:hover:text-red-300 transition">Estudios de imagen</a>
+          <a href="cardiovascular-funcionales.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-red-50 dark:hover:bg-red-500/10 hover:text-red-700 dark:hover:text-red-300 transition">Estudios electrofisiológicos y funcionales</a>
+          <a href="cardiovascular-procedimientos.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-red-50 dark:hover:bg-red-500/10 hover:text-red-700 dark:hover:text-red-300 transition">Procedimientos invasivos y estudios vasculares</a>
+        </div>
+      </details>
+      <details class="group" open>
+        <summary class="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden rounded-lg px-3 py-2 transition hover:bg-lime-50 dark:hover:bg-lime-500/10 group-open:bg-lime-50 dark:group-open:bg-lime-500/10">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-lime-500"></span>
+            <span class="truncate text-sm font-semibold text-lime-700 dark:text-lime-300">Enfermedades digestivas y hepáticas</span>
+          </span>
+          <svg class="h-4 w-4 shrink-0 text-lime-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mt-1 ml-3.5 space-y-0.5 border-l-2 border-lime-100 dark:border-lime-500/30 pl-2">
+          <a href="digestivo.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-lime-50 dark:hover:bg-lime-500/10 hover:text-lime-700 dark:hover:text-lime-300 transition">Estudios de laboratorio</a>
+          <a href="digestivo-imagen.html" class="block rounded-lg px-3 py-1.5 font-semibold bg-lime-100 dark:bg-lime-500/20 text-lime-800 dark:text-lime-200">Estudios por imagen</a>
+          <a href="digestivo-endoscopicos.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-lime-50 dark:hover:bg-lime-500/10 hover:text-lime-700 dark:hover:text-lime-300 transition">Estudios endoscópicos</a>
+          <a href="digestivo-funcionales.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-lime-50 dark:hover:bg-lime-500/10 hover:text-lime-700 dark:hover:text-lime-300 transition">Estudios funcionales</a>
+          <a href="digestivo-patologia.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-lime-50 dark:hover:bg-lime-500/10 hover:text-lime-700 dark:hover:text-lime-300 transition">Estudios anatomopatológicos</a>
+          <a href="digestivo-hepaticos.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-lime-50 dark:hover:bg-lime-500/10 hover:text-lime-700 dark:hover:text-lime-300 transition">Estudios específicos hepáticos</a>
+          <a href="digestivo-cuidados.html" class="block rounded-lg px-3 py-1.5 text-slate-600 dark:text-slate-400 hover:bg-lime-50 dark:hover:bg-lime-500/10 hover:text-lime-700 dark:hover:text-lime-300 transition">Cuidados de enfermería y complicaciones</a>
+        </div>
+      </details>
+      <div class="my-2 border-t border-slate-100 dark:border-slate-800"></div>
+      <a href="enlaces.html" class="block rounded-lg px-3 py-2 font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Enlaces y referencias</a>
+    </nav>
+    <div class="px-4 py-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
+      <span class="text-xs text-slate-400">© Proyecto académico</span>
+      <button onclick="toggleTheme()" aria-label="Cambiar tema"
+              class="h-9 w-9 rounded-full grid place-items-center ring-1 ring-slate-200 dark:ring-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 transition text-slate-600 dark:text-slate-300">
+        <svg class="dark:hidden h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="hidden dark:block h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path stroke-linecap="round" d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </button>
+    </div>
+  </aside>
+
+  <button onclick="document.getElementById('sidebar').classList.toggle('-translate-x-full')"
+          class="lg:hidden fixed bottom-5 right-5 z-50 h-12 w-12 rounded-full bg-indigo-600 text-white shadow-lg grid place-items-center">
+    <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+  </button>
+
+  <!-- ============ CONTENIDO ============ -->
+  <main class="flex-1 min-w-0">
+    <div class="max-w-4xl mx-auto px-6 py-10 lg:py-14">
+
+      <nav class="text-xs text-slate-400 mb-3">Inicio / Enfermedades digestivas y hepáticas / <span class="text-slate-600 dark:text-slate-300">Estudios por imagen</span></nav>
+
+      <div class="flex items-center gap-4">
+        <div class="h-12 w-1.5 rounded-full bg-lime-500"></div>
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">Estudios diagnósticos por imagen</h1>
+      </div>
+      <p class="mt-2 text-lime-700 dark:text-lime-300 font-semibold">Ecografía, radiología contrastada, TAC y resonancia magnética</p>
+
+      <!-- ===== Banner de la PARTE 2 ===== -->
+      <figure class="mt-8 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+        <div class="relative aspect-[16/7] bg-slate-100 dark:bg-slate-800"><img src="IMG/digestivo/estudios-imagen.webp" alt="Estudios diagnósticos por imagen del sistema digestivo" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-xs text-slate-400 p-3"><svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>IMG/digestivo/estudios-imagen.webp</span></div></div>
+      </figure>
+
+      <!-- ===== Generalidades de la PARTE 2 (patrón H) ===== -->
+      <div class="mt-6 rounded-2xl bg-lime-50/60 dark:bg-lime-500/5 ring-1 ring-lime-100 dark:ring-lime-500/20 p-6 space-y-4">
+        <h2 class="text-xl font-bold text-slate-900 dark:text-white">Generalidades de los estudios por imagen</h2>
+        <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">Los estudios por imagen son pruebas médicas que crean imágenes del interior del cuerpo. Estas imágenes ayudan al proveedor de salud a ver los órganos, huesos, vasos sanguíneos y tejidos. Las pruebas de imagen pueden ayudar a encontrar las causas de los síntomas, detectar de forma temprana una enfermedad, monitorear una afección u orientar el tratamiento.</p>
+
+        <div>
+          <h3 class="text-base font-bold text-slate-900 dark:text-white">Función del rol de enfermería</h3>
+          <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">Consiste en garantizar la seguridad, preparación y bienestar del paciente durante todo el procedimiento, actuando con distintos niveles de autonomía: de forma independiente al valorar, educar y vigilar al paciente según su propio criterio profesional; de forma dependiente al ejecutar indicaciones médicas como canalizar vías o administrar contraste; y de forma interdependiente al coordinar con el equipo de salud para asegurar la continuidad y calidad del cuidado.</p>
+        </div>
+
+        <div>
+          <h3 class="text-base font-bold text-slate-900 dark:text-white">¿Por qué se realizan?</h3>
+          <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">Estas pruebas ayudan a los proveedores a comprender los problemas de salud y a tomar decisiones sobre su tratamiento. Pueden utilizarse para:</p>
+          <div class="mt-2 grid sm:grid-cols-2 gap-x-6 gap-y-1 text-sm text-slate-600 dark:text-slate-400">
+            <div class="flex gap-2"><span class="text-lime-500">•</span>Detectar problemas de forma temprana.</div>
+            <div class="flex gap-2"><span class="text-lime-500">•</span>Entender las causas del dolor o de otros síntomas.</div>
+            <div class="flex gap-2"><span class="text-lime-500">•</span>Planificar un tratamiento.</div>
+            <div class="flex gap-2"><span class="text-lime-500">•</span>Monitorear una condición o evaluar si un tratamiento es eficaz.</div>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="text-base font-bold text-slate-900 dark:text-white">Intervenciones de enfermería</h3>
+          <div class="mt-2 grid sm:grid-cols-3 gap-3 text-xs">
+            <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes</p><ul class="space-y-1 list-disc list-inside text-slate-600 dark:text-slate-400"><li>Valorar al paciente (alergias, antecedentes, exámenes previos).</li><li>Explicar el procedimiento y verificar el consentimiento informado.</li><li>Preparar física y emocionalmente al paciente (ayuno, retiro de metales, vía venosa).</li></ul></div>
+            <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3"><p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante</p><ul class="space-y-1 list-disc list-inside text-slate-600 dark:text-slate-400"><li>Verificar identidad y posicionar correctamente al paciente.</li><li>Administrar contraste o medicación indicada y vigilar la infusión.</li><li>Monitorear signos vitales y reacciones adversas.</li></ul></div>
+            <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después</p><ul class="space-y-1 list-disc list-inside text-slate-600 dark:text-slate-400"><li>Vigilar reacciones tardías al contraste y el sitio de punción.</li><li>Controlar signos vitales hasta la estabilización.</li><li>Registrar el procedimiento y coordinar el traslado o entrega de resultados.</li></ul></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============ 2.1 Ecografía abdominal ============ -->
+      <article class="mt-8 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+        <div class="grid md:grid-cols-[34%_1fr]">
+          <div class="relative bg-slate-100 dark:bg-slate-800 aspect-[4/3] md:aspect-auto md:min-h-[12rem]"><img src="IMG/digestivo/ecografia-abdominal.webp" alt="Ecografía abdominal" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-xs text-slate-400 p-3"><svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>ecografia-abdominal.webp</span></div></div>
+          <div class="p-5">
+            <div class="flex items-center gap-3">
+              <span class="grid h-9 w-9 place-items-center rounded-xl bg-lime-500 text-white font-extrabold text-xs">2.1</span>
+              <h3 class="font-bold text-lg text-slate-900 dark:text-white">Ecografía abdominal</h3>
+            </div>
+            <p class="mt-3 text-xs font-bold uppercase tracking-wide text-lime-700 dark:text-lime-300">¿Qué es?</p>
+            <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">Es un estudio de imagen no invasivo que utiliza ondas de ultrasonido para visualizar los órganos y estructuras internas del abdomen, sin uso de radiación ni necesidad de contraste en la mayoría de los casos.</p>
+            <p class="mt-3 text-xs font-bold uppercase tracking-wide text-lime-700 dark:text-lime-300">Función</p>
+            <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">Permite obtener imágenes en tiempo real de los órganos abdominales para apoyar el diagnóstico médico, detectar alteraciones estructurales, guiar procedimientos (como biopsias o drenajes) y hacer seguimiento de enfermedades ya diagnosticadas.</p>
+          </div>
+        </div>
+        <div class="border-t border-slate-100 dark:border-slate-800 p-5 space-y-4">
+          <div>
+            <p class="text-xs font-bold uppercase tracking-wide text-lime-700 dark:text-lime-300">¿Qué evalúa?</p>
+            <div class="mt-1 grid sm:grid-cols-2 gap-x-6 gap-y-1 text-sm text-slate-600 dark:text-slate-400">
+              <div class="flex gap-2"><span class="text-lime-500">•</span><span><strong class="font-semibold text-slate-700 dark:text-slate-300">Hígado:</strong> tamaño, tumores, quistes, esteatosis, cirrosis.</span></div>
+              <div class="flex gap-2"><span class="text-lime-500">•</span><span><strong class="font-semibold text-slate-700 dark:text-slate-300">Vesícula y vías biliares:</strong> cálculos (litiasis), inflamación (colecistitis).</span></div>
+              <div class="flex gap-2"><span class="text-lime-500">•</span><span><strong class="font-semibold text-slate-700 dark:text-slate-300">Páncreas:</strong> inflamación, tumores, quistes.</span></div>
+              <div class="flex gap-2"><span class="text-lime-500">•</span><span><strong class="font-semibold text-slate-700 dark:text-slate-300">Riñones:</strong> cálculos, quistes, hidronefrosis, tamaño.</span></div>
+              <div class="flex gap-2"><span class="text-lime-500">•</span><span><strong class="font-semibold text-slate-700 dark:text-slate-300">Bazo:</strong> tamaño (esplenomegalia), lesiones.</span></div>
+              <div class="flex gap-2"><span class="text-lime-500">•</span><span><strong class="font-semibold text-slate-700 dark:text-slate-300">Vejiga:</strong> contenido, paredes, cálculos.</span></div>
+              <div class="flex gap-2"><span class="text-lime-500">•</span><span><strong class="font-semibold text-slate-700 dark:text-slate-300">Aorta abdominal:</strong> aneurismas.</span></div>
+              <div class="flex gap-2"><span class="text-lime-500">•</span>Líquido libre en cavidad abdominal (ascitis).</div>
+              <div class="flex gap-2"><span class="text-lime-500">•</span>En mujeres, a veces incluye útero y ovarios (según el tipo de estudio).</div>
+            </div>
+          </div>
+          <div>
+            <p class="text-xs font-bold uppercase tracking-wide text-lime-700 dark:text-lime-300 mb-2">Intervenciones de enfermería</p>
+            <div class="grid sm:grid-cols-3 gap-3 text-xs">
+              <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes</p><ul class="space-y-1 list-disc list-inside text-slate-600 dark:text-slate-400"><li>Verificar preparación previa: ayuno de 6-8 horas (para evitar gas y mejorar la visualización, especialmente de vesícula y páncreas).</li><li>Explicar el procedimiento al paciente para reducir la ansiedad.</li><li>Confirmar que el paciente no haya fumado ni masticado chicle.</li></ul></div>
+              <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3"><p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante</p><ul class="space-y-1 list-disc list-inside text-slate-600 dark:text-slate-400"><li>Acompañar y posicionar al paciente.</li><li>Brindar apoyo emocional y mantener su privacidad y comodidad.</li><li>Colaborar con el médico o técnico en el manejo del gel y la sonda si es necesario.</li></ul></div>
+              <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después</p><ul class="space-y-1 list-disc list-inside text-slate-600 dark:text-slate-400"><li>Retirar el exceso de gel de la piel del paciente.</li><li>Verificar que el paciente se encuentre estable y sin molestias.</li><li>Informar sobre la reanudación de su dieta habitual y coordinar la entrega de resultados.</li></ul></div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ============ 2.2 Radiografías contrastadas del tubo digestivo ============ -->
+      <article class="mt-8 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+        <div class="grid md:grid-cols-[34%_1fr]">
+          <div class="relative bg-slate-100 dark:bg-slate-800 aspect-[4/3] md:aspect-auto md:min-h-[12rem]"><img src="IMG/digestivo/radiografias-contrastadas.webp" alt="Radiografías contrastadas del tubo digestivo" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-xs text-slate-400 p-3"><svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>radiografias-contrastadas.webp</span></div></div>
+          <div class="p-5">
+            <div class="flex items-center gap-3">
+              <span class="grid h-9 w-9 place-items-center rounded-xl bg-lime-500 text-white font-extrabold text-xs">2.2</span>
+              <h3 class="font-bold text-lg text-slate-900 dark:text-white">Radiografías contrastadas del tubo digestivo</h3>
+            </div>
+            <p class="mt-3 text-xs font-bold uppercase tracking-wide text-lime-700 dark:text-lime-300">¿Qué es?</p>
+            <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">Son estudios radiológicos que utilizan un medio de contraste (generalmente sulfato de bario o, en algunos casos, contraste yodado hidrosoluble) para visualizar la luz y las paredes del tracto digestivo, ya que estas estructuras no se observan con claridad en una radiografía simple. Entre los principales estudios están:</p>
+            <div class="mt-2 grid sm:grid-cols-2 gap-x-6 gap-y-1 text-sm text-slate-600 dark:text-slate-400">
+              <div class="flex gap-2"><span class="text-lime-500">•</span>Esofagograma.</div>
+              <div class="flex gap-2"><span class="text-lime-500">•</span>Serie esófago-gastroduodenal.</div>
+              <div class="flex gap-2"><span class="text-lime-500">•</span>Tránsito intestinal.</div>
+              <div class="flex gap-2"><span class="text-lime-500">•</span>Enema baritado o colon por enema.</div>
+            </div>
+          </div>
+        </div>
+        <div class="border-t border-slate-100 dark:border-slate-800 p-5 space-y-4">
+          <div>
+            <p class="text-xs font-bold uppercase tracking-wide text-lime-700 dark:text-lime-300">Función</p>
+            <p class="mt-1 text-sm text-slate-600 dark:text-slate-400 leading-relaxed">Permite la visualización detallada de la anatomía, el contorno, el calibre y la motilidad del tubo digestivo, algo que no es posible apreciar mediante una radiografía simple debido a que los órganos huecos del sistema digestivo no generan suficiente contraste natural con los tejidos circundantes. Al introducir el medio de contraste (por vía oral o rectal, según el segmento a estudiar), este recubre las paredes internas o rellena la luz del órgano, permitiendo delinear con claridad su forma, identificar estrechamientos, dilataciones, defectos de llenado, úlceras o masas, y además evaluar el tránsito y la velocidad con que el contraste avanza, lo cual aporta información funcional (motilidad) además de estructural.</p>
+          </div>
+          <div>
+            <p class="text-xs font-bold uppercase tracking-wide text-lime-700 dark:text-lime-300">¿Qué enfermedades ayuda a detectar?</p>
+            <p class="mt-1 text-sm text-slate-600 dark:text-slate-400 leading-relaxed">Permite detectar una amplia variedad de enfermedades del tubo digestivo, entre ellas el reflujo gastroesofágico, la hernia hiatal, la acalasia, las estenosis y los divertículos esofágicos en la parte alta del tracto digestivo; y la úlcera péptica, la gastritis, los tumores gástricos y la estenosis pilórica a nivel del estómago y duodeno.</p>
+          </div>
+          <div>
+            <p class="text-xs font-bold uppercase tracking-wide text-lime-700 dark:text-lime-300 mb-2">Intervenciones de enfermería</p>
+            <div class="grid sm:grid-cols-3 gap-3 text-xs">
+              <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes</p><ul class="space-y-1 list-disc list-inside text-slate-600 dark:text-slate-400"><li>Verificar preparación intestinal.</li><li>Explicar el procedimiento y la ingesta o administración del medio de contraste.</li><li>Verificar antecedentes de alergias al contraste y contraindicaciones.</li></ul></div>
+              <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3"><p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante</p><ul class="space-y-1 list-disc list-inside text-slate-600 dark:text-slate-400"><li>Colaborar en la administración del contraste y posicionar al paciente.</li><li>Vigilar la tolerancia del paciente al procedimiento y a la ingesta del contraste.</li><li>Brindar apoyo emocional, ya que algunos estudios generan incomodidad.</li></ul></div>
+              <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después</p><ul class="space-y-1 list-disc list-inside text-slate-600 dark:text-slate-400"><li>Vigilar la eliminación del contraste.</li><li>Fomentar la ingesta abundante de líquidos y, si es necesario, laxantes suaves para eliminar el bario.</li><li>Informar signos de alarma y coordinar la entrega de resultados.</li></ul></div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ============ 2.3 Tomografía computarizada (TAC) abdominal ============ -->
+      <article class="mt-8 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+        <div class="grid md:grid-cols-[34%_1fr]">
+          <div class="relative bg-slate-100 dark:bg-slate-800 aspect-[4/3] md:aspect-auto md:min-h-[12rem]"><img src="IMG/digestivo/tac-abdominal.webp" alt="Tomografía computarizada (TAC) abdominal" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-xs text-slate-400 p-3"><svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>tac-abdominal.webp</span></div></div>
+          <div class="p-5">
+            <div class="flex items-center gap-3">
+              <span class="grid h-9 w-9 place-items-center rounded-xl bg-lime-500 text-white font-extrabold text-xs">2.3</span>
+              <h3 class="font-bold text-lg text-slate-900 dark:text-white">Tomografía computarizada (TAC) abdominal</h3>
+            </div>
+            <p class="mt-3 text-xs font-bold uppercase tracking-wide text-lime-700 dark:text-lime-300">¿Qué es?</p>
+            <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">Una tomografía computarizada abdominal utiliza una máquina de rayos X especial para tomar imágenes del hígado, el bazo, los riñones, la vejiga, el estómago, los intestinos, el páncreas, las glándulas suprarrenales, los vasos sanguíneos y los ganglios linfáticos.</p>
+            <p class="mt-2 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">El paciente yace acostado sobre una camilla. Una almohada y correas lo mantienen en su lugar para evitar movimientos que pudieran resultar en una imagen borrosa. La máquina, con forma de anillo, rodea el cuerpo tomando imágenes para obtener cortes transversales del abdomen desde diferentes ángulos. Estas imágenes se envían a una computadora que las registra y también puede combinarlas para formar imágenes en 3D.</p>
+          </div>
+        </div>
+        <div class="border-t border-slate-100 dark:border-slate-800 p-5 space-y-4">
+          <div>
+            <p class="text-xs font-bold uppercase tracking-wide text-lime-700 dark:text-lime-300">¿Por qué se realiza?</p>
+            <p class="mt-1 text-sm text-slate-600 dark:text-slate-400 leading-relaxed">Un médico puede solicitar una tomografía computarizada para detectar signos de inflamación, infección, lesión o enfermedad. Los resultados pueden ayudar a encontrar la causa del dolor abdominal, diagnosticar una enfermedad o evaluar las consecuencias de una lesión.</p>
+          </div>
+          <div>
+            <p class="text-xs font-bold uppercase tracking-wide text-lime-700 dark:text-lime-300">¿Qué enfermedades ayuda a detectar?</p>
+            <div class="mt-1 grid sm:grid-cols-2 gap-x-6 gap-y-1 text-sm text-slate-600 dark:text-slate-400">
+              <div class="flex gap-2"><span class="text-lime-500">•</span>Apendicitis.</div>
+              <div class="flex gap-2"><span class="text-lime-500">•</span>Diverticulitis.</div>
+              <div class="flex gap-2"><span class="text-lime-500">•</span>Colecistitis.</div>
+              <div class="flex gap-2"><span class="text-lime-500">•</span>Pancreatitis.</div>
+              <div class="flex gap-2"><span class="text-lime-500">•</span>Tumores de hígado, páncreas, riñones, bazo y otros órganos (incluyendo metástasis).</div>
+              <div class="flex gap-2"><span class="text-lime-500">•</span>Aneurismas de aorta abdominal.</div>
+              <div class="flex gap-2"><span class="text-lime-500">•</span>Trombosis vasculares.</div>
+              <div class="flex gap-2"><span class="text-lime-500">•</span>Obstrucciones intestinales.</div>
+            </div>
+          </div>
+          <div>
+            <p class="text-xs font-bold uppercase tracking-wide text-lime-700 dark:text-lime-300 mb-2">Intervenciones de enfermería</p>
+            <div class="grid sm:grid-cols-3 gap-3 text-xs">
+              <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes</p><ul class="space-y-1 list-disc list-inside text-slate-600 dark:text-slate-400"><li>Verificar ayuno previo y función renal si se usará contraste intravenoso.</li><li>Verificar alergias al yodo o al contraste, antecedentes de asma o reacciones previas, y estado de embarazo.</li><li>Explicar el procedimiento, canalizar vía venosa y administrar contraste oral si está indicado.</li></ul></div>
+              <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3"><p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante</p><ul class="space-y-1 list-disc list-inside text-slate-600 dark:text-slate-400"><li>Verificar identidad del paciente y posicionarlo correctamente en la mesa del tomógrafo.</li><li>Administrar el contraste intravenoso mediante bomba inyectora, vigilando el sitio de punción.</li><li>Monitorear al paciente durante el estudio y estar atenta a reacciones adversas.</li></ul></div>
+              <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después</p><ul class="space-y-1 list-disc list-inside text-slate-600 dark:text-slate-400"><li>Observar signos de reacción tardía al contraste.</li><li>Retirar la vía venosa y fomentar la hidratación abundante para favorecer la eliminación del contraste.</li><li>Registrar el procedimiento, informar hallazgos relevantes y coordinar la entrega de resultados.</li></ul></div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ============ 2.4 Resonancia magnética (RM) ============ -->
+      <article class="mt-8 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+        <div class="grid md:grid-cols-[34%_1fr]">
+          <div class="relative bg-slate-100 dark:bg-slate-800 aspect-[4/3] md:aspect-auto md:min-h-[12rem]"><img src="IMG/digestivo/resonancia-magnetica.webp" alt="Resonancia magnética (RM)" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="absolute inset-0 hidden flex-col items-center justify-center gap-1 text-center text-xs text-slate-400 p-3"><svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>resonancia-magnetica.webp</span></div></div>
+          <div class="p-5">
+            <div class="flex items-center gap-3">
+              <span class="grid h-9 w-9 place-items-center rounded-xl bg-lime-500 text-white font-extrabold text-xs">2.4</span>
+              <h3 class="font-bold text-lg text-slate-900 dark:text-white">Resonancia magnética (RM)</h3>
+            </div>
+            <p class="mt-3 text-xs font-bold uppercase tracking-wide text-lime-700 dark:text-lime-300">¿Qué es?</p>
+            <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">Es una técnica de obtención de imágenes médicas que utiliza un campo magnético y ondas de radio generadas por computadora para crear imágenes detalladas de los órganos y tejidos del cuerpo. Es una manera no invasiva de examinar los órganos, los tejidos y el sistema esquelético, y produce imágenes de alta resolución del interior del cuerpo para ayudar a diagnosticar diversas afecciones.</p>
+            <p class="mt-3 text-xs font-bold uppercase tracking-wide text-lime-700 dark:text-lime-300">Función</p>
+            <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">Proporciona imágenes de alta resolución y gran detalle de los tejidos blandos, permitiendo diferenciar con precisión estructuras que en otros estudios (como la radiografía o la TAC) resultan difíciles de distinguir, tales como el tejido nervioso, muscular, ligamentoso y órganos internos.</p>
+          </div>
+        </div>
+        <div class="border-t border-slate-100 dark:border-slate-800 p-5 space-y-4">
+          <div>
+            <p class="text-xs font-bold uppercase tracking-wide text-lime-700 dark:text-lime-300">¿Qué diagnostica?</p>
+            <div class="mt-1 grid sm:grid-cols-2 gap-x-6 gap-y-1 text-sm text-slate-600 dark:text-slate-400">
+              <div class="flex gap-2"><span class="text-lime-500">•</span>Aneurismas de los vasos del cerebro.</div>
+              <div class="flex gap-2"><span class="text-lime-500">•</span>Afecciones del ojo y del oído interno.</div>
+              <div class="flex gap-2"><span class="text-lime-500">•</span>Esclerosis múltiple.</div>
+              <div class="flex gap-2"><span class="text-lime-500">•</span>Afecciones de la médula espinal.</div>
+              <div class="flex gap-2"><span class="text-lime-500">•</span>Accidente cerebrovascular.</div>
+            </div>
+          </div>
+          <div>
+            <p class="text-xs font-bold uppercase tracking-wide text-lime-700 dark:text-lime-300 mb-2">Intervenciones de enfermería</p>
+            <div class="grid sm:grid-cols-3 gap-3 text-xs">
+              <div class="rounded-xl bg-sky-50 dark:bg-sky-500/10 ring-1 ring-sky-100 dark:ring-sky-500/20 p-3"><p class="font-bold text-sky-700 dark:text-sky-300 mb-1">Antes</p><ul class="space-y-1 list-disc list-inside text-slate-600 dark:text-slate-400"><li>Verificar de forma exhaustiva la ausencia de objetos metálicos o dispositivos incompatibles.</li><li>Indagar antecedentes de claustrofobia, alergias al contraste y función renal si se usará contraste.</li><li>Explicar el procedimiento.</li></ul></div>
+              <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 ring-1 ring-amber-100 dark:ring-amber-500/20 p-3"><p class="font-bold text-amber-700 dark:text-amber-300 mb-1">Durante</p><ul class="space-y-1 list-disc list-inside text-slate-600 dark:text-slate-400"><li>Verificar identidad del paciente y acompañarlo hasta la sala, asegurando que no ingrese ningún objeto metálico.</li><li>Posicionar al paciente cómodamente y proporcionar protección auditiva por el ruido del equipo.</li><li>Monitorear al paciente a través del sistema de comunicación de la sala y administrar contraste intravenoso si está indicado, vigilando reacciones adversas.</li></ul></div>
+              <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 ring-1 ring-emerald-100 dark:ring-emerald-500/20 p-3"><p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">Después</p><ul class="space-y-1 list-disc list-inside text-slate-600 dark:text-slate-400"><li>Observar signos de reacción alérgica tardía al contraste.</li><li>Retirar la vía venosa si fue colocada y verificar el estado general del paciente.</li><li>Registrar el procedimiento, informar hallazgos relevantes al equipo médico y coordinar la entrega de resultados.</li></ul></div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <div class="mt-12 flex items-center justify-between border-t border-slate-200 dark:border-slate-800 pt-6">
+        <a href="digestivo.html" class="text-sm text-slate-500 hover:text-indigo-600 dark:hover:text-indigo-400">← Estudios de laboratorio</a>
+        <a href="digestivo-endoscopicos.html"
+           class="inline-flex items-center gap-2 rounded-full bg-indigo-600 px-5 py-2.5 text-white text-sm font-semibold hover:bg-indigo-700">
+          Estudios endoscópicos →
+        </a>
+      </div>
+    </div>
+  </main>
+</div>
+<script>
+  function toggleTheme(){
+    const html = document.documentElement;
+    html.classList.toggle('dark');
+    localStorage.theme = html.classList.contains('dark') ? 'dark' : 'light';
+  }
+</script>
+
+  <!-- ===== Lightbox: clic en una imagen para ampliarla ===== -->
+  <div id="lightbox" class="fixed inset-0 z-[60] hidden items-center justify-center bg-black/80 backdrop-blur-sm p-4 cursor-zoom-out" onclick="closeLightbox()">
+    <button onclick="closeLightbox()" aria-label="Cerrar"
+            class="absolute top-4 right-4 h-11 w-11 rounded-full bg-white/10 hover:bg-white/20 ring-1 ring-white/30 text-white grid place-items-center">
+      <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <figure class="flex flex-col items-center gap-3" onclick="event.stopPropagation()">
+      <img id="lightbox-img" src="" alt="" class="max-h-[85vh] max-w-[92vw] rounded-xl shadow-2xl object-contain">
+      <figcaption id="lightbox-cap" class="text-sm text-white/80"></figcaption>
+    </figure>
+  </div>
+  <script>
+    (function(){
+      const box = document.getElementById('lightbox');
+      const big = document.getElementById('lightbox-img');
+      const cap = document.getElementById('lightbox-cap');
+      document.querySelectorAll('main img').forEach(function(el){
+        el.classList.add('cursor-zoom-in');
+        el.addEventListener('click', function(ev){
+          ev.preventDefault(); ev.stopPropagation();
+          big.src = el.currentSrc || el.src;
+          big.alt = el.alt || '';
+          cap.textContent = el.alt || '';
+          box.classList.remove('hidden'); box.classList.add('flex');
+          document.body.style.overflow = 'hidden';
+        });
+      });
+      window.closeLightbox = function(){
+        box.classList.add('hidden'); box.classList.remove('flex');
+        document.body.style.overflow = '';
+      };
+      document.addEventListener('keydown', function(e){ if(e.key === 'Escape') window.closeLightbox(); });
+    })();
+  </script>
+</body>
+</html>
