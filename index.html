@@ -27,7 +27,14 @@
     /* Aparición suave */
     @keyframes rise { from { opacity:0; transform: translateY(18px);} to { opacity:1; transform: translateY(0);} }
     .rise { animation: rise .7s cubic-bezier(.2,.7,.2,1) both; }
-    .d1{animation-delay:.05s} .d2{animation-delay:.15s} .d3{animation-delay:.25s} .d4{animation-delay:.35s} .d5{animation-delay:.45s}
+    .d1{animation-delay:.05s} .d2{animation-delay:.12s} .d3{animation-delay:.19s}
+    .d4{animation-delay:.26s} .d5{animation-delay:.33s} .d6{animation-delay:.40s}
+    /* Latido sutil del icono */
+    @keyframes pulse-ecg { 0%,100%{opacity:.55} 50%{opacity:1} }
+    .ecg { animation: pulse-ecg 2.4s ease-in-out infinite; }
+    /* Scrollbar fino en el temario */
+    .thin::-webkit-scrollbar{width:6px}
+    .thin::-webkit-scrollbar-thumb{background:rgba(120,120,140,.35);border-radius:99px}
   </style>
 </head>
 <body class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-200 transition-colors duration-500">
@@ -41,105 +48,283 @@
     <svg class="hidden dark:block h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path stroke-linecap="round" d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
   </button>
 
-  <!-- ====== PORTADA / CARÁTULA ====== -->
-  <main class="relative min-h-screen overflow-hidden flex items-center justify-center px-4 py-14
+  <!-- ====== PORTADA / CARÁTULA HORIZONTAL ====== -->
+  <main class="relative min-h-screen overflow-x-hidden flex items-center justify-center px-4 py-6
                bg-gradient-to-br from-indigo-100 via-violet-100 to-fuchsia-100
                dark:from-slate-950 dark:via-indigo-950 dark:to-slate-900">
 
-    <!-- Burbujas de fondo -->
-    <div class="blob pointer-events-none absolute -top-24 -left-24 h-80 w-80 rounded-full
+    <!-- Burbujas de fondo (fixed: nunca desbordan la página) -->
+    <div class="blob pointer-events-none fixed -top-24 -left-24 h-80 w-80 rounded-full
                 bg-indigo-400/40 dark:bg-indigo-600/30 blur-3xl"></div>
-    <div class="blob blob-2 pointer-events-none absolute top-1/3 -right-24 h-96 w-96 rounded-full
+    <div class="blob blob-2 pointer-events-none fixed top-1/3 -right-24 h-96 w-96 rounded-full
                 bg-fuchsia-400/40 dark:bg-fuchsia-600/20 blur-3xl"></div>
-    <div class="blob blob-3 pointer-events-none absolute -bottom-24 left-1/4 h-80 w-80 rounded-full
+    <div class="blob blob-3 pointer-events-none fixed -bottom-24 left-1/4 h-80 w-80 rounded-full
                 bg-violet-400/40 dark:bg-violet-600/25 blur-3xl"></div>
 
-    <!-- Tarjeta principal (glass) -->
-    <div class="relative w-full max-w-3xl rounded-[2rem] overflow-hidden
+    <!-- Tarjeta principal horizontal (glass) · altura limitada al viewport -->
+    <div class="rise relative w-full max-w-6xl rounded-[2rem] overflow-hidden
                 bg-white/70 dark:bg-slate-900/60 backdrop-blur-xl
-                ring-1 ring-white/60 dark:ring-white/10 shadow-2xl shadow-indigo-500/10">
+                ring-1 ring-white/60 dark:ring-white/10 shadow-2xl shadow-indigo-500/10
+                grid grid-cols-1 lg:grid-cols-[minmax(0,44%)_minmax(0,56%)]
+                lg:h-[calc(100vh-3rem)] lg:max-h-[860px]">
 
-      <!-- Encabezado -->
-      <div class="relative px-8 py-12 text-center text-white
-                  bg-gradient-to-r from-indigo-600 via-violet-600 to-fuchsia-600 overflow-hidden">
+      <!-- ================= PANEL IZQUIERDO · IDENTIDAD ================= -->
+      <div class="relative px-7 sm:px-9 py-8 text-white flex flex-col min-w-0 overflow-hidden
+                  lg:min-h-0 lg:overflow-y-auto lg:overflow-x-hidden thin
+                  bg-gradient-to-br from-indigo-600 via-violet-600 to-fuchsia-600">
+        <!-- textura de puntos -->
         <div class="pointer-events-none absolute inset-0 opacity-20"
              style="background-image:radial-gradient(circle at 20% 30%, white 2px, transparent 2px), radial-gradient(circle at 70% 60%, white 2px, transparent 2px); background-size: 60px 60px;"></div>
-        <div class="rise relative mx-auto mb-5 h-20 w-20 rounded-3xl bg-white/15 ring-1 ring-white/30
-                    grid place-items-center shadow-lg">
-          <svg class="h-10 w-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12h4l2 5 4-12 2 7h6"/></svg>
-        </div>
-        <p class="rise d1 relative uppercase tracking-[0.3em] text-[0.65rem] sm:text-xs text-indigo-100 font-semibold">Universidad</p>
-        <h1 class="rise d2 relative mt-2 text-2xl sm:text-4xl font-black leading-tight drop-shadow">
-          Universidad Bolivariana<br class="hidden sm:block"> del Ecuador
-        </h1>
-        <div class="rise d3 relative mt-4 inline-flex items-center gap-2 rounded-full
-                    bg-white/15 ring-1 ring-white/25 px-4 py-1.5 text-sm font-medium backdrop-blur">
-          Wiki · Medios de Diagnóstico
-        </div>
-      </div>
+        <!-- línea ECG decorativa -->
+        <svg class="ecg pointer-events-none absolute -bottom-2 left-0 w-full h-24 text-white/20" viewBox="0 0 400 60" fill="none" stroke="currentColor" stroke-width="2" preserveAspectRatio="none">
+          <path d="M0 30h40l8-18 10 36 9-18h30l8-12 10 24 8-12h40l8-18 10 36 9-18h30l8-12 10 24 8-12h40l8-18 10 36 9-18h60"/>
+        </svg>
 
-      <!-- Cuerpo de la carátula -->
-      <div class="px-6 sm:px-10 py-10 space-y-9">
+        <!-- ===== ESPACIO PARA EL LOGO DE LA UNIVERSIDAD ===== -->
+        <div class="rise d1 relative">
+          <div class="relative mx-auto lg:mx-0 h-24 w-24 rounded-3xl bg-white/95 dark:bg-white/95 ring-1 ring-white/40 shadow-xl grid place-items-center overflow-hidden p-2.5">
+            <img src="IMG/logo-universidad.jpg" alt="Logo de la Universidad Bolivariana del Ecuador"
+                 class="h-full w-full object-contain border-2 border-white/30 rounded-3xl"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="hidden absolute inset-0 flex-col items-center justify-center gap-1 text-center p-2 text-slate-400">
+              <svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3 2 8l10 5 10-5-10-5z"/><path stroke-linecap="round" stroke-linejoin="round" d="M6 10.5V16c0 1.7 2.7 3 6 3s6-1.3 6-3v-5.5"/></svg>
+              <span class="text-[0.55rem] font-semibold leading-tight">Logo de la<br>Universidad</span>
+              <span class="text-[0.45rem] text-slate-300 leading-none">IMG/logo-universidad.webp</span>
+            </div>
+          </div>
+        </div>
 
-        <div class="rise d2 grid sm:grid-cols-2 gap-4">
-          <div class="group rounded-2xl bg-white/70 dark:bg-slate-800/60 ring-1 ring-slate-200 dark:ring-slate-700 p-5 hover:ring-indigo-300 dark:hover:ring-indigo-500 transition">
-            <p class="text-[0.7rem] font-bold uppercase tracking-wider text-indigo-600 dark:text-indigo-400">Tema</p>
-            <p class="mt-1 text-lg font-bold">Wiki</p>
+        <!-- Universidad -->
+        <div class="rise d2 relative mt-5 text-center lg:text-left">
+          <p class="uppercase tracking-[0.3em] text-[0.6rem] text-indigo-100 font-semibold">Universidad</p>
+          <h2 class="mt-1 text-lg sm:text-xl font-black leading-tight drop-shadow">
+            Universidad Bolivariana<br class="hidden sm:block"> del Ecuador
+          </h2>
+        </div>
+
+        <!-- Título del proyecto -->
+        <div class="rise d3 relative mt-5 text-center lg:text-left">
+          <div class="inline-flex items-center gap-2 rounded-full bg-white/15 ring-1 ring-white/25 px-3 py-1 text-[0.68rem] font-semibold backdrop-blur">
+            <span class="h-1.5 w-1.5 rounded-full bg-emerald-300"></span> Wiki interactiva
           </div>
-          <div class="group rounded-2xl bg-white/70 dark:bg-slate-800/60 ring-1 ring-slate-200 dark:ring-slate-700 p-5 hover:ring-indigo-300 dark:hover:ring-indigo-500 transition">
-            <p class="text-[0.7rem] font-bold uppercase tracking-wider text-indigo-600 dark:text-indigo-400">Materia</p>
-            <p class="mt-1 text-lg font-bold">Medios de Diagnóstico</p>
+          <h1 class="mt-2.5 text-3xl sm:text-4xl font-black leading-[1.05] drop-shadow">
+            Medios de<br>Diagnóstico
+          </h1>
+          <p class="mt-2.5 text-[0.8rem] text-indigo-100/90 max-w-sm mx-auto lg:mx-0 leading-relaxed">
+            Guía completa de pruebas de laboratorio, estudios de imagen, procedimientos
+            e intervenciones de enfermería, organizada por sistema.
+          </p>
+        </div>
+
+        <!-- Meta -->
+        <div class="rise d4 relative mt-5 grid grid-cols-1 sm:grid-cols-3 gap-2 sm:text-center lg:text-left">
+          <div class="rounded-xl bg-white/10 ring-1 ring-white/20 px-3 py-2.5 backdrop-blur flex items-center justify-between gap-3 sm:block">
+            <p class="text-[0.55rem] font-bold uppercase tracking-wider text-indigo-100/80 shrink-0">Materia</p>
+            <p class="sm:mt-0.5 text-xs font-bold leading-tight text-right sm:text-center lg:text-left">Medios de Diagnóstico</p>
           </div>
-          <div class="group rounded-2xl bg-white/70 dark:bg-slate-800/60 ring-1 ring-slate-200 dark:ring-slate-700 p-5 hover:ring-indigo-300 dark:hover:ring-indigo-500 transition">
-            <p class="text-[0.7rem] font-bold uppercase tracking-wider text-indigo-600 dark:text-indigo-400">Curso</p>
-            <p class="mt-1 text-lg font-bold">UEPD-04</p>
+          <div class="rounded-xl bg-white/10 ring-1 ring-white/20 px-3 py-2.5 backdrop-blur flex items-center justify-between gap-3 sm:block">
+            <p class="text-[0.55rem] font-bold uppercase tracking-wider text-indigo-100/80 shrink-0">Curso</p>
+            <p class="sm:mt-0.5 text-xs font-bold leading-tight text-right sm:text-center lg:text-left">UEPD-04</p>
           </div>
-          <div class="group rounded-2xl bg-white/70 dark:bg-slate-800/60 ring-1 ring-slate-200 dark:ring-slate-700 p-5 hover:ring-indigo-300 dark:hover:ring-indigo-500 transition">
-            <p class="text-[0.7rem] font-bold uppercase tracking-wider text-indigo-600 dark:text-indigo-400">Docente</p>
-            <p class="mt-1 text-lg font-bold">Sanny Aranda</p>
+          <div class="rounded-xl bg-white/10 ring-1 ring-white/20 px-3 py-2.5 backdrop-blur flex items-center justify-between gap-3 sm:block">
+            <p class="text-[0.55rem] font-bold uppercase tracking-wider text-indigo-100/80 shrink-0">Docente</p>
+            <p class="sm:mt-0.5 text-xs font-bold leading-tight text-right sm:text-center lg:text-left">Sanny Aranda</p>
           </div>
         </div>
 
         <!-- Integrantes -->
-        <div class="rise d3">
-          <p class="text-[0.7rem] font-bold uppercase tracking-wider text-indigo-600 dark:text-indigo-400 mb-3">Integrantes</p>
-          <div class="grid sm:grid-cols-2 gap-3">
-            <div class="flex items-center gap-3 rounded-xl bg-gradient-to-r from-indigo-50 to-white dark:from-slate-800 dark:to-slate-800/40 ring-1 ring-slate-200 dark:ring-slate-700 px-4 py-3 hover:shadow-md transition">
-              <span class="h-9 w-9 shrink-0 rounded-full bg-gradient-to-br from-indigo-500 to-violet-500 text-white grid place-items-center font-bold text-sm shadow">A</span>
-              <span class="font-semibold">Arianna Arana</span>
-            </div>
-            <div class="flex items-center gap-3 rounded-xl bg-gradient-to-r from-violet-50 to-white dark:from-slate-800 dark:to-slate-800/40 ring-1 ring-slate-200 dark:ring-slate-700 px-4 py-3 hover:shadow-md transition">
-              <span class="h-9 w-9 shrink-0 rounded-full bg-gradient-to-br from-violet-500 to-fuchsia-500 text-white grid place-items-center font-bold text-sm shadow">T</span>
-              <span class="font-semibold">Tiffany Duarte</span>
-            </div>
-            <div class="flex items-center gap-3 rounded-xl bg-gradient-to-r from-fuchsia-50 to-white dark:from-slate-800 dark:to-slate-800/40 ring-1 ring-slate-200 dark:ring-slate-700 px-4 py-3 hover:shadow-md transition">
-              <span class="h-9 w-9 shrink-0 rounded-full bg-gradient-to-br from-fuchsia-500 to-rose-500 text-white grid place-items-center font-bold text-sm shadow">K</span>
-              <span class="font-semibold">Karla Torres</span>
-            </div>
-            <div class="flex items-center gap-3 rounded-xl bg-gradient-to-r from-rose-50 to-white dark:from-slate-800 dark:to-slate-800/40 ring-1 ring-slate-200 dark:ring-slate-700 px-4 py-3 hover:shadow-md transition">
-              <span class="h-9 w-9 shrink-0 rounded-full bg-gradient-to-br from-rose-500 to-orange-500 text-white grid place-items-center font-bold text-sm shadow">M</span>
-              <span class="font-semibold">María Valdivieso</span>
-            </div>
+        <div class="rise d5 relative mt-5">
+          <p class="text-[0.6rem] font-bold uppercase tracking-wider text-indigo-100/80 mb-2 text-center lg:text-left">Integrantes</p>
+          <div class="flex flex-wrap justify-center lg:justify-start gap-1.5">
+            <span class="inline-flex items-center gap-2 rounded-full bg-white/10 ring-1 ring-white/20 pl-1 pr-3 py-1 backdrop-blur">
+              <span class="h-6 w-6 rounded-full bg-gradient-to-br from-sky-300 to-indigo-400 text-indigo-950 grid place-items-center text-[0.65rem] font-black">A</span>
+              <span class="text-xs font-semibold">Arianna Arana</span>
+            </span>
+            <span class="inline-flex items-center gap-2 rounded-full bg-white/10 ring-1 ring-white/20 pl-1 pr-3 py-1 backdrop-blur">
+              <span class="h-6 w-6 rounded-full bg-gradient-to-br from-violet-300 to-fuchsia-400 text-indigo-950 grid place-items-center text-[0.65rem] font-black">T</span>
+              <span class="text-xs font-semibold">Tiffany Duarte</span>
+            </span>
+            <span class="inline-flex items-center gap-2 rounded-full bg-white/10 ring-1 ring-white/20 pl-1 pr-3 py-1 backdrop-blur">
+              <span class="h-6 w-6 rounded-full bg-gradient-to-br from-fuchsia-300 to-rose-400 text-indigo-950 grid place-items-center text-[0.65rem] font-black">K</span>
+              <span class="text-xs font-semibold">Karla Torres</span>
+            </span>
+            <span class="inline-flex items-center gap-2 rounded-full bg-white/10 ring-1 ring-white/20 pl-1 pr-3 py-1 backdrop-blur">
+              <span class="h-6 w-6 rounded-full bg-gradient-to-br from-amber-300 to-orange-400 text-indigo-950 grid place-items-center text-[0.65rem] font-black">M</span>
+              <span class="text-xs font-semibold">María Valdivieso</span>
+            </span>
           </div>
         </div>
 
         <!-- Botón entrar -->
-        <div class="rise d4 pt-2 text-center">
+        <div class="rise d6 relative mt-auto pt-6 text-center lg:text-left">
           <a href="introduccion.html"
-             class="group inline-flex items-center gap-2 rounded-full
-                    bg-gradient-to-r from-indigo-600 to-violet-600 px-9 py-4
-                    text-white font-bold shadow-xl shadow-indigo-600/30
-                    hover:shadow-2xl hover:shadow-violet-600/40 hover:-translate-y-0.5 transition">
+             class="group inline-flex items-center gap-2 rounded-full bg-white px-7 py-3
+                    text-indigo-700 font-bold text-sm shadow-xl shadow-indigo-900/20
+                    hover:shadow-2xl hover:-translate-y-0.5 transition">
             Entrar a la Wiki
-            <svg class="h-5 w-5 group-hover:translate-x-1 transition" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+            <svg class="h-4 w-4 group-hover:translate-x-1 transition" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5-5 5M6 12h12"/>
             </svg>
           </a>
         </div>
       </div>
 
-      <div class="bg-white/50 dark:bg-slate-900/50 px-8 py-4 text-center text-xs text-slate-400 dark:text-slate-500 border-t border-slate-200/60 dark:border-slate-700/60">
-        Proyecto académico · Medios de Diagnóstico · UEPD-04
+      <!-- ================= PANEL DERECHO · PREVIEW DEL TEMARIO ================= -->
+      <div class="px-6 sm:px-9 py-8 flex flex-col min-w-0 lg:min-h-0">
+
+        <!-- Encabezado del temario -->
+        <div class="rise d2 flex items-center justify-between gap-4">
+          <div>
+            <p class="text-[0.6rem] font-bold uppercase tracking-[0.25em] text-indigo-600 dark:text-indigo-400">Contenido</p>
+            <h3 class="mt-1 text-2xl font-black text-slate-900 dark:text-white">Temario</h3>
+          </div>
+          <span class="h-11 w-11 shrink-0 rounded-2xl bg-indigo-50 dark:bg-indigo-500/15 text-indigo-600 dark:text-indigo-400 grid place-items-center ring-1 ring-indigo-100 dark:ring-indigo-500/25">
+            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12h4l2 5 4-12 2 7h6"/></svg>
+          </span>
+        </div>
+
+        <!-- Estadísticas -->
+        <div class="rise d3 mt-5 grid grid-cols-3 gap-2.5">
+          <div class="rounded-xl bg-white dark:bg-slate-800/60 ring-1 ring-slate-200 dark:ring-slate-700 px-3 py-3 text-center">
+            <p class="text-2xl font-black text-indigo-600 dark:text-indigo-400 leading-none">12</p>
+            <p class="mt-1 text-[0.6rem] font-semibold uppercase tracking-wide text-slate-400">Sistemas</p>
+          </div>
+          <div class="rounded-xl bg-white dark:bg-slate-800/60 ring-1 ring-slate-200 dark:ring-slate-700 px-3 py-3 text-center">
+            <p class="text-2xl font-black text-violet-600 dark:text-violet-400 leading-none">30</p>
+            <p class="mt-1 text-[0.6rem] font-semibold uppercase tracking-wide text-slate-400">Páginas</p>
+          </div>
+          <div class="rounded-xl bg-white dark:bg-slate-800/60 ring-1 ring-slate-200 dark:ring-slate-700 px-3 py-3 text-center">
+            <p class="text-2xl font-black text-fuchsia-600 dark:text-fuchsia-400 leading-none">188</p>
+            <p class="mt-1 text-[0.6rem] font-semibold uppercase tracking-wide text-slate-400">Fuentes</p>
+          </div>
+        </div>
+
+        <!-- Lista de módulos -->
+        <div class="rise d4 mt-4 grid grid-cols-1 sm:grid-cols-2 gap-2.5 content-start thin
+                    lg:flex-1 lg:min-h-0 lg:overflow-y-auto lg:pr-1">
+
+          <a href="componentes.html" class="group flex items-center gap-3 rounded-xl bg-white dark:bg-slate-800/60 ring-1 ring-slate-200 dark:ring-slate-700 px-3 py-2.5 hover:ring-sky-300 dark:hover:ring-sky-500 hover:shadow-md hover:-translate-y-0.5 transition">
+            <span class="grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-sky-50 dark:bg-sky-500/15 text-sky-700 dark:text-sky-300 text-[0.7rem] font-extrabold ring-1 ring-sky-100 dark:ring-sky-500/25">01</span>
+            <span class="min-w-0 flex-1">
+              <span class="block text-sm font-bold text-slate-800 dark:text-slate-100 truncate group-hover:text-sky-700 dark:group-hover:text-sky-300">Fluidos corporales</span>
+              <span class="block text-[0.65rem] text-slate-400 truncate">Sangre · hemograma · frotis · 4 págs.</span>
+            </span>
+            <svg class="h-4 w-4 shrink-0 text-slate-300 dark:text-slate-600 group-hover:text-sky-500 group-hover:translate-x-0.5 transition" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+          </a>
+
+          <a href="medulograma.html" class="group flex items-center gap-3 rounded-xl bg-white dark:bg-slate-800/60 ring-1 ring-slate-200 dark:ring-slate-700 px-3 py-2.5 hover:ring-emerald-300 dark:hover:ring-emerald-500 hover:shadow-md hover:-translate-y-0.5 transition">
+            <span class="grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-emerald-50 dark:bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 text-[0.7rem] font-extrabold ring-1 ring-emerald-100 dark:ring-emerald-500/25">02</span>
+            <span class="min-w-0 flex-1">
+              <span class="block text-sm font-bold text-slate-800 dark:text-slate-100 truncate group-hover:text-emerald-700 dark:group-hover:text-emerald-300">Medulograma</span>
+              <span class="block text-[0.65rem] text-slate-400 truncate">Médula ósea · 1 pág.</span>
+            </span>
+            <svg class="h-4 w-4 shrink-0 text-slate-300 dark:text-slate-600 group-hover:text-emerald-500 group-hover:translate-x-0.5 transition" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+          </a>
+
+          <a href="embarazo.html" class="group flex items-center gap-3 rounded-xl bg-white dark:bg-slate-800/60 ring-1 ring-slate-200 dark:ring-slate-700 px-3 py-2.5 hover:ring-rose-300 dark:hover:ring-rose-500 hover:shadow-md hover:-translate-y-0.5 transition">
+            <span class="grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-rose-50 dark:bg-rose-500/15 text-rose-700 dark:text-rose-300 text-[0.7rem] font-extrabold ring-1 ring-rose-100 dark:ring-rose-500/25">03</span>
+            <span class="min-w-0 flex-1">
+              <span class="block text-sm font-bold text-slate-800 dark:text-slate-100 truncate group-hover:text-rose-700 dark:group-hover:text-rose-300">Embarazo</span>
+              <span class="block text-[0.65rem] text-slate-400 truncate">Diagnóstico prenatal · 1 pág.</span>
+            </span>
+            <svg class="h-4 w-4 shrink-0 text-slate-300 dark:text-slate-600 group-hover:text-rose-500 group-hover:translate-x-0.5 transition" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+          </a>
+
+          <a href="autoinmunes.html" class="group flex items-center gap-3 rounded-xl bg-white dark:bg-slate-800/60 ring-1 ring-slate-200 dark:ring-slate-700 px-3 py-2.5 hover:ring-fuchsia-300 dark:hover:ring-fuchsia-500 hover:shadow-md hover:-translate-y-0.5 transition">
+            <span class="grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-fuchsia-50 dark:bg-fuchsia-500/15 text-fuchsia-700 dark:text-fuchsia-300 text-[0.7rem] font-extrabold ring-1 ring-fuchsia-100 dark:ring-fuchsia-500/25">04</span>
+            <span class="min-w-0 flex-1">
+              <span class="block text-sm font-bold text-slate-800 dark:text-slate-100 truncate group-hover:text-fuchsia-700 dark:group-hover:text-fuchsia-300">Trastornos autoinmunitarios</span>
+              <span class="block text-[0.65rem] text-slate-400 truncate">ANA · anti-CCP · HLA-B27 · 1 pág.</span>
+            </span>
+            <svg class="h-4 w-4 shrink-0 text-slate-300 dark:text-slate-600 group-hover:text-fuchsia-500 group-hover:translate-x-0.5 transition" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+          </a>
+
+          <a href="oncologia.html" class="group flex items-center gap-3 rounded-xl bg-white dark:bg-slate-800/60 ring-1 ring-slate-200 dark:ring-slate-700 px-3 py-2.5 hover:ring-purple-300 dark:hover:ring-purple-500 hover:shadow-md hover:-translate-y-0.5 transition">
+            <span class="grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-purple-50 dark:bg-purple-500/15 text-purple-700 dark:text-purple-300 text-[0.7rem] font-extrabold ring-1 ring-purple-100 dark:ring-purple-500/25">05</span>
+            <span class="min-w-0 flex-1">
+              <span class="block text-sm font-bold text-slate-800 dark:text-slate-100 truncate group-hover:text-purple-700 dark:group-hover:text-purple-300">Neoplasias</span>
+              <span class="block text-[0.65rem] text-slate-400 truncate">Oncología · marcadores · 1 pág.</span>
+            </span>
+            <svg class="h-4 w-4 shrink-0 text-slate-300 dark:text-slate-600 group-hover:text-purple-500 group-hover:translate-x-0.5 transition" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+          </a>
+
+          <a href="soma.html" class="group flex items-center gap-3 rounded-xl bg-white dark:bg-slate-800/60 ring-1 ring-slate-200 dark:ring-slate-700 px-3 py-2.5 hover:ring-orange-300 dark:hover:ring-orange-500 hover:shadow-md hover:-translate-y-0.5 transition">
+            <span class="grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-orange-50 dark:bg-orange-500/15 text-orange-700 dark:text-orange-300 text-[0.7rem] font-extrabold ring-1 ring-orange-100 dark:ring-orange-500/25">06</span>
+            <span class="min-w-0 flex-1">
+              <span class="block text-sm font-bold text-slate-800 dark:text-slate-100 truncate group-hover:text-orange-700 dark:group-hover:text-orange-300">Sistema osteomioarticular</span>
+              <span class="block text-[0.65rem] text-slate-400 truncate">Radiografía · EMG · biopsia · 1 pág.</span>
+            </span>
+            <svg class="h-4 w-4 shrink-0 text-slate-300 dark:text-slate-600 group-hover:text-orange-500 group-hover:translate-x-0.5 transition" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+          </a>
+
+          <a href="neurologia.html" class="group flex items-center gap-3 rounded-xl bg-white dark:bg-slate-800/60 ring-1 ring-slate-200 dark:ring-slate-700 px-3 py-2.5 hover:ring-cyan-300 dark:hover:ring-cyan-500 hover:shadow-md hover:-translate-y-0.5 transition">
+            <span class="grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-cyan-50 dark:bg-cyan-500/15 text-cyan-700 dark:text-cyan-300 text-[0.7rem] font-extrabold ring-1 ring-cyan-100 dark:ring-cyan-500/25">07</span>
+            <span class="min-w-0 flex-1">
+              <span class="block text-sm font-bold text-slate-800 dark:text-slate-100 truncate group-hover:text-cyan-700 dark:group-hover:text-cyan-300">Estudios neurológicos</span>
+              <span class="block text-[0.65rem] text-slate-400 truncate">Neurología avanzada · 1 pág.</span>
+            </span>
+            <svg class="h-4 w-4 shrink-0 text-slate-300 dark:text-slate-600 group-hover:text-cyan-500 group-hover:translate-x-0.5 transition" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+          </a>
+
+          <a href="genitourinario.html" class="group flex items-center gap-3 rounded-xl bg-white dark:bg-slate-800/60 ring-1 ring-slate-200 dark:ring-slate-700 px-3 py-2.5 hover:ring-teal-300 dark:hover:ring-teal-500 hover:shadow-md hover:-translate-y-0.5 transition">
+            <span class="grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-teal-50 dark:bg-teal-500/15 text-teal-700 dark:text-teal-300 text-[0.7rem] font-extrabold ring-1 ring-teal-100 dark:ring-teal-500/25">08</span>
+            <span class="min-w-0 flex-1">
+              <span class="block text-sm font-bold text-slate-800 dark:text-slate-100 truncate group-hover:text-teal-700 dark:group-hover:text-teal-300">Sistema genitourinario</span>
+              <span class="block text-[0.65rem] text-slate-400 truncate">Pruebas urinarias · renal · 2 págs.</span>
+            </span>
+            <svg class="h-4 w-4 shrink-0 text-slate-300 dark:text-slate-600 group-hover:text-teal-500 group-hover:translate-x-0.5 transition" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+          </a>
+
+          <a href="endocrino.html" class="group flex items-center gap-3 rounded-xl bg-white dark:bg-slate-800/60 ring-1 ring-slate-200 dark:ring-slate-700 px-3 py-2.5 hover:ring-amber-300 dark:hover:ring-amber-500 hover:shadow-md hover:-translate-y-0.5 transition">
+            <span class="grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-amber-50 dark:bg-amber-500/15 text-amber-700 dark:text-amber-300 text-[0.7rem] font-extrabold ring-1 ring-amber-100 dark:ring-amber-500/25">09</span>
+            <span class="min-w-0 flex-1">
+              <span class="block text-sm font-bold text-slate-800 dark:text-slate-100 truncate group-hover:text-amber-700 dark:group-hover:text-amber-300">Sistema endocrino-metabólico</span>
+              <span class="block text-[0.65rem] text-slate-400 truncate">Glucosa · tiroides · lípidos · 3 págs.</span>
+            </span>
+            <svg class="h-4 w-4 shrink-0 text-slate-300 dark:text-slate-600 group-hover:text-amber-500 group-hover:translate-x-0.5 transition" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+          </a>
+
+          <a href="respiratorio.html" class="group flex items-center gap-3 rounded-xl bg-white dark:bg-slate-800/60 ring-1 ring-slate-200 dark:ring-slate-700 px-3 py-2.5 hover:ring-blue-300 dark:hover:ring-blue-500 hover:shadow-md hover:-translate-y-0.5 transition">
+            <span class="grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-blue-50 dark:bg-blue-500/15 text-blue-700 dark:text-blue-300 text-[0.7rem] font-extrabold ring-1 ring-blue-100 dark:ring-blue-500/25">10</span>
+            <span class="min-w-0 flex-1">
+              <span class="block text-sm font-bold text-slate-800 dark:text-slate-100 truncate group-hover:text-blue-700 dark:group-hover:text-blue-300">Sistema respiratorio</span>
+              <span class="block text-[0.65rem] text-slate-400 truncate">Gasometría · espirometría · TB · 4 págs.</span>
+            </span>
+            <svg class="h-4 w-4 shrink-0 text-slate-300 dark:text-slate-600 group-hover:text-blue-500 group-hover:translate-x-0.5 transition" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+          </a>
+
+          <a href="cardiovascular.html" class="group flex items-center gap-3 rounded-xl bg-white dark:bg-slate-800/60 ring-1 ring-slate-200 dark:ring-slate-700 px-3 py-2.5 hover:ring-red-300 dark:hover:ring-red-500 hover:shadow-md hover:-translate-y-0.5 transition">
+            <span class="grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-red-50 dark:bg-red-500/15 text-red-700 dark:text-red-300 text-[0.7rem] font-extrabold ring-1 ring-red-100 dark:ring-red-500/25">11</span>
+            <span class="min-w-0 flex-1">
+              <span class="block text-sm font-bold text-slate-800 dark:text-slate-100 truncate group-hover:text-red-700 dark:group-hover:text-red-300">Sistema cardiovascular</span>
+              <span class="block text-[0.65rem] text-slate-400 truncate">Troponina · ECG · Holter · 4 págs.</span>
+            </span>
+            <svg class="h-4 w-4 shrink-0 text-slate-300 dark:text-slate-600 group-hover:text-red-500 group-hover:translate-x-0.5 transition" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+          </a>
+
+          <a href="digestivo.html" class="group flex items-center gap-3 rounded-xl bg-white dark:bg-slate-800/60 ring-1 ring-slate-200 dark:ring-slate-700 px-3 py-2.5 hover:ring-lime-300 dark:hover:ring-lime-500 hover:shadow-md hover:-translate-y-0.5 transition">
+            <span class="grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-lime-50 dark:bg-lime-500/15 text-lime-700 dark:text-lime-300 text-[0.7rem] font-extrabold ring-1 ring-lime-100 dark:ring-lime-500/25">12</span>
+            <span class="min-w-0 flex-1">
+              <span class="block text-sm font-bold text-slate-800 dark:text-slate-100 truncate group-hover:text-lime-700 dark:group-hover:text-lime-300">Enfermedades digestivas y hepáticas</span>
+              <span class="block text-[0.65rem] text-slate-400 truncate">Hepatograma · endoscopia · 7 págs.</span>
+            </span>
+            <svg class="h-4 w-4 shrink-0 text-slate-300 dark:text-slate-600 group-hover:text-lime-500 group-hover:translate-x-0.5 transition" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+          </a>
+
+        </div>
+
+        <!-- Accesos rápidos -->
+        <div class="rise d5 mt-5 flex flex-wrap items-center gap-2 border-t border-slate-200/70 dark:border-slate-700/60 pt-4">
+          <a href="introduccion.html" class="inline-flex items-center gap-1.5 rounded-full bg-indigo-50 dark:bg-indigo-500/15 text-indigo-700 dark:text-indigo-300 ring-1 ring-indigo-100 dark:ring-indigo-500/25 px-3 py-1.5 text-xs font-semibold hover:bg-indigo-100 dark:hover:bg-indigo-500/25 transition">
+            <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="9"/><path stroke-linecap="round" d="M12 16v-4M12 8h.01"/></svg>
+            Introducción
+          </a>
+          <a href="enlaces.html" class="inline-flex items-center gap-1.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 ring-1 ring-slate-200 dark:ring-slate-700 px-3 py-1.5 text-xs font-semibold hover:bg-slate-200 dark:hover:bg-slate-700 transition">
+            <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 13a5 5 0 0 0 7 0l2-2a5 5 0 0 0-7-7l-1 1"/><path stroke-linecap="round" stroke-linejoin="round" d="M14 11a5 5 0 0 0-7 0l-2 2a5 5 0 0 0 7 7l1-1"/></svg>
+            Bibliografía · 188 fuentes
+          </a>
+          <span class="ml-auto text-[0.65rem] text-slate-400 dark:text-slate-500">Proyecto académico · UEPD-04</span>
+        </div>
       </div>
     </div>
   </main>
